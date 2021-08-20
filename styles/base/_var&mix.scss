@@ -1,0 +1,13 @@
+@mixin flex-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$base-transition: all ease-in-out .25s;
+$dark: #262627;
+$light: #F0F0F3;
+$green: #B7E10F;
+$blue: #06A7A7;
+$red: #FF7070;

@@ -5,84 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato:100,200,300,400,500,600,700,800,900"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="memory.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/data/images/icon.png" />
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Sound Memory Game</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="infoWrapper">
-            <div class="switchButtons">
-                <p>Switch theme</p>
-                <label class="switch">
-                    <input type="checkbox" id="switchTheme">
-                    <span class="slider"><span class="on">ON</span> OFF</span>
-                </label>
-            </div>
-            <div id="title">SOUND MEMORY GAME</div>
+    <div id="container">
+        <div id="infoWrapper">
 
-            <div id="train">Test and train your visulal and/or sound memory skills</div>
-            
-            <div class="rules">
-                <p>Players choose two cards at a time and try to find two cards that are exactly the same. Find your own
-                    way to play a game by choosing ...</p>
-                <ul id="levelRules">
-                    <li>Level 1 - C major scale</li>
-                    <li>Level 2 - Chromatic scale / 1 octave / C1 - C2</li>
-                    <li>Level 3 - Chromatic scale / 2 octaves / C1 - C3</li>
-                    <li>Level 4 - Chromatic scale / 3 octaves / C1 - C4</li>
-                </ul>
-                <div class="currentLevel"><span>Current Level:</span><span id="currentLevel"> </span></div>
+            <div id="titleWrapper">
+                <p id="title">SOUND MEMORY GAME</p>
+                <p id="subTitle">Test and train your visulal and/or sound memory skills</p>
             </div>
-            <div class="infoMiddle">
-                <div class="switchWrapper">
-                    
-                    <div class="switchButtons">
-                        <p>Visual on/off:</p>
-                        <label class="switch">
-                            <input type="checkbox" id="switchVisual">
-                            <span class="slider"><span class="on">ON</span> OFF</span>
-                        </label>
-                    </div>
-                    <div class="switchButtons">
-                        <p>Sound on/off:</p>
-                        <label class="switch">
-                            <input type="checkbox" id="switchSound">
-                            <span class="slider"><span class="on">ON</span> OFF</span>
-                        </label>
-                    </div>
-                    <div class="switchButtons">
-                        <p>Time on/off:</p>
-                        <label class="switch">
-                            <input type="checkbox" id="switchTime">
-                            <span class="slider"><span class="on">ON</span> OFF</span>
-                        </label>
-                    </div>
+
+            <div id="rulesButtonWrapper">
+                <button id="openRulesButton" class="gameButtons">Rules</button>
+            </div>
+
+            <div id="switchButtonsWrapper">
+                <div class="switchButtons">
+                    <p class="sectionTitles">theme</p>
+                    <p class="switchTitles">LIGHT / DARK</p>
+                    <label class="switch">
+                        <input type="checkbox" class="checkbox" id="switchTheme">
+                        <span class="slider"></span>
+                        <span class="sliderDot"></span>
+                        <span class="sliderLine"></span>
+                    </label>
                 </div>
-                <div class="buttonsWrapper">
-                    <div class="buttons">
-                        <button id="startGame">Start Game</button>
-                    </div>
-                    <div class="buttons">
-                        <button id="pauseGame">Pause Game</button>
-                    </div>
-                    <div class="buttons">
-                        <button id="nextLevel">Next Level</button>
-                    </div>
-                    <div class="buttons">
-                        <button id="resetGame">Reset Game</button>
-                    </div>
+                <div class="switchButtons">
+                    <p class="sectionTitles">rotate</p>
+                    <p class="switchTitles">OFF / ON</p>
+                    <label class="switch">
+                        <input type="checkbox" class="checkbox" id="switchVisual">
+                        <span class="slider"></span>
+                        <span class="sliderDot"></span>
+                        <span class="sliderLine"></span>
+                    </label>
+                </div>
+                <div class="switchButtons">
+                    <p class="sectionTitles">sound</p>
+                    <p class="switchTitles">OFF / ON</p>
+                    <label class="switch">
+                        <input type="checkbox" class="checkbox" id="switchSound">
+                        <span class="slider"></span>
+                        <span class="sliderDot"></span>
+                        <span class="sliderLine"></span>
+                    </label>
                 </div>
             </div>
 
-            <div id="timer"> </div>
-            <div class="overlay">
-                <button class="overlayButton">START</button>
+            <div id="levelTimeWrapper">
+                <div id="levelWrapper">
+                    <p class="sectionTitles">current level</p>
+                    <div id="currentLevel" class="roundedLevelTimer"></div>
+                    <button id="nextLevel" class="gameButtons">Next Level</button>
+                </div>
+                <div id="timeWrapper">
+                    <p class="sectionTitles">time</p>
+                    <div id="timer" class="roundedLevelTimer"></div>
+                    <div class="switchButtons">
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox" id="switchTime">
+                            <span class="slider"></span>
+                            <span class="sliderDot"></span>
+                            <span class="sliderLine"></span>
+                        </label>
+                        <p class="switchTitles">OFF / ON</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resetWrapper">
+                <button id="resetGame" class="gameButtons">Reset Game</button>
+            </div>
+            <div id="rulesWrapper" class="rulesClose">
+                <div id="mainRules">
+                    <p>Players choose two cards (each card contains sound and picture), at the same time, and try to find two of the same cards. Find your own way of playing the game by selecting different game settings.</p>
+                </div>
+                <div id="levelRules">
+                    <ul>
+                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel1W.png" class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel2W.png" class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel3W.png" class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel4W.png" class="rulesImages" alt="rules"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="closeRulesWrapper">
+                    <button id="closeRulesButton" class="gameButtons">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="divider">
+            <div id="border"></div>
+            <div id="startGameButtonWrapper">
+                <button id="startGame">
+                    <img src="./data/images/start.png" alt="">
+                </button>
             </div>
         </div>
 
@@ -92,7 +121,7 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="memory.js" type="module" defer></script>
+    <script src="script.js" type="module"></script>
 </body>
 
 </html>

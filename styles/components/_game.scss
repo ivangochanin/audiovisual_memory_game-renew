@@ -1,0 +1,50 @@
+#gameWrapper {
+    width: 60%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #gameBoard {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .cardWrapper {
+            opacity: 0;
+            width: 80px;
+            height: 80px;
+            position: relative;
+            transform: scale(1);
+            transform-style: preserve-3d;
+            transition: transform .5s;
+            margin: 2px;
+        }
+
+        .cardWrapper:active {
+            transform: scale(0.9);
+            transition: transform .25s;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            transform: rotateY(180deg);
+        }
+
+        .cardWrapper.rotate {
+            transform: perspective(600px) rotateY(180deg);
+        }
+
+        .cardsWrapper.flip {
+            transform: rotateY(180deg);
+        }
+    }
+}
