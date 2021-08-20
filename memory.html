@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="images/card1.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis|Lato:100" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="memory.css">
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <!-- <img src="images/image.jpg" id="logo"> -->
+    <div class="row">
+        <div class="col-5 offset-1">
+            <div id="title" class="text-center">MEMORY GAME</div>
+            <hr>
+            <div id="train" class="text-center">Test and train your visulal and/or sound memory skills</div>
+            <div id="level" class="text-center">LEVEL <span id="levelNo">1</span></div>
+            <div id="myBtn" class="row justify-content-center">
+                <button id="nextLevel" class="btn">Go to Next Level</button>
+            </div>
+            <div class="timer justify-content-center text-center">
+
+            </div>
+            <div id="visual" class="text-center text-secondary justify-content-center text-center">
+                <p>Visual on/off:</p>
+                <label class="switch">
+                    <input type="checkbox" id="switchVisual">
+                    <span class="slider round"><span class="on">On</span> Off</span>
+                </label>
+            </div>
+            <div id="sound" class="text-center text-secondary justify-content-center text-center">
+                <p>Sound on/off:</p>
+                <label class="switch">
+                    <input type="checkbox" id="switchSound">
+                    <span class="slider round"><span class="on">On</span> Off</span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="col-6" id="fullGame">
+            <div class="board"><img id="boardImg" src="images/board.png" alt="board"></div>
+
+
+            <div class="cards">
+
+                <!-- card 1-->
+                <div class="card game">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back1">
+                        <audio class="myAudio" src="images/card1.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 1.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back2">
+                        <audio class="myAudio" src="images/card1.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 2-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back3">
+                        <audio class="myAudio" src="images/card2.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 2.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back4">
+                        <audio class="myAudio" src="images/card2.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 3-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back5">
+                        <audio class="myAudio" src="images/card3.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 3.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back6">
+                        <audio class="myAudio" src="images/card3.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 4-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back7">
+                        <audio class="myAudio" src="images/card4.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 4.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back8">
+                        <audio class="myAudio" src="images/card4.wav" preload="auto"></audio>
+                    </div>
+                </div>
+
+                <!-- card 5-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back9">
+                        <audio class="myAudio" src="images/card5.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 5.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back10">
+                        <audio class="myAudio" src="images/card5.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 6-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back11">
+                        <audio class="myAudio" src="images/card6.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 6.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back12">
+                        <audio class="myAudio" src="images/card6.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 7-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back13">
+                        <audio class="myAudio" src="images/card7.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 7.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back14">
+                        <audio class="myAudio" src="images/card7.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 8-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back15">
+                        <audio class="myAudio" src="images/card8.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <!-- card 8.1-->
+                <div class="card game ">
+                    <div class="front">
+                        <img class="myCardsF" src="images/front.png" alt="front">
+                    </div>
+                    <div class="back">
+                        <img class="myCardsB" src="" alt="back16">
+                        <audio class="myAudio" src="images/card8.wav" preload="auto"></audio>
+                    </div>
+                </div>
+            </div>
+            <!--.cards End-->
+        </div>
+        <!--#fullGame End-->
+    </div>
+    <!--.row End-->
+
+    <!-- JS -->
+    <script src="memory.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

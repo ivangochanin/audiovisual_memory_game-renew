@@ -1,0 +1,196 @@
+body{ 
+  background-image: linear-gradient(to right, #17161a, #363638, #262626); /* Standard syntax (must be last) */
+  overflow-x: hidden;     /* bottom scroll disable */
+}
+/* #logo{
+    width: 100%;
+    margin-top: 1px;
+    margin-left: 40px;
+    opacity: 0.1; 
+    position: absolute;
+    transform: rotate(-35deg);
+    filter: grayscale(100%);
+} */
+#title{
+   /*  font-family: 'Dosis', sans-serif; */
+    font-family: 'Lato', sans-serif;
+    color: #6d6d70;
+    margin-top: 80px;
+    font-size: 75px;
+    text-shadow: 0px 5px black;
+}
+hr{
+    margin-top: -5px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #ffa66d, rgba(0, 0, 0, 0));
+    width: 568px;
+    height: 1px;;
+}
+#train{
+    font-family: 'Lato', sans-serif;
+    color: #b1b1b9;
+    font-size: 25px;
+    margin-top: -15px;
+    opacity: .9;  
+    text-shadow: 0px 4px #000000;
+}
+#level{
+    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Lato', sans-serif;
+    font-family: 'Baloo Chettan', cursive; */
+    color: #6d6d70;
+    font-size: 55px;
+    margin-top: 50px;
+    
+}
+#levelNo{
+    font-size: 55px;
+    background: -webkit-linear-gradient(#ffa66d, #f25a43, #c84949);
+    background-clip: text;
+    -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+#myBtn{
+    margin-top: 10px;
+}
+#nextLevel{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #ffa66d, rgba(0, 0, 0, 0));
+    /* outline: none; */
+}
+.btn:focus {
+    box-shadow: none;
+}
+.timer{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff, rgba(0, 0, 0, 0));
+    width: 200px; 
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+}
+
+.board{
+    margin-top: 150px; 
+    margin-left: 20px;
+    position: absolute;  /*Overlay One Div Over Another Div*/
+    float: left;
+}
+#boardImg{
+    width: 85%;
+    height: 85%;
+}
+
+.cards{
+    margin-top: 161px; 
+    margin-left: 30px;
+    width: 600px;
+    height: 600px;
+    position: absolute;   /*Overlay One Div Over Another Div*/
+}
+.game{
+    float: left;
+    transform: translate(-50%,-50);
+    background: none;
+}
+.card{
+    width: 130px;
+    height: 130px;
+    margin: 3px;
+}
+.myCardsF, .myCardsB{
+    width: 130px;
+    height: 130px; 
+}
+.front, .back{
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .5s linear;
+}
+.front {
+    transform: perspective(600px) rotateY(0deg); 
+    }
+.back {
+transform: perspective(600px) rotateY(180deg); 
+}
+/* .card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg); 
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg); 
+} */
+.front-rotate{
+    transform: perspective(600px) rotateY(-180deg); 
+}
+.back-rotate{
+    transform: perspective(600px) rotateY(0deg); 
+}
+.reverse-front-rotate{
+    transform: perspective(600px) rotateY(0deg); 
+}
+.reverse-back-rotate{
+    transform: perspective(600px) rotateY(180deg); 
+}
+
+ /*switch button*/
+/* The box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  /* Hide default HTML checkbox */
+  /* .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  } */
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#ffa66d;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color:#2c2c30;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input:checked + .slider {
+    background-color: #6d6d70;
+  }
+  input:focus + .slider {
+    box-shadow: 33 39 36px #2196F3;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    padding-top: 5px;
+    color:#2c2c30;
+    font-size: 15px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .on{
+      color: #ffa66d;
+  }
