@@ -10,21 +10,22 @@
 - after the end it is possible to play with switches
 
 # LEVEL
-- possible to click twice on next level button
+`- possible to click twice on next level button`
 
 # TIMER
-- time color red - theme change
+`- time color red - theme change`
 - timer double speed on double start button
 - timer -1
 - bonus time animation
 - count seconds as score
 - animations
+- clearInterval(countSeconds)
 
 # RESET
 
 # START
-- startButton is a switch
-- start/pause same button 
+`- startButton is a switch`
+`- start/pause same button `
 - if game is paused it is possible to start time, rotate cards, sounds - by switching the switch btns
 - if game is paused show to user that state with some design
 - bug after pause / resume - second card bug

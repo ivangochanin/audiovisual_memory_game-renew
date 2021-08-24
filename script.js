@@ -39,7 +39,6 @@ function randomOrder() {
 		level === 3 ? Object.assign(gameBoard.style, { width: "680px", height: "auto"}) : 
 		level === 4 ? Object.assign(gameBoard.style, { width: "840px", height: "auto"}) : 
 		Object.assign(gameBoard.style, { width: "340px", height: "auto" });
-		continueGame(cardWrapper, rotateOnOff, soundOnOff, game)
 	});
 	gsap.to(".cardWrapper", .25, {
 		opacity: 1,
@@ -56,8 +55,8 @@ function randomOrder() {
 
 function makeGame() {
 	gameBoard.innerHTML = null;
-	time.innerHTML = seconds;
 	level === 2 ? seconds = 50 : level === 3 ? seconds = 75 : level === 4 ? seconds = 100 : seconds = 25;
+	time.innerHTML = seconds;
 	setLevel();
 	dataPack.forEach(() => {
 		let createCards = document.createElement("div");
@@ -75,6 +74,11 @@ function makeGame() {
 		createCards.append(frontImage, backImage, audio);
 	});
 	randomOrder();
+	timerOnOff = false;
+	time.style.color = "#06A7A7"
+	startGameInput.checked = false;
+	startGameImage.src = '../data/images/start.png';
+	pauseGame();
 }
 
 function game() {
@@ -113,9 +117,9 @@ function game() {
     	    cardCounter = 0;
 		    timerOnOff = false;
 		    startGameInput.checked = false;
-		    startGameImage.src = '../data/images/start.png'
+		    startGameImage.src = '../data/images/start.png';
 		    makeGame();
-		    pauseGameFunc();
+		    pauseGame();
 		    time.innerHTML = seconds;
 		    currentLevel.innerHTML = level;
 		} 
@@ -176,8 +180,9 @@ function timer() {
 	  time.innerHTML = seconds;
 	 
 	  if (seconds === 0) {
-		clearInterval(countSeconds);
-		cardWrapper.forEach((i, index) => {
+		  clearInterval(countSeconds);
+		  startGameInput.checked = true;
+		  cardWrapper.forEach((i, index) => {
 			i.removeEventListener("click", rotateCard);
 			i.removeEventListener("click", playSound);
 			i.removeEventListener("click", game);
@@ -190,9 +195,7 @@ function timer() {
 			}, index * 175)
 		});
 	  }
-	  if(seconds <= 10) {
-        time.style.color = "#FF7070"; 
-      } 
+	  seconds <= 10 ? time.style.color = "#FF7070" : time.style.color = "#06A7A7";  
 	}, 1000)
   }
 
@@ -200,14 +203,10 @@ function reset() {
 	cardCounter = 0;
 	level = 1;
 	seconds = 25;
-	timerOnOff = false;
-	startGameInput.checked = false;
-	startGameImage.src = '../data/images/start.png'
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
 	makeGame();
-	pauseGameFunc();
-	theme();
+	pauseGame();
 };
 
 function setNextLevel() {
@@ -215,17 +214,13 @@ function setNextLevel() {
 		level++;
 		currentLevel.innerHTML = level;
     	cardCounter = 0;
-		timerOnOff = false;
-		startGameInput.checked = false;
-		startGameImage.src = '../data/images/start.png'
 		makeGame();
-		pauseGameFunc();
 	} else {
 		reset()
 	}
 };
 	
-function playGameFunc() {
+function playGame() {
 	switchTime.checked ?
 	timerOnOff = false : timerOnOff = true;
 	cardWrapper.forEach((i) => {
@@ -239,19 +234,19 @@ function playGameFunc() {
 	});
 }
 	
-function pauseGameFunc() {
-		timerOnOff = false;
-		cardWrapper.forEach((i) => {
-			i.removeEventListener("click", rotateCard);
-			i.removeEventListener("click", playSound);
-			i.removeEventListener("click", game);
-		});
-	}
+function pauseGame() {
+	timerOnOff = false;
+	cardWrapper.forEach((i) => {
+		i.removeEventListener("click", rotateCard);
+		i.removeEventListener("click", playSound);
+		i.removeEventListener("click", game);
+	});
+}
 	
 function playPause() {
 	startGameInput.checked
-	? playGameFunc()
-	: pauseGameFunc();
+	? playGame()
+	: pauseGame();
 }
 
 currentLevel.innerHTML = level;
@@ -263,4 +258,4 @@ switchSound.addEventListener("change", soundOnOff);
 switchTime.addEventListener("change", timeOnOf);
 
 runGame(makeGame, timer);
-pauseGameFunc();
+pauseGame();

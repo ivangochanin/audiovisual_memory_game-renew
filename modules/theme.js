@@ -3,7 +3,6 @@ const theme = () => {
 	let container = document.querySelector('#container');
 	let border = document.querySelector('#border');
 	let startGameButton = document.querySelector('#startGameButton');
-	let startGameImage = document.querySelector('#startGameImage');
 	let roundedLevelTimer = document.querySelectorAll(".roundedLevelTimer ");
 	let gameButtons = document.querySelectorAll(".gameButtons");
 	let slider = document.querySelectorAll(".slider");
@@ -18,8 +17,6 @@ const theme = () => {
 	let lightBorder = "0.5px solid #FFFFFF";
 	let dark = "#262627";
 	let light = "#F0F0F3";
-
-
 
 	if (!switchTheme.checked) {
 		setTimeout(() => {
