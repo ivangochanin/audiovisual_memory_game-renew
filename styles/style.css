@@ -381,12 +381,13 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: rgba(240, 240, 243, 0.56);
 }
 
 #gameWrapper #messageWrapper #message {
@@ -394,6 +395,31 @@ li {
   line-height: 43px;
   letter-spacing: 0.29em;
   text-transform: uppercase;
+}
+
+#gameWrapper #messageWrapper #continueAfterWin {
+  margin-top: 50px;
+  border: none;
+  text-transform: uppercase;
+  width: 150px;
+  height: 150px;
+  border-radius: 36px;
+  -webkit-transition: all ease-in-out 0.25s;
+  transition: all ease-in-out 0.25s;
+  font-weight: 900;
+}
+
+#gameWrapper #messageWrapper #continueAfterWin:hover {
+  opacity: .75;
+}
+
+#gameWrapper #messageWrapper #continueAfterWin:active {
+  -webkit-transform: scale(0.975);
+          transform: scale(0.975);
+  -webkit-transition: -webkit-transform ease-in-out .15s;
+  transition: -webkit-transform ease-in-out .15s;
+  transition: transform ease-in-out .15s;
+  transition: transform ease-in-out .15s, -webkit-transform ease-in-out .15s;
 }
 
 .gameButtons {

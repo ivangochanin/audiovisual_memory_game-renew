@@ -25,16 +25,17 @@ const theme = () => {
 			})
 		}, 25);
 		
-
 		rulesImages.forEach(i => {
 			let myString = i.src.split('');
 			myString.splice(51, 1, 'B');
 			i.src = myString.join('');
 		});
 		
+		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(38, 38, 39, 0.95)', color: light })
 		Object.assign(container.style, { backgroundColor: dark, color: light })
 		Object.assign(border.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
 		Object.assign(startGameButton.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
+		Object.assign(continueAfterWin.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow })
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow })
 		})
@@ -57,10 +58,11 @@ const theme = () => {
 			myString.splice(51, 1, 'W');
 			i.src = myString.join('');
 		});
-		
+		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.7)', color: dark })
 		Object.assign(container.style, { backgroundColor: light, color: dark })
 		Object.assign(border.style, { backgroundColor: light, boxShadow: convexLightShadow  })
 		Object.assign(startGameButton.style, { backgroundColor: light, boxShadow: convexLightShadow })
+		Object.assign(continueAfterWin.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow })
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow })
 		})

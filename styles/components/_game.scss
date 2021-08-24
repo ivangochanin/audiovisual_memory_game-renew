@@ -54,14 +54,35 @@
         height: 85vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        background: rgba(240, 240, 243, 0.56);
 
         #message {
             font-size: 3.6rem;
             line-height: 43px;
             letter-spacing: 0.29em;
             text-transform: uppercase;
+        }
+
+        #continueAfterWin {
+            margin-top: 50px;
+            border: none;
+            text-transform: uppercase;
+            width: 150px;
+            height: 150px;
+            border-radius: 36px;
+            transition: $base-transition;
+            font-weight: 900;
+
+            &:hover {
+                opacity: .75;
+            }
+
+            &:active {
+                transform: scale(0.975);
+                transition: transform ease-in-out .15s;
+            }
         }
     }
 }
