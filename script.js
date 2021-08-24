@@ -1,37 +1,266 @@
-import globals from './modules/globals.js';
-import makeGame from './modules/makeGame.js';
-import theme from './modules/theme.js';
+import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from './data/data.js';
+import {addClassAndAtribute, stopGame, continueGame, runGame} from './modules/helpers.js';
+import {rules} from './modules/buttons.js';
 import animations from './modules/animations.js';
-import {rulesButton, resetButton} from './modules/buttons.js';
-import timer from './modules/timer.js';
+import theme from './modules/theme.js';
+let gameBoard = document.querySelector('#gameBoard');
 let resetGame = document.querySelector('#resetGame');
-let seconds, firstCard, secondCard;
+let startGameInput = document.querySelector('#startGameInput');
+let nextLevel = document.querySelector('#nextLevel');
+let currentLevel = document.querySelector('#currentLevel');
+let time = document.querySelector('#timer');
+let openedCards = 0;
+let timerOnOff = true;
+let level =  1;
+let seconds = 25;
+let dataPack, cardWrapper, cardCounter, firstCard, secondCard;
 
-
-
-
-theme();
-rulesButton();
 animations();
-makeGame();
+theme();
+rules();
 
-const runGame = () => {
+function setLevel() {
+	level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1)) :
+	level === 2 ? (cardCounter = 26, dataPack = dataLevel2.concat(dataLevel2)) :
+	level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3)) :
+	level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4)) : (cardCounter = 0, dataPack = []);
+	return level;
+}
+
+function randomOrder() {
+	cardWrapper = document.querySelectorAll(".cardWrapper");
+	cardWrapper.forEach((i) => {
+		let randomData = dataPack[Math.floor(Math.random() * dataPack.length)];
+		i.childNodes[0].src = randomData.img;
+		i.childNodes[2].src = randomData.sound;
+		let removeData = dataPack.indexOf(randomData);
+		dataPack.splice(removeData, 1);
+		level === 2 ? Object.assign(gameBoard.style, { width: "510px", height: "auto" }) : 
+		level === 3 ? Object.assign(gameBoard.style, { width: "680px", height: "auto"}) : 
+		level === 4 ? Object.assign(gameBoard.style, { width: "840px", height: "auto"}) : 
+		Object.assign(gameBoard.style, { width: "340px", height: "auto" });
+		continueGame(cardWrapper, rotateOnOff, soundOnOff, game)
+	});
+	gsap.to(".cardWrapper", .25, {
+		opacity: 1,
+		yoyo: true, 
+		repeat: 0, 
+		ease: "power1.inOut",
+		delay:1,
+		stagger: {
+			amount: 1, 
+			from: "top"
+		}
+	});
+}
+
+function makeGame() {
+	gameBoard.innerHTML = null;
+	time.innerHTML = seconds;
+	level === 2 ? seconds = 50 : level === 3 ? seconds = 75 : level === 4 ? seconds = 100 : seconds = 25;
+	setLevel();
+	dataPack.forEach(() => {
+		let createCards = document.createElement("div");
+		createCards.classList.add("cardWrapper");
+		document.querySelector("#gameBoard").appendChild(createCards);
+		let frontImage = document.createElement("img");
+		let backImage = document.createElement("img");
+		let audio = document.createElement("audio");
+		addClassAndAtribute(backImage, "back", {
+			src: switchTheme.checked ? "./data/images/backW.svg" : "./data/images/backB.svg",
+			alt: "backImage",
+		});
+		addClassAndAtribute(frontImage, "front", { src: "", alt: "frontImage" });
+		addClassAndAtribute(audio, "audio", { src: "", preload: "auto" });
+		createCards.append(frontImage, backImage, audio);
+	});
+	randomOrder();
+}
+
+function game() {
+	if(openedCards < 2) {
+		openedCards++ 
+	} 
+	if(openedCards === 1) {
+		firstCard = this
+		firstCard.style.pointerEvents = 'none';
+	} 
+	if(openedCards === 2) {
+		secondCard = this
+		secondCard.style.pointerEvents = 'none';
+		stopGame(cardWrapper, rotateCard, playSound, game)
+		if(firstCard.childNodes[0].currentSrc === secondCard.childNodes[0].currentSrc && firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc) {
+			setTimeout(() => {
+				level === 2 ? seconds += 6 : level === 3 ? seconds += 11 : level === 4 ? seconds += 11 : seconds += 6;
+				firstCard.style.visibility = "hidden";
+				secondCard.style.visibility = "hidden";
+				openedCards = 0;
+				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
+			}, 500);
+			cardCounter = cardCounter - 2
+		} else {
+			setTimeout(() => {
+				firstCard.classList.remove("rotate");
+				secondCard.classList.remove("rotate");
+				openedCards = 0;
+				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
+			}, 500);
+		}
+	}	
 	setTimeout(() => {
-		timer()
+		if (cardCounter === 0 && level <= 4) {
+			level++;
+    	    cardCounter = 0;
+		    timerOnOff = false;
+		    startGameInput.checked = false;
+		    startGameImage.src = '../data/images/start.png'
+		    makeGame();
+		    pauseGameFunc();
+		    time.innerHTML = seconds;
+		    currentLevel.innerHTML = level;
+		} 
+		if (cardCounter === 0 && level > 4) {
+			reset()
+	} 
 	}, 1000);
 }
 
-/* runGame() */
-const toggleStartButtonImage = () => {
-	startGame.childNodes[1].src === "./data/images/start.png" ? startGame.childNodes[1].src = "./data/images/pauseB.png" : startGame.childNodes[1].src = "./data/images/start.png";
-   /*  return startGame.childNodes[1].src = "./data/images/pauseB.png"; */
+function rotateCard() {
+	if (openedCards < 2) {
+		this.classList.add("rotate");
+	} else {
+		cardWrapper.forEach((i) => {
+			i.removeEventListener("click", rotateCard);
+		});
+	}
 }
 
+function playSound() {
+	let sound = this.childNodes[2];
+	sound.currentTime = 0;
+	if (openedCards < 2) {
+		sound ? sound.play() : null;
+	} else {
+		cardWrapper.forEach((i) => {
+			i.removeEventListener("click", playSound);
+		});
+	}
+}
 
-startGame.addEventListener('click', runGame)
+function rotateOnOff() {
+	cardWrapper.forEach((i) => {
+		switchVisual.checked
+			? i.removeEventListener("click", rotateCard)
+			: i.addEventListener("click", rotateCard);
+	});
+}
 
+function soundOnOff() {
+	cardWrapper.forEach((i) => {
+		switchSound.checked
+			? i.removeEventListener("click", playSound)
+			: i.addEventListener("click", playSound);
+	});
+}
 
+function timeOnOf() {
+	switchTime.checked ?
+	timerOnOff = false : timerOnOff = true
+}
 
+function timer() {
+	let countSeconds = setInterval(() => {
+	  if(timerOnOff){
+		seconds--;
+	  }
+	  time.innerHTML = seconds;
+	 
+	  if (seconds === 0) {
+		clearInterval(countSeconds);
+		cardWrapper.forEach((i, index) => {
+			i.removeEventListener("click", rotateCard);
+			i.removeEventListener("click", playSound);
+			i.removeEventListener("click", game);
+			seconds = 1
+			setTimeout(() => {
+				if(i.style.visibility !== "hidden"){
+					i.classList.add("rotate");
+					i.childNodes[2].play();
+				}
+			}, index * 175)
+		});
+	  }
+	  if(seconds <= 10) {
+        time.style.color = "#FF7070"; 
+      } 
+	}, 1000)
+  }
 
+function reset() {
+	cardCounter = 0;
+	level = 1;
+	seconds = 25;
+	timerOnOff = false;
+	startGameInput.checked = false;
+	startGameImage.src = '../data/images/start.png'
+	time.innerHTML = seconds;
+	currentLevel.innerHTML = level;
+	makeGame();
+	pauseGameFunc();
+	theme();
+};
 
+function setNextLevel() {
+	if(level < 4) {
+		level++;
+		currentLevel.innerHTML = level;
+    	cardCounter = 0;
+		timerOnOff = false;
+		startGameInput.checked = false;
+		startGameImage.src = '../data/images/start.png'
+		makeGame();
+		pauseGameFunc();
+	} else {
+		reset()
+	}
+};
+	
+function playGameFunc() {
+	switchTime.checked ?
+	timerOnOff = false : timerOnOff = true;
+	cardWrapper.forEach((i) => {
+		switchVisual.checked
+		? i.removeEventListener("click", rotateCard)
+		: i.addEventListener("click", rotateCard);
+		switchSound.checked
+		? i.removeEventListener("click", playSound)
+		: i.addEventListener("click", playSound);
+		i.addEventListener("click", game);
+	});
+}
+	
+function pauseGameFunc() {
+		timerOnOff = false;
+		cardWrapper.forEach((i) => {
+			i.removeEventListener("click", rotateCard);
+			i.removeEventListener("click", playSound);
+			i.removeEventListener("click", game);
+		});
+	}
+	
+function playPause() {
+	startGameInput.checked
+	? playGameFunc()
+	: pauseGameFunc();
+}
 
+currentLevel.innerHTML = level;
+nextLevel.addEventListener('click', setNextLevel);
+resetGame.addEventListener('click', reset);
+startGameInput.addEventListener('change', playPause);
+switchVisual.addEventListener("change", rotateOnOff);
+switchSound.addEventListener("change", soundOnOff);
+switchTime.addEventListener("change", timeOnOf);
+
+runGame(makeGame, timer);
+pauseGameFunc();

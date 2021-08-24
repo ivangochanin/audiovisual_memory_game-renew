@@ -2,7 +2,8 @@ const theme = () => {
 	let backTheme = document.querySelectorAll('.back')
 	let container = document.querySelector('#container');
 	let border = document.querySelector('#border');
-	let startGame = document.querySelector('#startGame');
+	let startGameButton = document.querySelector('#startGameButton');
+	let startGameImage = document.querySelector('#startGameImage');
 	let roundedLevelTimer = document.querySelectorAll(".roundedLevelTimer ");
 	let gameButtons = document.querySelectorAll(".gameButtons");
 	let slider = document.querySelectorAll(".slider");
@@ -19,6 +20,7 @@ const theme = () => {
 	let light = "#F0F0F3";
 
 
+
 	if (!switchTheme.checked) {
 		setTimeout(() => {
 			backTheme.forEach(i => {
@@ -26,6 +28,7 @@ const theme = () => {
 			})
 		}, 25);
 		
+
 		rulesImages.forEach(i => {
 			let myString = i.src.split('');
 			myString.splice(51, 1, 'B');
@@ -34,7 +37,7 @@ const theme = () => {
 		
 		Object.assign(container.style, { backgroundColor: dark, color: light })
 		Object.assign(border.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
-		Object.assign(startGame.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
+		Object.assign(startGameButton.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow })
 		})
@@ -60,7 +63,7 @@ const theme = () => {
 		
 		Object.assign(container.style, { backgroundColor: light, color: dark })
 		Object.assign(border.style, { backgroundColor: light, boxShadow: convexLightShadow  })
-		Object.assign(startGame.style, { backgroundColor: light, boxShadow: convexLightShadow })
+		Object.assign(startGameButton.style, { backgroundColor: light, boxShadow: convexLightShadow })
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow })
 		})
@@ -75,6 +78,13 @@ const theme = () => {
 	
 }
 
+const startBtnState = () => {
+	startGameInput.checked ? 
+	startGameImage.src = '../data/images/pause.png' : 
+	startGameImage.src = '../data/images/start.png'
+}
+
+startGameInput.addEventListener('change', startBtnState);
 switchTheme.checked = true;
 switchTheme.addEventListener("change", theme);
 export default theme;

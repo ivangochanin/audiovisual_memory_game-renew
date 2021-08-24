@@ -11,36 +11,26 @@
     #startGameButtonWrapper {
         position: absolute;
 
-        #startGame {
+        #startGameButton {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: none;
-            width: 75px;
-            height: 75px;
+            width: 74px;
+            height: 74px;
             border-radius: 40px;
             transition: $base-transition;
 
-            img {
-                width: 40%;
-                transition: $base-transition;
-
-                &:active {
-                    transform: scale(0.9);
-                }
+            #startGameInput {
+                position: absolute;
+                z-index: -1;
             }
 
-            &:hover img {
-                opacity: .5;
-            }
-
-            &:active {
-                transform: scale(0.995);
-                transition: transform $base-transition;
+            #startGameImage {
+                width: 50%;
+                z-index: 1;
             }
         }
-
-
     }
 
     #border {

@@ -3,15 +3,14 @@
     flex-direction: column;
 
     .switch {
-    user-select: none;
-
+        user-select: none;
         text-align: center;
         position: relative;
         display: inline-block;
         width: 74px;
         height: 34px;
-        margin-bottom: 15px; 
-        
+        margin-bottom: 15px;
+
         .slider {
             position: absolute;
             cursor: pointer;

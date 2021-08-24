@@ -6,11 +6,11 @@
 - rules Full
 
 # SWITCHES
-- send switched(all buttons as object) to sessionStorage - enable load next level with preview user settings
+- send switched(all buttons as object) to sessionStorage - enable load next level with preview user settings(theme)
 - after the end it is possible to play with switches
 
 # LEVEL
-- next Level
+- possible to click twice on next level button
 
 # TIMER
 - time color red - theme change

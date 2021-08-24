@@ -257,7 +257,8 @@ li {
   position: absolute;
 }
 
-#divider #startGameButtonWrapper #startGame {
+#divider #startGameButtonWrapper #startGameButton {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,36 +268,21 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: none;
-  width: 75px;
-  height: 75px;
+  width: 74px;
+  height: 74px;
   border-radius: 40px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
 }
 
-#divider #startGameButtonWrapper #startGame img {
-  width: 40%;
-  -webkit-transition: all ease-in-out 0.25s;
-  transition: all ease-in-out 0.25s;
+#divider #startGameButtonWrapper #startGameButton #startGameInput {
+  position: absolute;
+  z-index: -1;
 }
 
-#divider #startGameButtonWrapper #startGame img:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-#divider #startGameButtonWrapper #startGame:hover img {
-  opacity: .5;
-}
-
-#divider #startGameButtonWrapper #startGame:active {
-  -webkit-transform: scale(0.995);
-          transform: scale(0.995);
-  -webkit-transition: -webkit-transform all ease-in-out 0.25s;
-  transition: -webkit-transform all ease-in-out 0.25s;
-  transition: transform all ease-in-out 0.25s;
-  transition: transform all ease-in-out 0.25s, -webkit-transform all ease-in-out 0.25s;
+#divider #startGameButtonWrapper #startGameButton #startGameImage {
+  width: 50%;
+  z-index: 1;
 }
 
 #divider #border {
