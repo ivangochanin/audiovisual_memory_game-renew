@@ -47,4 +47,21 @@
             transform: rotateY(180deg);
         }
     }
+
+    #messageWrapper {
+        position: absolute;
+        width: 50vw;
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        #message {
+            font-size: 3.6rem;
+            line-height: 43px;
+            letter-spacing: 0.29em;
+            text-transform: uppercase;
+        }
+    }
 }

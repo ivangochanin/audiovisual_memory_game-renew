@@ -9,6 +9,8 @@ let startGameInput = document.querySelector('#startGameInput');
 let nextLevel = document.querySelector('#nextLevel');
 let currentLevel = document.querySelector('#currentLevel');
 let time = document.querySelector('#timer');
+let message = document.querySelector('#message');
+let messageWrapper = document.querySelector('#messageWrapper');
 let openedCards = 0;
 let timerOnOff = true;
 let level =  1;
@@ -78,6 +80,7 @@ function makeGame() {
 	time.style.color = "#06A7A7"
 	startGameInput.checked = false;
 	startGameImage.src = '../data/images/start.png';
+	messageWrapper.style.display = "none";
 	pauseGame();
 }
 
@@ -113,15 +116,10 @@ function game() {
 	}	
 	setTimeout(() => {
 		if (cardCounter === 0 && level <= 4) {
-			level++;
-    	    cardCounter = 0;
 		    timerOnOff = false;
 		    startGameInput.checked = false;
-		    startGameImage.src = '../data/images/start.png';
-		    makeGame();
-		    pauseGame();
-		    time.innerHTML = seconds;
-		    currentLevel.innerHTML = level;
+			messageWrapper.style.display = "block";
+            message.innerHTML = 'Great job!';
 		} 
 		if (cardCounter === 0 && level > 4) {
 			reset()
@@ -181,6 +179,8 @@ function timer() {
 	 
 	  if (seconds === 0) {
 		  clearInterval(countSeconds);
+		  messageWrapper.style.display = "block";
+		  message.innerHTML = 'More luck next time! ';
 		  startGameInput.checked = true;
 		  cardWrapper.forEach((i, index) => {
 			i.removeEventListener("click", rotateCard);
