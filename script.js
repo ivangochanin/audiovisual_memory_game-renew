@@ -1,6 +1,7 @@
 import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from './data/data.js';
 import {addClassAndAtribute, stopGame, continueGame, runGame} from './modules/helpers.js';
 import {rules} from './modules/buttons.js';
+import {switchesDisable, switchesEnable} from './modules/switches.js'
 import animations from './modules/animations.js';
 import theme from './modules/theme.js';
 let gameBoard = document.querySelector('#gameBoard');
@@ -21,25 +22,6 @@ let dataPack, cardWrapper, cardCounter, firstCard, secondCard;
 animations();
 theme();
 rules();
-
-function switchesDisable() {
-	switchVisual.disabled = true;
-	switchSound.disabled = true;
-	switchTime.disabled = true;
-	visualSliderLine.style.opacity = .25;
-	soundSliderLine.style.opacity = .25;
-	timeSliderLine.style.opacity = .25;
-
-}
-
-function switchesEnable() {
-	switchVisual.disabled = false;
-	switchSound.disabled = false;
-	switchTime.disabled = false;
-	visualSliderLine.style.opacity = 1;
-	soundSliderLine.style.opacity = 1;
-	timeSliderLine.style.opacity = 1;
-}
 
 function setLevel() {
 	level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1)) :
@@ -96,12 +78,13 @@ function makeGame() {
 		createCards.append(frontImage, backImage, audio);
 	});
 	randomOrder();
-	timerOnOff = false;
+	timerOnOff = true;
 	time.style.color = "#06A7A7"
 	startGameImage.src = '../data/images/start.png';
-		messageWrapper.style.visibility = "hidden";
+	messageWrapper.style.visibility = "hidden";
 	startGameInput.checked = false;
 	startGameInput.disabled = false;
+	startGameButton.childNodes[3].style.opacity = 1;
 	switchesDisable()
 	pauseGame();
 }
@@ -143,6 +126,7 @@ function game() {
 		    timerOnOff = false;
 		    startGameInput.checked = false;
         	startGameImage.src = '../data/images/start.png';
+			startGameButton.childNodes[3].style.opacity = .2;
 			messageWrapper.style.visibility = "visible";
             message.innerHTML = 'Great job!';
 		} 
@@ -209,6 +193,7 @@ function timer() {
 		  message.innerHTML = 'More luck next time! ';
 	      startGameInput.disabled = true;
 		  startGameInput.checked = true;
+		  startGameButton.childNodes[3].style.opacity = .2;
           startGameImage.src = '../data/images/start.png';
 		  cardWrapper.forEach((i, index) => {
 			i.removeEventListener("click", rotateCard);

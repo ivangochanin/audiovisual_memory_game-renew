@@ -1,22 +1,19 @@
-function rotateOnOff(cardWrapper, switchVisual, rotateCard) {
-	cardWrapper.forEach((i) => {
-		switchVisual.checked
-			? i.removeEventListener("click", rotateCard)
-			: i.addEventListener("click", rotateCard);
-	});
+function switchesDisable() {
+	switchVisual.disabled = true;
+	switchSound.disabled = true;
+	switchTime.disabled = true;
+	visualSliderLine.style.opacity = .2;
+	soundSliderLine.style.opacity = .2;
+	timeSliderLine.style.opacity = .2;
 }
 
-function soundOnOff(cardWrapper, switchSound, playSound) {
-	cardWrapper.forEach((i) => {
-		switchSound.checked
-			? i.removeEventListener("click", playSound)
-			: i.addEventListener("click", playSound);
-	});
+function switchesEnable() {
+	switchVisual.disabled = false;
+	switchSound.disabled = false;
+	switchTime.disabled = false;
+	visualSliderLine.style.opacity = 1;
+	soundSliderLine.style.opacity = 1;
+	timeSliderLine.style.opacity = 1;
 }
 
-function timeOnOf(switchTime, timerOnOff) {
-	switchTime.checked ?
-	timerOnOff = false : timerOnOff = true
-}
-
-export {rotateOnOff, soundOnOff, timeOnOf}
+export {switchesDisable, switchesEnable}

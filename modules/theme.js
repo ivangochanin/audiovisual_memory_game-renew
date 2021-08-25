@@ -58,7 +58,7 @@ const theme = () => {
 			myString.splice(51, 1, 'W');
 			i.src = myString.join('');
 		});
-		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.7)', color: dark })
+		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.8)', color: dark })
 		Object.assign(container.style, { backgroundColor: light, color: dark })
 		Object.assign(border.style, { backgroundColor: light, boxShadow: convexLightShadow  })
 		Object.assign(startGameButton.style, { backgroundColor: light, boxShadow: convexLightShadow })

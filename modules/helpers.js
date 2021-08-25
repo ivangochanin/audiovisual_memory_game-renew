@@ -24,9 +24,7 @@ const continueGame = (cardWrapper, rotateOnOff, soundOnOff, game) => {
 
 const runGame = (makeGame, timer) => {
 	makeGame();
-	setTimeout(() => {
-		timer()
-	}, 1000);
+	timer();
 }
 
 export { addClassAndAtribute, stopGame, continueGame, runGame };

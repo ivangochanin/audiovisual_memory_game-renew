@@ -401,12 +401,13 @@ li {
   margin-top: 50px;
   border: none;
   text-transform: uppercase;
-  width: 150px;
+  width: 250px;
   height: 150px;
   border-radius: 36px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
   font-weight: 900;
+  letter-spacing: 3px;
 }
 
 #gameWrapper #messageWrapper #continueAfterWin:hover {
