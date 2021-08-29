@@ -103,7 +103,7 @@ function game() {
 				secondCard.classList.remove("rotate");
 				openedCards = 0;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 1000);
+			}, 750);
 		}
 	}	
 	if (cardCounter === 0 && level <= 4) {
