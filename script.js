@@ -108,7 +108,7 @@ function game() {
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 				firstCardIndicator.style.background = '#F0F0F3';
 			    secondCardIndicator.style.background = '#F0F0F3';
-			}, 1000);
+			}, 500);
 			
 		}
 	}	
