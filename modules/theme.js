@@ -27,7 +27,7 @@ const theme = () => {
 		
 		rulesImages.forEach(i => {
 			let myString = i.src.split('');
-			myString.splice(51, 1, 'B');
+			myString.splice(myString.length - 5, 1, 'B');
 			i.src = myString.join('');
 		});
 		
@@ -55,7 +55,7 @@ const theme = () => {
 		}, 25);
 		rulesImages.forEach(i => {
 			let myString = i.src.split('');
-			myString.splice(51, 1, 'W');
+			myString.splice(myString.length - 5, 1, 'W');
 			i.src = myString.join('');
 		});
 		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.8)', color: dark })
