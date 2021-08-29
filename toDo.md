@@ -6,6 +6,7 @@
 - rules Full
 
 # SWITCHES
+- css remove switch - put on/off button
 - send switched(all buttons as object) to sessionStorage - enable load next level with preview user settings(theme)
 - after the end it is possible to play with switches
 
@@ -36,6 +37,7 @@
 `- load next level popup after finish game level `
 - careful with setInterval !!!!!
 - phone & tablet only sound
-- test game
+- if user try to click on card and game is paused - show popup `start the game`
 - if all switches off - dissable all 
+- test game
 

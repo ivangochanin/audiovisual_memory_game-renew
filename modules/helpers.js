@@ -1,10 +1,3 @@
-const addClassAndAtribute = (element, className, attribute) => {
-	element.classList.add(className);
-	for (let key in attribute) {
-		element.setAttribute(key, attribute[key]);
-	}
-}
-
 const stopGame = (cardWrapper, rotateCard, playSound, game) => {
 	cardWrapper.forEach((i) => {
 		i.removeEventListener("click", rotateCard);
@@ -22,9 +15,5 @@ const continueGame = (cardWrapper, rotateOnOff, soundOnOff, game) => {
 	});
 }
 
-const runGame = (makeGame, timer) => {
-	makeGame();
-	timer();
-}
 
-export { addClassAndAtribute, stopGame, continueGame, runGame };
+export { stopGame, continueGame };

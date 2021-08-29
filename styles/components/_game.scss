@@ -18,13 +18,13 @@
             position: relative;
             transform: scale(1);
             transform-style: preserve-3d;
-            transition: transform .5s;
+            transition: $base-transition;
             margin: 2px;
         }
 
         .cardWrapper:active {
             transform: scale(0.9);
-            transition: transform .25s;
+            transition: $base-transition;
         }
 
         .front,
