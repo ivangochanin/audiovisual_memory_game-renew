@@ -82,19 +82,22 @@ function game() {
 	} 
 	if(openedCards === 1) {
 		firstCard = this;
+		firstCardIndicator.style.background = '#B7E10F';
 		firstCard.style.pointerEvents = 'none';
 	} 
 	if(openedCards === 2) {
 		secondCard = this;
-		secondCard.style.pointerEvents = 'none';
+		secondCardIndicator.style.background = '#B7E10F';
 		stopGame(cardWrapper, rotateCard, playSound, game)
 		if(firstCard.childNodes[0].currentSrc === secondCard.childNodes[0].currentSrc && firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc) {
 			setTimeout(() => {
 				bonusTime();
 				firstCard.style.visibility = "hidden";
 				secondCard.style.visibility = "hidden";
+				firstCardIndicator.style.background = '#F0F0F3';
+			    secondCardIndicator.style.background = '#F0F0F3';
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 250);
+			}, 500);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -103,7 +106,10 @@ function game() {
 				secondCard.classList.remove("rotate");
 				openedCards = 0;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
+				firstCardIndicator.style.background = '#F0F0F3';
+			    secondCardIndicator.style.background = '#F0F0F3';
 			}, 1000);
+			
 		}
 	}	
 	if (cardCounter === 0 && level <= 4) {

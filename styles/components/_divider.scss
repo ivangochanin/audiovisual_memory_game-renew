@@ -16,9 +16,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 74px;
-            height: 74px;
-            border-radius: 40px;
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
             transition: $base-transition;
 
             #startGameInput {
@@ -36,7 +36,7 @@
     #border {
         width: 9px;
         min-height: 85vh;
-        border-radius: 18px;
+        border-radius: 2px;
         transition: $base-transition;
     }
 

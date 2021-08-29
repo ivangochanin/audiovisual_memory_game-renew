@@ -156,9 +156,9 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 84px;
+  width: 130px;
   height: 61px;
-  border-radius: 36px;
+  border-radius: 4px;
   font-size: 36px;
   font-weight: 600;
   line-height: 43px;
@@ -268,9 +268,9 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 74px;
-  height: 74px;
-  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
 }
@@ -288,7 +288,7 @@ li {
 #divider #border {
   width: 9px;
   min-height: 85vh;
-  border-radius: 18px;
+  border-radius: 2px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
 }
@@ -299,12 +299,57 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#gameWrapper #cardSignal {
+  width: 80px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* background: chartreuse; */
+}
+
+#gameWrapper #cardSignal .indicatorWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  background: #F0F0F3;
+  -webkit-box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.5), inset 3px 3px 3px rgba(210, 210, 211, 0.5);
+          box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.5), inset 3px 3px 3px rgba(210, 210, 211, 0.5);
+  border-radius: 2px;
+}
+
+#gameWrapper #cardSignal .indicatorWrapper #firstCardIndicator,
+#gameWrapper #cardSignal .indicatorWrapper #secondCardIndicator {
+  width: 12px;
+  height: 12px;
+  background: #F0F0F3;
+  /* box-shadow: 1px 1px 1px rgba(215, 215, 217, 0.6), inset 3px 3px 3px #FFFFFF, inset -3px -3px 3px #E9E9EB; */
+  border-radius: 2px;
 }
 
 #gameWrapper #gameBoard {
@@ -325,6 +370,7 @@ li {
   opacity: 0;
   width: 80px;
   height: 80px;
+  border-radius: 4px;
   position: relative;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -393,24 +439,27 @@ li {
   text-transform: uppercase;
 }
 
-#gameWrapper #messageWrapper #continueAfterWin {
+#gameWrapper #messageWrapper #continueAfterWin,
+#gameWrapper #messageWrapper #levelAfterWin {
   margin-top: 50px;
   border: none;
   text-transform: uppercase;
-  width: 250px;
-  height: 150px;
-  border-radius: 36px;
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
   font-weight: 900;
   letter-spacing: 3px;
 }
 
-#gameWrapper #messageWrapper #continueAfterWin:hover {
+#gameWrapper #messageWrapper #continueAfterWin:hover,
+#gameWrapper #messageWrapper #levelAfterWin:hover {
   opacity: .75;
 }
 
-#gameWrapper #messageWrapper #continueAfterWin:active {
+#gameWrapper #messageWrapper #continueAfterWin:active,
+#gameWrapper #messageWrapper #levelAfterWin:active {
   -webkit-transform: scale(0.975);
           transform: scale(0.975);
   -webkit-transition: -webkit-transform ease-in-out .15s;
@@ -422,9 +471,9 @@ li {
 .gameButtons {
   border: none;
   text-transform: uppercase;
-  width: 122px;
-  height: 41px;
-  border-radius: 16px;
+  width: 130px;
+  height: 40px;
+  border-radius: 4px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
   font-weight: 900;
