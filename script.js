@@ -94,7 +94,7 @@ function game() {
 				firstCard.style.visibility = "hidden";
 				secondCard.style.visibility = "hidden";
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 500);
+			}, 250);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -103,7 +103,7 @@ function game() {
 				secondCard.classList.remove("rotate");
 				openedCards = 0;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 500);
+			}, 1000);
 		}
 	}	
 	if (cardCounter === 0 && level <= 4) {

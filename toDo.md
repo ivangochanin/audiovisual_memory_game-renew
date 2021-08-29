@@ -25,6 +25,7 @@
 - if time is off - no bonus time
 
 # RESET
+- if game is endes and play sounds and press reset game still play rest of the sounds
 
 # START
 `- startButton is a switch`
