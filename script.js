@@ -94,8 +94,8 @@ function game() {
 				bonusTime();
 				firstCard.style.visibility = "hidden";
 				secondCard.style.visibility = "hidden";
-				firstCardIndicator.style.background = '#F0F0F3';
-			    secondCardIndicator.style.background = '#F0F0F3';
+				firstCardIndicator.style.background = '';
+			    secondCardIndicator.style.background = '';
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 			}, 500);
 			openedCards = 0;
@@ -106,8 +106,8 @@ function game() {
 				secondCard.classList.remove("rotate");
 				openedCards = 0;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-				firstCardIndicator.style.background = '#F0F0F3';
-			    secondCardIndicator.style.background = '#F0F0F3';
+				firstCardIndicator.style.background = '';
+			    secondCardIndicator.style.background = '';
 			}, 500);
 			
 		}
@@ -235,7 +235,6 @@ function pauseGame() {
 	stopTime();
 	timerOnOff = false;
 	switchesDisable();
-	timerOnOff = false;
 	cardWrapper.forEach((i) => {
 		i.removeEventListener("click", rotateCard);
 		i.removeEventListener("click", playSound);
