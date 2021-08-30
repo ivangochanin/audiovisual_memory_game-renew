@@ -53,3 +53,4 @@
 - test game
 - warning for people with disabilities
 - add harp and rhodes sounds
+- end game -> if sound is off do not play sound, just open cards & vice versa
