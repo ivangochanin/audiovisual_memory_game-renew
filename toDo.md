@@ -44,7 +44,7 @@
 # GAME
 `- load next level popup after finish game level`
 - add card light(dot) indicator if play only with sound
-- if the user clockes on the next level and the first card is open indicator is still opened
+- if the user clicks on the next level and the first card is open indicator is still opened
 - game starts with the first click
 - end game button scenarios
 - phone & tablet only sound
