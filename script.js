@@ -133,14 +133,14 @@ function winGame() {
 	startGameInput.checked = false;
     startGameImage.src = '../data/images/start.png';
 	startGameButton.childNodes[3].style.opacity = .2;
-    message.innerHTML = 'Great job!';
+    message.innerHTML = 'Great job! The purpose of this game is to practice, not to win';
     winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
 }
 
 function endGame() {
 	const dynamics = [1, .75, .5, .25, .1, 1, 1];
 	switchesDisable();
-	message.innerHTML = 'More luck next time! ';
+	message.innerHTML = 'More luck next time! The purpose of this game is to practice, not to win';
 	winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
 	startGameInput.disabled = true;
 	startGameInput.checked = true;
