@@ -3,4 +3,5 @@
 - Translating an old sound memory game into ES modules
 - Redesign
 
-game on : https://audiovisual-memory-game.netlify.app/
+The purpose of this game is to practice, not to win. 
+Play game: https://audiovisual-memory-game.netlify.app/
