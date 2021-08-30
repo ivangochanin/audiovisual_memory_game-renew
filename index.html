@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="/data/images/icon.png" />
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <title>Sound Memory Game</title>
 </head>
 
@@ -64,7 +65,7 @@
                 </div>
                 <div id="timeWrapper">
                     <p class="sectionTitles">time</p>
-                    <div id="timer" class="roundedLevelTimer"></div>
+                    <div class="roundedLevelTimer"><span id="timer"></span></div>
                     <div class="switchButtons">
                         <label class="switch">
                             <input type="checkbox" class="checkbox" id="switchTime">
@@ -134,7 +135,6 @@
         </div>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="script.js" type="module"></script>
 </body>
 

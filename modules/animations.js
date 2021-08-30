@@ -17,14 +17,22 @@ const showCardsAnimation = () => {
 			from: "top"
 		}
 	});
-}
+	gsap.to("#cardSignal", .25, {opacity: 1,delay:1,});
+};
 
-const winMessageMessage = () => {
+const bonusTimeAnimation = (el) => {
+	gsap.fromTo(el, {scale: 1.25, color: '#B7E10F'}, {delay: .25, duration: .25, ease:Power3.easeInOut, scale: 1});
+};
 
-}
+const winLoseMessage = (wrapper, text, btn1, btn2) => {
+	gsap.to(wrapper, {duration: .5, autoAlpha: 1})
+    gsap.fromTo(text, {opacity: 0, scale: 1.2}, {delay: .25, duration: 1, ease:Power3.easeInOut, opacity: 1, scale: 1});
+    gsap.fromTo(btn1, {opacity: 0, autoAlpha:0}, {delay: .75, duration: .5, ease:Power3.easeInOut, opacity: 1, autoAlpha: 1});
+    gsap.fromTo(btn2, {opacity: 0, autoAlpha:0}, {delay: .75, duration: .5, ease:Power3.easeInOut, opacity: 1, autoAlpha: 1});
+};
 
-const loseMessageMessage = () => {
-	
-}
+const winLoseMessageHide = (wrapper) => {
+	gsap.to(wrapper, {duration: 1, autoAlpha: 0});
+};
 
-export {animations, showCardsAnimation};
+export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, winLoseMessageHide};

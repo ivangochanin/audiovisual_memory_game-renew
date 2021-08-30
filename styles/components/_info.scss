@@ -78,10 +78,14 @@
         border-radius: 4px;
         font-size: 36px;
         font-weight: 600;
+        letter-spacing: 2px;
         line-height: 43px;
         transition: $base-transition;
         color: $blue;
         margin-bottom: 15px;
+        #timer {
+        transition: $base-transition;
+        }
     }
 
     #rulesWrapper {

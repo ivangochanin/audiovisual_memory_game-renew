@@ -45,4 +45,4 @@
 - if the user tries to click on the card and the game is paused - show popup `start the game`
 - if all switches off - disable all 
 - test game
-
+- warning for people with disabilities

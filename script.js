@@ -1,19 +1,22 @@
 import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from './data/data.js';
-import { stopGame, continueGame } from './modules/helpers.js';
+import { stopGame, continueGame, randomEndSound } from './modules/helpers.js';
 import makeCards from './modules/cardBuilder.js'
 import {rules} from './modules/buttons.js';
 import {switchesDisable, switchesEnable} from './modules/switches.js';
-import {animations, showCardsAnimation} from './modules/animations.js';
+import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, winLoseMessageHide} from './modules/animations.js';
 import theme from './modules/theme.js';
 let gameBoard = document.querySelector('#gameBoard');
+let cardSignal = document.querySelector('#cardSignal')
 let resetGame = document.querySelector('#resetGame');
 let startGameInput = document.querySelector('#startGameInput');
 let nextLevel = document.querySelector('#nextLevel');
 let continueAfterWin = document.querySelector('#continueAfterWin');
+let levelAfterWin = document.querySelector('#levelAfterWin');
+
 let currentLevel = document.querySelector('#currentLevel');
 let time = document.querySelector('#timer');
-let message = document.querySelector('#message');
 let messageWrapper = document.querySelector('#messageWrapper');
+let message = document.querySelector('#message');
 let openedCards = 0;
 let timerOnOff = true;
 let level =  1;
@@ -24,15 +27,17 @@ animations();
 theme();
 rules();
 
+
+
 function bonusTime() {
-    return level === 2 ? seconds += 6 : level === 3 ? seconds += 11 : level === 4 ? seconds += 11 : seconds += 6;
+    level === 2 ? seconds += 6 : level === 3 ? seconds += 11 : level === 4 ? seconds += 11 : seconds += 6;
 }
 
 function setLevel() {
 	level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1), seconds = 25, Object.assign(gameBoard.style, { width: "340px", height: "auto" })) :
 	level === 2 ? (cardCounter = 26, dataPack = dataLevel2.concat(dataLevel2), seconds = 50, Object.assign(gameBoard.style, { width: "510px", height: "auto" })) :
 	level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3), seconds = 75, Object.assign(gameBoard.style, { width: "680px", height: "auto"})) :
-	level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 100, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
+	level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 1, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
 	(cardCounter = 0, dataPack = [], seconds = 0);
 }
 
@@ -42,6 +47,7 @@ function setNextLevel() {
 		currentLevel.innerHTML = level;
     	cardCounter = 0;
 		makeGame();
+		cardSignal.style.opacity = 0;
 	} else {
 		reset();
 	}
@@ -60,6 +66,7 @@ function randomOrder() {
 
 function makeGame() {
 	gameBoard.innerHTML = null;
+	winLoseMessageHide(messageWrapper);
 	setLevel();
 	makeCards(dataPack);
 	randomOrder();
@@ -67,7 +74,6 @@ function makeGame() {
 	time.innerHTML = seconds;
 	timerOnOff = true;
 	time.style.color = "#06A7A7"
-	messageWrapper.style.visibility = "hidden";
 	startGameImage.src = '../data/images/start.png';
 	startGameInput.checked = false;
 	startGameInput.disabled = false;
@@ -90,8 +96,10 @@ function game() {
 		secondCardIndicator.style.background = '#B7E10F';
 		stopGame(cardWrapper, rotateCard, playSound, game)
 		if(firstCard.childNodes[0].currentSrc === secondCard.childNodes[0].currentSrc && firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc) {
+			bonusTime()
+			bonusTimeAnimation(time);
 			setTimeout(() => {
-				bonusTime();
+				
 				firstCard.style.visibility = "hidden";
 				secondCard.style.visibility = "hidden";
 				firstCardIndicator.style.background = '';
@@ -120,8 +128,8 @@ function game() {
 		    startGameInput.checked = false;
         	startGameImage.src = '../data/images/start.png';
 			startGameButton.childNodes[3].style.opacity = .2;
-			messageWrapper.style.visibility = "visible";
             message.innerHTML = 'Great job!';
+        	winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
 		    }, 1000);
 		} 
 		if (cardCounter === 0 && level > 4) {
@@ -130,13 +138,14 @@ function game() {
 }
 
 function endGame() {
+	const dynamics = [1, .75, .5, .25, .1, 1, 1];
 	switchesDisable();
 	message.innerHTML = 'More luck next time! ';
+	winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
 	startGameInput.disabled = true;
 	startGameInput.checked = true;
 	startGameButton.childNodes[3].style.opacity = .2;
 	startGameImage.src = '../data/images/start.png';
-	messageWrapper.style.visibility = "visible";
 	cardWrapper.forEach((i, index) => {
 		i.removeEventListener("click", rotateCard);
 		i.removeEventListener("click", playSound);
@@ -145,8 +154,9 @@ function endGame() {
 		  if(i.style.visibility !== "hidden"){
 			  i.classList.add("rotate");
 			  i.childNodes[2].play();
+			  i.childNodes[2].volume = randomEndSound(dynamics);
 		  }
-	  }, index * 175)
+	  }, index * 175);
   });
 }
 
@@ -252,6 +262,7 @@ function reset() {
 	cardCounter = 0;
 	level = 1;
 	currentLevel.innerHTML = level;
+	cardSignal.style.opacity = 0;
 	makeGame();
 	pauseGame();
 };

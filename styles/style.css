@@ -161,11 +161,17 @@ li {
   border-radius: 4px;
   font-size: 36px;
   font-weight: 600;
+  letter-spacing: 2px;
   line-height: 43px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
   color: #06A7A7;
   margin-bottom: 15px;
+}
+
+#infoWrapper .roundedLevelTimer #timer {
+  -webkit-transition: all ease-in-out 0.25s;
+  transition: all ease-in-out 0.25s;
 }
 
 #infoWrapper #rulesWrapper {
@@ -312,16 +318,14 @@ li {
 }
 
 #gameWrapper #cardSignal {
+  opacity: 0;
   width: 80px;
-  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin-bottom: 20px;
 }
 
 #gameWrapper #cardSignal .indicatorWrapper {
@@ -343,8 +347,8 @@ li {
 
 #gameWrapper #cardSignal .indicatorWrapper #firstCardIndicator,
 #gameWrapper #cardSignal .indicatorWrapper #secondCardIndicator {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 2px;
 }
 
@@ -409,6 +413,7 @@ li {
 }
 
 #gameWrapper #messageWrapper {
+  visibility: hidden;
   position: absolute;
   width: 50vw;
   height: 85vh;
@@ -437,6 +442,7 @@ li {
 
 #gameWrapper #messageWrapper #continueAfterWin,
 #gameWrapper #messageWrapper #levelAfterWin {
+  visibility: hidden;
   margin-top: 50px;
   border: none;
   text-transform: uppercase;

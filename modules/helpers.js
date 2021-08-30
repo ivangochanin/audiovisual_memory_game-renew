@@ -15,5 +15,8 @@ const continueGame = (cardWrapper, rotateOnOff, soundOnOff, game) => {
 	});
 }
 
+function randomEndSound(x) {
+	return x[Math.floor(Math.random() * x.length)];
+}
 
-export { stopGame, continueGame };
+export { stopGame, continueGame, randomEndSound };

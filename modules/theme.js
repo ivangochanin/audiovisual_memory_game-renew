@@ -5,6 +5,7 @@ const theme = () => {
 	let startGameButton = document.querySelector('#startGameButton');
 	let roundedLevelTimer = document.querySelectorAll(".roundedLevelTimer ");
 	let gameButtons = document.querySelectorAll(".gameButtons");
+	let levelAfterWin = document.querySelector('#levelAfterWin');
 	let slider = document.querySelectorAll(".slider");
     let switchTheme = document.querySelector('#switchTheme');
 	let rulesWrapper = document.querySelector('#rulesWrapper');
@@ -34,23 +35,25 @@ const theme = () => {
 			i.src = myString.join('');
 		});
 		
-		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(38, 38, 39, 0.95)', color: light })
-		Object.assign(container.style, { backgroundColor: dark, color: light })
-		Object.assign(border.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
-		Object.assign(startGameButton.style, { backgroundColor: dark, boxShadow: convexDarkShadow })
-		Object.assign(continueAfterWin.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow })
+		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(38, 38, 39, 0.95)', color: light });
+		Object.assign(container.style, { backgroundColor: dark, color: light });
+		Object.assign(border.style, { backgroundColor: dark, boxShadow: convexDarkShadow });
+		Object.assign(startGameButton.style, { backgroundColor: dark, boxShadow: convexDarkShadow });
+		Object.assign(continueAfterWin.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow });
+		Object.assign(levelAfterWin.style, { backgroundColor: light, color: dark});
+
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow })
-		})
+		});
 		indicatorWrapper.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, boxShadow: indicatorShadowDark })
-		})
+		});
 		gameButtons.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow })
-		})
+		});
 		slider.forEach(el => {
 			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow, border: darkBorder })
-		})
+		});
 		Object.assign(rulesWrapper.style, { backgroundColor: dark, color: light, boxShadow: concaveDarkShadow })
 
 	} else {
@@ -64,24 +67,26 @@ const theme = () => {
 			myString.splice(myString.length - 5, 1, 'W');
 			i.src = myString.join('');
 		});
-		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.8)', color: dark })
-		Object.assign(container.style, { backgroundColor: light, color: dark })
-		Object.assign(border.style, { backgroundColor: light, boxShadow: convexLightShadow  })
-		Object.assign(startGameButton.style, { backgroundColor: light, boxShadow: convexLightShadow })
-		Object.assign(continueAfterWin.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow })
+		Object.assign(messageWrapper.style, { backgroundColor: 'rgba(240, 240, 243, 0.8)', color: dark });
+		Object.assign(container.style, { backgroundColor: light, color: dark });
+		Object.assign(border.style, { backgroundColor: light, boxShadow: convexLightShadow  });
+		Object.assign(startGameButton.style, { backgroundColor: light, boxShadow: convexLightShadow });
+		Object.assign(continueAfterWin.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow });
+		Object.assign(levelAfterWin.style, { backgroundColor: dark, color: light});
+
 		roundedLevelTimer.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow })
-		})
+		});
 		indicatorWrapper.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, boxShadow: indicatorShadowLight })
-		})
+		});
 		gameButtons.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow })
-		})
+		});
 		slider.forEach(el => {
 			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow, border: lightBorder })
-		})
-		Object.assign(rulesWrapper.style, { backgroundColor: light, color: dark, boxShadow: concaveLightShadow })
+		});
+		Object.assign(rulesWrapper.style, { backgroundColor: light, color: dark, boxShadow: concaveLightShadow });
 	}
 	
 }

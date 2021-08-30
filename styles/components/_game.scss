@@ -7,11 +7,11 @@
     align-items: center;
 
     #cardSignal {
+        opacity: 0;
         width: 80px;
-        height: 40px;
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        margin-bottom: 20px;
 
         .indicatorWrapper {
             display: flex;
@@ -24,8 +24,8 @@
 
             #firstCardIndicator,
             #secondCardIndicator {
-                width: 8px;
-                height: 8px;
+                width: 10px;
+                height: 10px;
                 border-radius: 2px;
             }
         }
@@ -76,6 +76,7 @@
     }
 
     #messageWrapper {
+        visibility: hidden;
         position: absolute;
         width: 50vw;
         height: 85vh;
@@ -94,6 +95,7 @@
 
         #continueAfterWin,
         #levelAfterWin {
+            visibility: hidden;
             margin-top: 50px;
             border: none;
             text-transform: uppercase;
