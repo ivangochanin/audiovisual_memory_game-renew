@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="/data/images/icon.png" />
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <title>Sound Memory Game</title>
 </head>
@@ -30,9 +31,7 @@
                     <p class="switchTitles">LIGHT / DARK</p>
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="switchTheme">
-                        <span class="slider"></span>
-                        <span class="sliderDot"></span>
-                        <span class="sliderLine" id="themeSliderLine"></span>
+                        <span class="material-icons md-48 switchOnOffIcon" id="themeButton">power_settings_new</span>
                     </label>
                 </div>
                 <div class="switchButtons">
@@ -40,9 +39,9 @@
                     <p class="switchTitles">OFF / ON</p>
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="switchVisual">
-                        <span class="slider"></span>
-                        <span class="sliderDot"></span>
-                        <span class="sliderLine" id="visualSliderLine"></span>
+                        <span class="material-icons switchOnOffIcon"id="visualButton">power_settings_new</span>
+
+
                     </label>
                 </div>
                 <div class="switchButtons">
@@ -50,9 +49,7 @@
                     <p class="switchTitles">OFF / ON</p>
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="switchSound">
-                        <span class="slider"></span>
-                        <span class="sliderDot"></span>
-                        <span class="sliderLine" id="soundSliderLine"></span>
+                        <span class="material-icons switchOnOffIcon" id="soundButton">power_settings_new</span>
                     </label>
                 </div>
             </div>
@@ -69,9 +66,8 @@
                     <div class="switchButtons">
                         <label class="switch">
                             <input type="checkbox" class="checkbox" id="switchTime">
-                            <span class="slider"></span>
-                            <span class="sliderDot"></span>
-                            <span class="sliderLine" id="timeSliderLine"></span>
+                        <span class="material-icons switchOnOffIcon" id="timeButton">power_settings_new</span>
+                           
                         </label>
                         <p class="switchTitles">OFF / ON</p>
                     </div>

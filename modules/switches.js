@@ -2,18 +2,18 @@ function switchesDisable() {
 	switchVisual.disabled = true;
 	switchSound.disabled = true;
 	switchTime.disabled = true;
-	visualSliderLine.style.opacity = .2;
-	soundSliderLine.style.opacity = .2;
-	timeSliderLine.style.opacity = .2;
+	visualButton.style.opacity = .3;
+	soundButton.style.opacity = .3;
+	timeButton.style.opacity = .3;
 }
 
 function switchesEnable() {
 	switchVisual.disabled = false;
 	switchSound.disabled = false;
 	switchTime.disabled = false;
-	visualSliderLine.style.opacity = 1;
-	soundSliderLine.style.opacity = 1;
-	timeSliderLine.style.opacity = 1;
+	visualButton.style.opacity = 1;
+	soundButton.style.opacity = 1;
+	timeButton.style.opacity = 1;
 }
 
 export {switchesDisable, switchesEnable}

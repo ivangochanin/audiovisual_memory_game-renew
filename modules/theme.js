@@ -6,7 +6,7 @@ const theme = () => {
 	let roundedLevelTimer = document.querySelectorAll(".roundedLevelTimer ");
 	let gameButtons = document.querySelectorAll(".gameButtons");
 	let levelAfterWin = document.querySelector('#levelAfterWin');
-	let slider = document.querySelectorAll(".slider");
+	let switchButtons = document.querySelectorAll(".switch");
     let switchTheme = document.querySelector('#switchTheme');
 	let rulesWrapper = document.querySelector('#rulesWrapper');
 	let rulesImages = document.querySelectorAll('.rulesImages');
@@ -43,16 +43,16 @@ const theme = () => {
 		Object.assign(levelAfterWin.style, { backgroundColor: light, color: dark});
 
 		roundedLevelTimer.forEach(el => {
-			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow })
+			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow, border: darkBorder })
 		});
 		indicatorWrapper.forEach(el => {
-			Object.assign(el.style, { backgroundColor: dark, boxShadow: indicatorShadowDark })
+			Object.assign(el.style, { backgroundColor: dark, boxShadow: indicatorShadowDark, border: darkBorder })
 		});
 		gameButtons.forEach(el => {
-			Object.assign(el.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow })
+			Object.assign(el.style, { backgroundColor: dark, color: light, boxShadow: convexDarkShadow, border: darkBorder })
 		});
-		slider.forEach(el => {
-			Object.assign(el.style, { backgroundColor: dark, boxShadow: concaveDarkShadow, border: darkBorder })
+		switchButtons.forEach(el => {
+			Object.assign(el.style, { backgroundColor: dark, boxShadow: convexDarkShadow, border: darkBorder })
 		});
 		Object.assign(rulesWrapper.style, { backgroundColor: dark, color: light, boxShadow: concaveDarkShadow })
 
@@ -75,16 +75,16 @@ const theme = () => {
 		Object.assign(levelAfterWin.style, { backgroundColor: dark, color: light});
 
 		roundedLevelTimer.forEach(el => {
-			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow })
+			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow, border: lightBorder })
 		});
 		indicatorWrapper.forEach(el => {
-			Object.assign(el.style, { backgroundColor: light, boxShadow: indicatorShadowLight })
+			Object.assign(el.style, { backgroundColor: light, boxShadow: indicatorShadowLight, border: lightBorder })
 		});
 		gameButtons.forEach(el => {
-			Object.assign(el.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow })
+			Object.assign(el.style, { backgroundColor: light, color: dark, boxShadow: convexLightShadow, border: lightBorder })
 		});
-		slider.forEach(el => {
-			Object.assign(el.style, { backgroundColor: light, boxShadow: concaveLightShadow, border: lightBorder })
+		switchButtons.forEach(el => {
+			Object.assign(el.style, { backgroundColor: light, boxShadow: convexLightShadow, border: lightBorder })
 		});
 		Object.assign(rulesWrapper.style, { backgroundColor: light, color: dark, boxShadow: concaveLightShadow });
 	}
@@ -98,6 +98,6 @@ const startBtnState = () => {
 }
 
 startGameInput.addEventListener('change', startBtnState);
-switchTheme.checked = true;
+switchTheme.checked = false;
 switchTheme.addEventListener("change", theme);
 export default theme;

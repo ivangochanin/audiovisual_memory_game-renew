@@ -8,6 +8,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -79,7 +80,7 @@ li {
 }
 
 #infoWrapper #titleWrapper #subTitle {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 19px;
   letter-spacing: .2rem;
@@ -474,7 +475,7 @@ li {
   border: none;
   text-transform: uppercase;
   width: 130px;
-  height: 40px;
+  height: 50px;
   border-radius: 4px;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s;
@@ -516,68 +517,36 @@ li {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  text-align: center;
   position: relative;
-  display: inline-block;
-  width: 74px;
-  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #F0F0F3;
+  -webkit-box-shadow: 2px 2px 2px #D7D7D9, inset 3px 3px 3px #FFFFFF, inset -3px -3px 3px rgba(174, 174, 192, 0.25);
+          box-shadow: 2px 2px 2px #D7D7D9, inset 3px 3px 3px #FFFFFF, inset -3px -3px 3px rgba(174, 174, 192, 0.25);
+  border-radius: 4px;
   margin-bottom: 15px;
 }
 
-.switchButtons .switch .slider {
+.switchButtons .switch .switchOnOffIcon {
+  color: #B7E10F;
+  font-size: 30px;
   position: absolute;
   cursor: pointer;
-  padding: 0 10px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transition: all ease-in-out 0.25s;
-  transition: all ease-in-out 0.25s;
-  width: 74px;
-  height: 34px;
-  background: #F0F0F3;
-  -webkit-box-shadow: inset -3px -3px 6px #F7F7FA, inset 3px 3px 6px rgba(174, 174, 192, 0.25);
-          box-shadow: inset -3px -3px 6px #F7F7FA, inset 3px 3px 6px rgba(174, 174, 192, 0.25);
-  border-radius: 16px;
 }
 
-.switchButtons .switch .sliderDot {
-  position: absolute;
-  content: "";
-  width: 24px;
-  height: 24px;
-  bottom: 5px;
-  left: 40px;
-  background: #5D5D5F;
-  -webkit-box-shadow: 2px 2px 2px rgba(13, 13, 16, 0.3), inset 4px 3px 7px #7D7D80, inset -3px -3px 3px #3A3939;
-          box-shadow: 2px 2px 2px rgba(13, 13, 16, 0.3), inset 4px 3px 7px #7D7D80, inset -3px -3px 3px #3A3939;
-  -webkit-transition: all ease-in-out 0.25s;
-  transition: all ease-in-out 0.25s;
-  border-radius: 50%;
-  z-index: 1;
-  cursor: pointer;
+.switchButtons .switch input {
+  z-index: -1;
 }
 
-.switchButtons .switch .sliderLine {
-  position: absolute;
-  content: "";
-  width: 50px;
-  height: 10px;
-  top: 12px;
-  left: 12px;
-  border-radius: 18px;
-  -webkit-transition: all ease-in-out 0.25s;
-  transition: all ease-in-out 0.25s;
-  background: #B7E10F;
-  cursor: pointer;
-}
-
-.switchButtons .switch input:checked ~ .sliderLine {
-  background: #A09F9F;
-}
-
-.switchButtons .switch input:checked ~ .sliderDot {
-  -webkit-transform: translateX(-30px);
-          transform: translateX(-30px);
+.switchButtons .switch input:checked ~ .switchOnOffIcon {
+  color: #A09F9F;
 }

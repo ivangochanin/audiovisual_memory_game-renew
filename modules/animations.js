@@ -26,7 +26,7 @@ const bonusTimeAnimation = (el) => {
 
 const winLoseMessage = (wrapper, text, btn1, btn2) => {
 	gsap.to(wrapper, {duration: .5, autoAlpha: 1})
-    gsap.fromTo(text, {opacity: 0, scale: 1.2}, {delay: .25, duration: 1, ease:Power3.easeInOut, opacity: 1, scale: 1});
+    gsap.fromTo(text, {opacity: 0 }, {delay: .25, duration: 1, ease:Power3.easeInOut, opacity: 1});
     gsap.fromTo(btn1, {opacity: 0, autoAlpha:0}, {delay: .75, duration: .5, ease:Power3.easeInOut, opacity: 1, autoAlpha: 1});
     gsap.fromTo(btn2, {opacity: 0, autoAlpha:0}, {delay: .75, duration: .5, ease:Power3.easeInOut, opacity: 1, autoAlpha: 1});
 };

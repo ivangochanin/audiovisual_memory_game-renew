@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -11,7 +12,6 @@ html {
 }
 
 #container {
-    
     width: 100%;
     min-height: 100vh;
     display: flex;
