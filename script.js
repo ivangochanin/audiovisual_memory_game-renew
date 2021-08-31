@@ -1,12 +1,12 @@
 import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from './data/data.js';
 import { stopGame, continueGame, randomEndSound } from './modules/helpers.js';
-import makeCards from './modules/cardBuilder.js'
+import makeCards from './modules/cardBuilder.js';
 import {rules} from './modules/buttons.js';
 import {switchesDisable, switchesEnable} from './modules/switches.js';
 import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, winLoseMessageHide} from './modules/animations.js';
 import theme from './modules/theme.js';
 let gameBoard = document.querySelector('#gameBoard');
-let cardSignal = document.querySelector('#cardSignal')
+let cardSignal = document.querySelector('#cardSignal');
 let resetGame = document.querySelector('#resetGame');
 let startGameInput = document.querySelector('#startGameInput');
 let nextLevel = document.querySelector('#nextLevel');
@@ -20,15 +20,24 @@ let openedCards = 0;
 let timerOnOff = true;
 let level =  1;
 let seconds = 25;
-let dataPack, cardWrapper, cardCounter, firstCard, secondCard;
+let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval;
 
 animations();
 theme();
-rules();
+rules(pauseGame, playPause);
+
+function boardStart(){
+	if(!startGameInput.checked){
+		console.log('bord');
+		alert('Press Play Button')
+	}
+}
+
+gameBoard.addEventListener('click', boardStart);
 
 function bonusTime() {
     level === 2 ? seconds += 6 : level === 3 ? seconds += 11 : level === 4 ? seconds += 11 : seconds += 6;
-}
+};
 
 function setLevel() {
 	level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1), seconds = 25, Object.assign(gameBoard.style, { width: "340px", height: "auto" })) :
@@ -36,7 +45,7 @@ function setLevel() {
 	level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3), seconds = 75, Object.assign(gameBoard.style, { width: "680px", height: "auto"})) :
 	level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 100, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
 	(cardCounter = 0, dataPack = [], seconds = 0);
-}
+};
 
 function setNextLevel() {
 	if(level < 4) {
@@ -59,10 +68,17 @@ function randomOrder() {
 		let removeData = dataPack.indexOf(randomData);
 		dataPack.splice(removeData, 1);
 	});
-}
+};
+
+function indicatorOff(){
+	firstCardIndicator.style.background = '';
+	secondCardIndicator.style.background = '';
+};
 
 function makeGame() {
 	gameBoard.innerHTML = null;
+	openedCards = 0;
+	indicatorOff()
 	winLoseMessageHide(messageWrapper);
 	setLevel();
 	makeCards(dataPack);
@@ -71,17 +87,16 @@ function makeGame() {
 	time.innerHTML = seconds;
 	timerOnOff = true;
 	time.style.color = "#06A7A7"
-	startGameImage.src = '../data/images/start.png';
 	startGameInput.checked = false;
 	startGameInput.disabled = false;
 	startGameButton.childNodes[3].style.opacity = 1;
 	switchesDisable();
 	pauseGame();
-}
+};
 
 function game() {
 	if(openedCards < 2) {
-		openedCards++ 
+		openedCards++; 
 	} 
 	if(openedCards === 1) {
 		firstCard = this;
@@ -91,15 +106,16 @@ function game() {
 	if(openedCards === 2) {
 		secondCard = this;
 		secondCardIndicator.style.background = '#B7E10F';
-		stopGame(cardWrapper, rotateCard, playSound, game)
+		stopGame(cardWrapper, rotateCard, playSound, game);
 		if(firstCard.childNodes[0].currentSrc === secondCard.childNodes[0].currentSrc && firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc) {
-			bonusTime()
-			bonusTimeAnimation(time);
+			if(!switchTime.checked){
+				bonusTime();
+				bonusTimeAnimation(time);
+			}
 			setTimeout(() => {
 				firstCard.style.visibility = "hidden";
 				secondCard.style.visibility = "hidden";
-				firstCardIndicator.style.background = '';
-			    secondCardIndicator.style.background = '';
+				indicatorOff();
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 			}, 500);
 			openedCards = 0;
@@ -110,53 +126,50 @@ function game() {
 				secondCard.classList.remove("rotate");
 				openedCards = 0;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-				firstCardIndicator.style.background = '';
-			    secondCardIndicator.style.background = '';
+				indicatorOff();
 			}, 500);
 			
 		}
 	}	
 	if (cardCounter === 0 && level <= 4) {
 			setTimeout(() => {
-				winGame()
+				winGame();
 		    }, 1000);
 		} 
 		if (cardCounter === 0 && level > 4) {
-		reset()
+		reset();
 	    } 
-}
+};
 
 function winGame() {
-	switchesDisable()
-	timerOnOff = false;
+	pauseGame();
 	startGameInput.disabled = true;
 	startGameInput.checked = false;
-    startGameImage.src = '../data/images/start.png';
 	startGameButton.childNodes[3].style.opacity = .2;
-    message.innerHTML = 'Great job! The purpose of this game is to practice, not to win';
+    message.innerHTML = 'Great job!';
     winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
-}
+};
 
 function endGame() {
 	const dynamics = [1, .75, .5, .25, .1, 1, 1];
-	switchesDisable();
-	message.innerHTML = 'More luck next time! The purpose of this game is to practice, not to win';
+	pauseGame();
+	message.innerHTML = 'More luck next time!';
 	winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
 	startGameInput.disabled = true;
 	startGameInput.checked = true;
 	startGameButton.childNodes[3].style.opacity = .2;
-	startGameImage.src = '../data/images/start.png';
-	removeAllListeners();
 	cardWrapper.forEach((i, index) => {
 	  setTimeout(() => {
 		  if(i.style.visibility !== "hidden"){
-			  i.classList.add("rotate");
-			  i.childNodes[2].play();
-			  i.childNodes[2].volume = randomEndSound(dynamics);
+			i.classList.add("rotate");
+			if(!switchSound.checked){
+				i.childNodes[2].play();
+				i.childNodes[2].volume = randomEndSound(dynamics);
+			}
 		  }
 	  }, index * 175);
   });
-}
+};
 
 function rotateCard() {
 	if (openedCards < 2) {
@@ -166,7 +179,7 @@ function rotateCard() {
 			i.removeEventListener("click", rotateCard);
 		});
 	}
-}
+};
 
 function playSound() {
 	let sound = this.childNodes[2];
@@ -178,7 +191,7 @@ function playSound() {
 			i.removeEventListener("click", playSound);
 		});
 	}
-}
+};
 
 function rotateOnOff() {
 	cardWrapper.forEach((i) => {
@@ -186,7 +199,7 @@ function rotateOnOff() {
 			? i.removeEventListener("click", rotateCard)
 			: i.addEventListener("click", rotateCard);
 	});
-}
+};
 
 function soundOnOff() {
 	cardWrapper.forEach((i) => {
@@ -194,12 +207,12 @@ function soundOnOff() {
 			? i.removeEventListener("click", playSound)
 			: i.addEventListener("click", playSound);
 	});
-}
+};
 
 function timeOnOf() {
 	switchTime.checked ?
-	timerOnOff = false : timerOnOff = true
-}
+	timerOnOff = false : timerOnOff = true;
+};
 
 function timer() {
 	if(timerOnOff){	
@@ -211,19 +224,19 @@ function timer() {
 		stopTime();
 		endGame();
 	}
-}
-
-let interval;
+};
 
 function runTime() {
 	interval = setInterval(timer, 1000);
-}
+};
 
 function stopTime() {
 	clearInterval(interval);
-}
+};
 
 function playGame() {
+    //gameBoard.removeEventListener('click', boardStart);
+	startGameImage.src = '../data/images/pause.png'; 
 	runTime();
 	switchesEnable();
 	switchTime.checked ?
@@ -237,14 +250,16 @@ function playGame() {
 		: i.addEventListener("click", playSound);
 		i.addEventListener("click", game);
 	});
-}
+};
 	
 function pauseGame() {
+    //gameBoard.addEventListener('click', boardStart);
+	startGameImage.src = '../data/images/start.png';
 	stopTime();
 	timerOnOff = false;
 	switchesDisable();
 	removeAllListeners();
-}
+};
 
 function removeAllListeners() {
 	cardWrapper.forEach((i) => {
@@ -252,11 +267,11 @@ function removeAllListeners() {
 		i.removeEventListener("click", playSound);
 		i.removeEventListener("click", game);
 	});
-}
+};
 
 function playPause() {
 	startGameInput.checked ? playGame() : pauseGame();
-}
+};
 
 function reset() {
 	cardCounter = 0;

@@ -91,13 +91,6 @@ const theme = () => {
 	
 }
 
-const startBtnState = () => {
-	startGameInput.checked ? 
-	startGameImage.src = '../data/images/pause.png' : 
-	startGameImage.src = '../data/images/start.png'
-}
-
-startGameInput.addEventListener('change', startBtnState);
 switchTheme.checked = false;
 switchTheme.addEventListener("change", theme);
 export default theme;
