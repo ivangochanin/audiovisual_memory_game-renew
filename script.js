@@ -1,5 +1,5 @@
 import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from './data/data.js';
-import { stopGame, continueGame, randomEndSound } from './modules/helpers.js';
+import { stopGame, continueGame, randomEndSound, addListener, removeListener } from './modules/helpers.js';
 import makeCards from './modules/cardBuilder.js';
 import {rules} from './modules/buttons.js';
 import {switchesDisable, switchesEnable} from './modules/switches.js';
@@ -28,8 +28,8 @@ rules(pauseGame, playPause);
 
 function boardStart(){
 	if(!startGameInput.checked){
-		console.log('bord');
-		alert('Press Play Button')
+		/* console.log('bord'); */
+	  return alert('Press Play Button')
 	}
 }
 
@@ -40,11 +40,13 @@ function bonusTime() {
 };
 
 function setLevel() {
-	level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1), seconds = 25, Object.assign(gameBoard.style, { width: "340px", height: "auto" })) :
-	level === 2 ? (cardCounter = 26, dataPack = dataLevel2.concat(dataLevel2), seconds = 50, Object.assign(gameBoard.style, { width: "510px", height: "auto" })) :
-	level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3), seconds = 75, Object.assign(gameBoard.style, { width: "680px", height: "auto"})) :
-	level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 100, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
-	(cardCounter = 0, dataPack = [], seconds = 0);
+	return [
+		level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1), seconds = 25, Object.assign(gameBoard.style, { width: "340px", height: "auto" })) :
+		level === 2 ? (cardCounter = 26, dataPack = dataLevel2.concat(dataLevel2), seconds = 50, Object.assign(gameBoard.style, { width: "510px", height: "auto" })) :
+		level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3), seconds = 75, Object.assign(gameBoard.style, { width: "680px", height: "auto"})) :
+		level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 1, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
+		(cardCounter = 0, dataPack = [], seconds = 0)
+	]
 };
 
 function setNextLevel() {
@@ -55,7 +57,7 @@ function setNextLevel() {
 		makeGame();
 		cardSignal.style.opacity = 0;
 	} else {
-		reset();
+    	return reset();
 	}
 };
 
@@ -76,22 +78,25 @@ function indicatorOff(){
 };
 
 function makeGame() {
-	gameBoard.innerHTML = null;
-	openedCards = 0;
-	indicatorOff()
-	winLoseMessageHide(messageWrapper);
-	setLevel();
-	makeCards(dataPack);
-	randomOrder();
-	showCardsAnimation();
-	time.innerHTML = seconds;
-	timerOnOff = true;
-	time.style.color = "#06A7A7"
-	startGameInput.checked = false;
-	startGameInput.disabled = false;
-	startGameButton.childNodes[3].style.opacity = 1;
-	switchesDisable();
-	pauseGame();
+	return[
+		gameBoard.innerHTML = null,
+		openedCards = 0,
+		indicatorOff(),
+		winLoseMessageHide(messageWrapper),
+		setLevel(),
+		makeCards(dataPack),
+		randomOrder(),
+		showCardsAnimation(),
+		timerOnOff = true,
+		time.style.color = "#06A7A7",
+		startGameInput.disabled = false,
+		startGameButton.childNodes[3].style.opacity = 1,
+		switchesDisable(),
+		pauseGame(),
+		addListener(nextLevel, setNextLevel),
+		time.innerHTML = seconds,
+	    currentLevel.innerHTML = level
+	]
 };
 
 function game() {
@@ -144,7 +149,6 @@ function game() {
 function winGame() {
 	pauseGame();
 	startGameInput.disabled = true;
-	startGameInput.checked = false;
 	startGameButton.childNodes[3].style.opacity = .2;
     message.innerHTML = 'Great job!';
     winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
@@ -153,10 +157,11 @@ function winGame() {
 function endGame() {
 	const dynamics = [1, .75, .5, .25, .1, 1, 1];
 	pauseGame();
+	removeListener(nextLevel, setNextLevel)
 	message.innerHTML = 'More luck next time!';
 	winLoseMessage(messageWrapper,message, continueAfterWin, levelAfterWin);
+	pauseGame();
 	startGameInput.disabled = true;
-	startGameInput.checked = true;
 	startGameButton.childNodes[3].style.opacity = .2;
 	cardWrapper.forEach((i, index) => {
 	  setTimeout(() => {
@@ -237,6 +242,7 @@ function stopTime() {
 function playGame() {
     //gameBoard.removeEventListener('click', boardStart);
 	startGameImage.src = '../data/images/pause.png'; 
+	startGameInput.checked = true,
 	runTime();
 	switchesEnable();
 	switchTime.checked ?
@@ -254,6 +260,7 @@ function playGame() {
 	
 function pauseGame() {
     //gameBoard.addEventListener('click', boardStart);
+	startGameInput.checked = false,
 	startGameImage.src = '../data/images/start.png';
 	stopTime();
 	timerOnOff = false;
@@ -276,14 +283,11 @@ function playPause() {
 function reset() {
 	cardCounter = 0;
 	level = 1;
-	currentLevel.innerHTML = level;
 	cardSignal.style.opacity = 0;
 	makeGame();
 	pauseGame();
 };
 
-currentLevel.innerHTML = level;
-nextLevel.addEventListener('click', setNextLevel);
 continueAfterWin.addEventListener('click', setNextLevel);
 resetGame.addEventListener('click', reset);
 startGameInput.addEventListener('change', playPause);

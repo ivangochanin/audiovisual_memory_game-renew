@@ -9,7 +9,7 @@ const rules = (pause, playPause) => {
 			? 
 			(rulesWrapper.className = "rulesOpen", 
 			pause(), 
-			startGameInput.checked = false,
+			/* startGameInput.checked = false, */
 			startGameInput.removeEventListener('change', playPause))
 			: 
 			(rulesWrapper.className = "rulesClose",

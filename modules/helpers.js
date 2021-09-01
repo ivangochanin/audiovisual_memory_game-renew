@@ -19,4 +19,12 @@ function randomEndSound(x) {
 	return x[Math.floor(Math.random() * x.length)];
 }
 
-export { stopGame, continueGame, randomEndSound };
+function addListener(element, func) {
+	return element.addEventListener('click', func);
+}
+
+function removeListener(element, func) {
+	return element.removeEventListener('click', func);
+}
+
+export { stopGame, continueGame, randomEndSound, addListener, removeListener };
