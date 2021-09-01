@@ -42,6 +42,7 @@
 `- add card light(dot) indicator if play only with sound`
 `- if the user clicks on the next level and the first card is open indicator is still opened`
 `- end game -> if sound is off do not play sound, just open cards`
+`- less 10 sec indicator red`
 - end game button scenarios
 - phone & tablet only sound
 - click on the card and the game is paused - show popup `start the game` or game starts with the first click

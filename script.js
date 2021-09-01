@@ -24,7 +24,7 @@ let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval;
 
 animations();
 theme();
-rules(pauseGame, playPause);
+rules(pauseGame, playPause, boardStart);
 
 function boardStart(){
 	if(!startGameInput.checked){
@@ -33,7 +33,6 @@ function boardStart(){
 	}
 }
 
-gameBoard.addEventListener('click', boardStart);
 
 function bonusTime() {
     level === 2 ? seconds += 6 : level === 3 ? seconds += 11 : level === 4 ? seconds += 11 : seconds += 6;
@@ -44,7 +43,7 @@ function setLevel() {
 		level === 1 ? (cardCounter = 16, dataPack = dataLevel1.concat(dataLevel1), seconds = 25, Object.assign(gameBoard.style, { width: "340px", height: "auto" })) :
 		level === 2 ? (cardCounter = 26, dataPack = dataLevel2.concat(dataLevel2), seconds = 50, Object.assign(gameBoard.style, { width: "510px", height: "auto" })) :
 		level === 3 ? (cardCounter = 50, dataPack = dataLevel3.concat(dataLevel3), seconds = 75, Object.assign(gameBoard.style, { width: "680px", height: "auto"})) :
-		level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 1, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
+		level === 4 ? (cardCounter = 74, dataPack = dataLevel4.concat(dataLevel4), seconds = 100, Object.assign(gameBoard.style, { width: "840px", height: "auto"})) : 
 		(cardCounter = 0, dataPack = [], seconds = 0)
 	]
 };
@@ -105,13 +104,13 @@ function game() {
 	} 
 	if(openedCards === 1) {
 		firstCard = this;
-		firstCardIndicator.style.background = '#B7E10F';
 		firstCard.style.pointerEvents = 'none';
+		seconds <= 10 ? firstCardIndicator.style.background = "#FF7070" : firstCardIndicator.style.background = '#B7E10F';
 	} 
 	if(openedCards === 2) {
 		secondCard = this;
-		secondCardIndicator.style.background = '#B7E10F';
 		stopGame(cardWrapper, rotateCard, playSound, game);
+		seconds <= 10 ? secondCardIndicator.style.background = "#FF7070" : secondCardIndicator.style.background = '#B7E10F';
 		if(firstCard.childNodes[0].currentSrc === secondCard.childNodes[0].currentSrc && firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc) {
 			if(!switchTime.checked){
 				bonusTime();
@@ -294,6 +293,7 @@ startGameInput.addEventListener('change', playPause);
 switchVisual.addEventListener("change", rotateOnOff);
 switchSound.addEventListener("change", soundOnOff);
 switchTime.addEventListener("change", timeOnOf);
+gameBoard.addEventListener('click', boardStart);
 
 makeGame(); 
 pauseGame();

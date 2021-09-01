@@ -1,4 +1,4 @@
-const rules = (pause, playPause) => {
+const rules = (pause, playPause, listener) => {
 	let openRulesButtnon = document.querySelector("#openRulesButton");
 	let closeRulesButton = document.querySelector("#closeRulesButton");
 	let rulesWrapper = document.querySelector("#rulesWrapper");
@@ -9,10 +9,13 @@ const rules = (pause, playPause) => {
 			? 
 			(rulesWrapper.className = "rulesOpen", 
 			pause(), 
-			/* startGameInput.checked = false, */
+			startGameImage.style.opacity = 0.2,
+            gameBoard.removeEventListener('click', listener),
 			startGameInput.removeEventListener('change', playPause))
 			: 
 			(rulesWrapper.className = "rulesClose",
+			startGameImage.style.opacity = 1,
+            gameBoard.addEventListener('click', listener),
 			startGameInput.addEventListener('change', playPause));
 	};
 	openRulesButtnon.addEventListener("click", toggleRules);
