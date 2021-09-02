@@ -15,7 +15,7 @@ const currentLevel = document.querySelector("#currentLevel");
 const time = document.querySelector("#timer");
 const messageWrapper = document.querySelector("#messageWrapper");
 const message = document.querySelector("#message");
-const openRulesButtnon = document.querySelector("#openRulesButton");
+const openRulesButton = document.querySelector("#openRulesButton");
 const closeRulesButton = document.querySelector("#closeRulesButton");
 const rulesWrapper = document.querySelector("#rulesWrapper");
 const blue = "#06A7A7";
@@ -23,7 +23,7 @@ const red = "#FF7070";
 const green = "#B7E10F";
 let firstClick = true;
 let timerOnOff = true;
-let rulesTriger = true;
+let rulesTrigger = true;
 let endSoundPlay = true;
 let addTimeFromLevel = 0;
 let openedCards = 0;
@@ -31,15 +31,15 @@ let level = 1;
 let dataPack,cardWrapper,cardCounter,firstCard,secondCard,interval,seconds;
 
 function toggleRules() {
-	rulesTriger
+	rulesTrigger
 		? (elementShow(rulesWrapper),
-		  (rulesTriger = false),
+		  (rulesTrigger = false),
 		  pauseGame(),
 		  (startGameImage.style.opacity = 0.2),
 		  gameBoard.removeEventListener("click", boardStart),
 		  startGameInput.removeEventListener("change", playPause))
 		: (elementHide(rulesWrapper),
-		  (rulesTriger = true),
+		  (rulesTrigger = true),
 		  (startGameImage.style.opacity = 1),
 		  gameBoard.addEventListener("click", boardStart),
 		  startGameInput.addEventListener("change", playPause));
@@ -129,11 +129,11 @@ function makeGame() {
 		pauseGame(),
 		addListener(nextLevel, setNextLevel),
 		addListener(resetGame, reset),
-		addListener(openRulesButtnon, toggleRules),
+		addListener(openRulesButton, toggleRules),
 		addListener(gameBoard, boardStart),
 		(nextLevel.style.opacity = 1),
 		(resetGame.style.opacity = 1),
-		(openRulesButtnon.style.opacity = 1),
+		(openRulesButton.style.opacity = 1),
 		(time.innerHTML = seconds),
 		(currentLevel.innerHTML = level),
 	];
@@ -197,11 +197,11 @@ function winLose() {
 	pauseGame();
 	removeListener(nextLevel, setNextLevel);
 	removeListener(resetGame, reset);
-	removeListener(openRulesButtnon, toggleRules);
+	removeListener(openRulesButton, toggleRules);
 	removeListener(gameBoard, boardStart);
 	resetGame.style.opacity = 0.35;
 	nextLevel.style.opacity = 0.35;
-	openRulesButtnon.style.opacity = 0.35;
+	openRulesButton.style.opacity = 0.35;
 	startGameInput.disabled = true;
 	startGameButton.childNodes[3].style.opacity = 0.2;
 	winLoseMessage(messageWrapper, message, continueAfterWin, levelAfterWin);
