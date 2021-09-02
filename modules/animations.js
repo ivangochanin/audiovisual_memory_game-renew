@@ -31,8 +31,12 @@ const winLoseMessage = (wrapper, text, btn1, btn2) => {
     gsap.fromTo(btn2, {opacity: 0, autoAlpha:0}, {delay: .75, duration: .5, ease:Power3.easeInOut, opacity: 1, autoAlpha: 1});
 };
 
-const winLoseMessageHide = (wrapper) => {
-	gsap.to(wrapper, {duration: 1, autoAlpha: 0});
+const elementShow = (wrapper) => {
+	gsap.to(wrapper, {duration: .25, autoAlpha: 1});
 };
 
-export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, winLoseMessageHide};
+const elementHide = (wrapper) => {
+	gsap.to(wrapper, {duration: .25, autoAlpha: 0});
+};
+
+export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide};

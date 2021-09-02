@@ -15,7 +15,7 @@ const continueGame = (cardWrapper, rotateOnOff, soundOnOff, game) => {
 	});
 }
 
-function randomEndSound(x) {
+function getRandom(x) {
 	return x[Math.floor(Math.random() * x.length)];
 }
 
@@ -27,4 +27,4 @@ function removeListener(element, func) {
 	return element.removeEventListener('click', func);
 }
 
-export { stopGame, continueGame, randomEndSound, addListener, removeListener };
+export { stopGame, continueGame, getRandom, addListener, removeListener };

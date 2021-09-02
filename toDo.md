@@ -2,15 +2,14 @@
 `- remove reload`
 
 # RULES
-- add gsap autoalpha and remove other show/hide things
-- sharp images - recognize all notes
-- play button after rules
+`- add gsap autoalpha and remove other show/hide things`
+`- play button after rules`
+`- sharp images - recognize all notes`
 `- rules on click pause game - disable all`
 
 # SWITCHES
 `- change switches`
-- disable - turn off both switches
-- if all switches off - disable all 
+- disable - turn off both switches or if all switches off - disable all or ?
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 `- after the end, it is possible to play with switches`
 `- disable user select blue background flash`
@@ -29,7 +28,7 @@
 - add bonus time on next level ?
 
 # RESET
-- if the game ends and play sounds and press reset game still play rest of the sounds - set animation after play finish
+`- if the game ends and play sounds and press reset game still play rest of the sounds`
 
 # START
 `- startButton is a switch`
@@ -43,10 +42,11 @@
 `- if the user clicks on the next level and the first card is open indicator is still opened`
 `- end game -> if sound is off do not play sound, just open cards`
 `- less 10 sec indicator red`
-- end game button scenarios
-- phone & tablet only sound
-- click on the card and the game is paused - show popup `start the game` or game starts with the first click
+`- open rules at end game, on close will enable start button`
+`- end game button scenarios`
+`- click on the card and the game is paused - show popup -start the game- or game starts with the first click`
+- responsive design phone & tablet only sound
 - warning for people with disabilities
 - add harp and rhodes sounds
-- code refactoring (do not forget return from func, DRY, compose/pipe ..)
+- code refactoring (return from func, DRY, compose/pipe ..)
 - test game

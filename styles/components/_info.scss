@@ -89,12 +89,13 @@
     }
 
     #rulesWrapper {
+        visibility: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         position: absolute;
-        transition: all ease-in-out .5s;
+        transition: $base-transition;
         width: 92.5%;
         min-height: 85vh;
         top: 0;
@@ -106,7 +107,7 @@
         letter-spacing: .15px;
         line-height: 20px;
         text-align: center;
-        transform-origin: top;
+
         ul {
             padding: 1% 0;
             text-align: left;
@@ -119,7 +120,7 @@
                 span {
                 font-weight: 700;
                 margin-left: 40px;
-                color: $red;
+                color: $blue;
                 }
 
                 .rulesImgWrapper {
@@ -134,15 +135,5 @@
             }
 
         }
-    }
-
-    .rulesClose {
-        display: none;
-        transform: scale(0);
-    }
-
-    .rulesOpen {
-        display: block;
-        transform: scale(1);
     }
 }
