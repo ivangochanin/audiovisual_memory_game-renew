@@ -1,5 +1,5 @@
 # SWITCHES
-- disable - turn off both switches or if all switches off - disable all or ?
+- disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
 # TIMER
