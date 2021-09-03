@@ -18,6 +18,13 @@ const message = document.querySelector("#message");
 const openRulesButton = document.querySelector("#openRulesButton");
 const closeRulesButton = document.querySelector("#closeRulesButton");
 const rulesWrapper = document.querySelector("#rulesWrapper");
+const switchVisual = document.querySelector("#switchVisual");
+const switchSound = document.querySelector("#switchSound");
+const switchTime = document.querySelector("#switchTime");
+const startGameImage = document.querySelector("#startGameImage");
+const startGameButton = document.querySelector("#startGameButton");
+const firstCardIndicator = document.querySelector("#firstCardIndicator");
+const secondCardIndicator = document.querySelector("#secondCardIndicator");
 const blue = "#06A7A7";
 const red = "#FF7070";
 const green = "#B7E10F";
@@ -214,6 +221,7 @@ function stopEndSound() {
 
 function repeatLevel() {
 	endSoundPlay = false;
+	addTimeFromLevel = 0;
 	makeGame();
 }
 
