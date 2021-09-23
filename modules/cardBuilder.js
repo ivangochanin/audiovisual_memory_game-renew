@@ -5,8 +5,8 @@ const addClassAndAttribute = (element, className, attribute) => {
 	});
 };
 
-const makeCards = (dataPack) => {
-	dataPack.forEach(() => {
+const makeCards = (dataPack, gameBoard, switchTheme) => {
+return 	dataPack.forEach(() => {
 		const createCards = document.createElement('div');
 		createCards.classList.add('cardWrapper');
 		gameBoard.appendChild(createCards);

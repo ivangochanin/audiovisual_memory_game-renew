@@ -41,7 +41,6 @@
 
 > script.js
 - remove ternary if more than one return
-- check levels with if else (switch)
 - makeGame() - remove return and array
 - data - add class or ... inside json files and compare without childNodes[0].src ...
 - add true/false mechanism inside functions that you call with eventListener - where
@@ -53,5 +52,5 @@
 
 > switches.js
 - export 2 functions and call them for every switch separate
--
+
 > BEM methodology

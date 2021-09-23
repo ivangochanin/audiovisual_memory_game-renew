@@ -32,11 +32,11 @@ const winLoseMessage = (wrapper, text, btn1, btn2) => {
 };
 
 const elementShow = (wrapper) => {
-	gsap.to(wrapper, {duration: .25, autoAlpha: 1});
+   return gsap.to(wrapper, {duration: .25, autoAlpha: 1});
 };
 
 const elementHide = (wrapper) => {
-	gsap.to(wrapper, {duration: .25, autoAlpha: 0});
+   return gsap.to(wrapper, {duration: .25, autoAlpha: 0});
 };
 
 export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide};

@@ -38,18 +38,20 @@ let level = 1;
 let dataPack,cardWrapper,cardCounter,firstCard,secondCard,interval,seconds;
 
 function toggleRules() {
-	rulesTrigger
-		? (elementShow(rulesWrapper),
-		  (rulesTrigger = false),
-		  pauseGame(),
-		  (startGameImage.style.opacity = 0.2),
-		  gameBoard.removeEventListener("click", boardStart),
-		  startGameInput.removeEventListener("change", playPause))
-		: (elementHide(rulesWrapper),
-		  (rulesTrigger = true),
-		  (startGameImage.style.opacity = 1),
-		  gameBoard.addEventListener("click", boardStart),
-		  startGameInput.addEventListener("change", playPause));
+	 if(rulesTrigger) {
+		 elementShow(rulesWrapper);
+		 rulesTrigger = false;
+		 pauseGame();
+		 startGameImage.style.opacity = 0.2;
+		 gameBoard.removeEventListener("click", boardStart);
+		 startGameInput.removeEventListener("change", playPause);
+	 } else {
+		 elementHide(rulesWrapper);
+		 rulesTrigger = true;
+		 startGameImage.style.opacity = 1;
+		 gameBoard.addEventListener("click", boardStart);
+		 startGameInput.addEventListener("change", playPause);
+	 }
 }
 
 function boardStart() {
@@ -58,7 +60,10 @@ function boardStart() {
 }
 
 function bonusTime() {
-	level === 2 ? (seconds += 6) : level === 3 ? (seconds += 11) : level === 4 ? (seconds += 11) : (seconds += 6);
+	level === 2 ? (seconds += 6) :
+	level === 3 ? (seconds += 11) :
+	level === 4 ? (seconds += 11) :
+	(seconds += 6);
 }
 
 function setLevel() {
@@ -66,49 +71,56 @@ function setLevel() {
 	let dataTonesLevel2 = dataTones.filter((tone,index) => index < 13);
 	let dataTonesLevel3 = dataTones.filter((tone,index) => index < 25);
 	let dataTonesLevel4 = dataTones.filter((tone,index) => index < 37);
-	return [
-		level === 1
-			? ((cardCounter = 16),
-			  (dataPack = dataTonesLevel1.concat(dataTonesLevel1)),
-			  (seconds = 20),
-			  Object.assign(gameBoard.style, { width: "340px", height: "auto" }))
-			: level === 2
-			? ((cardCounter = 26),
-			(dataPack = dataTonesLevel2.concat(dataTonesLevel2)),
-			  (seconds = 30 + addTimeFromLevel),
-			  Object.assign(gameBoard.style, { width: "510px", height: "auto" }))
-			: level === 3
-			? ((cardCounter = 50),
-			(dataPack = dataTonesLevel3.concat(dataTonesLevel3)),
-			  (seconds = 40 + addTimeFromLevel),
-			  Object.assign(gameBoard.style, { width: "680px", height: "auto" }))
-			: level === 4
-			? ((cardCounter = 74),
-			(dataPack = dataTonesLevel4.concat(dataTonesLevel4)),
-			  (seconds = 50 + addTimeFromLevel),
-			  Object.assign(gameBoard.style, { width: "840px", height: "auto" }))
-			: ((cardCounter = 0), (dataPack = []), (seconds = 0)),
-	];
+
+	switch (level) {
+		case 1 :
+			cardCounter = 16;
+			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
+			seconds = 20;
+			Object.assign(gameBoard.style, { width: "340px", height: "auto" });
+			break;
+		case 2 :
+			cardCounter = 26;
+			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
+			seconds = 30 + addTimeFromLevel;
+			Object.assign(gameBoard.style, { width: "510px", height: "auto" });
+			break;
+		case 3 :
+			cardCounter = 50;
+			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
+			seconds = 40 + addTimeFromLevel;
+			Object.assign(gameBoard.style, { width: "680px", height: "auto" });
+			break;
+		case 4 :
+			cardCounter = 74;
+			dataPack = dataTonesLevel4.concat(dataTonesLevel4);
+			seconds = 50 + addTimeFromLevel;
+			Object.assign(gameBoard.style, { width: "840px", height: "auto" });
+			break;
+		default:
+			cardCounter = 0;
+			dataPack = [];
+			seconds = 0;
+	}
+	return level;
 }
 
 function setNextLevel() {
-	level < 4 ? 
-	(
-	level++, 
-	currentLevel.innerHTML = level, 
-	cardCounter = 0, 
-	makeGame(), 
-	cardSignal.style.opacity = 0
-	) : 
-	( 
-	addTimeFromLevel = 0, 
-	reset()
-	)
+	if(level < 4) {
+	level++;
+	currentLevel.innerHTML = level;
+	cardCounter = 0;
+	makeGame();
+	cardSignal.style.opacity = 0;
+	} else {
+		addTimeFromLevel = 0;
+		reset()
+	}
 }
 
 function randomOrder() {
 	cardWrapper = document.querySelectorAll(".cardWrapper");
-	cardWrapper.forEach((i) => {
+	return cardWrapper.forEach((i) => {
 		let randomData = getRandom(dataPack);
 		i.childNodes[0].src = randomData.img;
 		i.childNodes[2].src = randomData.sound;
@@ -118,8 +130,10 @@ function randomOrder() {
 }
 
 function indicatorOff() {
-	firstCardIndicator.style.background = "";
-	secondCardIndicator.style.background = "";
+	return [
+		firstCardIndicator.style.background = "",
+		secondCardIndicator.style.background = ""
+	]
 }
 
 function makeGame() {
@@ -129,7 +143,7 @@ function makeGame() {
 		indicatorOff(),
 		elementHide(messageWrapper),
 		setLevel(),
-		makeCards(dataPack),
+		makeCards(dataPack, gameBoard, switchTheme),
 		randomOrder(),
 		showCardsAnimation(),
 		(timerOnOff = true),
@@ -270,15 +284,14 @@ function rotateCard() {
 function playSound() {
 	let sound = this.childNodes[2];
 	sound.currentTime = 0;
-	openedCards < 2 ? 
-	(
-		sound.volume = 1,
-		sound ? sound.play() : null
-	)
-	:
+	if(openedCards < 2) {
+		sound.volume = 1;
+		sound ? sound.play() : null;
+	} else {
 	cardWrapper.forEach((i) => {
 		i.removeEventListener("click", playSound);
 	});
+	}
 }
 
 function rotateOnOff() {
@@ -318,7 +331,7 @@ function runTime() {
 }
 
 function stopTime() {
-	clearInterval(interval);
+ return	clearInterval(interval);
 }
 
 function playGame() {
@@ -340,17 +353,19 @@ function playGame() {
 }
 
 function pauseGame() {
-	startGameInput.checked = false;
-	startGameImage.src = "../data/images/start.png";
-	stopTime();
-	timerOnOff = false;
-	firstClick = true;
-	switchesDisable();
-	removeAllListeners();
+	return [
+	startGameInput.checked = false,
+	startGameImage.src = "../data/images/start.png",
+	stopTime(),
+	timerOnOff = false,
+	firstClick = true,
+	switchesDisable(),
+	removeAllListeners()
+	]
 }
 
 function removeAllListeners() {
-	cardWrapper.forEach((i) => {
+return 	cardWrapper.forEach((i) => {
 		i.removeEventListener("click", rotateCard);
 		i.removeEventListener("click", playSound);
 		i.removeEventListener("click", game);
