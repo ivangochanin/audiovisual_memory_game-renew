@@ -1,23 +1,30 @@
-## ALL
+> Webpack project
+- add webpack
+- exports & modules
+- html loader
+- add scss & autoprefixer
+- dev/production
+
+
+### ALL
 - Webstorm errors
-- Webpack project
 - new fonts
 - design desk, tablet, mobile
-- add intervals & rhythm
+- add intervals, chords & rhythm
 - add harp and rhodes sounds
 - add bet background
+- rules -> separate pages
 
-
-# SWITCHES
+### SWITCHES
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 - add text indicator: full mode, sound mode, visual mode, bet mode
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
-# TIMER
+### TIMER
 - count seconds as score ?
 - add bonus time on next level 10 sec ?
 
-# GAME
+### GAME
 - repeat level after added bonus time - bug
 - responsive design phone & tablet only sound
 - speed up button click effect - css

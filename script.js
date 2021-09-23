@@ -1,4 +1,4 @@
-import { dataLevel1, dataLevel2, dataLevel3, dataLevel4 } from "./data/data.js";
+import dataTones from "./data/data.js";
 import {stopGame,continueGame,getRandom,addListener,removeListener,} from "./modules/helpers.js";
 import makeCards from "./modules/cardBuilder.js";
 import { switchesDisable, switchesEnable } from "./modules/switches.js";
@@ -62,25 +62,29 @@ function bonusTime() {
 }
 
 function setLevel() {
+	let dataTonesLevel1 = dataTones.filter((tone,index) => index < 8);
+	let dataTonesLevel2 = dataTones.filter((tone,index) => index < 13);
+	let dataTonesLevel3 = dataTones.filter((tone,index) => index < 25);
+	let dataTonesLevel4 = dataTones.filter((tone,index) => index < 37);
 	return [
 		level === 1
 			? ((cardCounter = 16),
-			  (dataPack = dataLevel1.concat(dataLevel1)),
+			  (dataPack = dataTonesLevel1.concat(dataTonesLevel1)),
 			  (seconds = 20),
 			  Object.assign(gameBoard.style, { width: "340px", height: "auto" }))
 			: level === 2
 			? ((cardCounter = 26),
-			  (dataPack = dataLevel2.concat(dataLevel2)),
+			(dataPack = dataTonesLevel2.concat(dataTonesLevel2)),
 			  (seconds = 30 + addTimeFromLevel),
 			  Object.assign(gameBoard.style, { width: "510px", height: "auto" }))
 			: level === 3
 			? ((cardCounter = 50),
-			  (dataPack = dataLevel3.concat(dataLevel3)),
+			(dataPack = dataTonesLevel3.concat(dataTonesLevel3)),
 			  (seconds = 40 + addTimeFromLevel),
 			  Object.assign(gameBoard.style, { width: "680px", height: "auto" }))
 			: level === 4
 			? ((cardCounter = 74),
-			  (dataPack = dataLevel4.concat(dataLevel4)),
+			(dataPack = dataTonesLevel4.concat(dataTonesLevel4)),
 			  (seconds = 50 + addTimeFromLevel),
 			  Object.assign(gameBoard.style, { width: "840px", height: "auto" }))
 			: ((cardCounter = 0), (dataPack = []), (seconds = 0)),
