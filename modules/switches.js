@@ -1,4 +1,8 @@
-function switchesDisable() {
+const visualButton = document.querySelector("#visualButton");
+const soundButton = document.querySelector("#soundButton");
+const timeButton = document.querySelector("#timeButton");
+
+function switchesDisable(switchVisual, switchSound, switchTime) {
     return [
         switchVisual.disabled = true,
         switchSound.disabled = true,
@@ -9,7 +13,7 @@ function switchesDisable() {
     ]
 }
 
-function switchesEnable() {
+function switchesEnable(switchVisual, switchSound, switchTime) {
     return [
         switchVisual.disabled = false,
         switchSound.disabled = false,

@@ -1,15 +1,8 @@
 import dataTones from "./data/data.js";
-import {stopGame, continueGame, getRandom, addListener, removeListener,} from "./modules/helpers.js";
+import {stopGame, continueGame, getRandom} from "./modules/helpers.js";
 import makeCards from "./modules/cardBuilder.js";
 import {switchesDisable, switchesEnable} from "./modules/switches.js";
-import {
-    animations,
-    showCardsAnimation,
-    bonusTimeAnimation,
-    winLoseMessage,
-    elementShow,
-    elementHide,
-} from "./modules/animations.js";
+import { animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide,} from "./modules/animations.js";
 import theme from "./modules/theme.js";
 
 const gameBoard = document.querySelector("#gameBoard");
@@ -43,6 +36,7 @@ let endSoundPlay = true;
 let addTimeFromLevel = 0;
 let openedCards = 0;
 let level = 1;
+
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
 function toggleRules() {
@@ -155,12 +149,12 @@ function makeGame() {
     time.style.color = blue;
     startGameInput.disabled = false;
     startGameImage.classList.remove("addOpacity");
-    switchesDisable();
+    switchesDisable(switchVisual, switchSound, switchTime);
     pauseGame();
-    addListener(nextLevel, setNextLevel);
-    addListener(resetGame, reset);
-    addListener(openRulesButton, toggleRules);
-    addListener(gameBoard, boardStart);
+    nextLevel.addEventListener('click', setNextLevel);
+    resetGame.addEventListener('click', reset);
+    openRulesButton.addEventListener('click', toggleRules);
+    gameBoard.addEventListener('click', boardStart);
     nextLevel.style.opacity = 1;
     resetGame.style.opacity = 1;
     openRulesButton.style.opacity = 1;
@@ -222,10 +216,10 @@ function game() {
 
 function winLose() {
     pauseGame();
-    removeListener(nextLevel, setNextLevel);
-    removeListener(resetGame, reset);
-    removeListener(openRulesButton, toggleRules);
-    removeListener(gameBoard, boardStart);
+    nextLevel.removeEventListener('click', setNextLevel);
+    resetGame.removeEventListener('click', reset);
+    openRulesButton.removeEventListener('click', toggleRules);
+    gameBoard.removeEventListener('click', boardStart);
     resetGame.style.opacity = 0.35;
     nextLevel.style.opacity = 0.35;
     openRulesButton.style.opacity = 0.35;
@@ -341,7 +335,7 @@ function playGame() {
     startGameInput.checked = true;
     firstClick = false;
     runTime();
-    switchesEnable();
+    switchesEnable(switchVisual, switchSound, switchTime);
     switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
     cardWrapper.forEach((i) => {
         switchVisual.checked
@@ -361,7 +355,7 @@ function pauseGame() {
         stopTime(),
         timerOnOff = false,
         firstClick = true,
-        switchesDisable(),
+        switchesDisable(switchVisual, switchSound, switchTime),
         removeAllListeners()
     ]
 }
@@ -394,6 +388,7 @@ resetGame.addEventListener("click", reset);
 continueAfterWin.addEventListener("click", stopEndSound);
 levelAfterWin.addEventListener("click", repeatLevel);
 closeRulesButton.addEventListener("click", toggleRules);
+switchTheme.addEventListener('change', theme);
 
 animations();
 theme();

@@ -19,12 +19,4 @@ function getRandom(x) {
     return x[Math.floor(Math.random() * x.length)];
 }
 
-function addListener(element, func) {
-    return element.addEventListener('click', func);
-}
-
-function removeListener(element, func) {
-    return element.removeEventListener('click', func);
-}
-
-export {stopGame, continueGame, getRandom, addListener, removeListener};
+export {stopGame, continueGame, getRandom};

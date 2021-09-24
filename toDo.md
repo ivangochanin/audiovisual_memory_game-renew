@@ -47,5 +47,3 @@
 > helpers.js
 - Remove addListener, removeListener functions or rest operator in parameters, than one func for all
 
-> switches.js
-- export 2 functions and call them for every switch separate
