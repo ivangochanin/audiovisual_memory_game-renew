@@ -331,7 +331,7 @@ function stopTime() {
 }
 
 function playGame() {
-    startGameImage.src = "../data/images/pause.png";
+    startGameImage.src = "./src/data/images/pause.png";
     startGameInput.checked = true;
     firstClick = false;
     runTime();
@@ -351,7 +351,7 @@ function playGame() {
 function pauseGame() {
     return [
         startGameInput.checked = false,
-        startGameImage.src = "../data/images/start.png",
+        startGameImage.src = "./src/data/images/start.png",
         stopTime(),
         timerOnOff = false,
         firstClick = true,
