@@ -29,7 +29,9 @@
             #startGameImage {
                 width: 50%;
                 z-index: 1;
+                transition: $base-transition;
             }
+
         }
     }
 
@@ -39,5 +41,8 @@
         border-radius: 2px;
         transition: $base-transition;
     }
+}
 
+.addOpacity {
+    opacity: .2;
 }

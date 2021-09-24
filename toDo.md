@@ -11,7 +11,7 @@
 - design desk, tablet, mobile
 - add intervals, chords & rhythm
 - add harp and rhodes sounds
-- add bet background
+- add bet card background
 - rules -> separate pages
 
 ### SWITCHES
@@ -25,6 +25,7 @@
 
 ### GAME
 - repeat level after added bonus time - bug
+- show wrong guesses
 - responsive design phone & tablet only sound
 - speed up button click effect - css
 - warning for people with disabilities
@@ -44,9 +45,7 @@
   will work or not.
 
 > helpers.js
-- Remove addListener, removeListener functions
+- Remove addListener, removeListener functions or rest operator in parameters, than one func for all
 
 > switches.js
 - export 2 functions and call them for every switch separate
-
-> BEM methodology

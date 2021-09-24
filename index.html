@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/data/images/icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/data/images/icon.png"/>
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
@@ -13,124 +13,130 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="infoWrapper">
+<div id="container">
+    <div id="infoWrapper">
 
-            <div id="titleWrapper">
-                <p id="title">SOUND MEMORY GAME</p>
-                <p id="subTitle">test and train your visual and/or sound memory skills</p>
+        <div id="titleWrapper">
+            <p id="title">SOUND MEMORY GAME</p>
+            <p id="subTitle">test and train your visual and/or sound memory skills</p>
+        </div>
+
+        <div id="rulesButtonWrapper">
+            <button id="openRulesButton" class="gameButtons">Rules</button>
+        </div>
+
+        <div id="switchButtonsWrapper">
+            <div class="switchButtons">
+                <p class="sectionTitles">theme</p>
+                <p class="switchTitles">LIGHT / DARK</p>
+                <label class="switch">
+                    <input type="checkbox" class="checkbox" id="switchTheme">
+                    <span class="material-icons md-48 switchOnOffIcon" id="themeButton">power_settings_new</span>
+                </label>
             </div>
-
-            <div id="rulesButtonWrapper">
-                <button id="openRulesButton" class="gameButtons">Rules</button>
+            <div class="switchButtons">
+                <p class="sectionTitles">rotate</p>
+                <p class="switchTitles">OFF / ON</p>
+                <label class="switch">
+                    <input type="checkbox" class="checkbox" id="switchVisual">
+                    <span class="material-icons switchOnOffIcon" id="visualButton">power_settings_new</span>
+                </label>
             </div>
-
-            <div id="switchButtonsWrapper">
-                <div class="switchButtons">
-                    <p class="sectionTitles">theme</p>
-                    <p class="switchTitles">LIGHT / DARK</p>
-                    <label class="switch">
-                        <input type="checkbox" class="checkbox" id="switchTheme">
-                        <span class="material-icons md-48 switchOnOffIcon" id="themeButton">power_settings_new</span>
-                    </label>
-                </div>
-                <div class="switchButtons">
-                    <p class="sectionTitles">rotate</p>
-                    <p class="switchTitles">OFF / ON</p>
-                    <label class="switch">
-                        <input type="checkbox" class="checkbox" id="switchVisual">
-                        <span class="material-icons switchOnOffIcon" id="visualButton">power_settings_new</span>
-                    </label>
-                </div>
-                <div class="switchButtons">
-                    <p class="sectionTitles">sound</p>
-                    <p class="switchTitles">OFF / ON</p>
-                    <label class="switch">
-                        <input type="checkbox" class="checkbox" id="switchSound">
-                        <span class="material-icons switchOnOffIcon" id="soundButton">power_settings_new</span>
-                    </label>
-                </div>
+            <div class="switchButtons">
+                <p class="sectionTitles">sound</p>
+                <p class="switchTitles">OFF / ON</p>
+                <label class="switch">
+                    <input type="checkbox" class="checkbox" id="switchSound">
+                    <span class="material-icons switchOnOffIcon" id="soundButton">power_settings_new</span>
+                </label>
             </div>
+        </div>
 
-            <div id="levelTimeWrapper">
-                <div id="levelWrapper">
-                    <p class="sectionTitles">current level</p>
-                    <div id="currentLevel" class="roundedLevelTimer"></div>
-                    <button id="nextLevel" class="gameButtons">Next Level</button>
-                </div>
-                <div id="timeWrapper">
-                    <p class="sectionTitles">time</p>
-                    <div class="roundedLevelTimer"><span id="timer"></span></div>
-                    <div class="switchButtons">
-                        <label class="switch">
-                            <input type="checkbox" class="checkbox" id="switchTime">
+        <div id="levelTimeWrapper">
+            <div id="levelWrapper">
+                <p class="sectionTitles">current level</p>
+                <div id="currentLevel" class="roundedLevelTimer"></div>
+                <button id="nextLevel" class="gameButtons">Next Level</button>
+            </div>
+            <div id="timeWrapper">
+                <p class="sectionTitles">time</p>
+                <div class="roundedLevelTimer"><span id="timer"></span></div>
+                <div class="switchButtons">
+                    <label class="switch">
+                        <input type="checkbox" class="checkbox" id="switchTime">
                         <span class="material-icons switchOnOffIcon" id="timeButton">power_settings_new</span>
-                           
-                        </label>
-                        <p class="switchTitles">OFF / ON</p>
-                    </div>
-                </div>
-            </div>
 
-            <div id="resetWrapper">
-                <button id="resetGame" class="gameButtons">Reset Game</button>
-            </div>
-            <div id="rulesWrapper" class="rulesClose">
-                <div id="mainRules">
-                    <p>Players choose two cards (each card contains sound and picture), at the same time, and try to find two of the same cards. Find your own way of playing the game by selecting different game settings.</p>
-                </div>
-                <div id="levelRules">
-                    <ul>
-                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
-                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel1W.svg" class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
-                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel2W.svg" class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
-                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel3W.svg" class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
-                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel4W.svg" class="rulesImages" alt="rules"></div>
-                        </li>
-                    </ul>
-                </div>
-                <div id="closeRulesWrapper">
-                    <button id="closeRulesButton" class="gameButtons">Close</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="divider">
-            <div id="border"></div>
-            <div id="startGameButtonWrapper">
-                    <label id="startGameButton">
-                        <input type="checkbox" id="startGameInput">
-                        <img src="./data/images/start.png" id="startGameImage" alt="start">
                     </label>
+                    <p class="switchTitles">OFF / ON</p>
+                </div>
             </div>
         </div>
 
-        <div id="gameWrapper">
-            <div id="cardSignal">
+        <div id="resetWrapper">
+            <button id="resetGame" class="gameButtons">Reset Game</button>
+        </div>
+        <div id="rulesWrapper" class="rulesClose">
+            <div id="mainRules">
+                <p>Players choose two cards (each card contains sound and picture), at the same time, and try to find
+                    two of the same cards. Find your own way of playing the game by selecting different game
+                    settings.</p>
+            </div>
+            <div id="levelRules">
+                <ul>
+                    <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel1W.svg" class="rulesImages"
+                                                          alt="rules"></div>
+                    </li>
+                    <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel2W.svg" class="rulesImages"
+                                                          alt="rules"></div>
+                    </li>
+                    <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel3W.svg" class="rulesImages"
+                                                          alt="rules"></div>
+                    </li>
+                    <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                        <div class="rulesImgWrapper"><img src="./data/images/rules/rulesLevel4W.svg" class="rulesImages"
+                                                          alt="rules"></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="closeRulesWrapper">
+                <button id="closeRulesButton" class="gameButtons">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="divider">
+        <div id="border"></div>
+        <div id="startGameButtonWrapper">
+            <label id="startGameButton">
+                <input type="checkbox" id="startGameInput">
+                <img src="./data/images/start.png" id="startGameImage" alt="start">
+            </label>
+        </div>
+    </div>
+
+    <div id="gameWrapper">
+        <div id="cardSignal">
             <div class="indicatorWrapper">
                 <div id="firstCardIndicator"></div>
             </div>
             <div class="indicatorWrapper">
                 <div id="secondCardIndicator"></div>
             </div>
-            </div>
-            <div id="gameBoard"></div>
-            <div id="messageWrapper">
-                <p id="message"></p>
-                <button id="continueAfterWin">Continue Game</button>
-                <button id="levelAfterWin">Repeat Level</button>
-            </div>
         </div>
-        
+        <div id="gameBoard"></div>
+        <div id="messageWrapper">
+            <p id="message"></p>
+            <button id="continueAfterWin">Continue Game</button>
+            <button id="levelAfterWin">Repeat Level</button>
+        </div>
     </div>
-   
-    <script src="script.js" type="module"></script>
+
+</div>
+
+<script src="script.js" type="module"></script>
 </body>
 
 </html>

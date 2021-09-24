@@ -1,27 +1,27 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
-    font-size: 10px;
-    overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 #container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: $base-transition;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $base-transition;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
