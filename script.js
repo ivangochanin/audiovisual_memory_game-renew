@@ -60,10 +60,7 @@ function boardStart() {
 }
 
 function bonusTime() {
-	level === 2 ? (seconds += 6) :
-	level === 3 ? (seconds += 11) :
-	level === 4 ? (seconds += 11) :
-	(seconds += 6);
+	return 	level === 3 || level === 4 ? seconds += 11 : seconds += 6;
 }
 
 function setLevel() {
@@ -122,6 +119,7 @@ function randomOrder() {
 	cardWrapper = document.querySelectorAll(".cardWrapper");
 	return cardWrapper.forEach((i) => {
 		let randomData = getRandom(dataPack);
+		i.cardId = randomData.cardId;
 		i.childNodes[0].src = randomData.img;
 		i.childNodes[2].src = randomData.sound;
 		let removeData = dataPack.indexOf(randomData);
@@ -137,31 +135,29 @@ function indicatorOff() {
 }
 
 function makeGame() {
-	return [
-		(gameBoard.innerHTML = null),
-		(openedCards = 0),
-		indicatorOff(),
-		elementHide(messageWrapper),
-		setLevel(),
-		makeCards(dataPack, gameBoard, switchTheme),
-		randomOrder(),
-		showCardsAnimation(),
-		(timerOnOff = true),
-		(time.style.color = blue),
-		(startGameInput.disabled = false),
-		(startGameButton.childNodes[3].style.opacity = 1),
-		switchesDisable(),
-		pauseGame(),
-		addListener(nextLevel, setNextLevel),
-		addListener(resetGame, reset),
-		addListener(openRulesButton, toggleRules),
-		addListener(gameBoard, boardStart),
-		(nextLevel.style.opacity = 1),
-		(resetGame.style.opacity = 1),
-		(openRulesButton.style.opacity = 1),
-		(time.innerHTML = seconds),
-		(currentLevel.innerHTML = level),
-	];
+	gameBoard.innerHTML = null;
+	openedCards = 0;
+	indicatorOff();
+	elementHide(messageWrapper);
+	setLevel();
+	makeCards(dataPack, gameBoard, switchTheme);
+	randomOrder();
+	showCardsAnimation();
+	timerOnOff = true;
+	time.style.color = blue;
+	startGameInput.disabled = false;
+	startGameButton.childNodes[3].style.opacity = 1;
+	switchesDisable();
+	pauseGame();
+	addListener(nextLevel, setNextLevel);
+	addListener(resetGame, reset);
+	addListener(openRulesButton, toggleRules);
+	addListener(gameBoard, boardStart);
+	nextLevel.style.opacity = 1;
+	resetGame.style.opacity = 1;
+	openRulesButton.style.opacity = 1;
+	time.innerHTML = seconds;
+	currentLevel.innerHTML = level;
 }
 
 function game() {
@@ -182,9 +178,7 @@ function game() {
 			? (secondCardIndicator.style.background = red)
 			: (secondCardIndicator.style.background = green);
 		if (
-			firstCard.childNodes[0].currentSrc ===
-				secondCard.childNodes[0].currentSrc &&
-			firstCard.childNodes[2].currentSrc === secondCard.childNodes[2].currentSrc
+			firstCard.cardId === secondCard.cardId
 		) {
 			if (!switchTime.checked) {
 				bonusTime();

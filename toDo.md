@@ -5,7 +5,6 @@
 - add scss & autoprefixer
 - dev/production
 
-
 ### ALL
 - Webstorm errors
 - new fonts
@@ -40,9 +39,6 @@
 *Remove all possible css from js into css - theme colors ...*
 
 > script.js
-- remove ternary if more than one return
-- makeGame() - remove return and array
-- data - add class or ... inside json files and compare without childNodes[0].src ...
 - add true/false mechanism inside functions that you call with eventListener - where
   you need to add and remove listener. Just ask inside func it some true/false then listener
   will work or not.
