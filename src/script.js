@@ -136,32 +136,6 @@ function indicatorOff() {
     ]
 }
 
-function makeGame() {
-    gameBoard.innerHTML = null;
-    openedCards = 0;
-    indicatorOff();
-    elementHide(messageWrapper);
-    setLevel();
-    makeCards(dataPack, gameBoard, switchTheme);
-    randomOrder();
-    showCardsAnimation();
-    timerOnOff = true;
-    time.style.color = blue;
-    startGameInput.disabled = false;
-    startGameImage.classList.remove("addOpacity");
-    switchesDisable(switchVisual, switchSound, switchTime);
-    pauseGame();
-    nextLevel.addEventListener('click', setNextLevel);
-    resetGame.addEventListener('click', reset);
-    openRulesButton.addEventListener('click', toggleRules);
-    gameBoard.addEventListener('click', boardStart);
-    nextLevel.style.opacity = 1;
-    resetGame.style.opacity = 1;
-    openRulesButton.style.opacity = 1;
-    time.innerHTML = seconds;
-    currentLevel.innerHTML = level;
-}
-
 function game() {
     if (openedCards < 2) {
         openedCards++;
@@ -390,7 +364,33 @@ levelAfterWin.addEventListener("click", repeatLevel);
 closeRulesButton.addEventListener("click", toggleRules);
 switchTheme.addEventListener('change', theme);
 
+export function makeGame() {
+    gameBoard.innerHTML = null;
+    openedCards = 0;
+    indicatorOff();
+    elementHide(messageWrapper);
+    setLevel();
+    makeCards(dataPack, gameBoard, switchTheme);
+    randomOrder();
+    showCardsAnimation();
+    timerOnOff = true;
+    time.style.color = blue;
+    startGameInput.disabled = false;
+    startGameImage.classList.remove("addOpacity");
+    switchesDisable(switchVisual, switchSound, switchTime);
+    pauseGame();
+    nextLevel.addEventListener('click', setNextLevel);
+    resetGame.addEventListener('click', reset);
+    openRulesButton.addEventListener('click', toggleRules);
+    gameBoard.addEventListener('click', boardStart);
+    nextLevel.style.opacity = 1;
+    resetGame.style.opacity = 1;
+    openRulesButton.style.opacity = 1;
+    time.innerHTML = seconds;
+    currentLevel.innerHTML = level;
+}
+
 animations();
 theme();
-makeGame();
+
 
