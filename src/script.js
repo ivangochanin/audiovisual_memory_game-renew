@@ -36,7 +36,6 @@ let endSoundPlay = true;
 let addTimeFromLevel = 0;
 let openedCards = 0;
 let level = 1;
-
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
 function toggleRules() {
@@ -364,7 +363,7 @@ levelAfterWin.addEventListener("click", repeatLevel);
 closeRulesButton.addEventListener("click", toggleRules);
 switchTheme.addEventListener('change', theme);
 
-export function makeGame() {
+function makeGame() {
     gameBoard.innerHTML = null;
     openedCards = 0;
     indicatorOff();
@@ -390,6 +389,7 @@ export function makeGame() {
     currentLevel.innerHTML = level;
 }
 
+makeGame();
 animations();
 theme();
 

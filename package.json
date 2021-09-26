@@ -2,9 +2,9 @@
   "name": "audiovisual_memory_game-renew",
   "version": "1.0.0",
   "description": "- Translating an old sound memory game into ES modules - Redesign - Add Webpack",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack --config config.js",
     "start:watch": "webpack --watch"
   },
   "repository": {
