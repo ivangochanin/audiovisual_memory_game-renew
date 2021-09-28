@@ -6,6 +6,8 @@
 
 > Install: yarn
 
-> Run: yarn start
+> Run dev: yarn start
+
+> Production: yarn build
 
 Play game: https://audiovisual-memory-game.netlify.app/

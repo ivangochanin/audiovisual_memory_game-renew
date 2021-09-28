@@ -1,3 +1,5 @@
+import "./styles/style.scss"
+
 import dataTones from "./data/data.js";
 import {stopGame, continueGame, getRandom} from "./modules/helpers.js";
 import makeCards from "./modules/cardBuilder.js";
@@ -304,7 +306,7 @@ function stopTime() {
 }
 
 function playGame() {
-    startGameImage.src = "./src/data/images/pause.png";
+    startGameImage.src = "./assets/images/pause.png";
     startGameInput.checked = true;
     firstClick = false;
     runTime();
@@ -324,7 +326,7 @@ function playGame() {
 function pauseGame() {
     return [
         startGameInput.checked = false,
-        startGameImage.src = "./src/data/images/start.png",
+        startGameImage.src = "./assets/images/start.png",
         stopTime(),
         timerOnOff = false,
         firstClick = true,

@@ -15,8 +15,8 @@ const makeCards = (dataPack, gameBoard, switchTheme) => {
         const audio = document.createElement('audio');
         addClassAndAttribute(backImage, 'back', {
             src: switchTheme.checked
-                ? './src/data/images/backW.svg'
-                : './src/data/images/backB.svg',
+                ? './assets/images/backW.svg'
+                : './assets/images/backB.svg',
             alt: 'backImage',
         });
         addClassAndAttribute(frontImage, 'front', {src: '', alt: 'frontImage'});

@@ -1,12 +1,8 @@
 > Webpack project
-- add webpack
-- exports & modules
 - html loader
 - add scss & autoprefixer
-- dev/production
 
 ### ALL
-- Webstorm errors
 - new fonts
 - design desk, tablet, mobile
 - add intervals, chords & rhythm

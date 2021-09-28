@@ -27,7 +27,7 @@ const theme = () => {
     if (!switchTheme.checked) {
         setTimeout(() => {
             backTheme.forEach(i => {
-                i.src = './src/data/images/backB.svg';
+                i.src = './assets/images/backB.svg';
             })
         }, 25);
 
@@ -66,7 +66,7 @@ const theme = () => {
     } else {
         setTimeout(() => {
             backTheme.forEach(i => {
-                i.src = './src/data/images/backW.svg';
+                i.src = './assets/images/backW.svg';
             })
         }, 25);
         rulesImages.forEach(i => {
