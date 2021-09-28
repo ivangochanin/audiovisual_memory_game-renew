@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import { gsap, Power3 } from "gsap";
 
 const animations = () => {
     gsap.to("#infoWrapper", {duration: 2, delay: 1, opacity: 1});
