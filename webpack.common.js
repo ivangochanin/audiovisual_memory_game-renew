@@ -25,14 +25,19 @@ module.exports = {
             },
             {
                 test: /\.html$/i,
-                loader: "html-loader"
+                loader: "html-loader",
+                options: {
+                    // Disables attributes processing
+                    sources: false,
+                }
             },
             {
                 test: /\.(svg|png|jpe?g|gif)$/i,
                 use: {
                     loader: "file-loader",
                     options: {
-                        name: "[name].[hash].[ext]"
+                        name: "[name].[hash].[ext]",
+                        outputPath: " "
                     }
                 }
             }
