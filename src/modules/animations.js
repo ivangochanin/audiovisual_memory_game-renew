@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 const animations = () => {
     gsap.to("#infoWrapper", {duration: 2, delay: 1, opacity: 1});
     gsap.to("#divider", {duration: 2, delay: 1, opacity: 1});
