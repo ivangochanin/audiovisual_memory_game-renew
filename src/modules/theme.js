@@ -5,7 +5,6 @@ const theme = () => {
     const startGameButton = document.querySelector('#startGameButton');
     const roundedLevelTimer = document.querySelectorAll('.roundedLevelTimer');
     const gameButtons = document.querySelectorAll('.gameButtons');
-    const levelAfterWin = document.querySelector('#levelAfterWin');
     const switchButtons = document.querySelectorAll('.switch');
     const switchTheme = document.querySelector('#switchTheme');
     const rulesWrapper = document.querySelector('#rulesWrapper');
@@ -13,6 +12,8 @@ const theme = () => {
     const indicatorWrapper = document.querySelectorAll('.indicatorWrapper');
     const messageWrapper = document.querySelector("#messageWrapper");
     const continueAfterWin = document.querySelector("#continueAfterWin");
+    const resetAfterWin = document.querySelector("#resetAfterWin");
+    const levelAfterWin = document.querySelector('#levelAfterWin');
     const convexDarkShadow = '2px 2px 2px #0D0D10, inset 3px 3px 3px #313132, inset -3px -3px 3px rgba(29, 29, 30, 100)';
     const convexLightShadow = '2px 2px 2px #D7D7D9, inset 3px 3px 3px rgb(255, 255, 255), inset -3px -3px 3px rgba(174, 174, 192, 0.25)';
     const concaveDarkShadow = 'inset -3px -3px 6px rgba(57, 57, 57, 0.5), inset 3px 3px 6px rgba(14, 14, 15, 100)';
@@ -42,6 +43,7 @@ const theme = () => {
         Object.assign(border.style, {backgroundColor: dark, boxShadow: convexDarkShadow});
         Object.assign(startGameButton.style, {backgroundColor: dark, boxShadow: convexDarkShadow});
         Object.assign(continueAfterWin.style, {backgroundColor: dark, color: light, boxShadow: convexDarkShadow});
+        Object.assign(resetAfterWin.style, {backgroundColor: dark, color: light, boxShadow: convexDarkShadow});
         Object.assign(levelAfterWin.style, {backgroundColor: light, color: dark});
 
         roundedLevelTimer.forEach(el => {
@@ -79,6 +81,7 @@ const theme = () => {
         Object.assign(border.style, {backgroundColor: light, boxShadow: convexLightShadow});
         Object.assign(startGameButton.style, {backgroundColor: light, boxShadow: convexLightShadow});
         Object.assign(continueAfterWin.style, {backgroundColor: light, color: dark, boxShadow: convexLightShadow});
+        Object.assign(resetAfterWin.style, {backgroundColor: light, color: dark, boxShadow: convexLightShadow});
         Object.assign(levelAfterWin.style, {backgroundColor: dark, color: light});
 
         roundedLevelTimer.forEach(el => {

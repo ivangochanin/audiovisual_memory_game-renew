@@ -13,6 +13,7 @@ const resetGame = document.querySelector("#resetGame");
 const startGameInput = document.querySelector("#startGameInput");
 const nextLevel = document.querySelector("#nextLevel");
 const continueAfterWin = document.querySelector("#continueAfterWin");
+const resetAfterWin = document.querySelector("#resetAfterWin");
 const levelAfterWin = document.querySelector("#levelAfterWin");
 const currentLevel = document.querySelector("#currentLevel");
 const time = document.querySelector("#timer");
@@ -34,7 +35,6 @@ const green = "#B7E10F";
 let firstClick = true;
 let timerOnOff = true;
 let rulesTrigger = true;
-let endSoundPlay = true;
 let addTimeFromLevel = 0;
 let openedCards = 0;
 let level = 1;
@@ -154,9 +154,7 @@ function game() {
         seconds <= 10
             ? (secondCardIndicator.style.background = red)
             : (secondCardIndicator.style.background = green);
-        if (
-            firstCard.cardId === secondCard.cardId
-        ) {
+        if (firstCard.cardId === secondCard.cardId) {
             if (!switchTime.checked) {
                 bonusTime();
                 bonusTimeAnimation(time);
@@ -200,35 +198,14 @@ function winLose() {
     openRulesButton.style.opacity = 0.35;
     startGameInput.disabled = true;
     startGameImage.classList.add("addOpacity");
-    winLoseMessage(messageWrapper, message, continueAfterWin, levelAfterWin);
-}
+    winLoseMessage(messageWrapper, message, continueAfterWin, resetAfterWin, levelAfterWin);
 
-function stopEndSound() {
-    endSoundPlay = false;
-    setNextLevel();
 }
-
 function repeatLevel() {
-    endSoundPlay = false;
     addTimeFromLevel = 0;
     makeGame();
-}
 
-function playEndSound() {
-    const dynamics = [1, 0.85, 0.75, 0.65, 0.55, 0.33, 1, 1, 1, 0.95];
-    cardWrapper.forEach((i, index) => {
-        setTimeout(() => {
-            if (i.style.visibility !== "hidden") {
-                i.classList.add("rotate");
-            }
-            if (!switchSound.checked && endSoundPlay) {
-                i.childNodes[2].play();
-                i.childNodes[2].volume = getRandom(dynamics);
-            }
-        }, index * 175);
-    });
 }
-
 function winGame() {
     winLose();
     message.innerHTML = "Great job!";
@@ -237,10 +214,8 @@ function winGame() {
 }
 
 function loseGame() {
-    endSoundPlay = true;
     winLose();
     message.innerHTML = "More luck next time!";
-    playEndSound();
 }
 
 function rotateCard() {
@@ -360,7 +335,8 @@ switchVisual.addEventListener("change", rotateOnOff);
 switchSound.addEventListener("change", soundOnOff);
 switchTime.addEventListener("change", timeOnOf);
 resetGame.addEventListener("click", reset);
-continueAfterWin.addEventListener("click", stopEndSound);
+continueAfterWin.addEventListener("click", setNextLevel);
+resetAfterWin.addEventListener("click", reset)
 levelAfterWin.addEventListener("click", repeatLevel);
 closeRulesButton.addEventListener("click", toggleRules);
 switchTheme.addEventListener('change', theme);

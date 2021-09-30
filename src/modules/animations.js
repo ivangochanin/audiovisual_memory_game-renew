@@ -25,17 +25,10 @@ const bonusTimeAnimation = (el) => {
     gsap.fromTo(el, {scale: 1.25, color: '#B7E10F'}, {delay: .25, duration: .25, ease: Power3.easeInOut, scale: 1});
 };
 
-const winLoseMessage = (wrapper, text, btn1, btn2) => {
+const winLoseMessage = (wrapper, text, ...btns) => {
     gsap.to(wrapper, {duration: .5, autoAlpha: 1})
     gsap.fromTo(text, {opacity: 0}, {delay: .25, duration: 1, ease: Power3.easeInOut, opacity: 1});
-    gsap.fromTo(btn1, {opacity: 0, autoAlpha: 0}, {
-        delay: .75,
-        duration: .5,
-        ease: Power3.easeInOut,
-        opacity: 1,
-        autoAlpha: 1
-    });
-    gsap.fromTo(btn2, {opacity: 0, autoAlpha: 0}, {
+    gsap.fromTo(btns, {opacity: 0, autoAlpha: 0}, {
         delay: .75,
         duration: .5,
         ease: Power3.easeInOut,

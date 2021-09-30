@@ -1,10 +1,5 @@
-> Webpack project
-- html loader
-- add scss & autoprefixer
-
 ### ALL
 - new fonts
-- design desk, tablet, mobile
 - add intervals, chords & rhythm
 - add harp and rhodes sounds
 - add bet card background
@@ -15,21 +10,12 @@
 - add text indicator: full mode, sound mode, visual mode, bet mode
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
-### TIMER
-- count seconds as score ?
-- add bonus time on next level 10 sec ?
-
 ### GAME
-- repeat level after added bonus time - bug
+- if lose do not show continue button, just reset - v.v - just remove btn height
 - show wrong guesses
-- responsive design phone & tablet only sound
-- speed up button click effect - css
-- warning for people with disabilities
-- code refactoring (return from func, DRY, compose/pipe ...)
 - responsive design phone & tablet only sound :
   a) 4 13-inch laptop - small control table, big game board
   b) turn off game on touch devices
-- safari end problem
 - test game
 
 #### ACA
@@ -40,6 +26,4 @@
   you need to add and remove listener. Just ask inside func it some true/false then listener
   will work or not.
 
-> helpers.js
-- Remove addListener, removeListener functions or rest operator in parameters, than one func for all
 
