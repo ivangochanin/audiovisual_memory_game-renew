@@ -77,25 +77,25 @@ function setLevel() {
             cardCounter = 16;
             dataPack = dataTonesLevel1.concat(dataTonesLevel1);
             seconds = 20;
-            Object.assign(gameBoard.style, {width: "340px", height: "auto"});
+            Object.assign(gameBoard.style, {width: "400px", height: "auto", background: "red"});
             break;
         case 2 :
             cardCounter = 26;
             dataPack = dataTonesLevel2.concat(dataTonesLevel2);
             seconds = 30 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "510px", height: "auto"});
+            Object.assign(gameBoard.style, {width: "600px", height: "auto", background: "red"});
             break;
         case 3 :
             cardCounter = 50;
             dataPack = dataTonesLevel3.concat(dataTonesLevel3);
             seconds = 40 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "680px", height: "auto"});
+            Object.assign(gameBoard.style, {width: "760px", height: "auto", background: "red"});
             break;
         case 4 :
             cardCounter = 74;
             dataPack = dataTonesLevel4.concat(dataTonesLevel4);
             seconds = 50 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "840px", height: "auto"});
+            Object.assign(gameBoard.style, {width: "50vw", height: "auto", background: "red"});
             break;
         default:
             cardCounter = 0;

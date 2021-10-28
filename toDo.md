@@ -3,7 +3,7 @@
 - add intervals, chords & rhythm
 - add harp and rhodes sounds
 - add bet card background
-- rules -> separate pages
+- font imports
 
 ### SWITCHES
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode

@@ -22,8 +22,8 @@ const theme = () => {
     const indicatorShadowDark = 'inset -3px -3px 6px rgba(57, 57, 57, 0.5), inset 3px 3px 3px rgb(28, 28, 29, 0.5)';
     const darkBorder = '0.5px solid #1A1A1B';
     const lightBorder = '0.5px solid #FFFFFF';
-    const dark = '#262627';
-    const light = '#F0F0F3';
+    const dark = '#1D1F28';
+    const light = '#FFFFFF';
 
     if (!switchTheme.checked) {
         setTimeout(() => {

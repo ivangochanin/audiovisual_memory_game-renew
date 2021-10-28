@@ -16,10 +16,12 @@
     align-items: center;
 
     #title {
-      font-weight: 400;
-      font-size: 3rem;
-      line-height: 43px;
-      letter-spacing: .77rem;
+      font-family: 'SF UI Display Thin';
+      font-style: normal;
+      font-size: 1.8rem;
+      line-height: 21px;
+      text-transform: capitalize;
+      //color: #E9EDF2;
     }
 
     #subTitle {
