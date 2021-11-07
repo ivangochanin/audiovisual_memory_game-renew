@@ -22,6 +22,8 @@ const theme = () => {
     const indicatorShadowDark = 'inset -3px -3px 6px rgba(57, 57, 57, 0.5), inset 3px 3px 3px rgb(28, 28, 29, 0.5)';
     const darkBorder = '0.5px solid #1A1A1B';
     const lightBorder = '0.5px solid #FFFFFF';
+    const containerDark = '#6B69D1'; // linear gradient inside variable ? linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%);
+    const containerLight = '#EEEEEE';
     const dark = '#1D1F28';
     const light = '#FFFFFF';
 
@@ -39,7 +41,7 @@ const theme = () => {
         });
 
         Object.assign(messageWrapper.style, {backgroundColor: 'rgba(38, 38, 39, 0.95)', color: light});
-        Object.assign(container.style, {backgroundColor: dark, color: light});
+        Object.assign(container.style, {backgroundColor: containerDark, color: light});
         Object.assign(border.style, {backgroundColor: dark, boxShadow: convexDarkShadow});
         Object.assign(startGameButton.style, {backgroundColor: dark, boxShadow: convexDarkShadow});
         Object.assign(continueAfterWin.style, {backgroundColor: dark, color: light, boxShadow: convexDarkShadow});
@@ -77,7 +79,7 @@ const theme = () => {
             i.src = myString.join('');
         });
         Object.assign(messageWrapper.style, {backgroundColor: 'rgba(240, 240, 243, 0.8)', color: dark});
-        Object.assign(container.style, {backgroundColor: light, color: dark});
+        Object.assign(container.style, {backgroundColor: containerLight, color: dark});
         Object.assign(border.style, {backgroundColor: light, boxShadow: convexLightShadow});
         Object.assign(startGameButton.style, {backgroundColor: light, boxShadow: convexLightShadow});
         Object.assign(continueAfterWin.style, {backgroundColor: light, color: dark, boxShadow: convexLightShadow});

@@ -6,6 +6,7 @@ import makeCards from "./modules/cardBuilder.js";
 import {switchesDisable, switchesEnable} from "./modules/switches.js";
 import { animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide,} from "./modules/animations.js";
 import theme from "./modules/theme.js";
+import accordion from "./modules/accordion.js";
 
 const gameBoard = document.querySelector("#gameBoard");
 const cardSignal = document.querySelector("#cardSignal");

@@ -15,12 +15,19 @@ html {
 }
 
 #container {
+  background: $background;
   width: 100%;
   min-height: 100vh;
+  
+  padding: 0 3vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   transition: $base-transition;
+}
+
+.sections {
+  border-radius: 25px;
 }
 
 li {

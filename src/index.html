@@ -5,30 +5,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Sound Memory Game</title>
 </head>
 
 <body>
-<div id="container">
-    <div id="infoWrapper">
+    <div id="container">
 
-        <div id="titleWrapper">
-            <p id="title">sound memory game</p>
-        </div>
+        <div class="sections settingsWrapper">
+            <div id="titleWrapper">
+                <p id="title">sound memory game</p>
+            </div>
+            <div class="panelWrapper">
+                <div class="panel">
+                    <button class="panelTrigger">Rules</button>
+                    <div class="panelContent">
+                        <div id="mainRules">
+                            <p>Players choose two cards (each card contains sound and picture), at the same time, and
+                                try to find
+                                two of the same cards. Find your own way of playing the game by selecting different game
+                                settings.</p>
+                        </div>
+                        <div id="levelRules">
+                            <ul>
+                                <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
+                                            class="rulesImages" alt="rules"></div>
+                                </li>
+                                <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
+                                            class="rulesImages" alt="rules"></div>
+                                </li>
+                                <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
+                                            class="rulesImages" alt="rules"></div>
+                                </li>
+                                <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
+                                            class="rulesImages" alt="rules"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <button class="panelTrigger">Panel 2</button>
+                    <div class="panelContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
+                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
+                            tempora, labore modi dolores laboriosam consequatur.
+                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
+                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
+                            fuga quam ea? Sint numquam maiores excepturi.
+                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
+                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
+                            in sint minus, facere dolores numquam ipsam vel hic id.
+                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
+                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
+                            natus eos cum!
+                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
+                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
+                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <button class="panelTrigger">Panel 3</button>
+                    <div class="panelContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
+                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
+                            tempora, labore modi dolores laboriosam consequatur.
 
-        <div id="rulesButtonWrapper">
-            <button id="openRulesButton" class="gameButtons">Rules</button>
-        </div>
-
-        <div id="switchButtonsWrapper">
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <button class="panelTrigger">Panel 4</button>
+                    <div class="panelContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <button class="panelTrigger">Panel 5</button>
+                    <div class="panelContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
+                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
+                            tempora, labore modi dolores laboriosam consequatur.
+                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
+                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
+                            fuga quam ea? Sint numquam maiores excepturi.
+                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
+                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
+                            in sint minus, facere dolores numquam ipsam vel hic id.
+                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
+                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
+                            natus eos cum!
+                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
+                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
+                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <button class="panelTrigger">Panel 6</button>
+                    <div class="panelContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
+                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
+                            tempora, labore modi dolores laboriosam consequatur.
+                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
+                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
+                            fuga quam ea? Sint numquam maiores excepturi.
+                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
+                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
+                            in sint minus, facere dolores numquam ipsam vel hic id.
+                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
+                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
+                            natus eos cum!
+                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
+                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
+                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p id="openRulesButton" class="sectionTitles">Rules</p>
             <div class="switchButtons">
                 <p class="sectionTitles">theme</p>
                 <p class="switchTitles">LIGHT / DARK</p>
                 <label class="switch">
                     <input type="checkbox" class="checkbox" id="switchTheme">
-                    <span class="material-icons md-48 switchOnOffIcon" id="themeButton">power_settings_new</span>
                 </label>
             </div>
             <div class="switchButtons">
@@ -36,7 +148,6 @@
                 <p class="switchTitles">OFF / ON</p>
                 <label class="switch">
                     <input type="checkbox" class="checkbox" id="switchVisual">
-                    <span class="material-icons switchOnOffIcon" id="visualButton">power_settings_new</span>
                 </label>
             </div>
             <div class="switchButtons">
@@ -44,99 +155,115 @@
                 <p class="switchTitles">OFF / ON</p>
                 <label class="switch">
                     <input type="checkbox" class="checkbox" id="switchSound">
-                    <span class="material-icons switchOnOffIcon" id="soundButton">power_settings_new</span>
+
                 </label>
             </div>
-        </div>
 
-        <div id="levelTimeWrapper">
+
+
             <div id="levelWrapper">
-                <p class="sectionTitles">current level</p>
-                <div id="currentLevel" class="roundedLevelTimer"></div>
-                <button id="nextLevel" class="gameButtons">Next Level</button>
+
+                <p id="nextLevel" class="sectionTitles">Next Level</p>
             </div>
             <div id="timeWrapper">
-                <p class="sectionTitles">time</p>
-                <div class="roundedLevelTimer"><span id="timer"></span></div>
+                <p class="sectionTitles">Timer</p>
                 <div class="switchButtons">
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="switchTime">
-                        <span class="material-icons switchOnOffIcon" id="timeButton">power_settings_new</span>
-
                     </label>
                     <p class="switchTitles">OFF / ON</p>
                 </div>
             </div>
+
+
+            <div id="resetWrapper">
+                <p class="sectionTitles">Reset Game</p>
+
+                <button id="resetGame" class="gameButtons">Icon</button>
+            </div>
+            <div id="rulesWrapper" class="rulesClose">
+                <div id="mainRules">
+                    <p>Players choose two cards (each card contains sound and picture), at the same time, and try to
+                        find
+                        two of the same cards. Find your own way of playing the game by selecting different game
+                        settings.</p>
+                </div>
+                <div id="levelRules">
+                    <ul>
+                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
+                                    class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
+                                    class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
+                                    class="rulesImages" alt="rules"></div>
+                        </li>
+                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
+                                    class="rulesImages" alt="rules"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="closeRulesWrapper">
+                    <button id="closeRulesButton" class="gameButtons">Close</button>
+                </div>
+            </div>
         </div>
 
-        <div id="resetWrapper">
-            <button id="resetGame" class="gameButtons">Reset Game</button>
+
+
+
+        <div class="sections gameWrapper">
+            <div id="boardInfo">
+                <div id="startGameButtonWrapper">
+                    <label id="startGameButton">
+                        <input type="checkbox" id="startGameInput">
+                        <img src="./assets/images/start.png" id="startGameImage" alt="start">
+                    </label>
+                </div>
+                <div>
+                    <p class="sectionTitles">current level</p>
+                    <div id="currentLevel" class="roundedLevelTimer"></div>
+                </div>
+                <div>
+                    <p class="sectionTitles">time</p>
+                    <div class="roundedLevelTimer"><span id="timer"></span></div>
+                </div>
+                <div id="cardSignal">
+                    <div class="indicatorWrapper">
+                        <div id="firstCardIndicator"></div>
+                    </div>
+                    <div class="indicatorWrapper">
+                        <div id="secondCardIndicator"></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="sectionTitles">mode</p>
+                    <div id="mode" class="roundedLevelTimer">chords</div>
+                </div>
+                <div>
+                    <p class="sectionTitles">instrument</p>
+                    <div id="instrument" class="roundedLevelTimer">Harp</div>
+                </div>
+            </div>
+
+
+            <div id="gameBoard"></div>
+
+
+            <div id="messageWrapper">
+                <p id="message"></p>
+                <button id="continueAfterWin">Continue Game</button>
+                <button id="resetAfterWin">Reset Game</button>
+                <button id="levelAfterWin">Repeat Level</button>
+            </div>
         </div>
-        <div id="rulesWrapper" class="rulesClose">
-            <div id="mainRules">
-                <p>Players choose two cards (each card contains sound and picture), at the same time, and try to find
-                    two of the same cards. Find your own way of playing the game by selecting different game
-                    settings.</p>
-            </div>
-            <div id="levelRules">
-                <ul>
-                    <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
-                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
-                                                          class="rulesImages"
-                                                          alt="rules"></div>
-                    </li>
-                    <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
-                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
-                                                          class="rulesImages"
-                                                          alt="rules"></div>
-                    </li>
-                    <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
-                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
-                                                          class="rulesImages"
-                                                          alt="rules"></div>
-                    </li>
-                    <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
-                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
-                                                          class="rulesImages"
-                                                          alt="rules"></div>
-                    </li>
-                </ul>
-            </div>
-            <div id="closeRulesWrapper">
-                <button id="closeRulesButton" class="gameButtons">Close</button>
-            </div>
-        </div>
+
     </div>
-
-    <div id="divider">
-        <div id="border"></div>
-        <div id="startGameButtonWrapper">
-            <label id="startGameButton">
-                <input type="checkbox" id="startGameInput">
-                <img src="./assets/images/start.png" id="startGameImage" alt="start">
-            </label>
-        </div>
-    </div>
-
-    <div id="gameWrapper">
-        <div id="cardSignal">
-            <div class="indicatorWrapper">
-                <div id="firstCardIndicator"></div>
-            </div>
-            <div class="indicatorWrapper">
-                <div id="secondCardIndicator"></div>
-            </div>
-        </div>
-        <div id="gameBoard"></div>
-        <div id="messageWrapper">
-            <p id="message"></p>
-            <button id="continueAfterWin">Continue Game</button>
-            <button id="resetAfterWin">Reset Game</button>
-            <button id="levelAfterWin">Repeat Level</button>
-        </div>
-    </div>
-
-</div>
 
 </body>
 
