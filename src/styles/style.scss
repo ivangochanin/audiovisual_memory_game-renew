@@ -4,11 +4,12 @@
 @import "base/var&mix";
 @import "base/mediaqueries";
 
+// Sections
+@import "sections/layout";
+@import "sections/settings";
+@import "sections/game";
+
 // Components
-@import "components/accordion";
-@import "components/layout";
-@import "components/settings";
-@import "components/game";
 @import "components/switches";
 @import "components/icons";
 

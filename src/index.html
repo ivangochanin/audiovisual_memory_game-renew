@@ -21,15 +21,21 @@
 
             <div id="panelWrapper">
 
-                
+
                 <div class="panel">
-                    <div class="panelSections accordionTrigger">Rules</div>
+                    <div class="panelSections accordionTrigger">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/rules.png" alt="rules"></div><span>Rules</span></div>
+                        <div class="panelSectionsRight"><img src="./assets/icons/updown.png" alt="rules arrow"></div>
+                    </div>
+
                     <div class="accordionWrapper">
                         <div class="accordion">
                             <div id="mainRules">
-                                <p>Players choose two cards (each card contains sound and picture), at the same time, and
+                                <p>Players choose two cards (each card contains sound and picture), at the same time,
+                                    and
                                     try to find
-                                    two of the same cards. Find your own way of playing the game by selecting different game
+                                    two of the same cards. Find your own way of playing the game by selecting different
+                                    game
                                     settings.</p>
                             </div>
                             <div id="levelRules">
@@ -57,18 +63,24 @@
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections accordionTrigger">Mode</div>
-                    <div class="accordionWrapper">
-                        <div class="accordion">
-                            <p>
-                                Mode checkboxes
-                            </p>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/theme.png" alt="theme"></div><span>Theme</span></div>
+                        <div class="panelSectionsRight">
+                            <div class="switchButtons">
+                                <span class="switchTitles">dark</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchTheme">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections accordionTrigger">Instrument</div>
+                    <div class="panelSections accordionTrigger">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument"></div><span>Instrument</span></div>
+                        <div class="panelSectionsRight"><img src="./assets/icons/updown.png" alt="instrument arrow"></div>
+                    </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
                             <p>
@@ -79,68 +91,84 @@
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections accordionTrigger">Level</div>
+                    <div class="panelSections accordionTrigger">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/mode.png" alt="mode"></div><span>Mode</span></div>
+                        <div class="panelSectionsRight"><img src="./assets/icons/updown.png" alt="mode arrow"></div>
+                    </div>
                     <div class="accordionWrapper">
-                        <div class="accordion"><p id="nextLevel">Next Level</p></div>
+                        <div class="accordion">
+                            <p>
+                                Mode checkboxes
+                            </p>
+                        </div>
                     </div>
                 </div>
-
+   
                 <div class="panel">
-                    <div class="panelSections">Theme
-                        <div class="switchButtons">
-                            <span class="switchTitles"> JS - LIGHT / DARK</span>
-                            <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchTheme">
-                            </label>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div><span>Card Face</span></div>
+
+                        <div class="panelSectionsRight">
+                            <div class="switchButtons">
+                                <span class="switchTitles"> score</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchCardFace">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections">Rotate Cards
-                        <div class="switchButtons">
-                            <span class="switchTitles"> JS - OFF / ON</span>
-                            <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchVisual">
-                            </label>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/rotate.png" alt="rotate"></div><span>Rotate Card</span></div>
+                        <div class="panelSectionsRight">
+                            <div class="switchButtons">
+                                <span class="switchTitles">on</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchVisual">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections">Sound
-                        <div class="switchButtons">
-                            <span class="switchTitles"> JS - OFF / ON</span>
-                            <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchSound">
-
-                            </label>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/sound.png" alt="sound"></div><span>Sound</span></div>
+                        <div class="panelSectionsRight">
+                            <div class="switchButtons">
+                                <span class="switchTitles">on</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchSound">
+    
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections">Time
-                        <div class="switchButtons">
-                            <span class="switchTitles"> JS - OFF / ON</span>
-                            <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchTime">
-                            </label>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/time.png" alt="time"></div><span>Time</span></div>
+
+                        <div class="panelSectionsRight">
+                            <div class="switchButtons">
+                                <span class="switchTitles"> on</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchTime">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections">Card Face
-                        <div class="switchButtons">
-                            <span class="switchTitles"> ON</span>
-                            <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchCardFace">
-                            </label>
-                        </div>
+                    <div class="panelSections">
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Level</span></div>
+                        <div class="panelSectionsRight"><img id="nextLevel" src="./assets/icons/continue.png" alt="instrument arrow"></div>
                     </div>
                 </div>
-
             </div>
 
             <div id="resetWrapper">
@@ -194,9 +222,13 @@
 
             <div id="messageWrapper">
                 <p id="message" class="font_light"></p>
-                <button id="continueAfterWin">Continue Game</button>
+                <div id="continueAfterWin" class="iconWrapper"><img src="./assets/icons/continue.png" alt="continue"></div>
+                <div id="resetAfterWin" class="iconWrapper"><img src="./assets/icons/repeat.png" alt="repeat"></div>
+                <div id="levelAfterWin" class="iconWrapper"><img src="./assets/icons/reset.png" alt="reset"></div>
+
+                <!-- <button id="continueAfterWin">Continue Game</button>
                 <button id="resetAfterWin">Reset Game</button>
-                <button id="levelAfterWin">Repeat Level</button>
+                <button id="levelAfterWin">Repeat Level</button> -->
             </div>
         </div>
 

@@ -202,7 +202,7 @@ function repeatLevel() {
 }
 function winGame() {
     winLose();
-    message.innerHTML = "Great job!";
+    message.innerHTML = "Great Job!";
     time.style.color = blue;
     addTimeFromLevel = seconds;
 }
