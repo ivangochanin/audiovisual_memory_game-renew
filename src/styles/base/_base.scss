@@ -19,10 +19,16 @@ li {
 .font_default {
   font-family: fontThin;
   color: #E9EDF2;
+  letter-spacing: .5px;
+
 }
 
 .font_light {
   font-family: fontUltralight;
   color: #8a8e96;
+  letter-spacing: .5px;
 }
 
+.addOpacity {
+  opacity: .2;
+  }

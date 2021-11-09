@@ -1,9 +1,19 @@
+# NEW
+- gsap accordion
+- switches
+- switch buttons (play, reset, win lose)
+- switch checkboxes
+- icons wrapper
+- full info section
+
+
+
+
 ### ALL
-- new fonts
 - add intervals, chords & rhythm
 - add harp and rhodes sounds
 - add bet card background
-- font imports
+- rules - describe all settings possibilities
 
 ### SWITCHES
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
@@ -11,11 +21,8 @@
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
 ### GAME
-- if lose do not show continue button, just reset - v.v - just remove btn height
 - show wrong guesses
-- responsive design phone & tablet only sound :
-  a) 4 13-inch laptop - small control table, big game board
-  b) turn off game on touch devices
+- responsive design
 - test game
 
 #### ACA

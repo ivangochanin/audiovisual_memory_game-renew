@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+/* .switchButtons {
+    @include flex-center;
+    flex-direction: column;
+  
+    .switch {
+      user-select: none;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+  
+      .switchOnOffIcon {
+        color: $green;
+        font-size: 3rem;
+        position: absolute;
+        cursor: pointer;
+      }
+  
+      input {
+        z-index: -1;
+      }
+  
+      input:checked ~ .switchOnOffIcon {
+        color: $gray;
+      }
+    }
+  } */

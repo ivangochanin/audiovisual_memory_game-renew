@@ -10,128 +10,141 @@
 </head>
 
 <body>
-    <div id="container">
+    <div id="container" class="font_default">
 
-        <div class="sections settingsWrapper">
+        <div id="settingsWrapperSection" class="sections">
+
             <div id="titleWrapper">
                 <p id="title" class="font_light">sound memory game</p>
             </div>
+
+
             <div id="panelWrapper">
+
+                
                 <div class="panel">
-                    <button class="panelTrigger">Rules</button>
-                    <div class="panelContent">
-                        <div id="mainRules">
-                            <p>Players choose two cards (each card contains sound and picture), at the same time, and
-                                try to find
-                                two of the same cards. Find your own way of playing the game by selecting different game
-                                settings.</p>
-                        </div>
-                        <div id="levelRules">
-                            <ul>
-                                <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
-                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
-                                            class="rulesImages" alt="rules"></div>
-                                </li>
-                                <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
-                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
-                                            class="rulesImages" alt="rules"></div>
-                                </li>
-                                <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
-                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
-                                            class="rulesImages" alt="rules"></div>
-                                </li>
-                                <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
-                                    <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
-                                            class="rulesImages" alt="rules"></div>
-                                </li>
-                            </ul>
+                    <div class="panelSections accordionTrigger">Rules</div>
+                    <div class="accordionWrapper">
+                        <div class="accordion">
+                            <div id="mainRules">
+                                <p>Players choose two cards (each card contains sound and picture), at the same time, and
+                                    try to find
+                                    two of the same cards. Find your own way of playing the game by selecting different game
+                                    settings.</p>
+                            </div>
+                            <div id="levelRules">
+                                <ul>
+                                    <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
+                                                class="rulesImages" alt="rules"></div>
+                                    </li>
+                                    <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
+                                                class="rulesImages" alt="rules"></div>
+                                    </li>
+                                    <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
+                                                class="rulesImages" alt="rules"></div>
+                                    </li>
+                                    <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                                        <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
+                                                class="rulesImages" alt="rules"></div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                    <div class="panel">
-                        <div class="panelTrigger">Theme
-                            <div class="switchButtons">
-                                <span class="switchTitles"> JS - LIGHT / DARK</span>
-                                <label class="switch">
-                                    <input type="checkbox" class="checkbox" id="switchTheme">
-                                </label>
-                            </div>
+
+                <div class="panel">
+                    <div class="panelSections accordionTrigger">Mode</div>
+                    <div class="accordionWrapper">
+                        <div class="accordion">
+                            <p>
+                                Mode checkboxes
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="panel">
-                        <div class="panelTrigger">Rotate Cards
-                            <div class="switchButtons">
-                                <span class="switchTitles"> JS - OFF / ON</span>
-                                <label class="switch">
-                                    <input type="checkbox" class="checkbox" id="switchVisual">
-                                </label>
-                            </div>
+                <div class="panel">
+                    <div class="panelSections accordionTrigger">Instrument</div>
+                    <div class="accordionWrapper">
+                        <div class="accordion">
+                            <p>
+                                Instrument checkboxes
+                            </p>
                         </div>
-                   </div>
+                    </div>
+                </div>
 
-                   <div class="panel">
-                        <div class="panelTrigger">Sound
-                            <div class="switchButtons">
-                                <span class="switchTitles"> JS - OFF / ON</span>
-                                <label class="switch">
-                                    <input type="checkbox" class="checkbox" id="switchSound">
-                
-                                </label>
-                            </div>
-                        </div>
-                   </div>
-                    
-                   <div class="panel">
-                        <div class="panelTrigger">Time
-                            <div class="switchButtons">
-                                <span class="switchTitles"> JS - OFF / ON</span>
-                                <label class="switch">
-                                    <input type="checkbox" class="checkbox" id="switchTime">
-                                </label>
-                            </div>
-                        </div>
-                   </div>
+                <div class="panel">
+                    <div class="panelSections accordionTrigger">Level</div>
+                    <div class="accordionWrapper">
+                        <div class="accordion"><p id="nextLevel">Next Level</p></div>
+                    </div>
+                </div>
 
-                   <div class="panel">
-                    <div class="panelTrigger">Cards
+                <div class="panel">
+                    <div class="panelSections">Theme
                         <div class="switchButtons">
-                            <span class="switchTitles"> JS - OFF / ON</span>
+                            <span class="switchTitles"> JS - LIGHT / DARK</span>
                             <label class="switch">
-                                <input type="checkbox" class="checkbox" id="switchCards">
+                                <input type="checkbox" class="checkbox" id="switchTheme">
                             </label>
                         </div>
                     </div>
-               </div>
-               
+                </div>
+
                 <div class="panel">
-                    <button class="panelTrigger">Mode</button>
-                    <div class="panelContent">
-                        <p>
-                            Mode checkboxes
-                        </p>
+                    <div class="panelSections">Rotate Cards
+                        <div class="switchButtons">
+                            <span class="switchTitles"> JS - OFF / ON</span>
+                            <label class="switch">
+                                <input type="checkbox" class="checkbox" id="switchVisual">
+                            </label>
+                        </div>
                     </div>
                 </div>
+
                 <div class="panel">
-                    <button class="panelTrigger">Instrument</button>
-                    <div class="panelContent">
-                        <p>
-                            Instrument checkboxes
-                        </p>
+                    <div class="panelSections">Sound
+                        <div class="switchButtons">
+                            <span class="switchTitles"> JS - OFF / ON</span>
+                            <label class="switch">
+                                <input type="checkbox" class="checkbox" id="switchSound">
+
+                            </label>
+                        </div>
                     </div>
                 </div>
+
                 <div class="panel">
-                    <button class="panelTrigger">Levels</button>
-                    <div class="panelContent">
-                        <p id="nextLevel" class="sectionTitles">Next Level</p>
+                    <div class="panelSections">Time
+                        <div class="switchButtons">
+                            <span class="switchTitles"> JS - OFF / ON</span>
+                            <label class="switch">
+                                <input type="checkbox" class="checkbox" id="switchTime">
+                            </label>
+                        </div>
                     </div>
                 </div>
-                
+
+                <div class="panel">
+                    <div class="panelSections">Card Face
+                        <div class="switchButtons">
+                            <span class="switchTitles"> ON</span>
+                            <label class="switch">
+                                <input type="checkbox" class="checkbox" id="switchCardFace">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            
+
             <div id="resetWrapper">
-                <p class="sectionTitles">Reset Game</p>
+                <p class="font_light">Reset Game</p>
 
                 <button id="resetGame" class="gameButtons">
                     <img src="./assets/icons/reset.png" alt="reset game">
@@ -139,11 +152,8 @@
             </div>
         </div>
 
-
-
-
-        <div class="sections gameWrapper">
-            <div id="boardInfo">
+        <div id="gameWrapperSection" class="sections">
+            <div id="boardInfoWrapper">
                 <div id="startGameButtonWrapper">
                     <label id="startGameButton">
                         <input type="checkbox" id="startGameInput">
@@ -151,11 +161,11 @@
                     </label>
                 </div>
                 <div>
-                    <p class="sectionTitles">current level</p>
+                    <p>current level</p>
                     <div id="currentLevel" class="roundedLevelTimer"></div>
                 </div>
                 <div>
-                    <p class="sectionTitles">time</p>
+                    <p>time</p>
                     <div class="roundedLevelTimer"><span id="timer"></span></div>
                 </div>
                 <div id="cardSignal">
@@ -167,21 +177,23 @@
                     </div>
                 </div>
                 <div>
-                    <p class="sectionTitles">mode</p>
+                    <p>mode</p>
                     <div id="mode" class="roundedLevelTimer">chords</div>
                 </div>
                 <div>
-                    <p class="sectionTitles">instrument</p>
+                    <p>instrument</p>
                     <div id="instrument" class="roundedLevelTimer">Harp</div>
                 </div>
             </div>
 
 
-            <div id="gameBoard"></div>
+            <div id="boardGameWrapper">
+                <div id="gameBoard"></div>
+            </div>
 
 
             <div id="messageWrapper">
-                <p id="message"></p>
+                <p id="message" class="font_light"></p>
                 <button id="continueAfterWin">Continue Game</button>
                 <button id="resetAfterWin">Reset Game</button>
                 <button id="levelAfterWin">Repeat Level</button>

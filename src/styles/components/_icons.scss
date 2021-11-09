@@ -1,0 +1,22 @@
+.gameButtons {
+  border: none;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #2D3037;
+  transition: $base-transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: .75;
+  }
+
+  &:active {
+    background: red;
+    transition: transform ease-in-out .05s;
+    /* transform: scale(0.975);
+     */
+  }
+}

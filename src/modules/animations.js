@@ -1,7 +1,7 @@
 import { gsap, Power3 } from "gsap";
 
 const animations = () => {
-    gsap.to(".settingsWrapper", {duration: 2, delay: 1, opacity: 1});
+    gsap.to("#settingsWrapperSection", {duration: 2, delay: 1, opacity: 1});
     gsap.to("#timer", {duration: 2, delay: 2, opacity: 1});
     gsap.to("#currentLevel", {duration: 2, delay: 2, opacity: 1});
 };

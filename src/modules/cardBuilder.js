@@ -5,11 +5,11 @@ const addClassAndAttribute = (element, className, attribute) => {
     });
 };
 
-const makeCards = (dataPack, gameBoard, switchTheme) => {
+const makeCards = (dataPack, game, switchTheme) => {
     return dataPack.forEach(() => {
         const createCards = document.createElement('div');
         createCards.classList.add('cardWrapper');
-        gameBoard.appendChild(createCards);
+        game.appendChild(createCards);
         const frontImage = document.createElement('img');
         const backImage = document.createElement('img');
         const audio = document.createElement('audio');

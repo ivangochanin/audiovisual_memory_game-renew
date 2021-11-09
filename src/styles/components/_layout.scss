@@ -1,14 +1,26 @@
 #container {
-    background: $background;
-    width: 100%;
-    min-height: 100vh;
-    padding: 0 3vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: $base-transition;
-  }
-  
+  background: $background;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: $base-transition;
+
   .sections {
+    height: 90vh;
+    padding: 2.5%;
     border-radius: 25px;
+    background: $dark;
   }
+
+  #settingsWrapperSection {
+    width: 33%;
+  }
+
+  #gameWrapperSection {
+    position: relative;
+    width: 65%;
+  }
+}
