@@ -1,0 +1,45 @@
+.settingsWrapper {
+
+    #titleWrapper {
+        //background: red;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #panelWrapper {
+        width: 100%;
+        height: 80%;
+        background: #222531;
+        //background: green;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        //align-items: center;
+        padding-bottom: 5%;
+    }
+
+    #resetWrapper {
+        //background: blue;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+    }
+
+}
+
+
+
+
+
+
+
+.rulesImages {
+    width: 100%;
+}

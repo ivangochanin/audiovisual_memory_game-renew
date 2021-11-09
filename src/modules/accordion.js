@@ -12,5 +12,3 @@ function openPanel() {
 panelTrigger.forEach(i => {
     i.addEventListener('click', openPanel)
 })
-
-console.log('aaaaaaaaaa Panel');

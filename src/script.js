@@ -20,9 +20,6 @@ const currentLevel = document.querySelector("#currentLevel");
 const time = document.querySelector("#timer");
 const messageWrapper = document.querySelector("#messageWrapper");
 const message = document.querySelector("#message");
-const openRulesButton = document.querySelector("#openRulesButton");
-const closeRulesButton = document.querySelector("#closeRulesButton");
-const rulesWrapper = document.querySelector("#rulesWrapper");
 const switchVisual = document.querySelector("#switchVisual");
 const switchSound = document.querySelector("#switchSound");
 const switchTime = document.querySelector("#switchTime");
@@ -43,14 +40,12 @@ let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds
 
 function toggleRules() {
     if (rulesTrigger) {
-        elementShow(rulesWrapper);
         rulesTrigger = false;
         pauseGame();
         startGameImage.style.opacity = 0.2;
         gameBoard.removeEventListener("click", boardStart);
         startGameInput.removeEventListener("change", playPause);
     } else {
-        elementHide(rulesWrapper);
         rulesTrigger = true;
         startGameImage.style.opacity = 1;
         gameBoard.addEventListener("click", boardStart);
@@ -192,11 +187,9 @@ function winLose() {
     pauseGame();
     nextLevel.removeEventListener('click', setNextLevel);
     resetGame.removeEventListener('click', reset);
-    openRulesButton.removeEventListener('click', toggleRules);
     gameBoard.removeEventListener('click', boardStart);
     resetGame.style.opacity = 0.35;
     nextLevel.style.opacity = 0.35;
-    openRulesButton.style.opacity = 0.35;
     startGameInput.disabled = true;
     startGameImage.classList.add("addOpacity");
     winLoseMessage(messageWrapper, message, continueAfterWin, resetAfterWin, levelAfterWin);
@@ -339,7 +332,6 @@ resetGame.addEventListener("click", reset);
 continueAfterWin.addEventListener("click", setNextLevel);
 resetAfterWin.addEventListener("click", reset)
 levelAfterWin.addEventListener("click", repeatLevel);
-closeRulesButton.addEventListener("click", toggleRules);
 switchTheme.addEventListener('change', theme);
 
 function makeGame() {
@@ -359,11 +351,9 @@ function makeGame() {
     pauseGame();
     nextLevel.addEventListener('click', setNextLevel);
     resetGame.addEventListener('click', reset);
-    openRulesButton.addEventListener('click', toggleRules);
     gameBoard.addEventListener('click', boardStart);
     nextLevel.style.opacity = 1;
     resetGame.style.opacity = 1;
-    openRulesButton.style.opacity = 1;
     time.innerHTML = seconds;
     currentLevel.innerHTML = level;
 }

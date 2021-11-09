@@ -17,12 +17,10 @@
     align-items: center;
 
     #title {
-      font-family: 'SF UI Display Thin';
       font-style: normal;
       font-size: 1.8rem;
       line-height: 21px;
       text-transform: capitalize;
-      //color: #E9EDF2;
     }
 
     #subTitle {
@@ -64,66 +62,19 @@
       transition: $base-transition;
     }
   }
-
-  #rulesWrapper {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    transition: $base-transition;
-    width: 92.5%;
-    min-height: 85vh;
-    top: 0;
-    left: 5%;
-    right: 2.5%;
-    z-index: 1;
-    padding: 2.5%;
-    font-size: 1.25rem;
-    letter-spacing: .15px;
-    line-height: 20px;
-    text-align: center;
-
-    ul {
-      padding: 1% 0;
-      text-align: left;
-
-      li {
-
-        margin-top: 15px;
-        font-size: 1.25rem;
-        font-weight: 500;
-
-        span {
-          font-weight: 700;
-          margin-left: 40px;
-          color: $blue;
-        }
-
-        .rulesImgWrapper {
-          margin: 0 5%;
-          width: 90%;
-
-          img {
-            width: 100%;
-          }
-        }
-
-      }
-
-    }
-  }
 }
 
 .gameButtons {
   border: none;
-  text-transform: uppercase;
-  width: 130px;
-  height: 50px;
-  border-radius: 4px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #2D3037;
   transition: $base-transition;
-  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 
   &:hover {
     opacity: .75;

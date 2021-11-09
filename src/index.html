@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon.png" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/mamoryGame.png" />
     <title>Sound Memory Game</title>
 </head>
 
@@ -15,9 +14,9 @@
 
         <div class="sections settingsWrapper">
             <div id="titleWrapper">
-                <p id="title">sound memory game</p>
+                <p id="title" class="font_light">sound memory game</p>
             </div>
-            <div class="panelWrapper">
+            <div id="panelWrapper">
                 <div class="panel">
                     <button class="panelTrigger">Rules</button>
                     <div class="panelContent">
@@ -49,168 +48,94 @@
                         </div>
                     </div>
                 </div>
+                    <div class="panel">
+                        <div class="panelTrigger">Theme
+                            <div class="switchButtons">
+                                <span class="switchTitles"> JS - LIGHT / DARK</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchTheme">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panelTrigger">Rotate Cards
+                            <div class="switchButtons">
+                                <span class="switchTitles"> JS - OFF / ON</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchVisual">
+                                </label>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="panel">
+                        <div class="panelTrigger">Sound
+                            <div class="switchButtons">
+                                <span class="switchTitles"> JS - OFF / ON</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchSound">
+                
+                                </label>
+                            </div>
+                        </div>
+                   </div>
+                    
+                   <div class="panel">
+                        <div class="panelTrigger">Time
+                            <div class="switchButtons">
+                                <span class="switchTitles"> JS - OFF / ON</span>
+                                <label class="switch">
+                                    <input type="checkbox" class="checkbox" id="switchTime">
+                                </label>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="panel">
+                    <div class="panelTrigger">Cards
+                        <div class="switchButtons">
+                            <span class="switchTitles"> JS - OFF / ON</span>
+                            <label class="switch">
+                                <input type="checkbox" class="checkbox" id="switchCards">
+                            </label>
+                        </div>
+                    </div>
+               </div>
+               
                 <div class="panel">
-                    <button class="panelTrigger">Panel 2</button>
+                    <button class="panelTrigger">Mode</button>
                     <div class="panelContent">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
-                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
-                            tempora, labore modi dolores laboriosam consequatur.
-                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
-                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
-                            fuga quam ea? Sint numquam maiores excepturi.
-                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
-                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
-                            in sint minus, facere dolores numquam ipsam vel hic id.
-                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
-                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
-                            natus eos cum!
-                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
-                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
-                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
+                            Mode checkboxes
                         </p>
                     </div>
                 </div>
                 <div class="panel">
-                    <button class="panelTrigger">Panel 3</button>
+                    <button class="panelTrigger">Instrument</button>
                     <div class="panelContent">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
-                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
-                            tempora, labore modi dolores laboriosam consequatur.
-
+                            Instrument checkboxes
                         </p>
                     </div>
                 </div>
                 <div class="panel">
-                    <button class="panelTrigger">Panel 4</button>
+                    <button class="panelTrigger">Levels</button>
                     <div class="panelContent">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
-                        </p>
+                        <p id="nextLevel" class="sectionTitles">Next Level</p>
                     </div>
                 </div>
-                <div class="panel">
-                    <button class="panelTrigger">Panel 5</button>
-                    <div class="panelContent">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
-                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
-                            tempora, labore modi dolores laboriosam consequatur.
-                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
-                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
-                            fuga quam ea? Sint numquam maiores excepturi.
-                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
-                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
-                            in sint minus, facere dolores numquam ipsam vel hic id.
-                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
-                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
-                            natus eos cum!
-                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
-                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
-                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
-                        </p>
-                    </div>
-                </div>
-                <div class="panel">
-                    <button class="panelTrigger">Panel 6</button>
-                    <div class="panelContent">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officiis labore nobis?
-                            Accusamus quod neque, eius necessitatibus incidunt optio ea quibusdam illo molestias culpa
-                            tempora, labore modi dolores laboriosam consequatur.
-                            Odio nobis magni eveniet corporis similique dolorem recusandae ducimus optio, adipisci aut
-                            quibusdam illo aperiam voluptatem atque voluptatibus perferendis veniam iusto officia itaque
-                            fuga quam ea? Sint numquam maiores excepturi.
-                            Quam ad, doloribus veniam consequatur eaque quibusdam iste iure minima distinctio
-                            perferendis asperiores deserunt corrupti dolorem! Magnam laudantium consequatur dignissimos
-                            in sint minus, facere dolores numquam ipsam vel hic id.
-                            Quae ipsam eaque omnis quaerat voluptatibus non dolore vero accusamus quia amet. Fuga illo
-                            modi labore, consequuntur adipisci voluptates tempore quia odio totam quam nihil ea, ipsum
-                            natus eos cum!
-                            Rem cumque consectetur at architecto accusantium odio quae quibusdam, voluptate est
-                            repudiandae doloribus accusamus velit facere dolorem molestiae labore corporis sed illo
-                            placeat ullam. Iusto, in maxime. Reprehenderit, fugiat inventore!
-                        </p>
-                    </div>
-                </div>
+                
             </div>
-            <p id="openRulesButton" class="sectionTitles">Rules</p>
-            <div class="switchButtons">
-                <p class="sectionTitles">theme</p>
-                <p class="switchTitles">LIGHT / DARK</p>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" id="switchTheme">
-                </label>
-            </div>
-            <div class="switchButtons">
-                <p class="sectionTitles">rotate</p>
-                <p class="switchTitles">OFF / ON</p>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" id="switchVisual">
-                </label>
-            </div>
-            <div class="switchButtons">
-                <p class="sectionTitles">sound</p>
-                <p class="switchTitles">OFF / ON</p>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" id="switchSound">
-
-                </label>
-            </div>
-
-
-
-            <div id="levelWrapper">
-
-                <p id="nextLevel" class="sectionTitles">Next Level</p>
-            </div>
-            <div id="timeWrapper">
-                <p class="sectionTitles">Timer</p>
-                <div class="switchButtons">
-                    <label class="switch">
-                        <input type="checkbox" class="checkbox" id="switchTime">
-                    </label>
-                    <p class="switchTitles">OFF / ON</p>
-                </div>
-            </div>
-
-
+            
+            
             <div id="resetWrapper">
                 <p class="sectionTitles">Reset Game</p>
 
-                <button id="resetGame" class="gameButtons">Icon</button>
-            </div>
-            <div id="rulesWrapper" class="rulesClose">
-                <div id="mainRules">
-                    <p>Players choose two cards (each card contains sound and picture), at the same time, and try to
-                        find
-                        two of the same cards. Find your own way of playing the game by selecting different game
-                        settings.</p>
-                </div>
-                <div id="levelRules">
-                    <ul>
-                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
-                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel1W.svg"
-                                    class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
-                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel2W.svg"
-                                    class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
-                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel3W.svg"
-                                    class="rulesImages" alt="rules"></div>
-                        </li>
-                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
-                            <div class="rulesImgWrapper"><img src="./assets/images/rules/rulesLevel4W.svg"
-                                    class="rulesImages" alt="rules"></div>
-                        </li>
-                    </ul>
-                </div>
-                <div id="closeRulesWrapper">
-                    <button id="closeRulesButton" class="gameButtons">Close</button>
-                </div>
+                <button id="resetGame" class="gameButtons">
+                    <img src="./assets/icons/reset.png" alt="reset game">
+                </button>
             </div>
         </div>
 

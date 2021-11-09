@@ -1,6 +1,3 @@
-// Font
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 // Base
 @import "base/base";
 @import "base/font";
@@ -9,12 +6,13 @@
 
 // Components
 @import "components/accordion";
+@import "components/layout";
 @import "components/settings";
 @import "components/game";
 @import "components/switches";
 @import "components/xsettings";
 @import "components/xgame";
-@import "components/xswitches";
+//@import "components/xswitches";
 
 
 

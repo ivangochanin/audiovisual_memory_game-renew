@@ -10,27 +10,19 @@
 html {
   font-size: 10px;
   overflow-x: hidden;
-  //font-family: 'SF UI Display Medium';
-  
-}
-
-#container {
-  background: $background;
-  width: 100%;
-  min-height: 100vh;
-  
-  padding: 0 3vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: $base-transition;
-}
-
-.sections {
-  border-radius: 25px;
 }
 
 li {
   list-style: none;
+}
+
+.font_default {
+  font-family: fontThin;
+  color: #E9EDF2;
+}
+
+.font_light {
+  font-family: fontUltralight;
+  color: #8a8e96;
 }
 

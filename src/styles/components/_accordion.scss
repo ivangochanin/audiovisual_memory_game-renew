@@ -1,9 +1,9 @@
-.panelWrapper {
+/* #panelWrapper {
     width: 100%;
     max-height: auto;
-    /* background: #222531; */
+    background: #222531;
     overflow: auto;
-}
+} */
 
 .panel {
     background: lightslategrey;
@@ -40,7 +40,6 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-   
 }
 
 /* .active,
