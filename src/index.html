@@ -82,16 +82,28 @@
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
-                            <div class="accordionCheckboxesWrapper">
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="pianoSound"> <span class="font_light">Piano</span>
-                                </label>
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="rhodesSound"> <span class="font_light">Rhodes</span>
-                                </label>
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="harpSound"> <span class="font_light">Harp</span>
-                                </label>
+                            <div class="accordionCheckboxesWrapper font_light">
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioInstrument" id="pianoSound" checked="checked"> 
+                                        <span class="customRadio"></span>                                   
+                                    </label>
+                                    <span class="switchTitles">Piano</span>
+                                </div>
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioInstrument" id="rhodesSound"> 
+                                        <span class="customRadio"></span>
+                                    </label>
+                                    <span class="switchTitles">Rhodes</span>
+                                </div>
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioInstrument" id="harpSound"> 
+                                        <span class="customRadio"></span>
+                                    </label>
+                                    <span class="switchTitles">Harp</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,16 +116,28 @@
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
-                            <div class="accordionCheckboxesWrapper">
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="toneSound"> <span class="font_light">Tone</span>
-                                </label>
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="intervalSound"> <span class="font_light">Interval</span>
-                                </label>
-                                <label class="checkboxWrapper">
-                                    <input type="checkbox" id="chordSound"> <span class="font_light">Chord</span>
-                                </label>
+                            <div class="accordionCheckboxesWrapper font_light">
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioMode" id="toneSound" checked="checked"> 
+                                        <span class="customRadio"></span>
+                                    </label>
+                                    <span class="switchTitles">Tone</span>
+                                </div>
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioMode" id="intervalSound"> 
+                                        <span class="customRadio"></span>
+                                    </label>
+                                    <span class="switchTitles">Interval</span>
+                                </div>
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioMode" id="chordSound"> 
+                                        <span class="customRadio"></span>
+                                    </label>
+                                    <span class="switchTitles">Chord</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,7 +203,7 @@
                 <div class="panel">
                     <div class="panelSections">
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Next Level</span></div>
-                        <div class="panelSectionsRight"><img id="nextLevel" src="./assets/icons/continue.png" alt="instrument arrow"></div>
+                        <div class="panelSectionsRight"><div id="nextLevelIconWrapper"><img id="nextLevel" src="./assets/icons/continue.png" alt="instrument arrow"></div></div>
                     </div>
                 </div>
             </div>
