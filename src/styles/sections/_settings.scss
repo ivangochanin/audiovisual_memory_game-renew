@@ -14,7 +14,6 @@
     /* -------------------------------------------------------   MID   ------------------------------------------------------- */
 
     #panelWrapper {
-        //background: #232c55;
         width: 100%;
         height: 75%;
         display: flex;
@@ -33,7 +32,6 @@
             padding-bottom: 2.5vh;
 
             .panelSections {
-                //background: red;
                 cursor: pointer;
                 width: 100%;
                 height: 4vh;
@@ -48,7 +46,7 @@
 
                 .panelSectionsLeft {
                     @include flex-center;
-                  
+
                     .iconWrapper {
                         @include flex-center;
                         width: 35px;
@@ -56,15 +54,21 @@
                         background: #2D3037;
                         border-radius: 50%;
                         margin-right: 15px;
+                        transition: $base-transition;
 
-                         img {
-                            height: 20px;
+                        &:hover {
+                            opacity: .75;
                         }
                     }
                 }
 
                 .panelSectionsRight {
                     height: 20px;
+                    @include flex-center;
+
+                    .switchTitles {
+                        text-transform: capitalize;
+                    }
                 }
             }
 
@@ -77,6 +81,20 @@
                 .accordion {
                     padding-top: 10px;
                     font-size: 1.4rem;
+
+                    .accordionCheckboxesWrapper {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 7rem 1rem 5rem;
+
+                        .checkboxWrapper {
+                            margin: 2.5px 0;
+
+                            span {
+                                margin-left: 2rem;
+                            }
+                        }
+                    }
                 }
             }
         }

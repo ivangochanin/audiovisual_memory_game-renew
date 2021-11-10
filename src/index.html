@@ -66,13 +66,11 @@
                     <div class="panelSections">
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/theme.png" alt="theme"></div><span>Theme</span></div>
                         <div class="panelSectionsRight">
-                            <div class="switchWrapper">
-                                <span class="switchTitles">dark</span>
-                                <label class="switch">
+                                <span class="switchTitles font_light">dark</span>
+                                <label class="switchWrapper">
                                     <input type="checkbox" id="switchTheme">
-                                    <span class="slider"/>
+                                    <span class="sliderCircle"/>
                                 </label>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,9 +82,17 @@
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
-                            <p>
-                                Instrument checkboxes
-                            </p>
+                            <div class="accordionCheckboxesWrapper">
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="pianoSound"> <span class="font_light">Piano</span>
+                                </label>
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="rhodesSound"> <span class="font_light">Rhodes</span>
+                                </label>
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="harpSound"> <span class="font_light">Harp</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,9 +104,17 @@
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
-                            <p>
-                                Mode checkboxes
-                            </p>
+                            <div class="accordionCheckboxesWrapper">
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="toneSound"> <span class="font_light">Tone</span>
+                                </label>
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="intervalSound"> <span class="font_light">Interval</span>
+                                </label>
+                                <label class="checkboxWrapper">
+                                    <input type="checkbox" id="chordSound"> <span class="font_light">Chord</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,13 +124,11 @@
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div><span>Card Face</span></div>
 
                         <div class="panelSectionsRight">
-                            <div class="switchWrapper">
-                                <span class="switchTitles"> score</span>
-                                <label class="switch">
+                                <span class="switchTitles font_light"> score</span>
+                                <label class="switchWrapper">
                                     <input type="checkbox" id="switchCardFace">
-                                    <span class="slider"/>
+                                    <span class="sliderCircle"/>
                                 </label>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,13 +137,11 @@
                     <div class="panelSections">
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/rotate.png" alt="rotate"></div><span>Rotate Card</span></div>
                         <div class="panelSectionsRight">
-                            <div class="switchWrapper">
-                                <span class="switchTitles">on</span>
-                                <label class="switch">
+                                <span class="switchTitles font_light">on</span>
+                                <label class="switchWrapper">
                                     <input type="checkbox" id="switchVisual">
-                                    <span class="slider"/>
+                                    <span class="sliderCircle"/>
                                 </label>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,13 +150,12 @@
                     <div class="panelSections">
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/sound.png" alt="sound"></div><span>Sound</span></div>
                         <div class="panelSectionsRight">
-                            <div class="switchWrapper">
-                                <span class="switchTitles">on</span>
-                                <label class="switch">
+                                <span class="switchTitles font_light">on</span>
+                                <label class="switchWrapper">
                                     <input type="checkbox" id="switchSound">
-                                    <span class="slider"/>
+                                    <span class="sliderCircle"/>
                                 </label>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -156,20 +165,20 @@
                         <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/time.png" alt="time"></div><span>Time</span></div>
 
                         <div class="panelSectionsRight">
-                            <div class="switchWrapper">
-                                <span class="switchTitles"> on</span>
-                                <label class="switch">
+                            
+                                <span class="switchTitles font_light"> on</span>
+                                <label class="switchWrapper">
                                     <input type="checkbox" id="switchTime">
-                                    <span class="slider"/>
+                                    <span class="sliderCircle"/>
                                 </label>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="panel">
                     <div class="panelSections">
-                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Level</span></div>
+                        <div class="panelSectionsLeft"><div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Next Level</span></div>
                         <div class="panelSectionsRight"><img id="nextLevel" src="./assets/icons/continue.png" alt="instrument arrow"></div>
                     </div>
                 </div>
@@ -226,13 +235,20 @@
 
             <div id="messageWrapper">
                 <p id="message" class="font_light"></p>
-                <div id="continueAfterWin" class="iconWrapper"><img src="./assets/icons/continue.png" alt="continue"></div>
-                <div id="resetAfterWin" class="iconWrapper"><img src="./assets/icons/repeat.png" alt="repeat"></div>
-                <div id="levelAfterWin" class="iconWrapper"><img src="./assets/icons/reset.png" alt="reset"></div>
-
-                <!-- <button id="continueAfterWin">Continue Game</button>
-                <button id="resetAfterWin">Reset Game</button>
-                <button id="levelAfterWin">Repeat Level</button> -->
+               <div id="messageButtonsSection">
+                    <div class="messageButtonWrapper">
+                        <p class="font_light">Continue game</p>
+                        <button id="continueAfterWin" class="gameButtons"><img src="./assets/icons/continue.png" alt="continue"></button>
+                    </div>
+                    <div class="messageButtonWrapper">
+                        <p class="font_light">Repeat game</p>
+                        <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png" alt="repeat"></button>
+                    </div>
+                    <div class="messageButtonWrapper">
+                        <p class="font_light">Reset game</p>
+                        <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/reset.png" alt="reset"></button>
+                    </div>
+               </div>
             </div>
         </div>
 
