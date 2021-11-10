@@ -35,8 +35,17 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "gsap": "^3.7.1"
+    "gsap": "^3.7.1",
+    "postcss": "^8.1.0"
   },
-  "postcss": { "plugins": { "autoprefixer": {} } },
-  "browserslist": [ "last 2 versions", "> 0.5%", "IE 10" ]
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "IE 10"
+  ]
 }

@@ -5,7 +5,6 @@
     const startGameButton = document.querySelector('#startGameButton');
     const roundedLevelTimer = document.querySelectorAll('.roundedLevelTimer');
     const gameButtons = document.querySelectorAll('.gameButtons');
-    const switchButtons = document.querySelectorAll('.switch');
     const switchTheme = document.querySelector('#switchTheme');
     const rulesImages = document.querySelectorAll('.rulesImages');
     const indicatorWrapper = document.querySelectorAll('.indicatorWrapper');
@@ -54,9 +53,6 @@
                 border: darkBorder
             });
         });
-        switchButtons.forEach(el => {
-            Object.assign(el.style, {backgroundColor: dark, border: darkBorder});
-        });
 
     } else {
         setTimeout(() => {
@@ -89,9 +85,6 @@
                 color: dark,
                 border: lightBorder
             })
-        });
-        switchButtons.forEach(el => {
-            Object.assign(el.style, {backgroundColor: light, border: lightBorder})
         });
     }
 }
