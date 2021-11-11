@@ -74,6 +74,8 @@
                 .panelSectionsRight {
                     height: 20px;
                     @include flex-center;
+                    transition: $base-transition;
+
 
                     .switchTitles {
                         text-transform: capitalize;

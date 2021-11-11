@@ -36,8 +36,9 @@
 
   input {
     position: absolute;
-    top: 7.5px;
+    top: 5px;
     left: 10px;
+    display: none;
 
     &:checked+.sliderCircle {
       background: #2D3037;
@@ -51,75 +52,45 @@
 
 /* ------------------------------------------------------------------ PANEL RADIO BOXES ------------------------------------------------------------------*/
 .radioSection {
-  width: 100px;
+  width: 200px;
+  height: 22px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 
   .radioWrapper {
-    width: 22px;
-    height: 22px;
     position: relative;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    user-select: none;
-    @include flex-center;
-    margin-right: 10px;
-    transition: $base-transition;
 
-    /* On mouse-over, add a grey background color */
-    &:hover input~.customRadio {
-      opacity: .9;
-    }
-
-    /* Hide the browser's default radio button */
     input {
       position: absolute;
-      opacity: 0;
-      cursor: pointer;
+      left: 4px;
+      display: none;
 
-      /* When the radio button is checked, add a blue background */
       &:checked~.customRadio {
         background: $blue;
       }
-
-      /* Show the indicator (dot/circle) when checked */
-      &:checked~.customRadio:after {
-        display: block;
+      &:checked~.customRadio::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: #E9EDF2;
+        border-radius: 50%;
       }
     }
 
-    /* Create a custom radio button */
     .customRadio {
-      position: absolute;
       height: 22px;
       width: 22px;
       background: #505258;
       border-radius: 50%;
       @include flex-center;
+    }
 
-      /* Create the indicator (the dot/circle - hidden when not checked) */
-      &:after {
-        content: "";
-        position: absolute;
-        display: none;
-      }
-
-      /* Style the indicator (dot/circle) */
-      &:after {
-        width: 8px;
-        height: 8px;
-        background: #E9EDF2;
-        border-radius: 50%;
-
-      }
+    .radioTitles {
+      margin-left: 10px;
     }
   }
-
-
-
-
-
-
-
-
 }
