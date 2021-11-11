@@ -21,7 +21,7 @@ const showCardsAnimation = () => {
 };
 
 const bonusTimeAnimation = (el) => {
-    gsap.fromTo(el, {scaleY: 0}, {delay: .5, duration: .25, ease: Power3.easeInOut, scaleY: 1,transformOrigin: "center bottom"});
+    gsap.fromTo(el, {scaleY: 0}, {duration: .3, ease: Power3.easeInOut, scaleY: 1,transformOrigin: "center bottom", delay: .4});
 };
 
 const winLoseMessage = (wrapper, text, ...btns) => {
