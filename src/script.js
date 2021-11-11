@@ -73,25 +73,25 @@ function setLevel() {
             cardCounter = 16;
             dataPack = dataTonesLevel1.concat(dataTonesLevel1);
             seconds = 20;
-            Object.assign(gameBoard.style, {width: "400px", height: "auto", background: "red"});
+            Object.assign(gameBoard.style, {width: "400px", height: "auto", background: "black"});
             break;
         case 2 :
             cardCounter = 26;
             dataPack = dataTonesLevel2.concat(dataTonesLevel2);
             seconds = 30 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "600px", height: "auto", background: "red"});
+            Object.assign(gameBoard.style, {width: "600px", height: "auto", background: "black"});
             break;
         case 3 :
             cardCounter = 50;
             dataPack = dataTonesLevel3.concat(dataTonesLevel3);
             seconds = 40 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "760px", height: "auto", background: "red"});
+            Object.assign(gameBoard.style, {width: "760px", height: "auto", background: "black"});
             break;
         case 4 :
             cardCounter = 74;
             dataPack = dataTonesLevel4.concat(dataTonesLevel4);
             seconds = 50 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "50vw", height: "auto", background: "red"});
+            Object.assign(gameBoard.style, {width: "50vw", height: "auto", background: "black"});
             break;
         default:
             cardCounter = 0;
@@ -275,7 +275,7 @@ function stopTime() {
 }
 
 function playGame() {
-    startGameImage.src = "./assets/images/pause.png";
+    startGameImage.src = "./assets/icons/pause.png";
     startGameInput.checked = true;
     firstClick = false;
     runTime();
@@ -295,7 +295,7 @@ function playGame() {
 function pauseGame() {
     return [
         startGameInput.checked = false,
-        startGameImage.src = "./assets/images/start.png",
+        startGameImage.src = "./assets/icons/play.png",
         stopTime(),
         timerOnOff = false,
         firstClick = true,

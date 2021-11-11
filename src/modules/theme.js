@@ -3,7 +3,7 @@
     const container = document.querySelector('#container');
     const border = document.querySelector('#border');
     const startGameButton = document.querySelector('#startGameButton');
-    const roundedLevelTimer = document.querySelectorAll('.roundedLevelTimer');
+    const boardInfoParameters = document.querySelectorAll('.boardInfoParameters');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switchTheme = document.querySelector('#switchTheme');
     const rulesImages = document.querySelectorAll('.rulesImages');
@@ -40,7 +40,7 @@
         Object.assign(resetAfterWin.style, {backgroundColor: dark, color: light});
         Object.assign(levelAfterWin.style, {backgroundColor: light, color: dark});
 
-        roundedLevelTimer.forEach(el => {
+        boardInfoParameters.forEach(el => {
             Object.assign(el.style, {backgroundColor: dark, border: darkBorder});
         });
         indicatorWrapper.forEach(el => {
@@ -73,7 +73,7 @@
         Object.assign(resetAfterWin.style, {backgroundColor: light, color: dark});
         Object.assign(levelAfterWin.style, {backgroundColor: dark, color: light});
 
-        roundedLevelTimer.forEach(el => {
+        boardInfoParameters.forEach(el => {
             Object.assign(el.style, {backgroundColor: light, border: lightBorder})
         });
         indicatorWrapper.forEach(el => {

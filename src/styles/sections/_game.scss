@@ -1,41 +1,70 @@
 #gameWrapperSection {
   #boardInfoWrapper {
-    background: rgb(243, 73, 73);
+    //background: rgb(19, 31, 66);
     width: 100%;
-    height: 10%;
+    height: 5%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
+    .boardInfoSections {
+      //background: rgb(26, 54, 71);
+      height: 100%;
+      @include flex-center;
+      
+      .boardInfoTitles {
+        margin-right: 10px;
+        font-size: 1.6rem;
+      }
 
-    #cardSignal {
-      opacity: 0;
-      width: 80px;
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-
-      .indicatorWrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        border-radius: 2px;
-        transition: $base-transition;
-
-        #firstCardIndicator,
-        #secondCardIndicator {
-          width: 10px;
-          height: 10px;
-          border-radius: 2px;
+      .boardInfoParameters {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        min-width: 20px;
+        #timer {
+         // background: rebeccapurple;
+         font-family: fontMedium;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          min-width: 40px;
+          height: 3rem;
         }
       }
+
+      #cardSignal {
+        opacity: 0;
+        width: 70px;
+        display: flex;
+        justify-content: space-around;
+  
+        .indicatorWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          transition: $base-transition;
+  
+          #firstCardIndicator,
+          #secondCardIndicator {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #505258;
+          }
+        }
+      } 
     }
+
+    
   }
 
   #boardGameWrapper {
-    background: green;
+    background: rgb(29, 36, 54);
     width: 100%;
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -49,7 +78,7 @@
 
       .cardWrapper {
         opacity: 0;
-        background: green;
+        //background: lightslategray;
         width: 4.6vw;
         height: 4.6vw;
         border-radius: 4px;

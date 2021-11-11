@@ -18,6 +18,16 @@
     transition: transform ease-in-out .05s;
   }
 }
+/* ----------------------------------------------------------------- START GAME BUTTON -----------------------------------------------------------------*/
+#startGameButton {
+  position: relative;
+  
+  input {
+    position: absolute;
+    left: 10px;
+    display: none;
+  }
+}
 
 /* ------------------------------------------------------------------ PANEL NEXT LEVEL ------------------------------------------------------------------*/
 #nextLevelIconWrapper{
