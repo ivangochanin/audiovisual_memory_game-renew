@@ -18,7 +18,7 @@ for (let i = 0; i < accordionTrigger.length; i++) {
 				accordionTrigger[j].childNodes[3].style.transform = null;
 		}
 		let panel = this.nextElementSibling;
-		let panelArrow = this.childNodes[3];
+		let panelArrow = this.childNodes[3].childNodes[3].childNodes[1];
 		panel.style.maxHeight
 			? (panel.style.maxHeight = null, panelArrow.style.transform = null)
 			: (panel.style.maxHeight = panel.scrollHeight + 'px', panelArrow.style.transform = "rotate(-180deg)");

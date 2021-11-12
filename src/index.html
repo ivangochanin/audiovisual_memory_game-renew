@@ -28,8 +28,12 @@
                             <div class="iconWrapper"><img src="./assets/icons/rules.png" alt="rules"></div>
                             <span>Help</span>
                         </div>
-                        <div class="panelSectionsRight"><img class="accordionArrow" src="./assets/icons/updown.png"
-                                alt="rules arrow"></div>
+                        <div class="panelSectionsRight">
+                            <span class="switchTitles font_light"></span>
+                            <div class="accordionArrowWrapper">
+                                <img class="accordionArrow" src="./assets/icons/updown.png" alt="help arrow">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="accordionWrapper">
@@ -73,7 +77,7 @@
                             <span>Theme</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">dark</span>
+                            <span id="switchThemeText" class="switchTitles font_light">dark</span>
                             <label class="switchWrapper">
                                 <input type="checkbox" id="switchTheme">
                                 <span class="sliderCircle" />
@@ -88,8 +92,12 @@
                             <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument"></div>
                             <span>Instrument</span>
                         </div>
-                        <div class="panelSectionsRight"><img class="accordionArrow" src="./assets/icons/updown.png"
-                                alt="instrument arrow"></div>
+                        <div class="panelSectionsRight">
+                            <span class="switchTitles font_light">piano</span>
+                            <div class="accordionArrowWrapper">
+                                <img class="accordionArrow" src="./assets/icons/updown.png" alt="instrument arrow">
+                            </div>
+                        </div>
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
@@ -126,8 +134,12 @@
                             <div class="iconWrapper"><img src="./assets/icons/mode.png" alt="mode"></div>
                             <span>Mode</span>
                         </div>
-                        <div class="panelSectionsRight"><img class="accordionArrow" src="./assets/icons/updown.png"
-                                alt="mode arrow"></div>
+                        <div class="panelSectionsRight">
+                            <span class="switchTitles font_light">tone</span>
+                            <div class="accordionArrowWrapper">
+                                <img class="accordionArrow" src="./assets/icons/updown.png" alt="mode arrow">
+                            </div>
+                        </div>
                     </div>
                     <div class="accordionWrapper">
                         <div class="accordion">
@@ -159,18 +171,36 @@
                 </div>
 
                 <div class="panel">
-                    <div class="panelSections">
+                    <div class="panelSections accordionTrigger">
                         <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div><span>Card
-                                Face</span>
+                            <div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div>
+                            <span>Card Face</span>
                         </div>
-
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light"> score</span>
-                            <label class="switchWrapper">
-                                <input type="checkbox" id="switchCardFace">
-                                <span class="sliderCircle" />
-                            </label>
+                            <span class="switchTitles font_light">score</span>
+                            <div class="accordionArrowWrapper">
+                                <img class="accordionArrow" src="./assets/icons/updown.png" alt="card face arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordionWrapper">
+                        <div class="accordion">
+                            <div class="accordionCheckboxesWrapper font_light">
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioFace" id="cardFaceScore" checked="checked">
+                                        <span class="customRadio"><span class="radioDot"></span></span>
+                                        <span class="radioTitles">Score</span>
+                                    </label>
+                                </div>
+                                <div class="radioSection">
+                                    <label class="radioWrapper">
+                                        <input type="radio" name="radioFace" id="cardFaceText">
+                                        <span class="customRadio"><span class="radioDot"></span></span>
+                                        <span class="radioTitles">Text</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,9 +212,9 @@
                             <span>Rotate Card</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">on</span>
+                            <span id="switchRotateCardText" class="switchTitles font_light">on</span>
                             <label class="switchWrapper">
-                                <input type="checkbox" id="switchVisual">
+                                <input type="checkbox" id="switchRotateCard">
                                 <span class="sliderCircle" />
                             </label>
                         </div>
@@ -198,7 +228,7 @@
                             <span>Sound</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">on</span>
+                            <span id="switchSoundText" class="switchTitles font_light">on</span>
                             <label class="switchWrapper">
                                 <input type="checkbox" id="switchSound">
                                 <span class="sliderCircle" />
@@ -216,7 +246,7 @@
                         </div>
 
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light"> on</span>
+                            <span id="switchTimeText" class="switchTitles font_light"> on</span>
                             <label class="switchWrapper">
                                 <input type="checkbox" id="switchTime">
                                 <span class="sliderCircle" />
@@ -263,7 +293,9 @@
                 </div>
                 <div class="boardInfoSections">
                     <p class="boardInfoTitles font_light">time</p>
-                    <div class="boardInfoParameters"><p id="timer"></p></div>
+                    <div class="boardInfoParameters">
+                        <p id="timer"></p>
+                    </div>
                 </div>
                 <div class="boardInfoSections">
                     <div id="cardSignal">

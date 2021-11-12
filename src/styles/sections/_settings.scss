@@ -30,14 +30,14 @@
 
         .panel {
             padding-bottom: 2.5vh;
+            transition: $base-transition;
 
+            &:hover {
+                opacity: .7;
+            }
             .accordionTrigger {
                 cursor: pointer;
                 transition: $base-transition;
-
-                &:hover {
-                    opacity: .7;
-                }
             }
 
             .panelSections {
@@ -76,9 +76,15 @@
                     @include flex-center;
                     transition: $base-transition;
 
-
                     .switchTitles {
                         text-transform: capitalize;
+                        margin-right: 10px;
+                    }
+
+                    .accordionArrowWrapper {
+                        width: 50px;
+                        display: flex;
+                        justify-content: flex-end;
                     }
                 }
             }

@@ -20,10 +20,14 @@ const currentLevel = document.querySelector("#currentLevel");
 const time = document.querySelector("#timer");
 const messageWrapper = document.querySelector("#messageWrapper");
 const message = document.querySelector("#message");
-const switchVisual = document.querySelector("#switchVisual");
+const switchRotateCard = document.querySelector("#switchRotateCard");
+const switchRotateCardText = document.querySelector("#switchRotateCardText");
 const switchSound = document.querySelector("#switchSound");
+const switchSoundText = document.querySelector("#switchSoundText");
 const switchTime = document.querySelector("#switchTime");
+const switchTimeText = document.querySelector("#switchTimeText");
 const switchTheme = document.querySelector("#switchTheme");
+const switchThemeText = document.querySelector("#switchThemeText");
 const startGameImage = document.querySelector("#startGameImage");
 const firstCardIndicator = document.querySelector("#firstCardIndicator");
 const secondCardIndicator = document.querySelector("#secondCardIndicator");
@@ -32,27 +36,11 @@ const red = "#FF7070";
 const green = "#B7E10F";
 let firstClick = true;
 let timerOnOff = true;
-//let rulesTrigger = true;
 let addTimeFromLevel = 0;
 let wrongGuesses = 0;
 let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
-
-/* function toggleRules() {
-    if (rulesTrigger) {
-        rulesTrigger = false;
-        pauseGame();
-        startGameImage.style.opacity = 0.2;
-        gameBoard.removeEventListener("click", boardStart);
-        startGameInput.removeEventListener("change", playPause);
-    } else {
-        rulesTrigger = true;
-        startGameImage.style.opacity = 1;
-        gameBoard.addEventListener("click", boardStart);
-        startGameInput.addEventListener("change", playPause);
-    }
-} */
 
 function boardStart() {
     !startGameInput.checked && firstClick ? playGame() : null;
@@ -238,22 +226,38 @@ function playSound() {
 
 function rotateOnOff() {
     cardWrapper.forEach((i) => {
-        switchVisual.checked
-            ? i.removeEventListener("click", rotateCard)
-            : i.addEventListener("click", rotateCard);
+       if(switchRotateCard.checked) {
+           i.removeEventListener("click", rotateCard);
+           switchRotateCardText.innerHTML = "off";
+       } else {
+           i.addEventListener("click", rotateCard);
+           switchRotateCardText.innerHTML = "on";
+       }
     });
 }
 
 function soundOnOff() {
     cardWrapper.forEach((i) => {
-        switchSound.checked
-            ? i.removeEventListener("click", playSound)
-            : i.addEventListener("click", playSound);
+        if(switchSound.checked) {
+            i.removeEventListener("click", playSound)
+            switchSoundText.innerHTML = "off";
+        } else {
+            i.addEventListener("click", playSound);
+            switchSoundText.innerHTML = "on";
+        }
     });
 }
 
 function timeOnOf() {
-    switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
+    if (switchTime.checked){
+        timerOnOff = false 
+        switchTimeText.innerHTML = "off";
+        time.style.opacity = '.25'
+    } else {
+        timerOnOff = true;
+        switchTimeText.innerHTML = "on";
+        time.style.opacity = '1'
+    }
 }
 
 function timer() {
@@ -281,10 +285,10 @@ function playGame() {
     startGameInput.checked = true;
     firstClick = false;
     runTime();
-    switchesEnable(switchVisual, switchSound, switchTime);
+    switchesEnable(switchRotateCard, switchSound, switchTime);
     switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
     cardWrapper.forEach((i) => {
-        switchVisual.checked
+        switchRotateCard.checked
             ? i.removeEventListener("click", rotateCard)
             : i.addEventListener("click", rotateCard);
         switchSound.checked
@@ -301,7 +305,7 @@ function pauseGame() {
         stopTime(),
         timerOnOff = false,
         firstClick = true,
-        switchesDisable(switchVisual, switchSound, switchTime),
+        switchesDisable(switchRotateCard, switchSound, switchTime),
         removeAllListeners()
     ]
 }
@@ -328,7 +332,7 @@ function reset() {
 }
 
 startGameInput.addEventListener("change", playPause);
-switchVisual.addEventListener("change", rotateOnOff);
+switchRotateCard.addEventListener("change", rotateOnOff);
 switchSound.addEventListener("change", soundOnOff);
 switchTime.addEventListener("change", timeOnOf);
 resetGame.addEventListener("click", reset);
@@ -350,7 +354,7 @@ function makeGame() {
     time.style.color = blue;
     startGameInput.disabled = false;
     startGameImage.classList.remove("addOpacity");
-    switchesDisable(switchVisual, switchSound, switchTime);
+    switchesDisable(switchRotateCard, switchSound, switchTime);
     pauseGame();
     nextLevel.addEventListener('click', setNextLevel);
     resetGame.addEventListener('click', reset);

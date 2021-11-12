@@ -1,14 +1,14 @@
-function switchesDisable(switchVisual, switchSound, switchTime) {
+function switchesDisable(switchRotateCard, switchSound, switchTime) {
     return [
-        switchVisual.disabled = true,
+        switchRotateCard.disabled = true,
         switchSound.disabled = true,
         switchTime.disabled = true,
     ]
 }
 
-function switchesEnable(switchVisual, switchSound, switchTime) {
+function switchesEnable(switchRotateCard, switchSound, switchTime) {
     return [
-        switchVisual.disabled = false,
+        switchRotateCard.disabled = false,
         switchSound.disabled = false,
         switchTime.disabled = false,
     ]
