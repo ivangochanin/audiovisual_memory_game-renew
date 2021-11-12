@@ -4,14 +4,7 @@ import './styles/style.scss';
 import dataTones from './data/data.js';
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import makeCards from './modules/cardBuilder.js';
-import {
-	animations,
-	showCardsAnimation,
-	bonusTimeAnimation,
-	winLoseMessage,
-	elementShow,
-	elementHide,
-} from './modules/animations.js';
+import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
 import theme from './modules/theme.js';
 import accordion from './modules/accordion.js';
 
@@ -27,9 +20,7 @@ const currentLevel = document.querySelector('#currentLevel');
 const time = document.querySelector('#timer');
 const messageWrapper = document.querySelector('#messageWrapper');
 const message = document.querySelector('#message');
-const radioInstrument = document.getElementsByName('radioInstrument');
-const radioMode = document.getElementsByName('radioMode');
-const radioFace = document.getElementsByName('radioFace');
+
 const switchRotateCard = document.querySelector('#switchRotateCard');
 const switchRotateCardText = document.querySelector('#switchRotateCardText');
 const switchSound = document.querySelector('#switchSound');
@@ -53,30 +44,7 @@ let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
 
-radioInstrument.forEach(i => {
-    i.addEventListener('click', function(){
-        if(i.checked) {
-            console.log('inst ch',radioInstrument[0].checked);
-            console.log(i.value);
-        }
-    })
-})
 
-radioMode.forEach(i => {
-    i.addEventListener('click', function(){
-        if(i.checked) {
-            console.log(i.value);
-        }
-    })
-})
-
-radioFace.forEach(i => {
-    i.addEventListener('click', function(){
-        if(i.checked) {
-            console.log(i.value);
-        }
-    })
-})
 
 function boardStart() {
 	!startGameInput.checked && firstClick ? playGame() : null;

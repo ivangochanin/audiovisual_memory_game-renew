@@ -15,13 +15,17 @@ for (let i = 0; i < accordionTrigger.length; i++) {
 		for (j = 0; j < accordionTrigger.length; j++) {
 			if (j !== i)
 				accordionTrigger[j].nextElementSibling.style.maxHeight = null;
-				accordionTrigger[j].childNodes[3].style.transform = null;
+				accordionTrigger[j].childNodes[3].childNodes[3].childNodes[1].style.transform = null;
 		}
 		let panel = this.nextElementSibling;
 		let panelArrow = this.childNodes[3].childNodes[3].childNodes[1];
-		panel.style.maxHeight
-			? (panel.style.maxHeight = null, panelArrow.style.transform = null)
-			: (panel.style.maxHeight = panel.scrollHeight + 'px', panelArrow.style.transform = "rotate(-180deg)");
+		if (panel.style.maxHeight){
+			panel.style.maxHeight = null; 
+			panelArrow.style.transform = null;
+		} else {
+			panel.style.maxHeight = panel.scrollHeight + 'px'; 
+			panelArrow.style.transform = "rotate(-180deg)";
+		}
 	});
 }
 

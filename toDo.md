@@ -2,7 +2,8 @@
 - gsap accordion
 - radio btns
 - full info section
-
+- count how many seconds finished game + wrong guesses
+- rules only white - no theme change
 
 ### ALL
 - add intervals, chords & rhythm

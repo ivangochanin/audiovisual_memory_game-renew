@@ -85,7 +85,7 @@
         position: relative;
         transform: scale(1);
         transform-style: preserve-3d;
-        transition: $base-transition;
+        transition: all ease-in-out .15s;
         margin: .1vw;
       }
 
@@ -101,11 +101,12 @@
         height: 100%;
         backface-visibility: hidden;
       }
-
+      
       .front {
         transform: rotateY(180deg);
+        border-radius: 3px;
       }
-
+      
       .cardWrapper.rotate {
         transform: perspective(600px) rotateY(180deg);
       }
