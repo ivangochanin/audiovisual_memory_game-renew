@@ -1,12 +1,7 @@
 # NEW
 - gsap accordion
-- switches
-- switch buttons (play, reset, win lose)
-- switch checkboxes
-- icons wrapper
+- radio btns
 - full info section
-
-
 
 
 ### ALL
