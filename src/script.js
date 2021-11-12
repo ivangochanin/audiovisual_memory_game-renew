@@ -32,13 +32,14 @@ const red = "#FF7070";
 const green = "#B7E10F";
 let firstClick = true;
 let timerOnOff = true;
-let rulesTrigger = true;
+//let rulesTrigger = true;
 let addTimeFromLevel = 0;
+let wrongGuesses = 0;
 let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
-function toggleRules() {
+/* function toggleRules() {
     if (rulesTrigger) {
         rulesTrigger = false;
         pauseGame();
@@ -51,7 +52,7 @@ function toggleRules() {
         gameBoard.addEventListener("click", boardStart);
         startGameInput.addEventListener("change", playPause);
     }
-}
+} */
 
 function boardStart() {
     !startGameInput.checked && firstClick ? playGame() : null;
@@ -67,31 +68,30 @@ function setLevel() {
     let dataTonesLevel2 = dataTones.filter((tone, index) => index < 13);
     let dataTonesLevel3 = dataTones.filter((tone, index) => index < 25);
     let dataTonesLevel4 = dataTones.filter((tone, index) => index < 37);
-
     switch (level) {
         case 1 :
             cardCounter = 16;
             dataPack = dataTonesLevel1.concat(dataTonesLevel1);
             seconds = 20;
-            Object.assign(gameBoard.style, {width: "400px", height: "auto", background: "black"});
+            gameBoard.style.width = "17vw";
             break;
         case 2 :
             cardCounter = 26;
             dataPack = dataTonesLevel2.concat(dataTonesLevel2);
             seconds = 30 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "600px", height: "auto", background: "black"});
+            gameBoard.style.width = "26vw";
             break;
         case 3 :
             cardCounter = 50;
             dataPack = dataTonesLevel3.concat(dataTonesLevel3);
             seconds = 40 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "760px", height: "auto", background: "black"});
+            gameBoard.style.width = "35vw";
             break;
         case 4 :
             cardCounter = 74;
             dataPack = dataTonesLevel4.concat(dataTonesLevel4);
             seconds = 50 + addTimeFromLevel;
-            Object.assign(gameBoard.style, {width: "50vw", height: "auto", background: "black"});
+            gameBoard.style.width = "42vw";
             break;
         default:
             cardCounter = 0;
@@ -168,6 +168,8 @@ function game() {
                 firstCard.classList.remove("rotate");
                 secondCard.classList.remove("rotate");
                 openedCards = 0;
+                wrongGuesses++;
+                /* console.log(wrongGuesses); */
                 continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
                 indicatorOff();
             }, 500);
@@ -202,14 +204,14 @@ function repeatLevel() {
 }
 function winGame() {
     winLose();
-    message.innerHTML = "Great Job!";
+    message.innerHTML = `Great Job! Your score is: ${seconds}, Wrong guesses: ${wrongGuesses}`;
     time.style.color = blue;
     addTimeFromLevel = seconds;
 }
 
 function loseGame() {
     winLose();
-    message.innerHTML = "More luck next time!";
+    message.innerHTML = `More luck next time! Your score is: ${seconds}, Wrong guesses: ${wrongGuesses}`;
 }
 
 function rotateCard() {
@@ -318,6 +320,7 @@ function playPause() {
 
 function reset() {
     cardCounter = 0;
+    wrongGuesses = 0;
     level = 1;
     cardSignal.style.opacity = 0;
     makeGame();
