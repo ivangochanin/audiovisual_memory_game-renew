@@ -43,7 +43,11 @@ let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
+const radioInputs = document.querySelectorAll('.radioInputs');
 
+radioInputs.forEach(i => {
+	i.addEventListener('click', makeGame)
+})
 
 
 function boardStart() {

@@ -1,7 +1,11 @@
 const radioInstrument = document.getElementsByName('radioInstrument');
 const radioMode = document.getElementsByName('radioMode');
 const radioFace = document.getElementsByName('radioFace');
-
+let panelInstrumentName = document.querySelector('#panelInstrumentName');
+let panelModeName = document.querySelector('#panelModeName');
+let panelCardFaceName = document.querySelector('#panelCardFaceName');
+let boardInfoModeName = document.querySelector('#boardInfoModeName');
+let boardInfoInstrumentName = document.querySelector('#boardInfoInstrumentName');
 let cardFace = 'symbol';
 let mode = 'interval';
 let instrument = 'rhodes';
@@ -11,6 +15,8 @@ radioInstrument.forEach(i => {
         if(i.checked) {
             console.log('inst ch',radioInstrument[0].checked);
             console.log(i.value);
+            panelInstrumentName.innerHTML = i.value;
+            boardInfoInstrumentName.innerHTML = i.value;
         }
     })
 })
@@ -19,6 +25,8 @@ radioMode.forEach(i => {
     i.addEventListener('click', function(){
         if(i.checked) {
             console.log(i.value);
+            panelModeName.innerHTML = i.value;
+            boardInfoModeName.innerHTML = i.value;
         }
     })
 })
@@ -27,6 +35,7 @@ radioFace.forEach(i => {
     i.addEventListener('click', function(){
         if(i.checked) {
             console.log(i.value);
+            panelCardFaceName.innerHTML = i.value;
         }
     })
 })

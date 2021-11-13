@@ -93,7 +93,7 @@
                             <span>Instrument</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">piano</span>
+                            <span id="panelInstrumentName" class="switchTitles font_light">piano</span>
                             <div class="accordionArrowWrapper">
                                 <img class="accordionArrow" src="./assets/icons/updown.png" alt="instrument arrow">
                             </div>
@@ -104,23 +104,16 @@
                             <div class="accordionCheckboxesWrapper font_light">
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioInstrument" value="piano" checked="checked">
+                                        <input class="radioInputs" type="radio" name="radioInstrument" value="piano" checked="checked">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Piano</span>
                                     </label>
                                 </div>
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioInstrument" value="rhodes">
+                                        <input class="radioInputs" type="radio" name="radioInstrument" value="rhodes">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Rhodes</span>
-                                    </label>
-                                </div>
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input type="radio" name="radioInstrument" value="harp">
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Harp</span>
                                     </label>
                                 </div>
                             </div>
@@ -135,7 +128,7 @@
                             <span>Mode</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">tone</span>
+                            <span id="panelModeName" class="switchTitles font_light">tone</span>
                             <div class="accordionArrowWrapper">
                                 <img class="accordionArrow" src="./assets/icons/updown.png" alt="mode arrow">
                             </div>
@@ -146,21 +139,21 @@
                             <div class="accordionCheckboxesWrapper font_light">
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioMode" value="tone" checked="checked">
+                                        <input class="radioInputs" type="radio" name="radioMode" value="tone" checked="checked">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Tone</span>
                                     </label>
                                 </div>
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioMode" value="interval">
+                                        <input class="radioInputs" type="radio" name="radioMode" value="interval">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Interval</span>
                                     </label>
                                 </div>
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioMode" value="chord">
+                                        <input class="radioInputs" type="radio" name="radioMode" value="chord">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Chord</span>
                                     </label>
@@ -177,7 +170,7 @@
                             <span>Card Face</span>
                         </div>
                         <div class="panelSectionsRight">
-                            <span class="switchTitles font_light">score</span>
+                            <span id="panelCardFaceName" class="switchTitles font_light">score</span>
                             <div class="accordionArrowWrapper">
                                 <img class="accordionArrow" src="./assets/icons/updown.png" alt="card face arrow">
                             </div>
@@ -188,14 +181,14 @@
                             <div class="accordionCheckboxesWrapper font_light">
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioFace" value="score" checked="checked">
+                                        <input class="radioInputs" type="radio" name="radioFace" value="score" checked="checked">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Score</span>
                                     </label>
                                 </div>
                                 <div class="radioSection">
                                     <label class="radioWrapper">
-                                        <input type="radio" name="radioFace" value="symbol">
+                                        <input class="radioInputs" type="radio" name="radioFace" value="symbol">
                                         <span class="customRadio"><span class="radioDot"></span></span>
                                         <span class="radioTitles">Symbol</span>
                                     </label>
@@ -309,11 +302,11 @@
                 </div>
                 <div class="boardInfoSections">
                     <p class="boardInfoTitles font_light">mode</p>
-                    <div id="mode" class="boardInfoParameters">interval</div>
+                    <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
                 </div>
                 <div class="boardInfoSections">
                     <p class="boardInfoTitles font_light">instrument</p>
-                    <div id="instrument" class="boardInfoParameters">Rhodes</div>
+                    <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
                 </div>
             </div>
 
