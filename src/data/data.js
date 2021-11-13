@@ -7,7 +7,7 @@ let panelCardFaceName = document.querySelector('#panelCardFaceName');
 let boardInfoModeName = document.querySelector('#boardInfoModeName');
 let boardInfoInstrumentName = document.querySelector('#boardInfoInstrumentName');
 let cardFace = 'symbol';
-let mode = 'interval';
+let mode = 'chord';
 let instrument = 'rhodes';
 
 radioInstrument.forEach(i => {
