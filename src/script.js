@@ -1,13 +1,11 @@
 import './styles/style.scss';
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
-
-import dataTones from './data/data.js';
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
 import theme from './modules/theme.js';
 import accordion from './modules/accordion.js';
-
+import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
 const cardSignal = document.querySelector('#cardSignal');
 const resetGame = document.querySelector('#resetGame');
@@ -20,7 +18,7 @@ const currentLevel = document.querySelector('#currentLevel');
 const time = document.querySelector('#timer');
 const messageWrapper = document.querySelector('#messageWrapper');
 const message = document.querySelector('#message');
-
+const radioInputs = document.querySelectorAll('.radioInputs');
 const switchRotateCard = document.querySelector('#switchRotateCard');
 const switchRotateCardText = document.querySelector('#switchRotateCardText');
 const switchSound = document.querySelector('#switchSound');
@@ -43,11 +41,10 @@ let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
-const radioInputs = document.querySelectorAll('.radioInputs');
 
-radioInputs.forEach(i => {
-	i.addEventListener('click', makeGame)
-})
+
+cardsData();
+
 
 
 function boardStart() {
@@ -60,10 +57,10 @@ function bonusTime() {
 }
 
 function setLevel() {
-	let dataTonesLevel1 = dataTones.filter((tone, index) => index < 8);
-	let dataTonesLevel2 = dataTones.filter((tone, index) => index < 13);
-	let dataTonesLevel3 = dataTones.filter((tone, index) => index < 25);
-	let dataTonesLevel4 = dataTones.filter((tone, index) => index < 37);
+	let dataTonesLevel1 = cardsData().filter((tone, index) => index < 8);
+	let dataTonesLevel2 = cardsData().filter((tone, index) => index < 13);
+	let dataTonesLevel3 = cardsData().filter((tone, index) => index < 25);
+	let dataTonesLevel4 = cardsData().filter((tone, index) => index < 37);
 	switch (level) {
 		case 1:
 			cardCounter = 16;
@@ -342,6 +339,9 @@ function reset() {
 	pauseGame();
 }
 
+radioInputs.forEach(i => {
+	i.addEventListener('click', makeGame)
+})
 startGameInput.addEventListener('change', playPause);
 switchRotateCard.addEventListener('change', rotateOnOff);
 switchSound.addEventListener('change', soundOnOff);
@@ -351,6 +351,7 @@ continueAfterWin.addEventListener('click', setNextLevel);
 resetAfterWin.addEventListener('click', reset);
 levelAfterWin.addEventListener('click', repeatLevel);
 switchTheme.addEventListener('change', theme);
+
 
 function makeGame() {
 	gameBoard.innerHTML = null;
