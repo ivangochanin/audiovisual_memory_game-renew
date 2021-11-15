@@ -18,6 +18,8 @@ const currentLevel = document.querySelector('#currentLevel');
 const time = document.querySelector('#timer');
 const messageWrapper = document.querySelector('#messageWrapper');
 const message = document.querySelector('#message');
+const messageAddedSeconds = document.querySelector('#messageAddedSeconds');
+const messageWrongGuesses = document.querySelector('#messageWrongGuesses');
 const radioInputs = document.querySelectorAll('.radioInputs');
 const switchRotateCard = document.querySelector('#switchRotateCard');
 const switchRotateCardText = document.querySelector('#switchRotateCardText');
@@ -201,14 +203,18 @@ function repeatLevel() {
 }
 function winGame() {
 	winLose();
-	message.innerHTML = `Great Job! Your score is: ${seconds}, Wrong guesses: ${wrongGuesses}`;
+	message.innerHTML = `Great Job!`;
+	messageAddedSeconds.innerHTML = `Added seconds to next level: ${seconds}`;
+	messageWrongGuesses.innerHTML = `Wrong guesses: ${wrongGuesses}`;
 	time.style.color = blue;
 	addTimeFromLevel = seconds;
 }
 
 function loseGame() {
 	winLose();
-	message.innerHTML = `More luck next time! Your score is: ${seconds}, Wrong guesses: ${wrongGuesses}`;
+	message.innerHTML = `More luck next time! `;
+	messageAddedSeconds.innerHTML = `Time is up!`;
+	messageWrongGuesses.innerHTML = `Wrong guesses: ${wrongGuesses}`;
 }
 
 function rotateCard() {
@@ -356,6 +362,7 @@ switchTheme.addEventListener('change', theme);
 function makeGame() {
 	gameBoard.innerHTML = null;
 	openedCards = 0;
+	wrongGuesses = 0;
 	indicatorOff();
 	elementHide(messageWrapper);
 	setLevel();
