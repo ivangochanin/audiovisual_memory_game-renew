@@ -1,10 +1,10 @@
 import './styles/style.scss';
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
+import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
 import theme from './modules/theme.js';
-import accordion from './modules/accordion.js';
 import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
 const cardSignal = document.querySelector('#cardSignal');
@@ -44,7 +44,7 @@ let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
 
-
+accordion();
 cardsData();
 
 
