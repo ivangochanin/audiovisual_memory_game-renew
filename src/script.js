@@ -28,7 +28,6 @@ const switchSoundText = document.querySelector('#switchSoundText');
 const switchTime = document.querySelector('#switchTime');
 const switchTimeText = document.querySelector('#switchTimeText');
 const switchTheme = document.querySelector('#switchTheme');
-const switchThemeText = document.querySelector('#switchThemeText');
 const startGameImage = document.querySelector('#startGameImage');
 const firstCardIndicator = document.querySelector('#firstCardIndicator');
 const secondCardIndicator = document.querySelector('#secondCardIndicator');
@@ -43,11 +42,8 @@ let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
-
 accordion();
 cardsData();
-
-
 
 function boardStart() {
 	!startGameInput.checked && firstClick ? playGame() : null;
@@ -348,6 +344,7 @@ function reset() {
 radioInputs.forEach(i => {
 	i.addEventListener('click', makeGame)
 })
+
 startGameInput.addEventListener('change', playPause);
 switchRotateCard.addEventListener('change', rotateOnOff);
 switchSound.addEventListener('change', soundOnOff);

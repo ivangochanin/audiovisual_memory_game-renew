@@ -18,7 +18,6 @@
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
 ### GAME
-- show wrong guesses
 - responsive design
 - test game
 
