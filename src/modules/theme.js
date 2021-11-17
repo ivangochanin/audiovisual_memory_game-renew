@@ -57,6 +57,3 @@ const theme = () => {
 }
 
 export default theme;
-
-
-var background="linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%)";

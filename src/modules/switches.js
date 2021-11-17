@@ -1,3 +1,4 @@
+/*
 function switchesDisable(switchRotateCard, switchSound, switchTime) {
     return [
         switchRotateCard.disabled = true,
@@ -15,3 +16,4 @@ function switchesEnable(switchRotateCard, switchSound, switchTime) {
 }
 
 export {switchesDisable, switchesEnable}
+*/

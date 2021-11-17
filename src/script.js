@@ -98,7 +98,7 @@ function setNextLevel() {
 		currentLevel.innerHTML = level;
 		cardCounter = 0;
 		makeGame();
-		cardSignal.style.opacity = 0;
+		cardSignal.style.opacity = '0';
 	} else {
 		addTimeFromLevel = 0;
 		reset();
@@ -181,8 +181,8 @@ function winLose() {
 	nextLevel.removeEventListener('click', setNextLevel);
 	resetGame.removeEventListener('click', reset);
 	gameBoard.removeEventListener('click', boardStart);
-	resetGame.style.opacity = 0.35;
-	nextLevel.style.opacity = 0.35;
+	resetGame.style.opacity = '0.35';
+	nextLevel.style.opacity = '0.35';
 	startGameInput.disabled = true;
 	startGameImage.classList.add('addOpacity');
 	winLoseMessage(
@@ -336,7 +336,7 @@ function reset() {
 	cardCounter = 0;
 	wrongGuesses = 0;
 	level = 1;
-	cardSignal.style.opacity = 0;
+	cardSignal.style.opacity = '0';
 	makeGame();
 	pauseGame();
 }
@@ -375,8 +375,8 @@ function makeGame() {
 	nextLevel.addEventListener('click', setNextLevel);
 	resetGame.addEventListener('click', reset);
 	gameBoard.addEventListener('click', boardStart);
-	nextLevel.style.opacity = 1;
-	resetGame.style.opacity = 1;
+	nextLevel.style.opacity = '1';
+	resetGame.style.opacity = '1';
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
 }
