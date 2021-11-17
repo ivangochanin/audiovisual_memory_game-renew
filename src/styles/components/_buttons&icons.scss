@@ -5,12 +5,12 @@
   height: 37px;
   border-radius: 50%;
   cursor: pointer;
-  background: #2D3037;
   transition: $base-transition;
   @include flex-center;
 
   &:hover {
     background: #232833;
+    opacity: .7;
   }
 
   &:active {
