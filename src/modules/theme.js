@@ -10,7 +10,6 @@ const theme = () => {
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switcherSlider = document.querySelectorAll('.switcherSlider');
-    const sliderInputs = document.querySelectorAll('.sliderInputs');
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -23,40 +22,45 @@ const theme = () => {
     const lightWrapper = '#6E6F71';
     const blueDark = '#31397E';
     const blueLight = '#0054E7';
-    const offDark = '#2D3037';
+    const darkOff = '#2D3037';
+    const lightOff = '#6E6F71';
 
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
-        setTimeout(() => {
-            backTheme.forEach(i => {
-                i.src = './assets/images/backB.svg';
-            })
-        }, 25);
-
-        Object.assign(container.style, {backgroundImage: containerDark});
-        sections.forEach(el => { Object.assign(el.style, {backgroundColor: dark})});
+        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
+        container.style.backgroundImage = containerDark;
+        sections.forEach(el => { el.style.backgroundColor = dark });
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: darkFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontUltralight", color: darkFont_thin})});
-        front.forEach(el => { Object.assign(el.style, {border: "1px solid #25286b"})});
-        iconWrapper.forEach(el => { Object.assign(el.style, {backgroundColor: darkWrapper})});
-        gameButtons.forEach(el => { Object.assign(el.style, {backgroundColor: darkWrapper})});
-        /* switcherSlider.forEach(el => { Object.assign(el.style, {backgroundColor: blueDark})}); */
-
+        front.forEach(el => { el.style.border = "1px solid #25286b" });
+        iconWrapper.forEach(el => { el.style.backgroundColor = darkWrapper });
+        gameButtons.forEach(el => { el.style.backgroundColor = darkWrapper });
+        switcherSlider.forEach(el => { 
+            el.previousElementSibling.checked ? el.style.backgroundColor = darkOff : el.style.backgroundColor = blueDark
+        });
+        switcherSlider.forEach(i => { 
+                i.addEventListener('click', function(){
+                    this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = darkOff
+                });
+        })
     } else {
         switchThemeText.innerHTML = "Light";
-        setTimeout(() => {
-            backTheme.forEach(i => {
-                i.src = './assets/images/backW.svg';
-            })
-        }, 25);
-        Object.assign(container.style, {backgroundImage: containerLight});
-        sections.forEach(el => { Object.assign(el.style, {backgroundColor: light})});
+        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
+        container.style.backgroundImage = containerLight;
+        sections.forEach(el => { el.style.backgroundColor = light });
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontLight", color: lightFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: lightFont_thin})});
-        front.forEach(el => { Object.assign(el.style, {border: "1px solid #0054E7"})});
-        iconWrapper.forEach(el => { Object.assign(el.style, {backgroundColor: lightWrapper})});
-        gameButtons.forEach(el => { Object.assign(el.style, {backgroundColor: lightWrapper})});
-        /* switcherSlider.forEach(el => { Object.assign(el.style, {backgroundColor: blueLight})}); */
+        front.forEach(el => { el.style.border = "1px solid #0054E7" });
+        iconWrapper.forEach(el => { el.style.backgroundColor = lightWrapper });
+        gameButtons.forEach(el => { el.style.backgroundColor = lightWrapper });
+        switcherSlider.forEach(el => { 
+          el.previousElementSibling.checked ? el.style.backgroundColor = lightOff : el.style.backgroundColor = blueLight
+        });
+        switcherSlider.forEach(i => { 
+            i.addEventListener('click', function(){
+                this.previousElementSibling.checked ? this.style.backgroundColor = blueLight : this.style.backgroundColor = lightOff 
+            });
+        })
     }
 }
 
