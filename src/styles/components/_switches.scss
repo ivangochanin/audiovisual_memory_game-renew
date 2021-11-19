@@ -23,7 +23,17 @@
     align-items: center;
   }
 
-  .switcherSlider:before {
+  .switchDots {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* background: #1D1F28; */
+    right: 5px;
+    transition: $base-transition;
+    border-radius: 50%;
+  }
+
+  /* .switcherSlider:before {
     position: absolute;
     content: "";
     width: 20px;
@@ -32,7 +42,7 @@
     right: 5px;
     transition: $base-transition;
     border-radius: 50%;
-  }
+  } */
 
   input {
     position: absolute;
@@ -40,13 +50,13 @@
     left: 10px;
     display: none;
 
-    &:checked+.switcherSlider {
+    /* &:checked+.switcherSlider {
       background: #2D3037;
-    }
+    } */
 
-    &:checked+.switcherSlider:before {
+    /* &:checked+.switchDots {
       transform: translateX(-20px);
-    }
+    } */
   }
 }
 

@@ -1,3 +1,4 @@
+import gsap from "gsap";
 const theme = () => {
     const backTheme = document.querySelectorAll('.back')
     const container = document.querySelector('#container');
@@ -10,6 +11,7 @@ const theme = () => {
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switcherSlider = document.querySelectorAll('.switcherSlider');
+    const switchDots = document.querySelectorAll('.switchDots');
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -40,9 +42,19 @@ const theme = () => {
         });
         switcherSlider.forEach(i => { 
                 i.addEventListener('click', function(){
-                    this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = darkOff
+                    if(this.previousElementSibling.checked){ 
+                        this.style.backgroundColor = blueDark
+                     gsap.to(this.childNodes[1], {duration: .025, translateX: 0});
+
+                     } else {
+                         this.style.backgroundColor = darkOff
+                        gsap.to(this.childNodes[1], {duration: .025, translateX: -20});
+
+                     }
                 });
         })
+        switchDots.forEach(el => { el.style.backgroundColor = dark})
+
     } else {
         switchThemeText.innerHTML = "Light";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
@@ -58,9 +70,16 @@ const theme = () => {
         });
         switcherSlider.forEach(i => { 
             i.addEventListener('click', function(){
-                this.previousElementSibling.checked ? this.style.backgroundColor = blueLight : this.style.backgroundColor = lightOff 
+                if(this.previousElementSibling.checked) {
+                     this.style.backgroundColor = blueLight
+                     gsap.to(this.childNodes[1], {duration: .025, translateX: 0});
+                    } else { 
+                        this.style.backgroundColor = lightOff
+                        gsap.to(this.childNodes[1], {duration: .025, translateX: -20});
+                    } 
             });
         })
+        switchDots.forEach(el => { el.style.backgroundColor = light})
     }
 }
 
