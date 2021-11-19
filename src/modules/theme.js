@@ -10,6 +10,7 @@ const theme = () => {
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switcherSlider = document.querySelectorAll('.switcherSlider');
+    const accordionArrow = document.querySelectorAll('.accordionArrow');
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -28,6 +29,7 @@ const theme = () => {
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
+        setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownDark.png'})}, 25);
         container.style.backgroundImage = containerDark;
         sections.forEach(el => { el.style.backgroundColor = dark });
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: darkFont_default})});
@@ -39,21 +41,17 @@ const theme = () => {
             el.previousElementSibling.checked ? el.style.backgroundColor = darkOff : el.style.backgroundColor = blueDark
         });
         switcherSlider.forEach(el => { 
-            // Pseudo-elements with Javascript Using Custom Properties - .switcherSlider:before 
-            // https://css-irl.info/quick-tip-style-pseudo-elements-with-javascript-using-custom-properties/
+            // .switcherSlider:before - https://css-irl.info/quick-tip-style-pseudo-elements-with-javascript-using-custom-properties/
             el.style.setProperty('--background', '#1D1F28'); 
-                el.addEventListener('click', function(){
-                    if(this.previousElementSibling.checked){ 
-                        this.style.backgroundColor = blueDark
-                     } else {
-                        this.style.backgroundColor = darkOff
-                     }
+                el.addEventListener('click', function () { 
+                    this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = darkOff
                 });
         });
        
     } else {
         switchThemeText.innerHTML = "Light";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
+        setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownLight.png'})}, 25);
         container.style.backgroundImage = containerLight;
         sections.forEach(el => { el.style.backgroundColor = light });
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontLight", color: lightFont_default})});
@@ -67,11 +65,7 @@ const theme = () => {
         switcherSlider.forEach(el => { 
             el.style.setProperty('--background', '#FFFFFF'); 
             el.addEventListener('click', function(){
-                if(this.previousElementSibling.checked) {
-                    this.style.backgroundColor = blueLight
-                    } else { 
-                    this.style.backgroundColor = lightOff
-                } 
+                this.previousElementSibling.checked ? this.style.backgroundColor = blueLight : this.style.backgroundColor = lightOff
             });
         })
     }
