@@ -23,17 +23,7 @@
     align-items: center;
   }
 
-  .switchDots {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    /* background: #1D1F28; */
-    right: 5px;
-    transition: $base-transition;
-    border-radius: 50%;
-  }
-
-  /* .switcherSlider:before {
+  .switcherSlider:before {
     position: absolute;
     content: "";
     width: 20px;
@@ -42,7 +32,7 @@
     right: 5px;
     transition: $base-transition;
     border-radius: 50%;
-  } */
+  }
 
   input {
     position: absolute;
@@ -54,9 +44,9 @@
       background: #2D3037;
     } */
 
-    /* &:checked+.switchDots {
+    &:checked+.switcherSlider:before {
       transform: translateX(-20px);
-    } */
+    }
   }
 }
 

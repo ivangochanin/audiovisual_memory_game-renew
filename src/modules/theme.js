@@ -10,7 +10,6 @@ const theme = () => {
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switcherSlider = document.querySelectorAll('.switcherSlider');
-    const switchDots = document.querySelectorAll('.switchDots');
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -36,7 +35,6 @@ const theme = () => {
         front.forEach(el => { el.style.border = "1px solid #25286b" });
         iconWrapper.forEach(el => { el.style.backgroundColor = darkWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = darkWrapper });
-        switchDots.forEach(el => { el.style.backgroundColor = dark});
         switcherSlider.forEach(el => { 
             el.previousElementSibling.checked ? el.style.backgroundColor = darkOff : el.style.backgroundColor = blueDark
         });
@@ -44,13 +42,12 @@ const theme = () => {
                 i.addEventListener('click', function(){
                     if(this.previousElementSibling.checked){ 
                         this.style.backgroundColor = blueDark
-                        this.childNodes[1].style.transform = "translateX(0px)";
                      } else {
                         this.style.backgroundColor = darkOff
-                        this.childNodes[1].style.transform = "translateX(-20px)";
                      }
                 });
         });
+ 
 
     } else {
         switchThemeText.innerHTML = "Light";
@@ -62,19 +59,15 @@ const theme = () => {
         front.forEach(el => { el.style.border = "1px solid #0054E7" });
         iconWrapper.forEach(el => { el.style.backgroundColor = lightWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = lightWrapper });
-        switchDots.forEach(el => { el.style.backgroundColor = light})
         switcherSlider.forEach(el => { 
             el.previousElementSibling.checked ? el.style.backgroundColor = lightOff : el.style.backgroundColor = blueLight
         });
         switcherSlider.forEach(i => { 
             i.addEventListener('click', function(){
-                
                 if(this.previousElementSibling.checked) {
                     this.style.backgroundColor = blueLight
-                    this.childNodes[1].style.transform = "translateX(0px)";
                     } else { 
                     this.style.backgroundColor = lightOff
-                    this.childNodes[1].style.transform = "translateX(-20px)";
                 } 
             });
         })
