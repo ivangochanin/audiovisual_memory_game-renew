@@ -1,20 +1,16 @@
 # NEW
-- gsap accordion
-- radio btns
 - full info section
 - count how many seconds finished game + wrong guesses
 - rules only white - no theme change
-- board info push elements on change instruments and mode
+- board info push other elements left/right on change instruments, face and mode
+- next level icon 4 light theme
 
 ### ALL
-- add intervals, chords & rhythm
-- add harp and rhodes sounds
 - add bet card background
 - rules - describe all settings possibilities
 
 ### SWITCHES
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
-- add text indicator: full mode, sound mode, visual mode, bet mode
 - send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
 ### GAME

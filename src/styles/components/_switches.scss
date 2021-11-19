@@ -40,10 +40,6 @@
     left: 10px;
     display: none;
 
-    /* &:checked+.switcherSlider {
-      background: #2D3037;
-    } */
-
     &:checked+.switcherSlider:before {
       transform: translateX(-20px);
     }
@@ -69,9 +65,9 @@
       left: 4px;
       display: none;
 
-      &:checked~.customRadio {
+      /* &:checked~.customRadio {
         background: $blue;
-      }
+      } */
       &:checked~.customRadio::before {
         content: "";
         width: 8px;
@@ -84,7 +80,7 @@
     .customRadio {
       height: 22px;
       width: 22px;
-      background: #505258;
+      /* background: #505258; */
       border-radius: 50%;
       @include flex-center;
     }
