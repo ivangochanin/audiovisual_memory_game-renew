@@ -1,4 +1,3 @@
-import gsap from "gsap";
 const theme = () => {
     const backTheme = document.querySelectorAll('.back')
     const container = document.querySelector('#container');
@@ -37,6 +36,7 @@ const theme = () => {
         front.forEach(el => { el.style.border = "1px solid #25286b" });
         iconWrapper.forEach(el => { el.style.backgroundColor = darkWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = darkWrapper });
+        switchDots.forEach(el => { el.style.backgroundColor = dark});
         switcherSlider.forEach(el => { 
             el.previousElementSibling.checked ? el.style.backgroundColor = darkOff : el.style.backgroundColor = blueDark
         });
@@ -44,16 +44,13 @@ const theme = () => {
                 i.addEventListener('click', function(){
                     if(this.previousElementSibling.checked){ 
                         this.style.backgroundColor = blueDark
-                     gsap.to(this.childNodes[1], {duration: .025, translateX: 0});
-
+                        this.childNodes[1].style.transform = "translateX(0px)";
                      } else {
-                         this.style.backgroundColor = darkOff
-                        gsap.to(this.childNodes[1], {duration: .025, translateX: -20});
-
+                        this.style.backgroundColor = darkOff
+                        this.childNodes[1].style.transform = "translateX(-20px)";
                      }
                 });
-        })
-        switchDots.forEach(el => { el.style.backgroundColor = dark})
+        });
 
     } else {
         switchThemeText.innerHTML = "Light";
@@ -65,21 +62,22 @@ const theme = () => {
         front.forEach(el => { el.style.border = "1px solid #0054E7" });
         iconWrapper.forEach(el => { el.style.backgroundColor = lightWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = lightWrapper });
+        switchDots.forEach(el => { el.style.backgroundColor = light})
         switcherSlider.forEach(el => { 
-          el.previousElementSibling.checked ? el.style.backgroundColor = lightOff : el.style.backgroundColor = blueLight
+            el.previousElementSibling.checked ? el.style.backgroundColor = lightOff : el.style.backgroundColor = blueLight
         });
         switcherSlider.forEach(i => { 
             i.addEventListener('click', function(){
+                
                 if(this.previousElementSibling.checked) {
-                     this.style.backgroundColor = blueLight
-                     gsap.to(this.childNodes[1], {duration: .025, translateX: 0});
+                    this.style.backgroundColor = blueLight
+                    this.childNodes[1].style.transform = "translateX(0px)";
                     } else { 
-                        this.style.backgroundColor = lightOff
-                        gsap.to(this.childNodes[1], {duration: .025, translateX: -20});
-                    } 
+                    this.style.backgroundColor = lightOff
+                    this.childNodes[1].style.transform = "translateX(-20px)";
+                } 
             });
         })
-        switchDots.forEach(el => { el.style.backgroundColor = light})
     }
 }
 
