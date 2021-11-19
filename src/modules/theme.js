@@ -38,8 +38,11 @@ const theme = () => {
         switcherSlider.forEach(el => { 
             el.previousElementSibling.checked ? el.style.backgroundColor = darkOff : el.style.backgroundColor = blueDark
         });
-        switcherSlider.forEach(i => { 
-                i.addEventListener('click', function(){
+        switcherSlider.forEach(el => { 
+            // Pseudo-elements with Javascript Using Custom Properties - .switcherSlider:before 
+            // https://css-irl.info/quick-tip-style-pseudo-elements-with-javascript-using-custom-properties/
+            el.style.setProperty('--background', '#1D1F28'); 
+                el.addEventListener('click', function(){
                     if(this.previousElementSibling.checked){ 
                         this.style.backgroundColor = blueDark
                      } else {
@@ -47,8 +50,7 @@ const theme = () => {
                      }
                 });
         });
- 
-
+       
     } else {
         switchThemeText.innerHTML = "Light";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
@@ -62,8 +64,9 @@ const theme = () => {
         switcherSlider.forEach(el => { 
             el.previousElementSibling.checked ? el.style.backgroundColor = lightOff : el.style.backgroundColor = blueLight
         });
-        switcherSlider.forEach(i => { 
-            i.addEventListener('click', function(){
+        switcherSlider.forEach(el => { 
+            el.style.setProperty('--background', '#FFFFFF'); 
+            el.addEventListener('click', function(){
                 if(this.previousElementSibling.checked) {
                     this.style.backgroundColor = blueLight
                     } else { 
