@@ -17,6 +17,25 @@
 - responsive design
 - test game
 
+### THEME
+- DRY -> find solution: 
+const radioInputs = document.querySelectorAll('.radioInputs');
+  radioInputs.forEach(i => { 
+      i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
+      i.addEventListener('change', function() {
+        console.log('this',this.name);
+        if(this.checked) {
+            //let arr = Array.from(this.name)
+            this.name.forEach(i => { 
+                console.log('inside',i);
+                i.nextElementSibling.style.backgroundColor = grayDark
+            }); 
+            this.nextElementSibling.style.backgroundColor = blueDark;
+        } 
+    })
+}) 
+
+
 #### ACA
 *Remove all possible css from js into css - theme colors ...*
 
