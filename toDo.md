@@ -1,13 +1,13 @@
 # NEW
+- rules - describe all settings possibilities
 - full info section
 - count how many seconds finished game + wrong guesses
-- rules only white - no theme change
+- rules - no theme change
 - board info push other elements left/right on change instruments, face and mode
 - next level icon 4 light theme
 
 ### ALL
 - add bet card background
-- rules - describe all settings possibilities
 
 ### SWITCHES
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode

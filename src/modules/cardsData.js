@@ -47,7 +47,6 @@ const setCardFace = () => {
     })
 }
 
-
 const cardsData = () => {
     setInstrument();
     setMode();

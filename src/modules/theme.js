@@ -10,7 +10,9 @@ const theme = () => {
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const gameButtons = document.querySelectorAll('.gameButtons');
     const switcherSlider = document.querySelectorAll('.switcherSlider');
-    const customRadio = document.querySelectorAll('.customRadio');
+    const radioInstrument = document.getElementsByName('radioInstrument');
+    const radioMode = document.getElementsByName('radioMode');
+    const radioFace = document.getElementsByName('radioFace');
     const accordionArrow = document.querySelectorAll('.accordionArrow');
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
@@ -45,14 +47,43 @@ const theme = () => {
                 el.addEventListener('click', function () { 
                     this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = grayDark
                 });
-        });
-        customRadio.forEach(el => { 
-            el.previousElementSibling.checked ? el.style.backgroundColor = blueDark : el.style.backgroundColor = grayDark;
-            el.previousElementSibling.addEventListener('change', function () { 
-                this.checked ? this.nextElementSibling.style.backgroundColor = blueDark : this.nextElementSibling.style.backgroundColor = grayDark;
             });
-        })
-       
+
+            radioInstrument.forEach(i => { 
+                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
+                i.addEventListener('change', function() {
+                    if(this.checked) {
+                        radioInstrument.forEach(i => { 
+                            i.nextElementSibling.style.backgroundColor = grayDark
+                        }); 
+                        this.nextElementSibling.style.backgroundColor = blueDark;
+                    } 
+                })
+            })
+            radioMode.forEach(i => { 
+                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
+                i.addEventListener('change', function() {
+                    if(this.checked) {
+                        radioMode.forEach(i => { 
+                            i.nextElementSibling.style.backgroundColor = grayDark
+                        }); 
+                        this.nextElementSibling.style.backgroundColor = blueDark;
+                    } 
+                })
+            })
+            radioFace.forEach(i => { 
+                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
+                i.addEventListener('change', function() {
+                    if(this.checked) {
+                        radioFace.forEach(i => { 
+                            i.nextElementSibling.style.backgroundColor = grayDark
+                        }); 
+                        this.nextElementSibling.style.backgroundColor = blueDark;
+                    } 
+                })
+            })
+
+
     } else {
         switchThemeText.innerHTML = "Light";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
@@ -71,12 +102,40 @@ const theme = () => {
                 this.previousElementSibling.checked ? this.style.backgroundColor = blueLight : this.style.backgroundColor = grayLight
             });
         })
-        customRadio.forEach(el => { 
-            el.previousElementSibling.checked ? el.style.backgroundColor = blueLight : el.style.backgroundColor = grayLight;
-            el.previousElementSibling.addEventListener('change', function () { 
-                this.checked ? this.nextElementSibling.style.backgroundColor = blueLight : this.nextElementSibling.style.backgroundColor = grayLight;
-            });
+        radioInstrument.forEach(i => { 
+            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
+            i.addEventListener('change', function() {
+                if(this.checked) {
+                    radioInstrument.forEach(i => { 
+                        i.nextElementSibling.style.backgroundColor = grayLight;
+                    }); 
+                    this.nextElementSibling.style.backgroundColor = blueLight;
+                } 
+            })
         })
+        radioMode.forEach(i => { 
+            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
+            i.addEventListener('change', function() {
+                if(this.checked) {
+                    radioMode.forEach(i => { 
+                        i.nextElementSibling.style.backgroundColor = grayLight;
+                    }); 
+                    this.nextElementSibling.style.backgroundColor = blueLight;
+                } 
+            })
+        })
+        radioFace.forEach(i => { 
+            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
+            i.addEventListener('change', function() {
+                if(this.checked) {
+                    radioFace.forEach(i => { 
+                        i.nextElementSibling.style.backgroundColor = grayLight;
+                    }); 
+                    this.nextElementSibling.style.backgroundColor = blueLight;
+                } 
+            })
+        })
+
     }
 }
 
