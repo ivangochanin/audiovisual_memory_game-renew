@@ -118,10 +118,13 @@ function randomOrder() {
 }
 
 function indicatorOff() {
-	return [
-		(firstCardIndicator.style.background = ''),
-		(secondCardIndicator.style.background = ''),
-	];
+	if (!switchTheme.checked) {
+		firstCardIndicator.style.background = '#505258';
+		secondCardIndicator.style.background = '#505258';
+	} else {
+		firstCardIndicator.style.background = '#c7c8c9';
+		secondCardIndicator.style.background = '#c7c8c9';
+	}
 }
 
 function game() {

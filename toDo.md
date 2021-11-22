@@ -1,21 +1,15 @@
-# NEW
-- rules - describe all settings possibilities
-- full info section
-- count how many seconds finished game + wrong guesses
-- rules - no theme change
-- board info push other elements left/right on change instruments, face and mode
-- next level icon 4 light theme
-
 ### ALL
-- add bet card background
-
-### SWITCHES
+- board info push other elements left/right on change instruments, face and mode
+- all animations renew
+- initial loading
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
-- send switched(all buttons as an object) to sessionStorage - enable load next level with preview user settings(theme)
 
-### GAME
-- responsive design
-- test game
+### RULES
+- describe all settings possibilities
+- no theme change
+
+### RESPONSIVE
+- turn off score on mobile devices
 
 ### THEME
 - DRY -> find solution: 
@@ -45,3 +39,4 @@ const radioInputs = document.querySelectorAll('.radioInputs');
   will work or not.
 
 
+### TEST GAME

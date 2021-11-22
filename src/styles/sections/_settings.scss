@@ -22,16 +22,15 @@
         -ms-overflow-style: none;
         /* IE and Edge */
         scrollbar-width: none;
-
         /* Firefox */
         &::-webkit-scrollbar {
             display: none;
         }
+        padding-top: 2px;
 
         .panel {
             padding-bottom: 2.5vh;
             transition: $base-transition;
-
            /*  &:hover {
                 opacity: .75;
             } */
