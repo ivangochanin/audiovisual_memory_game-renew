@@ -6,7 +6,8 @@ const theme = () => {
     const messageWrapper = document.querySelector('#messageWrapper');
     const switchTheme = document.querySelector('#switchTheme');
     const switchThemeText = document.querySelector('#switchThemeText');
-    const backTheme = document.querySelectorAll('.back')
+    const backTheme = document.querySelectorAll('.back');
+    const helpWrapper = document.querySelector('#helpWrapper');
     const iconWrapper = document.querySelectorAll('.iconWrapper');
     const indicators = document.querySelectorAll('.indicators');
     const gameButtons = document.querySelectorAll('.gameButtons');
@@ -30,7 +31,10 @@ const theme = () => {
     const blueLight = '#0054E7';
     const grayDark = '#505258';
     const grayLight = '#c7c8c9';
+    const helperDark = '#EEEEEE';
 
+
+ 
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
@@ -40,9 +44,10 @@ const theme = () => {
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontUltralight", color: darkFont_thin})});
         container.style.backgroundImage = containerDark;
         sections.forEach(el => { el.style.backgroundColor = dark });
+        helpWrapper.style.backgroundColor = helperDark;
         messageWrapper.style.backgroundColor = dark;
         iconWrapper.forEach(el => { el.style.backgroundColor = darkWrapper });
-        gameButtons.forEach(el => { el.style.backgroundColor = darkWrapper });
+        gameButtons.forEach(el => { el.style.backgroundColor = blueDark});
         indicators.forEach(el => { el.style.backgroundColor = grayDark });
 
         switcherSlider.forEach(el => { 
@@ -98,9 +103,10 @@ const theme = () => {
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: lightFont_thin})});
         container.style.backgroundImage = containerLight;
         sections.forEach(el => { el.style.backgroundColor = light });
+        helpWrapper.style.backgroundColor = light;
         messageWrapper.style.backgroundColor = light;
         iconWrapper.forEach(el => { el.style.backgroundColor = lightWrapper });
-        gameButtons.forEach(el => { el.style.backgroundColor = lightWrapper });
+        gameButtons.forEach(el => { el.style.backgroundColor = blueLight});
         indicators.forEach(el => { el.style.backgroundColor = grayLight });
 
         switcherSlider.forEach(el => { 

@@ -6,7 +6,7 @@
   width: 50px;
   height: 24px;
   background: transparent;
-  
+
 
   .switcherSlider {
     border-radius: 50px;
@@ -59,6 +59,11 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: $base-transition;
+
+    &:hover {
+      opacity: .7;
+    }
 
     input {
       position: absolute;

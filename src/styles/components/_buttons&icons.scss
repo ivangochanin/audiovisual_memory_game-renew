@@ -9,13 +9,8 @@
   @include flex-center;
 
   &:hover {
-    background: #232833;
     opacity: .7;
-  }
-
-  &:active {
-    background: #2b3344;
-    transition: transform ease-in-out .05s;
+    background-color: red;
   }
 }
 /* ----------------------------------------------------------------- START GAME BUTTON -----------------------------------------------------------------*/

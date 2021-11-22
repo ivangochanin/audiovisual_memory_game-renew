@@ -13,7 +13,7 @@
       @include flex-center;
       
       .boardInfoTitles {
-        margin-right: 10px;
+        margin-right: 5px;
         font-size: 1.6rem;
         text-transform: capitalize;
       }
@@ -21,7 +21,8 @@
       .boardInfoParameters {
         font-size: 1.8rem;
         text-transform: capitalize;
-        min-width: 20px;
+        width: 60px;
+        /* background: red; */
         #timer {
           font-family: fontMedium, serif;
           display: flex;
@@ -86,10 +87,11 @@
         transform-style: preserve-3d;
         transition: all ease-in-out .15s;
         margin: .1vw;
+        
       }
 
       .cardWrapper:active {
-        transform: scale(0.9);
+        transform: scale(0.975);
         transition: $base-transition;
       }
 
@@ -99,6 +101,7 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
+        
       }
       
       .front {
@@ -106,7 +109,7 @@
         border-radius: 6px;
         border: 1px solid #0054E7;
       }
-      
+   
       .cardWrapper.rotate {
         transform: perspective(600px) rotateY(180deg);
       }
@@ -154,7 +157,7 @@
       @include flex-center;
       flex-direction: column;
       font-size: 1.4rem;
-
+      
       button {
         margin-top: 1rem;
       }

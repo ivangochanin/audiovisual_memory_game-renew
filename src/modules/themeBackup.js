@@ -13,8 +13,8 @@ const theme = () => {
     const continueAfterWin = document.querySelector("#continueAfterWin");
     const resetAfterWin = document.querySelector("#resetAfterWin");
     const levelAfterWin = document.querySelector('#levelAfterWin');
-    const darkBorder = '0.5px solid #1A1A1B';
-    const lightBorder = '0.5px solid #FFFFFF';
+    const darkBorder = '5px solid #1A1A1B';
+    const lightBorder = '5px solid #FFFFFF';
     const containerDark = '#6B69D1'; // linear gradient inside variable ? linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%);
     const containerLight = '#EEEEEE';
     const dark = '#1D1F28';

@@ -1,12 +1,12 @@
-### ALL
-- board info push other elements left/right on change instruments, face and mode
-- all animations renew
-- initial loading
-- disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
-
 ### RULES
 - describe all settings possibilities
 - no theme change
+
+### ALL
+- buttons hover
+- animations timing renew
+- initial loading
+- disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 
 ### RESPONSIVE
 - turn off score on mobile devices
@@ -38,5 +38,6 @@ const radioInputs = document.querySelectorAll('.radioInputs');
   you need to add and remove listener. Just ask inside func it some true/false then listener
   will work or not.
 
+### README
 
 ### TEST GAME
