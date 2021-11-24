@@ -2,6 +2,22 @@
 - icons - same width
 - Add iGo logo - link to github game
 
+### BOARD INFO
+`Div 1` 
+- Play
+- SMG Title - desktop *hide*  
+- Settings btn - desktop *hide*
+
+`Div 2`
+- Level - mobile `icon`
+- Time - mobile `icon`
+- indicator
+
+`Div 3`
+- Instrument - mobile `text` 50%
+- Mode - mobile `text` 50%
+- Face - mobile *hide*
+
 ### RULES
 - describe all settings possibilities
 - score(face) on mobile devices - explanation

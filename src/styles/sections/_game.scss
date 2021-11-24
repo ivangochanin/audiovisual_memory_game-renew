@@ -3,27 +3,52 @@
 #gameWrapperSection {
   #boardInfoWrapper {
     width: 100%;
-    height: 5%;
+    /* height: 5%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     //background: red;
-    
+
     .boardInfoSections {
       height: 100%;
       @include flex-center;
-      
+
+      .infoSectionSettingsIcons {
+        display: none;
+
+        @include respond(laptop) {
+          display: block;
+          @include flex-center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 5px;
+          transition: $base-transition;
+          img {
+            width: 55%;
+          }
+        }
+      }
+
       .boardInfoTitles {
+        display: block;
         margin-right: 5px;
         font-size: 1.6rem;
         text-transform: capitalize;
+
+        @include respond(laptop) {
+          display: none;
+        }
       }
 
       .boardInfoParameters {
         font-size: 1.8rem;
         text-transform: capitalize;
         width: 60px;
-        /* background: red; */
+        @include respond(laptop) {
+          font-size: 1.5rem;
+          width: auto;
+        }
         #timer {
           font-family: fontMedium, serif;
           display: flex;
@@ -31,6 +56,9 @@
           align-items: center;
           min-width: 40px;
           height: 3rem;
+          @include respond(laptop) {
+            min-width: auto;
+          }
         }
       }
 
@@ -39,16 +67,19 @@
         width: 70px;
         display: flex;
         justify-content: space-around;
-  
+        @include respond(laptop) {
+          width: 50px;
+        }
         .indicatorWrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flex-center;
           width: 25px;
           height: 25px;
           border-radius: 50%;
           transition: $base-transition;
-
+          @include respond(laptop) {
+            width: 20px;
+          height: 20px;
+          }
           #firstCardIndicator,
           #secondCardIndicator {
             width: 100%;
@@ -56,21 +87,23 @@
             border-radius: 50%;
           }
         }
-      } 
-      
+      }
+
     }
+
     #boardInfoSectionsSwitchButton {
       display: none;
+
       @include respond(laptop) {
         display: block;
       }
     }
   }
 
-/* ------------------------------------------------------------------ BOARD GAME ------------------------------------------------------------------*/
+  /* ------------------------------------------------------------------ BOARD GAME ------------------------------------------------------------------*/
 
   #boardGameWrapper {
-   // background: rgb(29, 36, 54);
+    // background: rgb(29, 36, 54);
     width: 100%;
     height: 95%;
     @include flex-center;
@@ -81,8 +114,8 @@
       flex-wrap: wrap;
       height: auto;
       background: black;
-      
-      
+
+
       .cardWrapper {
         opacity: 0;
         /* flex-basis: calc(25% - .2vw); */
@@ -95,13 +128,15 @@
         transform-style: preserve-3d;
         transition: all ease-in-out .15s;
         margin: .1vw;
+
         @include respond(laptop-big) {
           width: 6rem;
-        height: 6rem;
+          height: 6rem;
         }
+
         @include respond(laptop) {
           width: 4.25rem;
-        height: 4.25rem;
+          height: 4.25rem;
         }
       }
 
@@ -116,15 +151,15 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-        
+
       }
-      
+
       .front {
         transform: rotateY(180deg);
         border-radius: 6px;
         border: 1px solid #0054E7;
       }
-   
+
       .cardWrapper.rotate {
         transform: perspective(600px) rotateY(180deg);
       }
@@ -156,6 +191,7 @@
     line-height: 8rem;
 
   }
+
   .messages {
     text-align: center;
     font-size: 2rem;
@@ -172,7 +208,7 @@
       @include flex-center;
       flex-direction: column;
       font-size: 1.4rem;
-      
+
       button {
         margin-top: 1rem;
       }
