@@ -1,5 +1,8 @@
 #settingsWrapperSection {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* -------------------------------------------------------   TOP   ------------------------------------------------------- */
     #titleWrapper {
         position: relative;
@@ -29,9 +32,12 @@
     #panelWrapper {
         width: 100%;
         height: 75%;
-        margin-top: 10%;
+        margin-top: 5%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+
+        /* justify-content: center; */
         overflow: auto;
         -ms-overflow-style: none;
         /* IE and Edge */
@@ -45,21 +51,26 @@
         //padding-top: 2px;
 
         .panel {
-            padding-bottom: 2.5vh;
+            /* height: calc(100% / 9); */
+            //height: 100%;
+            /* background: red; */
+            
+            /* padding-bottom: 2.5vh; */
             transition: $base-transition;
+            margin-top: 5px;
 
-            /*  &:hover {
-                opacity: .75;
-            } */
             .accordionTrigger {
                 cursor: pointer;
                 transition: $base-transition;
             }
 
             .panelSections {
-                //cursor: pointer;
+                /* background: green; */
                 width: 100%;
-                height: 4vh;
+                
+                //min-height: 3rem;
+                /* height: 6rem; */
+                //margin: 1.5px 0;
                 padding: 0 10px;
                 font-size: 16px;
                 border: none;
@@ -127,16 +138,20 @@
 
     /* -------------------------------------------------------   BOTTOM   ------------------------------------------------------- */
     #resetWrapper {
+        /* background: blue; */
         width: 100%;
         height: 10%;
-        padding-top: 3%;
+        /* padding-top: 1rem; */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         font-size: 1.4rem;
         line-height: 1.6rem;
         text-transform: capitalize;
+        #resetGame {
+            margin-top: 1rem;
+        }
     }
 
 }

@@ -80,22 +80,29 @@
       @include flex-center;
       flex-wrap: wrap;
       height: auto;
-      //background: black;
+      background: black;
       
       
       .cardWrapper {
         opacity: 0;
         /* flex-basis: calc(25% - .2vw); */
         //flex: 0 0 23%;
-        width: 4vw;
-        height: 4vw;
+        width: 7rem;
+        height: 7rem;
         border-radius: 4px;
         position: relative;
         transform: scale(1);
         transform-style: preserve-3d;
         transition: all ease-in-out .15s;
         margin: .1vw;
-        
+        @include respond(laptop-big) {
+          width: 6rem;
+        height: 6rem;
+        }
+        @include respond(laptop) {
+          width: 4.25rem;
+        height: 4.25rem;
+        }
       }
 
       .cardWrapper:active {

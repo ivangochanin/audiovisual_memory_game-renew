@@ -5,7 +5,7 @@ import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
 import theme from './modules/theme.js';
-//import switchNavbar from './modules/navbar.js'
+import switchNavbar from './modules/navbar.js'
 import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
 const cardSignal = document.querySelector('#cardSignal');
@@ -66,25 +66,25 @@ function setLevel() {
 			cardCounter = 16;
 			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
 			seconds = 20;
-			gameBoard.style.width = '17vw';
+			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '30%';
 			break;
 		case 2:
 			cardCounter = 26;
 			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
 			seconds = 30 + addTimeFromLevel;
-			gameBoard.style.width = '26vw';
+			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '45%';
 			break;
 		case 3:
 			cardCounter = 50;
 			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
 			seconds = 40 + addTimeFromLevel;
-			gameBoard.style.width = '35vw';
+			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '60%';
 			break;
 		case 4:
 			cardCounter = 74;
 			dataPack = dataTonesLevel4.concat(dataTonesLevel4);
 			seconds = 50 + addTimeFromLevel;
-			gameBoard.style.width = '42vw';
+			window.innerWidth < 635 ? gameBoard.style.width = '95%%': gameBoard.style.width = '80%';
 			break;
 		default:
 			cardCounter = 0;
@@ -390,4 +390,4 @@ makeGame();
 animations();
 theme();
 
-//switchNavButton.addEventListener('click', switchNavbar)
+switchNavButton.addEventListener('click', switchNavbar)

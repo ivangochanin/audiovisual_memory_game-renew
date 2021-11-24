@@ -1,18 +1,14 @@
 #container {
   width: 100%;
   height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 3vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: $base-transition;
-
+  
   @include respond(laptop) {
     position: relative;
   }
-
+  
   #customContainer {
     width: 100%;
     max-width: 2560px;
@@ -25,12 +21,18 @@
     justify-content: space-between;
     align-items: center;
     background: transparent;
+    transition: $base-transition;
 
     .sections {
       height: 90%;
       max-height: 90%;
       padding: 2.5%;
       border-radius: 25px;
+      @include respond(phone) {
+        height: 95%;
+        top: 2.5%;
+        bottom: 2.5%;
+      }
     }
 
     #settingsWrapperSection {
@@ -48,10 +50,15 @@
       width: 65%;
 
       @include respond(laptop) {
-        width: 98%;
         position: absolute;
-        left: 1%;
-        right: 1%;
+        width: 70%;
+        left: 15%;
+        right: 15%;
+      }
+      @include respond(tab-port) {
+        width: 95%;
+        left: 2.5%;
+        right: 2.5%;
       }
     }
   }
