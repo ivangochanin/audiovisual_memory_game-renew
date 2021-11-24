@@ -11,429 +11,431 @@
 
 <body>
     <div id="container" class="font_default">
-
-        <div id="settingsWrapperSection" class="sections">
-
-            <div id="titleWrapper">
-                <p id="title" class="font_thin">sound memory game</p>
-                <button id="goBackButton" class="gameButtons">
-                    <img src="./assets/icons/goBack.png" alt="">
-                </button>
-            </div>
-
-
-            <div id="panelWrapper">
-
-
-                <div class="panel">
-                    <div class="panelSections accordionTrigger">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/rules.png" alt="rules"></div>
-                            <span>Help</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span class="switchTitles font_thin"></span>
-                            <div class="accordionArrowWrapper">
-                                <img class="accordionArrow" src=" " alt="help arrow">
+<div id="customContainer">
+    
+            <div id="settingsWrapperSection" class="sections">
+    
+                <div id="titleWrapper">
+                    <p id="title" class="font_thin">sound memory game</p>
+                    <button id="goBackButton" class="gameButtons">
+                        <img src="./assets/icons/goBack.png" alt="">
+                    </button>
+                </div>
+    
+    
+                <div id="panelWrapper">
+    
+    
+                    <div class="panel">
+                        <div class="panelSections accordionTrigger">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/rules.png" alt="rules"></div>
+                                <span>Help</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span class="switchTitles font_thin"></span>
+                                <div class="accordionArrowWrapper">
+                                    <img class="accordionArrow" src=" " alt="help arrow">
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="accordionWrapper">
-                        <div class="accordion">
-                            <div id="helpWrapper">
-                                <div class="helpSections">
-                                    <p class="helpTitles">GAME IN GENERAL</p>
-                                    <p class="helpText">Player choose two cards (each card contains sound and image) and tries to find two of the same cards. Find your own way of playing the game by selecting different game settings.</p>
-                                </div>
-                                <div class="helpSections">
-                                    <p class="helpTitles">GAME LEVELS</p>
-                                    <p class="helpSubTitles">MODE - TONE</p>
-                                    <p class="helpText">Game with individual tones.</p>
-                                    <ul>
-                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Major scale / 1 octave:</p>
-                                            <p class="addedScore">tones:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel1.svg"
-                                                    class="helpImages" alt="tones Level1"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Chromatic scale / 1 octave.</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel2.svg"
-                                                    class="helpImages" alt="tones Level2"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C1-C3 / Chromatic scale / 2 octaves.</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel3.svg"
-                                                    class="helpImages" alt="tones Level3"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Chromatic scale / 3 octaves.</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel4.svg"
-                                                    class="helpImages" alt="tones Level4"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="helpSections">
-                                    <p class="helpSubTitles">MODE - INTERVAL</p>
-                                    <p class="helpText">Game with two tones at the same time - interval. The root is tone C1.</p>
-                                    <div class="helpSymbolSections">
-                                       <p class="symbolTitle">Symbols:</p>
-                                       <ul>
-                                        <li><span class="symbol">↑ & ↓</span> - Indicates the direction of the interval</li>
-                                        <li><span class="symbol">M</span> - Major interval</li>
-                                        <li><span class="symbol">m</span> - Minor interval</li>
-                                        <li><span class="symbol">P</span> - Perfect interval</li>
-                                        <li><span class="symbol">A</span> - Augmented interval</li>
-                                        <li><span class="symbol">d</span> - Diminished interval</li>
-                                       </ul>
+    
+                        <div class="accordionWrapper">
+                            <div class="accordion">
+                                <div id="helpWrapper">
+                                    <div class="helpSections">
+                                        <p class="helpTitles">GAME IN GENERAL</p>
+                                        <p class="helpText">Player choose two cards (each card contains sound and image) and tries to find two of the same cards. Find your own way of playing the game by selecting different game settings.</p>
                                     </div>
-                                    <ul>
-                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Intervals within major scale / 1 octave(up):</p>
-                                            <p class="addedScore">intervals:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel1.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Intervals within chromatic scale / 1 octave(up).</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel2.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C0-C2 / Intervals within chromatic scale / 1 octave(up) + 1 octave(down).</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel3.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Intervals within chromatic scale / 2 octaves(up) + 1 octave(down).</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel4.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="helpSections">
-                                    <p class="helpSubTitles">MODE - CHORD</p>
-                                    <p class="helpText">Game with three or more tones at the same time - chord. The root is tone C.</p>
-                                    <div class="helpSymbolSections">
-                                        <p class="symbolTitle">Symbols:</p>
+                                    <div class="helpSections">
+                                        <p class="helpTitles">GAME LEVELS</p>
+                                        <p class="helpSubTitles">MODE - TONE</p>
+                                        <p class="helpText">Game with individual tones.</p>
                                         <ul>
-                                            <li><span class="symbol">▵</span> - Major chords</li>
-                                            <li><span class="symbol">m</span> – Minor chords</li>
-                                            <li><span class="symbol">°</span> - Diminished chords</li>
-                                            <li><span class="symbol">numbers</span> - indicates inversion or chord tension</li>
+                                            <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Major scale / 1 octave:</p>
+                                                <p class="addedScore">tones:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel1.svg"
+                                                        class="helpImages" alt="tones Level1"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Chromatic scale / 1 octave.</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel2.svg"
+                                                        class="helpImages" alt="tones Level2"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C1-C3 / Chromatic scale / 2 octaves.</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel3.svg"
+                                                        class="helpImages" alt="tones Level3"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Chromatic scale / 3 octaves.</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel4.svg"
+                                                        class="helpImages" alt="tones Level4"></div>
+                                            </li>
                                         </ul>
                                     </div>
-                                    <ul>
-                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">Major and minor chords(with inversions) + diminished and augmented chords:</p>
-                                            <p class="addedScore">chords:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel1.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">Added sus, diminished chords(with inversion) and diminished 7th chords.</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel2.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">Most common four-notes chords(no inversion).</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel3.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">Most common five-notes chords(no inversion).</p>
-                                            <p class="addedScore">add:</p>
-                                            <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel4.svg"
-                                                    class="helpImages" alt="rules"></div>
-                                        </li>
-                                    </ul>
+                                    <div class="helpSections">
+                                        <p class="helpSubTitles">MODE - INTERVAL</p>
+                                        <p class="helpText">Game with two tones at the same time - interval. The root is tone C1.</p>
+                                        <div class="helpSymbolSections">
+                                           <p class="symbolTitle">Symbols:</p>
+                                           <ul>
+                                            <li><span class="symbol">↑ & ↓</span> - Indicates the direction of the interval</li>
+                                            <li><span class="symbol">M</span> - Major interval</li>
+                                            <li><span class="symbol">m</span> - Minor interval</li>
+                                            <li><span class="symbol">P</span> - Perfect interval</li>
+                                            <li><span class="symbol">A</span> - Augmented interval</li>
+                                            <li><span class="symbol">d</span> - Diminished interval</li>
+                                           </ul>
+                                        </div>
+                                        <ul>
+                                            <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Intervals within major scale / 1 octave(up):</p>
+                                                <p class="addedScore">intervals:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel1.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Intervals within chromatic scale / 1 octave(up).</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel2.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C0-C2 / Intervals within chromatic scale / 1 octave(up) + 1 octave(down).</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel3.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Intervals within chromatic scale / 2 octaves(up) + 1 octave(down).</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel4.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="helpSections">
+                                        <p class="helpSubTitles">MODE - CHORD</p>
+                                        <p class="helpText">Game with three or more tones at the same time - chord. The root is tone C.</p>
+                                        <div class="helpSymbolSections">
+                                            <p class="symbolTitle">Symbols:</p>
+                                            <ul>
+                                                <li><span class="symbol">▵</span> - Major chords</li>
+                                                <li><span class="symbol">m</span> – Minor chords</li>
+                                                <li><span class="symbol">°</span> - Diminished chords</li>
+                                                <li><span class="symbol">numbers</span> - indicates inversion or chord tension</li>
+                                            </ul>
+                                        </div>
+                                        <ul>
+                                            <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">Major and minor chords(with inversions) + diminished and augmented chords:</p>
+                                                <p class="addedScore">chords:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel1.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">Added sus, diminished chords(with inversion) and diminished 7th chords.</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel2.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">Most common four-notes chords(no inversion).</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel3.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                            <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">Most common five-notes chords(no inversion).</p>
+                                                <p class="addedScore">add:</p>
+                                                <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel4.svg"
+                                                        class="helpImages" alt="rules"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/theme.png" alt="theme"></div>
-                            <span>Theme</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="switchThemeText" class="switchTitles font_thin">dark</span>
-                            <label class="switchWrapper">
-                                <input type="checkbox" id="switchTheme">
-                                <span class="switcherSlider"></span>
-
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections accordionTrigger">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument"></div>
-                            <span>Instrument</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="panelInstrumentName" class="switchTitles font_thin">piano</span>
-                            <div class="accordionArrowWrapper">
-                                <img class="accordionArrow" src=" " alt="instrument arrow">
+    
+                    <div class="panel">
+                        <div class="panelSections">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/theme.png" alt="theme"></div>
+                                <span>Theme</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span id="switchThemeText" class="switchTitles font_thin">dark</span>
+                                <label class="switchWrapper">
+                                    <input type="checkbox" id="switchTheme">
+                                    <span class="switcherSlider"></span>
+    
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="accordionWrapper">
-                        <div class="accordion">
-                            <div class="accordionCheckboxesWrapper font_thin">
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioInstrument" value="piano"
-                                            checked>
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Piano</span>
-                                    </label>
-                                </div>
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioInstrument" value="rhodes">
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Rhodes</span>
-                                    </label>
+    
+                    <div class="panel">
+                        <div class="panelSections accordionTrigger">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument"></div>
+                                <span>Instrument</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span id="panelInstrumentName" class="switchTitles font_thin">piano</span>
+                                <div class="accordionArrowWrapper">
+                                    <img class="accordionArrow" src=" " alt="instrument arrow">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections accordionTrigger">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/mode.png" alt="mode"></div>
-                            <span>Mode</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="panelModeName" class="switchTitles font_thin">tone</span>
-                            <div class="accordionArrowWrapper">
-                                <img class="accordionArrow" src=" " alt="mode arrow">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordionWrapper">
-                        <div class="accordion">
-                            <div class="accordionCheckboxesWrapper font_thin">
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioMode" value="tone" checked>
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Tone</span>
-                                    </label>
-                                </div>
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioMode" value="interval">
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Interval</span>
-                                    </label>
-                                </div>
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioMode" value="chord">
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Chord</span>
-                                    </label>
+                        <div class="accordionWrapper">
+                            <div class="accordion">
+                                <div class="accordionCheckboxesWrapper font_thin">
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioInstrument" value="piano"
+                                                checked>
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Piano</span>
+                                        </label>
+                                    </div>
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioInstrument" value="rhodes">
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Rhodes</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections accordionTrigger">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div>
-                            <span>Card Face</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="panelCardFaceName" class="switchTitles font_thin">score</span>
-                            <div class="accordionArrowWrapper">
-                                <img class="accordionArrow" src=" " alt="card face arrow">
+    
+                    <div class="panel">
+                        <div class="panelSections accordionTrigger">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/mode.png" alt="mode"></div>
+                                <span>Mode</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordionWrapper">
-                        <div class="accordion">
-                            <div class="accordionCheckboxesWrapper font_thin">
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioFace" value="score" checked>
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Score</span>
-                                    </label>
-                                </div>
-                                <div class="radioSection">
-                                    <label class="radioWrapper">
-                                        <input class="radioInputs" type="radio" name="radioFace" value="symbol">
-                                        <span class="customRadio"><span class="radioDot"></span></span>
-                                        <span class="radioTitles">Symbol</span>
-                                    </label>
+                            <div class="panelSectionsRight">
+                                <span id="panelModeName" class="switchTitles font_thin">tone</span>
+                                <div class="accordionArrowWrapper">
+                                    <img class="accordionArrow" src=" " alt="mode arrow">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/rotate.png" alt="rotate"></div>
-                            <span>Rotate Card</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="switchRotateCardText" class="switchTitles font_thin">on</span>
-                            <label class="switchWrapper">
-                                <input type="checkbox" id="switchRotateCard">
-                                <span class="switcherSlider"></span>
-
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/sound.png" alt="sound"></div>
-                            <span>Sound</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <span id="switchSoundText" class="switchTitles font_thin">on</span>
-                            <label class="switchWrapper">
-                                <input type="checkbox" id="switchSound">
-                                <span class="switcherSlider"></span>
-
-                            </label>
-
+                        <div class="accordionWrapper">
+                            <div class="accordion">
+                                <div class="accordionCheckboxesWrapper font_thin">
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioMode" value="tone" checked>
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Tone</span>
+                                        </label>
+                                    </div>
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioMode" value="interval">
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Interval</span>
+                                        </label>
+                                    </div>
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioMode" value="chord">
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Chord</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/time.png" alt="time"></div>
-                            <span>Time</span>
+    
+                    <div class="panel">
+                        <div class="panelSections accordionTrigger">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div>
+                                <span>Card Face</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span id="panelCardFaceName" class="switchTitles font_thin">score</span>
+                                <div class="accordionArrowWrapper">
+                                    <img class="accordionArrow" src=" " alt="card face arrow">
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="panelSectionsRight">
-                            <span id="switchTimeText" class="switchTitles font_thin"> on</span>
-                            <label class="switchWrapper">
-                                <input type="checkbox" id="switchTime">
-                                <span class="switcherSlider"></span>
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <div class="panelSections">
-                        <div class="panelSectionsLeft">
-                            <div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Next
-                                Level</span>
-                        </div>
-                        <div class="panelSectionsRight">
-                            <div id="nextLevelIconWrapper"><img id="nextLevel" src=" " alt="instrument arrow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="resetWrapper">
-                <p class="font_thin">Reset Game</p>
-
-                <button id="resetGame" class="gameButtons">
-                    <img src="./assets/icons/reset.png" alt="reset game">
-                </button>
-            </div>
-        </div>
-
-        <div id="gameWrapperSection" class="sections">
-            <div id="boardInfoWrapper">
-                <div class="boardInfoSections">
-                    <label id="startGameButton" class="gameButtons">
-                        <input type="checkbox" id="startGameInput">
-                        <img src=" " id="startGameImage" alt="start">
-                    </label>
-                </div>
-                <div class="boardInfoSections">
-                    <p class="boardInfoTitles font_thin">current level</p>
-                    <div id="currentLevel" class="boardInfoParameters"></div>
-                </div>
-                <div class="boardInfoSections">
-                    <p class="boardInfoTitles font_thin">time</p>
-                    <div class="boardInfoParameters">
-                        <p id="timer"></p>
-                    </div>
-                </div>
-                <div class="boardInfoSections">
-                    <div id="cardSignal">
-                        <div class="indicatorWrapper">
-                            <div class="indicators" id="firstCardIndicator"></div>
-                        </div>
-                        <div class="indicatorWrapper">
-                            <div class="indicators" id="secondCardIndicator"></div>
+                        <div class="accordionWrapper">
+                            <div class="accordion">
+                                <div class="accordionCheckboxesWrapper font_thin">
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioFace" value="score" checked>
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Score</span>
+                                        </label>
+                                    </div>
+                                    <div class="radioSection">
+                                        <label class="radioWrapper">
+                                            <input class="radioInputs" type="radio" name="radioFace" value="symbol">
+                                            <span class="customRadio"><span class="radioDot"></span></span>
+                                            <span class="radioTitles">Symbol</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+    
+                    <div class="panel">
+                        <div class="panelSections">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/rotate.png" alt="rotate"></div>
+                                <span>Rotate Card</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span id="switchRotateCardText" class="switchTitles font_thin">on</span>
+                                <label class="switchWrapper">
+                                    <input type="checkbox" id="switchRotateCard">
+                                    <span class="switcherSlider"></span>
+    
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="panel">
+                        <div class="panelSections">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/sound.png" alt="sound"></div>
+                                <span>Sound</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <span id="switchSoundText" class="switchTitles font_thin">on</span>
+                                <label class="switchWrapper">
+                                    <input type="checkbox" id="switchSound">
+                                    <span class="switcherSlider"></span>
+    
+                                </label>
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="panel">
+                        <div class="panelSections">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/time.png" alt="time"></div>
+                                <span>Time</span>
+                            </div>
+    
+                            <div class="panelSectionsRight">
+                                <span id="switchTimeText" class="switchTitles font_thin"> on</span>
+                                <label class="switchWrapper">
+                                    <input type="checkbox" id="switchTime">
+                                    <span class="switcherSlider"></span>
+                                </label>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="panel">
+                        <div class="panelSections">
+                            <div class="panelSectionsLeft">
+                                <div class="iconWrapper"><img src="./assets/icons/level.png" alt="level"></div><span>Next
+                                    Level</span>
+                            </div>
+                            <div class="panelSectionsRight">
+                                <div id="nextLevelIconWrapper"><img id="nextLevel" src=" " alt="instrument arrow"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="boardInfoSections">
-                    <p class="boardInfoTitles font_thin">instrument</p>
-                    <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
-                </div>
-                <div class="boardInfoSections">
-                    <p class="boardInfoTitles font_thin">mode</p>
-                    <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
-                </div>
-                <div class="boardInfoSections">
-                    <p class="boardInfoTitles font_thin">face</p>
-                    <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
-                </div>
-                <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
-                    <button id="switchNavButton" class="gameButtons">
-                        <img src="./assets/icons/settings.png" alt="">
+    
+                <div id="resetWrapper">
+                    <p class="font_thin">Reset Game</p>
+    
+                    <button id="resetGame" class="gameButtons">
+                        <img src="./assets/icons/reset.png" alt="reset game">
                     </button>
                 </div>
             </div>
-
-
-            <div id="boardGameWrapper">
-                <div id="gameBoard"></div>
+    
+            <div id="gameWrapperSection" class="sections">
+                <div id="boardInfoWrapper">
+                    <div class="boardInfoSections">
+                        <label id="startGameButton" class="gameButtons">
+                            <input type="checkbox" id="startGameInput">
+                            <img src=" " id="startGameImage" alt="start">
+                        </label>
+                    </div>
+                    <div class="boardInfoSections">
+                        <p class="boardInfoTitles font_thin">current level</p>
+                        <div id="currentLevel" class="boardInfoParameters"></div>
+                    </div>
+                    <div class="boardInfoSections">
+                        <p class="boardInfoTitles font_thin">time</p>
+                        <div class="boardInfoParameters">
+                            <p id="timer"></p>
+                        </div>
+                    </div>
+                    <div class="boardInfoSections">
+                        <div id="cardSignal">
+                            <div class="indicatorWrapper">
+                                <div class="indicators" id="firstCardIndicator"></div>
+                            </div>
+                            <div class="indicatorWrapper">
+                                <div class="indicators" id="secondCardIndicator"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boardInfoSections">
+                        <p class="boardInfoTitles font_thin">instrument</p>
+                        <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
+                    </div>
+                    <div class="boardInfoSections">
+                        <p class="boardInfoTitles font_thin">mode</p>
+                        <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
+                    </div>
+                    <div class="boardInfoSections">
+                        <p class="boardInfoTitles font_thin">face</p>
+                        <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
+                    </div>
+                    <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
+                        <button id="switchNavButton" class="gameButtons">
+                            <img src="./assets/icons/settings.png" alt="">
+                        </button>
+                    </div>
+                </div>
+    
+    
+                <div id="boardGameWrapper">
+                    <div id="gameBoard"></div>
+                </div>
+    
+    
+                <div id="messageWrapper">
+                    <div id="messageTextSection">
+                        <p id="message" class="font_thin"></p>
+                        <p id="messageAddedSeconds" class="font_thin messages"></p>
+                        <p id="messageWrongGuesses" class="font_thin messages"></p>
+                    </div>
+                    <div id="messageButtonsSection">
+                        <div class="messageButtonWrapper">
+                            <p class="font_thin">Continue game</p>
+                            <button id="continueAfterWin" class="gameButtons"><img src="./assets/icons/continue.png"
+                                    alt="continue"></button>
+                        </div>
+                        <div class="messageButtonWrapper">
+                            <p class="font_thin">Repeat game</p>
+                            <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png"
+                                    alt="repeat"></button>
+                        </div>
+                        <div class="messageButtonWrapper">
+                            <p class="font_thin">Reset game</p>
+                            <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/reset.png"
+                                    alt="reset"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-            <div id="messageWrapper">
-                <div id="messageTextSection">
-                    <p id="message" class="font_thin"></p>
-                    <p id="messageAddedSeconds" class="font_thin messages"></p>
-                    <p id="messageWrongGuesses" class="font_thin messages"></p>
-                </div>
-                <div id="messageButtonsSection">
-                    <div class="messageButtonWrapper">
-                        <p class="font_thin">Continue game</p>
-                        <button id="continueAfterWin" class="gameButtons"><img src="./assets/icons/continue.png"
-                                alt="continue"></button>
-                    </div>
-                    <div class="messageButtonWrapper">
-                        <p class="font_thin">Repeat game</p>
-                        <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png"
-                                alt="repeat"></button>
-                    </div>
-                    <div class="messageButtonWrapper">
-                        <p class="font_thin">Reset game</p>
-                        <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/reset.png"
-                                alt="reset"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+</div>  div 
     </div>
 
 </body>
