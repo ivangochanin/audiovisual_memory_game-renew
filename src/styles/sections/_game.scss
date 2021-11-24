@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    //background: red;
     
     .boardInfoSections {
       height: 100%;
@@ -56,6 +57,13 @@
           }
         }
       } 
+      
+    }
+    #boardInfoSectionsSwitchButton {
+      display: none;
+      @include respond(laptop) {
+        display: block;
+      }
     }
   }
 

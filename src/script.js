@@ -5,6 +5,7 @@ import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
 import theme from './modules/theme.js';
+//import switchNavbar from './modules/navbar.js'
 import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
 const cardSignal = document.querySelector('#cardSignal');
@@ -31,6 +32,7 @@ const switchTheme = document.querySelector('#switchTheme');
 const startGameImage = document.querySelector('#startGameImage');
 const firstCardIndicator = document.querySelector('#firstCardIndicator');
 const secondCardIndicator = document.querySelector('#secondCardIndicator');
+const switchNavButton = document.querySelector('#switchNavButton');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -387,3 +389,5 @@ function makeGame() {
 makeGame();
 animations();
 theme();
+
+//switchNavButton.addEventListener('click', switchNavbar)

@@ -16,6 +16,9 @@
 
             <div id="titleWrapper">
                 <p id="title" class="font_thin">sound memory game</p>
+                <button id="goBackButton" class="gameButtons">
+                    <img src="./assets/icons/goBack.png" alt="">
+                </button>
             </div>
 
 
@@ -39,74 +42,106 @@
                     <div class="accordionWrapper">
                         <div class="accordion">
                             <div id="helpWrapper">
-                                <div id="mainRules">
-                                    <p>Players choose two cards (each card contains sound and picture), at the same time,
-                                        and
-                                        try to find
-                                        two of the same cards. Find your own way of playing the game by selecting different
-                                        game
-                                        settings.</p>
+                                <div class="helpSections">
+                                    <p class="helpTitles">GAME IN GENERAL</p>
+                                    <p class="helpText">Player choose two cards (each card contains sound and image) and tries to find two of the same cards. Find your own way of playing the game by selecting different game settings.</p>
                                 </div>
-                                <div class="levelRules">
-                                    <h1>Tones</h1>
+                                <div class="helpSections">
+                                    <p class="helpTitles">GAME LEVELS</p>
+                                    <p class="helpSubTitles">MODE - TONE</p>
+                                    <p class="helpText">Game with individual tones.</p>
                                     <ul>
-                                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Major scale / 1 octave:</p>
+                                            <p class="addedScore">tones:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel1.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="tones Level1"></div>
                                         </li>
-                                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Chromatic scale / 1 octave.</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel2.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="tones Level2"></div>
                                         </li>
-                                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C1-C3 / Chromatic scale / 2 octaves.</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel3.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="tones Level3"></div>
                                         </li>
-                                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Chromatic scale / 3 octaves.</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/tonesLevel4.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="tones Level4"></div>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="levelRules">
-                                    <h1>Intervals</h1>
+                                <div class="helpSections">
+                                    <p class="helpSubTitles">MODE - INTERVAL</p>
+                                    <p class="helpText">Game with two tones at the same time - interval. The root is tone C1.</p>
+                                    <div class="helpSymbolSections">
+                                       <p class="symbolTitle">Symbols:</p>
+                                       <ul>
+                                        <li><span class="symbol">↑ & ↓</span> - Indicates the direction of the interval</li>
+                                        <li><span class="symbol">M</span> - Major interval</li>
+                                        <li><span class="symbol">m</span> - Minor interval</li>
+                                        <li><span class="symbol">P</span> - Perfect interval</li>
+                                        <li><span class="symbol">A</span> - Augmented interval</li>
+                                        <li><span class="symbol">d</span> - Diminished interval</li>
+                                       </ul>
+                                    </div>
                                     <ul>
-                                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">C1-C2 / Intervals within major scale / 1 octave(up):</p>
+                                            <p class="addedScore">intervals:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel1.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">C1-C2 / Intervals within chromatic scale / 1 octave(up).</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel2.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">C0-C2 / Intervals within chromatic scale / 1 octave(up) + 1 octave(down).</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel3.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">C0-C3 / Intervals within chromatic scale / 2 octaves(up) + 1 octave(down).</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/intervalsLevel4.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="levelRules">
-                                    <h1>Chords</h1>
+                                <div class="helpSections">
+                                    <p class="helpSubTitles">MODE - CHORD</p>
+                                    <p class="helpText">Game with three or more tones at the same time - chord. The root is tone C.</p>
+                                    <div class="helpSymbolSections">
+                                        <p class="symbolTitle">Symbols:</p>
+                                        <ul>
+                                            <li><span class="symbol">▵</span> - Major chords</li>
+                                            <li><span class="symbol">m</span> – Minor chords</li>
+                                            <li><span class="symbol">°</span> - Diminished chords</li>
+                                            <li><span class="symbol">numbers</span> - indicates inversion or chord tension</li>
+                                        </ul>
+                                    </div>
                                     <ul>
-                                        <li><span>LEVEL 1</span> - C1 - C2 / Major scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 1</p> <p class="helpLevelText">Major and minor chords(with inversions) + diminished and augmented chords:</p>
+                                            <p class="addedScore">chords:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel1.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 2</span> - C1 - C2 / Chromatic scale / 1 octave
+                                        <li><p class="helpLevelTitle">Level 2</p> <p class="helpLevelText">Added sus, diminished chords(with inversion) and diminished 7th chords.</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel2.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 3</span> - C1 - C3 / Chromatic scale / 2 octaves
+                                        <li><p class="helpLevelTitle">Level 3</p> <p class="helpLevelText">Most common four-notes chords(no inversion).</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel3.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
-                                        <li><span>LEVEL 4</span> - C0 - C3 / Chromatic scale / 3 octaves
+                                        <li><p class="helpLevelTitle">Level 4</p> <p class="helpLevelText">Most common five-notes chords(no inversion).</p>
+                                            <p class="addedScore">add:</p>
                                             <div class="rulesImgWrapper"><img src="./assets/images/rules/chordsLevel4.svg"
-                                                    class="rulesImages" alt="rules"></div>
+                                                    class="helpImages" alt="rules"></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -359,6 +394,11 @@
                 <div class="boardInfoSections">
                     <p class="boardInfoTitles font_thin">face</p>
                     <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
+                </div>
+                <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
+                    <button id="switchNavButton" class="gameButtons">
+                        <img src="./assets/icons/settings.png" alt="">
+                    </button>
                 </div>
             </div>
 

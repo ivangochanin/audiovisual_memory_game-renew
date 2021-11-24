@@ -1,15 +1,24 @@
+### SANDRIK
+- icons - same width
+- rules design
+
 ### RULES
 - describe all settings possibilities
-- no theme change
+- score(face) on mobile devices - explanation
 
 ### ALL
 - buttons hover
 - animations timing renew
 - initial loading
+- disable whole info section on win/lose message
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
+- Add iGo logo - link to github game
 
 ### RESPONSIVE
-- turn off score on mobile devices
+- turn off score(face) on mobile devices
+- board info bar - icons instead titles - level, time, instr ... - on small devices
+- only add back button on info(settings bar) and show goto settings on game board
+- careful with large screens - sections - max-width/max-height
 
 ### THEME
 - DRY -> find solution: 
@@ -39,5 +48,6 @@ const radioInputs = document.querySelectorAll('.radioInputs');
   will work or not.
 
 ### README
+- Ask for help. The best way to load sound samples?
 
 ### TEST GAME

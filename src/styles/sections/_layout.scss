@@ -1,26 +1,43 @@
 #container {
   /* background: $background; */
   width: 100%;
+  /* max-width: 1650px; */
   min-height: 100vh;
+  /* max-height: 1000px; */
   padding: 0 3vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: $base-transition;
-
+  @include respond(laptop) {
+    position: relative;
+  }
   .sections {
     height: 90vh;
     padding: 2.5%;
     border-radius: 25px;
-    /* background: $dark; */
   }
 
   #settingsWrapperSection {
     width: 33%;
+
+    @include respond(laptop) {
+      width: 98%;
+      position: absolute;
+      left: -100%;
+    }
   }
 
   #gameWrapperSection {
     position: relative;
     width: 65%;
+    
+
+    @include respond(laptop) {
+      width: 98%;
+      position: absolute;
+      left: 1%;
+      right: 1%;
+    }
   }
 }
