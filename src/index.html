@@ -401,7 +401,7 @@
                         <div class="boardInfoSections boardInfoGameTitle">
                             <p class="gameTitle font_thin">sound memory game</p>
                         </div>
-                        
+
                         <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
                             <button id="switchNavButton" class="gameButtons">
                                 <img src="./assets/icons/settings.png" alt="">
@@ -411,19 +411,21 @@
 
                     <div id="boardInfoMid" class="boardInfoSectionsWrapper">
                         <div class="boardInfoSections">
-                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/level.png" alt="level"></div>
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/level.png"
+                                    alt="level"></div>
                             <p class="boardInfoTitles font_thin">current level</p>
                             <div id="currentLevel" class="boardInfoParameters"></div>
                         </div>
-            
+
                         <div class="boardInfoSections">
-                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/time.png" alt="time"></div>
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/time.png"
+                                    alt="time"></div>
                             <p class="boardInfoTitles font_thin">time</p>
                             <div class="boardInfoParameters">
                                 <p id="timer"></p>
                             </div>
                         </div>
-            
+
                         <div class="boardInfoSections">
                             <div id="cardSignal">
                                 <div class="indicatorWrapper">
@@ -438,19 +440,25 @@
 
                     <div id="boardInfoBottom" class="boardInfoSectionsWrapper">
                         <div class="boardInfoSections">
-                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/instrument.png" alt="instrument"></div>
+                            <div class="iconWrapper infoSectionSettingsIcons">
+                                <img src="./assets/icons/instrument.png" alt="instrument">
+                            </div>
                             <p class="boardInfoTitles font_thin">instrument</p>
                             <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
                         </div>
-            
+
                         <div class="boardInfoSections">
-                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/mode.png" alt="mode"></div>
+                            <div class="iconWrapper infoSectionSettingsIcons">
+                                <img src="./assets/icons/mode.png" alt="mode">
+                            </div>
                             <p class="boardInfoTitles font_thin">mode</p>
                             <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
                         </div>
-            
+
                         <div class="boardInfoSections">
-                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/cards.png" alt="face"></div>
+                            <div class="iconWrapper infoSectionSettingsIcons">
+                                <img src="./assets/icons/cards.png" alt="face">
+                            </div>
                             <p class="boardInfoTitles font_thin">face</p>
                             <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
                         </div>
@@ -466,27 +474,39 @@
 
 
                 <div id="messageWrapper">
-                    <div id="messageTextSection">
+                    <div class="messageSection">
                         <p id="message" class="font_thin"></p>
-                        <p id="messageAddedSeconds" class="font_thin messages"></p>
-                        <p id="messageWrongGuesses" class="font_thin messages"></p>
                     </div>
-                    <div id="messageButtonsSection">
-                        <div class="messageButtonWrapper">
-                            <p class="font_thin">Continue game</p>
-                            <button id="continueAfterWin" class="gameButtons"><img src="./assets/icons/continue.png"
-                                    alt="continue"></button>
+                    <div class="messageSection">
+                        <div id="messageTextSection">
+                            <p id="messageAddedSeconds" class="font_thin messages"></p>
+                            <p id="messageWrongGuesses" class="font_thin messages"></p>
                         </div>
-                        <div class="messageButtonWrapper">
-                            <p class="font_thin">Repeat game</p>
-                            <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png"
-                                    alt="repeat"></button>
+                        <div id="messageButtonsSection">
+                            <div class="messageButtonWrapper">
+                                <p class="font_default">Continue game</p>
+                                <button id="continueAfterWin" class="gameButtons">
+                                    <img src="./assets/icons/continue.png" alt="continue">
+                                </button>
+                            </div>
+                            <div class="messageButtonWrapper">
+                                <p class="font_default">Repeat game</p>
+                                <button id="levelAfterWin" class="gameButtons">
+                                    <img src="./assets/icons/repeat.png" alt="repeat">
+                                </button>
+                            </div>
+                            <div class="messageButtonWrapper">
+                                <p class="font_default">Reset game</p>
+                                <button id="resetAfterWin" class="gameButtons">
+                                    <img src="./assets/icons/reset.png" alt="reset">
+                                </button>
+                            </div>
                         </div>
-                        <div class="messageButtonWrapper">
-                            <p class="font_thin">Reset game</p>
-                            <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/reset.png"
-                                    alt="reset"></button>
-                        </div>
+                    </div>
+                    <div class="messageSection">
+                            <a href="https://github.com/ivangochanin/audiovisual_memory_game-renew" target="_blank" rel="noreferrer">
+                            <img src="./assets/icons/gitHub.png" alt="github">
+                        </a>
                     </div>
                 </div>
             </div>

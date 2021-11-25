@@ -14,20 +14,18 @@
 - Mode - mobile `text` 50%
 - Face - mobile *hide*
 
-### RULES
-- describe all settings possibilities
-- score(face) on mobile devices - explanation
-
 ### ALL
 - buttons hover
-- animations timing renew
+- hover for small devices
 - initial loading
+- animations timing renew
 - disable whole info section on win/lose message
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 - if rotate off - disable face accordion
 - win/lose - all disabled
 - small reverb on sounds
-- github instead igo
+- remove unused ids and classes from html
+- code refactoring
 
 ### BUG
 - add time in different scenarios
@@ -35,8 +33,8 @@
 ### RESPONSIVE
 - turn off score(face) on mobile devices
 - board info bar - icons instead titles - level, time, instr ... - on small devices
-- only add back button on info(settings bar) and show goto settings on game board
 - careful with large screens - sections - max-width/max-height
+- gameBoard different width on levels
 
 ### THEME
 - DRY -> find solution: 
