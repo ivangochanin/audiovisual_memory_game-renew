@@ -53,14 +53,13 @@ function boardStart() {
 }
 
 function bonusTime() {
-	return level === 3 || level === 4 ? (seconds += 11) : (seconds += 6);
+	return level === 3 ? (seconds += 11) : (seconds += 6);
 }
 
 function setLevel() {
 	let dataTonesLevel1 = cardsData().filter((tone, index) => index < 8);
 	let dataTonesLevel2 = cardsData().filter((tone, index) => index < 13);
 	let dataTonesLevel3 = cardsData().filter((tone, index) => index < 25);
-	let dataTonesLevel4 = cardsData().filter((tone, index) => index < 37);
 	switch (level) {
 		case 1:
 			cardCounter = 16;
@@ -88,14 +87,6 @@ function setLevel() {
 				window.innerWidth < 1440 ? gameBoard.style.width = '70%': gameBoard.style.width = '60%';
 			}) */
 			break;
-		case 4:
-			cardCounter = 74;
-			dataPack = dataTonesLevel4.concat(dataTonesLevel4);
-			seconds = 50 + addTimeFromLevel;
-			/* window.addEventListener("resize", function () {
-				window.innerWidth < 1640 ? gameBoard.style.width = '100%': gameBoard.style.width = '80%';
-			}) */
-			break;
 		default:
 			cardCounter = 0;
 			dataPack = [];
@@ -105,7 +96,7 @@ function setLevel() {
 }
 
 function setNextLevel() {
-	if (level < 4) {
+	if (level < 3) {
 		level++;
 		currentLevel.innerHTML = level;
 		cardCounter = 0;

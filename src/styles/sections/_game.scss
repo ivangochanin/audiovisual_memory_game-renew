@@ -194,8 +194,8 @@
         opacity: 0;
         /* flex-basis: calc(25% - .2vw); */
         //flex: 0 0 23%;
-        width: 7rem;
-        height: 7rem;
+        width: 8rem;
+        height: 8rem;
         border-radius: 4px;
         position: relative;
         transform: scale(1);
@@ -228,8 +228,8 @@
           height: 4.5rem;
         }
         @include respond(phone-extra-small) {
-          width: 4rem;
-          height: 4rem;
+          width: 4.5rem;
+          height: 4.5rem;
         }
         @include respond(phone-smallest) {
           width: 3.75rem;
