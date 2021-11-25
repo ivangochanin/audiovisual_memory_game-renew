@@ -1,19 +1,3 @@
-### BOARD INFO
-`Div 1` 
-- Play
-- SMG Title - desktop *hide*  
-- Settings btn - desktop *hide*
-
-`Div 2`
-- Level - mobile `icon`
-- Time - mobile `icon`
-- indicator
-
-`Div 3`
-- Instrument - mobile `text` 50%
-- Mode - mobile `text` 50%
-- Face - mobile *hide*
-
 ### ALL
 - buttons hover
 - hover for small devices
@@ -35,6 +19,9 @@
 - board info bar - icons instead titles - level, time, instr ... - on small devices
 - careful with large screens - sections - max-width/max-height
 - gameBoard different width on levels
+
+### RESPONSIVE SETTINGS 2 GAME V.V.
+- rotate - same as cards
 
 ### THEME
 - DRY -> find solution: 
