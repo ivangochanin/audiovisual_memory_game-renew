@@ -16,7 +16,7 @@
             <div id="settingsWrapperSection" class="sections">
 
                 <div id="titleWrapper">
-                    <p id="title" class="font_thin">sound memory game</p>
+                    <p class="gameTitle font_thin">sound memory game</p>
                     <button id="goBackButton" class="gameButtons">
                         <img src="./assets/icons/goBack.png" alt="">
                     </button>
@@ -221,7 +221,8 @@
                     <div class="panel">
                         <div class="panelSections accordionTrigger">
                             <div class="panelSectionsLeft">
-                                <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument"></div>
+                                <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument">
+                                </div>
                                 <span>Instrument</span>
                             </div>
                             <div class="panelSectionsRight">
@@ -411,55 +412,77 @@
             </div>
 
             <div id="gameWrapperSection" class="sections">
+
+
                 <div id="boardInfoWrapper">
-                    <div class="boardInfoSections">
-                        <label id="startGameButton" class="gameButtons">
-                            <input type="checkbox" id="startGameInput">
-                            <img src=" " id="startGameImage" alt="start">
-                        </label>
-                    </div>
-                    <div class="boardInfoSections">
-                        <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/level.png" alt="level"></div>
-                        <p class="boardInfoTitles font_thin">current level</p>
-                        <div id="currentLevel" class="boardInfoParameters"></div>
-                    </div>
-                    <div class="boardInfoSections">
-                        <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/time.png" alt="time"></div>
-                        <p class="boardInfoTitles font_thin">time</p>
-                        <div class="boardInfoParameters">
-                            <p id="timer"></p>
+
+                    <div id="boardInfoTop" class="boardInfoSectionsWrapper">
+                        <div class="boardInfoSections">
+                            <label id="startGameButton" class="gameButtons">
+                                <input type="checkbox" id="startGameInput">
+                                <img src=" " id="startGameImage" alt="start">
+                            </label>
+                        </div>
+
+                        <div class="boardInfoSections boardInfoGameTitle">
+                            <p class="gameTitle font_thin">sound memory game</p>
+                        </div>
+                        
+                        <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
+                            <button id="switchNavButton" class="gameButtons">
+                                <img src="./assets/icons/settings.png" alt="">
+                            </button>
                         </div>
                     </div>
-                    <div class="boardInfoSections">
-                        <div id="cardSignal">
-                            <div class="indicatorWrapper">
-                                <div class="indicators" id="firstCardIndicator"></div>
+
+                    <div id="boardInfoMid" class="boardInfoSectionsWrapper">
+                        <div class="boardInfoSections">
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/level.png" alt="level"></div>
+                            <p class="boardInfoTitles font_thin">current level</p>
+                            <div id="currentLevel" class="boardInfoParameters"></div>
+                        </div>
+            
+                        <div class="boardInfoSections">
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/time.png" alt="time"></div>
+                            <p class="boardInfoTitles font_thin">time</p>
+                            <div class="boardInfoParameters">
+                                <p id="timer"></p>
                             </div>
-                            <div class="indicatorWrapper">
-                                <div class="indicators" id="secondCardIndicator"></div>
+                        </div>
+            
+                        <div class="boardInfoSections">
+                            <div id="cardSignal">
+                                <div class="indicatorWrapper">
+                                    <div class="indicators" id="firstCardIndicator"></div>
+                                </div>
+                                <div class="indicatorWrapper">
+                                    <div class="indicators" id="secondCardIndicator"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="boardInfoSections">
-                        <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/instrument.png" alt="instrument"></div>
-                        <p class="boardInfoTitles font_thin">instrument</p>
-                        <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
+
+                    <div id="boardInfoBottom" class="boardInfoSectionsWrapper">
+                        <div class="boardInfoSections">
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/instrument.png" alt="instrument"></div>
+                            <p class="boardInfoTitles font_thin">instrument</p>
+                            <div id="boardInfoInstrumentName" class="boardInfoParameters">piano</div>
+                        </div>
+            
+                        <div class="boardInfoSections">
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/mode.png" alt="mode"></div>
+                            <p class="boardInfoTitles font_thin">mode</p>
+                            <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
+                        </div>
+            
+                        <div class="boardInfoSections">
+                            <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/cards.png" alt="face"></div>
+                            <p class="boardInfoTitles font_thin">face</p>
+                            <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
+                        </div>
                     </div>
-                    <div class="boardInfoSections">
-                        <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/mode.png" alt="mode"></div>
-                        <p class="boardInfoTitles font_thin">mode</p>
-                        <div id="boardInfoModeName" class="boardInfoParameters">tone</div>
-                    </div>
-                    <div class="boardInfoSections">
-                        <div class="iconWrapper infoSectionSettingsIcons"><img src="./assets/icons/cards.png" alt="face"></div>
-                        <p class="boardInfoTitles font_thin">face</p>
-                        <div id="boardInfoFaceName" class="boardInfoParameters">score</div>
-                    </div>
-                    <div class="boardInfoSections" id="boardInfoSectionsSwitchButton">
-                        <button id="switchNavButton" class="gameButtons">
-                            <img src="./assets/icons/settings.png" alt="">
-                        </button>
-                    </div>
+
+
                 </div>
 
 
@@ -482,12 +505,12 @@
                         </div>
                         <div class="messageButtonWrapper">
                             <p class="font_thin">Repeat game</p>
-                            <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png"
+                            <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/repeat.png"
                                     alt="repeat"></button>
                         </div>
                         <div class="messageButtonWrapper">
                             <p class="font_thin">Reset game</p>
-                            <button id="levelAfterWin" class="gameButtons"><img src="./assets/icons/reset.png"
+                            <button id="resetAfterWin" class="gameButtons"><img src="./assets/icons/reset.png"
                                     alt="reset"></button>
                         </div>
                     </div>

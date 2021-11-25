@@ -1,8 +1,6 @@
 ### AudioVisual memory game renew
-- Practice front
-- Translating an old sound memory game into ES modules
-- Redesign
-- Add Webpack
+Enthusiasm started this project. The main purpose is learning javascript, webpack and so on .... 
+I’m not sure what would be the best way to upload audio samples, so if anyone can help, I'll be grateful.
 
 > Install: yarn
 

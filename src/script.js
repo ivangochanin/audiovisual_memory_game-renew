@@ -66,25 +66,35 @@ function setLevel() {
 			cardCounter = 16;
 			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
 			seconds = 20;
-			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '30%';
+			console.log(window.innerWidth);
+			/* window.addEventListener("resize", function () {
+				window.innerWidth < 1440 ? gameBoard.style.width = '70%': gameBoard.style.width = '30%';
+			}) */
 			break;
 		case 2:
 			cardCounter = 26;
 			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
 			seconds = 30 + addTimeFromLevel;
-			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '45%';
+			/* window.addEventListener("resize", function () {
+				window.innerWidth < 1440 ? gameBoard.style.width = '70%': gameBoard.style.width = '45%';
+			}) */
+			
 			break;
 		case 3:
 			cardCounter = 50;
 			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
 			seconds = 40 + addTimeFromLevel;
-			window.innerWidth < 635 ? gameBoard.style.width = '70%': gameBoard.style.width = '60%';
+			/* window.addEventListener("resize", function () {
+				window.innerWidth < 1440 ? gameBoard.style.width = '70%': gameBoard.style.width = '60%';
+			}) */
 			break;
 		case 4:
 			cardCounter = 74;
 			dataPack = dataTonesLevel4.concat(dataTonesLevel4);
 			seconds = 50 + addTimeFromLevel;
-			window.innerWidth < 635 ? gameBoard.style.width = '95%%': gameBoard.style.width = '80%';
+			/* window.addEventListener("resize", function () {
+				window.innerWidth < 1640 ? gameBoard.style.width = '100%': gameBoard.style.width = '80%';
+			}) */
 			break;
 		default:
 			cardCounter = 0;

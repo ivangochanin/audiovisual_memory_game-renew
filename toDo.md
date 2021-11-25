@@ -1,7 +1,3 @@
-### SANDRIK
-- icons - same width
-- Add iGo logo - link to github game
-
 ### BOARD INFO
 `Div 1` 
 - Play
@@ -31,6 +27,7 @@
 - if rotate off - disable face accordion
 - win/lose - all disabled
 - small reverb on sounds
+- github instead igo
 
 ### BUG
 - add time in different scenarios
@@ -67,9 +64,5 @@ const radioInputs = document.querySelectorAll('.radioInputs');
 - add true/false mechanism inside functions that you call with eventListener - where
   you need to add and remove listener. Just ask inside func it some true/false then listener
   will work or not.
-
-### README
-- Enthusiasm
-- Ask for help. The best way to load sound samples?
 
 ### TEST GAME
