@@ -265,7 +265,6 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-
       }
 
       .front {
@@ -278,9 +277,9 @@
         transform: perspective(600px) rotateY(180deg);
       }
 
-      .cardsWrapper.flip {
+      /* .cardsWrapper.flip {
         transform: rotateY(180deg);
-      }
+      } */
     }
   }
 }

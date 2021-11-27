@@ -4,11 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  @include respond(laptop) {
+
+  /* @include respond(laptop) {
     position: relative;
-  }
-  
+  } */
+
   #customContainer {
     width: 100%;
     max-width: 2560px;
@@ -23,26 +23,44 @@
     background: transparent;
     transition: $base-transition;
 
+    @include respond(laptop) {
+      position: relative;
+      transform: scale(1);
+      /* transform-style: preserve-3d; */
+      /* transform: perspective(600px) rotateY(180deg); */
+    }
+
+    
+
     .sections {
       height: 90%;
       max-height: 90%;
       padding: 2.5%;
       border-radius: 25px;
-      @include respond(phone) {
+      /* @include respond(phone) {
         height: 95%;
         top: 2.5%;
         bottom: 2.5%;
-      }
+      } */
     }
 
     #settingsWrapperSection {
       width: 33%;
 
       @include respond(laptop) {
+        position: absolute;
+        width: 95%;
+        left: 2.5%;
+        /* z-index: 0; */
+        /* transform: rotateY(180deg); */
+        /* backface-visibility: hidden; */
+      }
+
+      /* @include respond(laptop) {
         width: 98%;
         position: absolute;
         left: -100%;
-      }
+      } */
     }
 
     #gameWrapperSection {
@@ -50,6 +68,17 @@
       width: 65%;
 
       @include respond(laptop) {
+        position: absolute;
+        width: 95%;
+        left: 2.5%;
+        /* display: none; */
+        /* z-index: 1; */
+        /* transform: rotateY(180deg); */
+        /* backface-visibility: hidden; */
+        /* transform: rotateY(0deg); */
+      }
+
+      /* @include respond(laptop) {
         position: absolute;
         width: 70%;
         left: 15%;
@@ -59,7 +88,13 @@
         width: 95%;
         left: 2.5%;
         right: 2.5%;
-      }
+      } */
     }
   }
+}
+
+.rotateSections {
+  /* transform: perspective(600px) rotateY(180deg);
+  background: red !important; */
+  display: none;
 }

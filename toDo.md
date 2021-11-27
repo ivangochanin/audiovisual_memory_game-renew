@@ -15,13 +15,14 @@
 - add time in different scenarios
 
 ### RESPONSIVE
+- SETTINGS 2 GAME V.V. rotate - same as cards
 - turn off score(face) on mobile devices
 - board info bar - icons instead titles - level, time, instr ... - on small devices
 - careful with large screens - sections - max-width/max-height
 - gameBoard different width on levels
-
-### RESPONSIVE SETTINGS 2 GAME V.V.
-- rotate - same as cards
+- Help max width on small devices
+- Stop everything on switch games Sections
+- time seconds fixed width
 
 ### THEME
 - DRY -> find solution: 
