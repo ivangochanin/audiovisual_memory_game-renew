@@ -1,5 +1,5 @@
 import './styles/style.scss';
-import AudioContextMonkeyPatch from './modules/AudioContextMonkeyPatch.js'
+/* import AudioContextMonkeyPatch from './modules/AudioContextMonkeyPatch.js' */
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import accordion from './modules/accordion.js';
@@ -229,7 +229,7 @@ function rotateCard() {
 		  });
 }
 
-/* function playSound() {
+function playSound() {
 	let sound = this.childNodes[2];
 	console.log(sound.src);
 	sound.currentTime = 0;
@@ -241,8 +241,8 @@ function rotateCard() {
 			i.removeEventListener('click', playSound);
 		});
 	}
-} */
-const audio = new AudioContext();
+}
+/* const audio = new AudioContext();
 const primaryGainControl = audio.createGain();
 primaryGainControl.gain.setValueAtTime(1, 0);
 primaryGainControl.connect(audio.destination);
@@ -265,7 +265,7 @@ function playSound() {
 			i.removeEventListener('click', playSound);
 		});
 	}
-}
+} */
 
 function rotateOnOff() {
 	cardWrapper.forEach((i) => {
