@@ -158,7 +158,7 @@ function game() {
 				secondCard.style.visibility = 'hidden';
 				indicatorOff();
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 500);
+			}, 100);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -170,7 +170,7 @@ function game() {
 				/* console.log(wrongGuesses); */
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 				indicatorOff();
-			}, 500);
+			}, 300);
 		}
 	}
 	if (cardCounter === 0 && level <= 4) {
@@ -247,23 +247,18 @@ primaryGainControl.gain.setValueAtTime(1, 0);
 primaryGainControl.connect(audio.destination);
 function playSound() {
 	let sound = this.childNodes[2].src;
-	console.log(sound);
-	/* sound.currentTime = 0; */
 	async function fetchSet() {
 		const set = await fetch(sound);
 		const soundBuffer = await set.arrayBuffer();
 		const noteBuffer = await audio.decodeAudioData(soundBuffer);
 		const noteSource = audio.createBufferSource();
 		noteSource.buffer = noteBuffer;
-		// speed of sample
-		noteSource.playbackRate.setValueAtTime(1, 0); // 1 changing frequency
+		noteSource.playbackRate.setValueAtTime(1, 0); 
 		noteSource.connect(primaryGainControl);
 		noteSource.start();
 	}
 	if (openedCards < 2) {
-		fetchSet();
-		/* sound.volume = 1;
-		sound ? sound.play() : null; */
+		fetchSet()
 	} else {
 		cardWrapper.forEach((i) => {
 			i.removeEventListener('click', playSound);
