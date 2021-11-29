@@ -1,4 +1,5 @@
 import './styles/style.scss';
+import AudioContextMonkeyPatch from './modules/AudioContextMonkeyPatch.js'
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import accordion from './modules/accordion.js';
