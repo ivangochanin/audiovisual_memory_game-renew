@@ -1,5 +1,4 @@
 import './styles/style.scss';
-/* import AudioContextMonkeyPatch from './modules/AudioContextMonkeyPatch.js' */
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import accordion from './modules/accordion.js';
@@ -234,7 +233,7 @@ function playSound() {
 	console.log(sound.src);
 	sound.currentTime = 0;
 	if (openedCards < 2) {
-		sound.volume = 1;
+		sound.volume = .75;
 		sound ? sound.play() : null;
 	} else {
 		cardWrapper.forEach((i) => {
@@ -242,30 +241,6 @@ function playSound() {
 		});
 	}
 }
-/* const audio = new AudioContext();
-const primaryGainControl = audio.createGain();
-primaryGainControl.gain.setValueAtTime(1, 0);
-primaryGainControl.connect(audio.destination);
-function playSound() {
-	let sound = this.childNodes[2].src;
-	async function fetchSet() {
-		const set = await fetch(sound);
-		const soundBuffer = await set.arrayBuffer();
-		const noteBuffer = await audio.decodeAudioData(soundBuffer);
-		const noteSource = audio.createBufferSource();
-		noteSource.buffer = noteBuffer;
-		noteSource.playbackRate.setValueAtTime(1, 0); 
-		noteSource.connect(primaryGainControl);
-		noteSource.start();
-	}
-	if (openedCards < 2) {
-		fetchSet()
-	} else {
-		cardWrapper.forEach((i) => {
-			i.removeEventListener('click', playSound);
-		});
-	}
-} */
 
 function rotateOnOff() {
 	cardWrapper.forEach((i) => {
