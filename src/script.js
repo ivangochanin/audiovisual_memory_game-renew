@@ -158,7 +158,7 @@ function game() {
 				secondCard.style.visibility = 'hidden';
 				indicatorOff();
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 100);
+			}, 250);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -167,10 +167,9 @@ function game() {
 				secondCard.classList.remove('rotate');
 				openedCards = 0;
 				wrongGuesses++;
-				/* console.log(wrongGuesses); */
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 				indicatorOff();
-			}, 300);
+			}, 500);
 		}
 	}
 	if (cardCounter === 0 && level <= 4) {
@@ -230,10 +229,9 @@ function rotateCard() {
 
 function playSound() {
 	let sound = this.childNodes[2];
-	console.log(sound.src);
 	sound.currentTime = 0;
 	if (openedCards < 2) {
-		sound.volume = .75;
+		sound.volume = 1;
 		sound ? sound.play() : null;
 	} else {
 		cardWrapper.forEach((i) => {

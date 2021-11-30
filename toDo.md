@@ -9,6 +9,7 @@
 - win/lose - all disabled
 - small reverb on sounds
 - remove unused ids and classes from html
+- show level on settings section
 - code refactoring
 
 ### BUG
