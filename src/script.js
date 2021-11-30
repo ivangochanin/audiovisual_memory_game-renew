@@ -16,6 +16,7 @@ const continueAfterWin = document.querySelector('#continueAfterWin');
 const resetAfterWin = document.querySelector('#resetAfterWin');
 const levelAfterWin = document.querySelector('#levelAfterWin');
 const currentLevel = document.querySelector('#currentLevel');
+const switchLevel = document.querySelector('#switchLevel');
 const time = document.querySelector('#timer');
 const messageWrapper = document.querySelector('#messageWrapper');
 const message = document.querySelector('#message');
@@ -100,9 +101,9 @@ function setNextLevel() {
 	if (level < 3) {
 		level++;
 		currentLevel.innerHTML = level;
+		switchLevel.innerHTML = level;
 		cardCounter = 0;
 		makeGame();
-		cardSignal.style.opacity = '0';
 	} else {
 		addTimeFromLevel = 0;
 		reset();
@@ -158,7 +159,7 @@ function game() {
 				secondCard.style.visibility = 'hidden';
 				indicatorOff();
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 250);
+			}, 0);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -169,7 +170,7 @@ function game() {
 				wrongGuesses++;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 				indicatorOff();
-			}, 500);
+			}, 0);
 		}
 	}
 	if (cardCounter === 0 && level <= 4) {
@@ -190,7 +191,6 @@ function winLose() {
 	resetGame.style.opacity = '0.35';
 	nextLevel.style.opacity = '0.35';
 	startGameInput.disabled = true;
-	startGameImage.classList.add('addOpacity');
 	winLoseMessage(
 		messageWrapper,
 		message,
@@ -342,7 +342,6 @@ function reset() {
 	cardCounter = 0;
 	wrongGuesses = 0;
 	level = 1;
-	cardSignal.style.opacity = '0';
 	makeGame();
 	pauseGame();
 }
@@ -375,7 +374,6 @@ function makeGame() {
 	timerOnOff = true;
 	time.style.color = blue;
 	startGameInput.disabled = false;
-	startGameImage.classList.remove('addOpacity');
 	//switchesDisable(switchRotateCard, switchSound, switchTime);
 	pauseGame();
 	nextLevel.addEventListener('click', setNextLevel);
@@ -385,15 +383,14 @@ function makeGame() {
 	resetGame.style.opacity = '1';
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
+	switchLevel.innerHTML = level;
 }
 
 makeGame();
 animations();
 theme();
 
-/* function cl(){ 
-	console.log('aaaaa')
-} */
+
 
 goToSettingsButton.addEventListener('click', rotateGameSections)
 goToGameButton.addEventListener('click', rotateGameSections)

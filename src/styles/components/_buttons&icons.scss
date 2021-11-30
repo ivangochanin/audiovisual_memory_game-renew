@@ -8,13 +8,17 @@
   transition: $base-transition;
   @include flex-center;
 
-  &:hover {
-    opacity: .7;
+  @media (hover: hover) {
+    &:hover {
+      opacity: .7;
+    }
   }
- 
+
+
   @include respond(laptop) {
     width: 30px;
     height: 30px;
+
     img {
       width: 55%;
     }
@@ -24,7 +28,7 @@
 /* ----------------------------------------------------------------- START GAME BUTTON -----------------------------------------------------------------*/
 #startGameButton {
   position: relative;
-  
+
   input {
     position: absolute;
     left: 10px;
@@ -33,11 +37,17 @@
 }
 
 /* ------------------------------------------------------------------ PANEL NEXT LEVEL ------------------------------------------------------------------*/
-#nextLevelIconWrapper{
+#nextLevelIconWrapper {
   transition: $base-transition;
   cursor: pointer;
-  &:hover {
-    opacity: .7;
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: .7;
+    }
   }
 }
 
@@ -51,4 +61,3 @@
   margin-right: 15px;
   transition: $base-transition;
 }
-

@@ -1,26 +1,27 @@
 ### ALL
-- buttons hover
-- hover for small devices
+- buttons hover - script line 385 - resetGame.style.opacity = '1';
 - initial loading
 - animations timing renew
 - disable whole info section on win/lose message
 - disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 - if rotate off - disable face accordion
 - win/lose - all disabled
-- small reverb on sounds
 - remove unused ids and classes from html
-- show level on settings section
 - code refactoring
+- player choose set timeout for card speed
+- make cute samples !!!
+
 
 ### BUG
 - add time in different scenarios
+- ios sample - play() problem
 
 ### RESPONSIVE
+- gameBoard different width on levels
 - SETTINGS 2 GAME V.V. rotate - same as cards
 - turn off score(face) on mobile devices
 - board info bar - icons instead titles - level, time, instr ... - on small devices
 - careful with large screens - sections - max-width/max-height
-- gameBoard different width on levels
 - Help max width on small devices
 - Stop everything on switch games Sections
 - time seconds fixed width

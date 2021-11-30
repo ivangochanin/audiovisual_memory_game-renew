@@ -61,9 +61,11 @@
     cursor: pointer;
     transition: $base-transition;
 
-    &:hover {
-      opacity: .7;
-    }
+    @media (hover: hover) {
+      &:hover {
+          opacity: .7;
+      }
+  }
 
     input {
       position: absolute;
