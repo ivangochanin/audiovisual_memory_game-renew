@@ -159,7 +159,7 @@ function game() {
 				secondCard.style.visibility = 'hidden';
 				indicatorOff();
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
-			}, 0);
+			}, 50);
 			openedCards = 0;
 			cardCounter -= 2;
 		} else {
@@ -170,7 +170,7 @@ function game() {
 				wrongGuesses++;
 				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
 				indicatorOff();
-			}, 0);
+			}, 200);
 		}
 	}
 	if (cardCounter === 0 && level <= 4) {
