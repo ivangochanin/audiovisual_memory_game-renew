@@ -33,8 +33,6 @@ const theme = () => {
     const grayLight = '#c7c8c9';
     const helperDark = '#EEEEEE';
 
-
- 
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
@@ -58,41 +56,22 @@ const theme = () => {
                     this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = grayDark
                 });
             });
-
-            radioInstrument.forEach(i => { 
-                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
-                i.addEventListener('change', function() {
-                    if(this.checked) {
-                        radioInstrument.forEach(i => { 
-                            i.nextElementSibling.style.backgroundColor = grayDark
-                        }); 
-                        this.nextElementSibling.style.backgroundColor = blueDark;
-                    } 
+            const radioButtonsDark = (radioButton) => {
+                radioButton.forEach(i => { 
+                    i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
+                    i.addEventListener('change', function() {
+                        if(this.checked) {
+                            radioButton.forEach(i => { 
+                                i.nextElementSibling.style.backgroundColor = grayDark
+                            }); 
+                            this.nextElementSibling.style.backgroundColor = blueDark;
+                        } 
+                    })
                 })
-            })
-            radioMode.forEach(i => { 
-                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
-                i.addEventListener('change', function() {
-                    if(this.checked) {
-                        radioMode.forEach(i => { 
-                            i.nextElementSibling.style.backgroundColor = grayDark
-                        }); 
-                        this.nextElementSibling.style.backgroundColor = blueDark;
-                    } 
-                })
-            })
-            radioFace.forEach(i => { 
-                i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
-                i.addEventListener('change', function() {
-                    if(this.checked) {
-                        radioFace.forEach(i => { 
-                            i.nextElementSibling.style.backgroundColor = grayDark
-                        }); 
-                        this.nextElementSibling.style.backgroundColor = blueDark;
-                    } 
-                })
-            })
-
+            }
+            radioButtonsDark(radioInstrument);
+            radioButtonsDark(radioMode);
+            radioButtonsDark(radioFace);
 
     } else {
         switchThemeText.innerHTML = "Light";
@@ -116,40 +95,24 @@ const theme = () => {
                 this.previousElementSibling.checked ? this.style.backgroundColor = blueLight : this.style.backgroundColor = grayLight
             });
         })
-        radioInstrument.forEach(i => { 
-            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
-            i.addEventListener('change', function() {
-                if(this.checked) {
-                    radioInstrument.forEach(i => { 
-                        i.nextElementSibling.style.backgroundColor = grayLight;
-                    }); 
-                    this.nextElementSibling.style.backgroundColor = blueLight;
-                } 
-            })
-        })
-        radioMode.forEach(i => { 
-            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
-            i.addEventListener('change', function() {
-                if(this.checked) {
-                    radioMode.forEach(i => { 
-                        i.nextElementSibling.style.backgroundColor = grayLight;
-                    }); 
-                    this.nextElementSibling.style.backgroundColor = blueLight;
-                } 
-            })
-        })
-        radioFace.forEach(i => { 
-            i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
-            i.addEventListener('change', function() {
-                if(this.checked) {
-                    radioFace.forEach(i => { 
-                        i.nextElementSibling.style.backgroundColor = grayLight;
-                    }); 
-                    this.nextElementSibling.style.backgroundColor = blueLight;
-                } 
-            })
-        })
 
+        const radioButtonsLight = (radioButton) => {
+            radioButton.forEach(i => { 
+                i.checked ? i.nextElementSibling.style.backgroundColor = blueLight : i.nextElementSibling.style.backgroundColor = grayLight;
+                i.addEventListener('change', function() {
+                    if(this.checked) {
+                        radioButton.forEach(i => { 
+                            i.nextElementSibling.style.backgroundColor = grayLight;
+                        }); 
+                        this.nextElementSibling.style.backgroundColor = blueLight;
+                    } 
+                })
+            })
+        }
+
+        radioButtonsLight(radioInstrument);
+        radioButtonsLight(radioMode);
+        radioButtonsLight(radioFace);
     }
 }
 

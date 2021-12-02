@@ -9,8 +9,6 @@
 - remove unused ids and classes from html
 - code refactoring
 - player choose set timeout for card speed
-- make cute samples !!!
-
 
 ### BUG
 - add time in different scenarios
@@ -18,39 +16,17 @@
 
 ### RESPONSIVE
 - gameBoard different width on levels
-- SETTINGS 2 GAME V.V. rotate - same as cards
-- turn off score(face) on mobile devices
-- board info bar - icons instead titles - level, time, instr ... - on small devices
+- SETTINGS 2 GAME V.V. animation
+- turn off score(face) on mobile devices - or default = symbol
 - careful with large screens - sections - max-width/max-height
-- Help max width on small devices
-- Stop everything on switch games Sections
-- time seconds fixed width
-
-### THEME
-- DRY -> find solution: 
-const radioInputs = document.querySelectorAll('.radioInputs');
-  radioInputs.forEach(i => { 
-      i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark
-      i.addEventListener('change', function() {
-        console.log('this',this.name);
-        if(this.checked) {
-            //let arr = Array.from(this.name)
-            this.name.forEach(i => { 
-                console.log('inside',i);
-                i.nextElementSibling.style.backgroundColor = grayDark
-            }); 
-            this.nextElementSibling.style.backgroundColor = blueDark;
-        } 
-    })
-}) 
-
+- stop everything on switch games Sections
+- bigger icons & buttons on mobile
 
 #### ACA
 *Remove all possible css from js into css - theme colors ...*
 
 > script.js
-- add true/false mechanism inside functions that you call with eventListener - where
-  you need to add and remove listener. Just ask inside func it some true/false then listener
-  will work or not.
+- add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
+  Just ask inside func it some true/false then listener will work or not.
 
 ### TEST GAME

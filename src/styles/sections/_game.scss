@@ -122,10 +122,6 @@
           justify-content: flex-start;
           align-items: center;
           min-width: 40px;
-
-          @include respond(laptop) {
-            min-width: auto;
-          }
         }
       }
 

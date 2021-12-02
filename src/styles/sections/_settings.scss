@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     /* -------------------------------------------------------   TOP   ------------------------------------------------------- */
     #titleWrapper {
         position: relative;
@@ -11,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         //background: red;
         #goToGameButton {
             position: absolute;
@@ -51,7 +52,7 @@
             /* height: calc(100% / 9); */
             //height: 100%;
             /* background: red; */
-            
+
             /* padding-bottom: 2.5vh; */
             transition: $base-transition;
             margin-top: 5px;
@@ -64,7 +65,7 @@
             .panelSections {
                 /* background: green; */
                 width: 100%;
-                
+
                 //min-height: 3rem;
                 /* height: 6rem; */
                 //margin: 1.5px 0;
@@ -80,7 +81,7 @@
                 .panelSectionsLeft {
                     @include flex-center;
 
-                    
+
                 }
 
                 .panelSectionsRight {
@@ -138,6 +139,7 @@
         font-size: 1.4rem;
         line-height: 1.6rem;
         text-transform: capitalize;
+
         #resetGame {
             margin-top: 1rem;
         }
@@ -211,9 +213,12 @@
             margin: .5rem 1rem 0 1rem;
         }
 
-        .helpImages {
-            width: 100%;
-            margin-top: 1rem;
+        .rulesImgWrapper {
+          max-width: 500px;
+            .helpImages {
+                width: 100%;
+                margin-top: 1rem;
+            }
         }
 
         .helpSymbolSections {
