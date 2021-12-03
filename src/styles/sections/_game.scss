@@ -53,6 +53,9 @@
           display: block;
         }
       }
+      #startGameImage {
+        width: 65%;
+      }
     }
 
     #boardInfoMid {
@@ -180,7 +183,8 @@
     }
 
     #gameBoard {
-      width: 100%;
+      //background: black;
+      /* width: 35rem; */
       @include flex-center;
       flex-wrap: wrap;
       height: auto;
@@ -193,7 +197,6 @@
         display: none;
       }
 
-      //background: black;
 
 
       .cardWrapper {
@@ -210,8 +213,8 @@
         margin: .1vw;
 
         @include respond(laptop-big) {
-          width: 5.75rem;
-          height: 5.75rem;
+          width: 7rem;
+          height: 7rem;
         }
 
         @include respond(laptop) {
@@ -220,8 +223,8 @@
         }
 
         @include respond(tab-land) {
-          width: 5.25rem;
-          height: 5.25rem;
+          width: 6rem;
+          height: 6rem;
         }
 
         @include respond(tab-port) {
@@ -229,11 +232,11 @@
           height: 5rem;
         }
 
-        @include respond(phone) {
-          width: 4.75rem;
-          height: 4.75rem;
+         @include respond(phone) {
+          width: 4rem;
+          height: 4rem;
         }
-
+/*
         @include respond(phone-small) {
           width: 4.5rem;
           height: 4.5rem;
@@ -242,7 +245,7 @@
         @include respond(phone-extra-small) {
           width: 4.5rem;
           height: 4.5rem;
-        }
+        } */
 
         @include respond(phone-smallest) {
           width: 3.75rem;
