@@ -1,5 +1,4 @@
 ### ALL
-- initial loading
 - animations timing renew
 - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
 - stop everything on switch to game settings
@@ -16,14 +15,13 @@
 ### RESPONSIVE
 - gameBoard different width on levels
 - SETTINGS 2 GAME V.V. - animation
-- SETTINGS 2 GAME V.V. - same margin top
 - turn off score(face) on mobile devices - or default = symbol
 - bigger icons & buttons on mobile
 - on mobile devices no blue/white container
-- extra small phones font
+- font & icons - laptop & extra small phones
 
 ### BUG
 - add time in different scenarios
 - ios sample - play() problem
 
-### TEST GAME
+> TEST GAME

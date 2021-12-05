@@ -3,7 +3,7 @@ import './styles/style.scss';
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
-import {animations,showCardsAnimation,bonusTimeAnimation,winLoseMessage,elementShow,elementHide,} from './modules/animations.js';
+import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading} from './modules/animations.js';
 import theme from './modules/theme.js';
 import rotateGameSections from './modules/switchSections.js'
 import cardsData from './modules/cardsData';
@@ -46,6 +46,7 @@ let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
+initialLoading();
 accordion();
 cardsData();
 

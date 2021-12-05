@@ -44,4 +44,8 @@ const elementHide = (wrapper) => {
     return gsap.to(wrapper, {duration: .25, autoAlpha: 0});
 };
 
-export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide};
+const initialLoading = () => {
+    return gsap.to("#container", {duration: .5, autoAlpha: 1, delay: 1});
+};
+
+export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading};

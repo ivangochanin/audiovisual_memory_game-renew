@@ -3,18 +3,12 @@
 #gameWrapperSection {
   #boardInfoWrapper {
     width: 100%;
-    height: 5%;
-    // background: red;
-    border-radius: 20px;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 
-    /* @include respond(laptop) {
-      flex-direction: column;
-      
-    } */
     @include respond(laptop) {
       height: 10%;
     }
@@ -25,20 +19,16 @@
 
     .boardInfoSectionsWrapper {
       height: 4rem;
-      //background: lightblue;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      border-radius: 20px;
     }
-
+    
     #boardInfoTop {
-
-      //background: greenyellow;
-      @include respond(laptop) {
+      @include respond(tab-land) {
         width: 100%;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
       }
 
       @include respond(tab-land) {
@@ -49,12 +39,12 @@
       #boardInfoSectionsSwitchButton {
         display: none;
 
-        @include respond(laptop) {
+        @include respond(tab-land) {
           display: block;
         }
       }
       #startGameImage {
-        width: 65%;
+        width: 25px;
       }
     }
 
@@ -165,10 +155,9 @@
   /* ------------------------------------------------------------------ BOARD GAME ------------------------------------------------------------------*/
 
   #boardGameWrapper {
-    //background: rgb(36, 77, 182);
     width: 100%;
-    height: 95%;
-    max-height: 95%;
+    height: 90%;
+    max-height: 90%;
     @include flex-center;
     flex-wrap: wrap;
 
@@ -236,16 +225,6 @@
           width: 4rem;
           height: 4rem;
         }
-/*
-        @include respond(phone-small) {
-          width: 4.5rem;
-          height: 4.5rem;
-        }
-
-        @include respond(phone-extra-small) {
-          width: 4.5rem;
-          height: 4.5rem;
-        } */
 
         @include respond(phone-smallest) {
           width: 3.75rem;
@@ -275,10 +254,7 @@
       .cardWrapper.rotate {
         transform: perspective(600px) rotateY(180deg);
       }
-
-      /* .cardsWrapper.flip {
-        transform: rotateY(180deg);
-      } */
+      
     }
   }
 }
