@@ -1,30 +1,30 @@
-### ALL
-- animations timing renew
-- disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
-- stop everything on switch to game settings
-- win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
-- remove unused ids and classes from html
-- add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
-  Just ask inside func if some true/false then listener will work or not.
-- code refactoring
-
 ### RESPONSIVE
-- gameBoard different width on levels
-- SETTINGS 2 GAME V.V. - animation
-- bigger icons & buttons on mobile
-- on mobile devices no blue/white container
-- font & icons - laptop & extra small phones
+1. gameBoard different width on levels
+2. SETTINGS 2 GAME V.V. - animation
+3. bigger icons & buttons on mobile
+4. font & icons - laptop & extra small phones
+5. theme - top address bar on phone
+
+### ALL
+1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
+2. stop everything on switch to game settings
+3. win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
+4. remove unused ids and classes from html
+5. add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
+  Just ask inside func if some true/false then listener will work or not.
+6. code refactoring
+7. accordion nested for loop => es6
 
 ### Maybe
-- add iGo icon
-- if rotate off - disable face accordion
-- save settings into Cookie or Local storage or Session storage - find solution
-- player choose set timeout for card speed
-- turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
+1. add iGo icon
+2. if rotate off - disable face accordion
+3. save settings into Cookie or Local storage or Session storage - find solution
+4. player choose set timeout for card speed
+5. turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
 
 
 ### BUG
-- add time in different scenarios
-- ios sample - play() problem
+1. add time in different scenarios
+2. ios sample - play() problem
 
 > TEST GAME

@@ -362,7 +362,8 @@ continueAfterWin.addEventListener('click', setNextLevel);
 resetAfterWin.addEventListener('click', reset);
 levelAfterWin.addEventListener('click', repeatLevel);
 switchTheme.addEventListener('change', theme);
-
+goToSettingsButton.addEventListener('click', rotateGameSections)
+goToGameButton.addEventListener('click', rotateGameSections)
 
 function makeGame() {
 	gameBoard.innerHTML = null;
@@ -395,5 +396,3 @@ theme();
 
 
 
-goToSettingsButton.addEventListener('click', rotateGameSections)
-goToGameButton.addEventListener('click', rotateGameSections)
