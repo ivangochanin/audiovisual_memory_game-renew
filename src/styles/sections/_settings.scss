@@ -15,6 +15,7 @@
         @include respond(tab-land) {
             height: 4rem;
         }
+        
         #goToGameButton {
             position: absolute;
             right: 0;
@@ -35,25 +36,18 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* justify-content: center; */
         overflow: auto;
         -ms-overflow-style: none;
         /* IE and Edge */
         scrollbar-width: none;
-
         /* Firefox */
         &::-webkit-scrollbar {
             display: none;
         }
-
-        //padding-top: 2px;
-
+        @include respond(laptop) {
+            height: 70%;
+          }
         .panel {
-            /* height: calc(100% / 9); */
-            //height: 100%;
-            /* background: red; */
-
-            /* padding-bottom: 2.5vh; */
             transition: $base-transition;
             margin-top: 5px;
 
@@ -63,25 +57,21 @@
             }
 
             .panelSections {
-                /* background: green; */
                 width: 100%;
-
-                //min-height: 3rem;
-                /* height: 6rem; */
-                //margin: 1.5px 0;
                 padding: 0 10px;
-                font-size: 16px;
+                font-size: 1.6rem;
                 border: none;
                 outline: none;
                 transition: 0.4s;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                @include respond(laptop) {
+                    font-size: 1.4rem;
+                  }
 
                 .panelSectionsLeft {
                     @include flex-center;
-
-
                 }
 
                 .panelSectionsRight {
@@ -139,7 +129,9 @@
         font-size: 1.4rem;
         line-height: 1.6rem;
         text-transform: capitalize;
-
+        @include respond(laptop) {
+            height: 15%;
+          }
         #resetGame {
             margin-top: 1rem;
         }
@@ -155,13 +147,11 @@
     padding: 0 1rem;
     border-radius: 12.5px;
     font-size: 1.4rem;
-    /* color: #1D1F28; */
     color: #70737a;
     overflow: auto;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
-
     /* Firefox */
     &::-webkit-scrollbar {
         display: none;
@@ -172,7 +162,6 @@
         padding: 1rem 0;
         border-top: 2px solid #70737a;
 
-        //background: red;
         .helpTitles {
             font-family: fontLight;
             font-size: 1.75rem;
@@ -237,7 +226,6 @@
                 font-size: 1.25rem;
                 min-width: 6rem;
                 text-align: center;
-                /* background: red;  */
             }
         }
     }

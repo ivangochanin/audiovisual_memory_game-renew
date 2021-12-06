@@ -60,4 +60,14 @@
   border-radius: 50%;
   margin-right: 15px;
   transition: $base-transition;
+  img {
+    width: 2.5rem;
+    @include respond(phone) {
+      width: 2rem;
+    }
+  }
+  @include respond(phone) {
+    width: 30px;
+    height: 30px;
+  }
 }
