@@ -17,6 +17,7 @@ const theme = () => {
     const radioMode = document.getElementsByName('radioMode');
     const radioFace = document.getElementsByName('radioFace');
     const accordionArrow = document.querySelectorAll('.accordionArrow');
+    const meta = document.querySelector("[name=theme-color][content]");
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -33,6 +34,7 @@ const theme = () => {
     const grayLight = '#c7c8c9';
     const helperDark = '#EEEEEE';
 
+
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
@@ -47,7 +49,7 @@ const theme = () => {
         iconWrapper.forEach(el => { el.style.backgroundColor = darkWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = blueDark});
         indicators.forEach(el => { el.style.backgroundColor = grayDark });
-
+        meta.content = dark;
         switcherSlider.forEach(el => { 
             // .switcherSlider:before - https://css-irl.info/quick-tip-style-pseudo-elements-with-javascript-using-custom-properties/
             el.style.setProperty('--background', '#1D1F28'); 
@@ -87,7 +89,7 @@ const theme = () => {
         iconWrapper.forEach(el => { el.style.backgroundColor = lightWrapper });
         gameButtons.forEach(el => { el.style.backgroundColor = blueLight});
         indicators.forEach(el => { el.style.backgroundColor = grayLight });
-
+        meta.content = light;
         switcherSlider.forEach(el => { 
             el.style.setProperty('--background', '#FFFFFF'); 
             el.previousElementSibling.checked ? el.style.backgroundColor = grayLight : el.style.backgroundColor = blueLight
