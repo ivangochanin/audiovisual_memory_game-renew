@@ -1,7 +1,6 @@
 ### RESPONSIVE
 1. gameBoard different width on levels
 2. SETTINGS 2 GAME V.V. - animation
-3. font & icons - laptop & extra small phones
 
 ### ALL
 1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
