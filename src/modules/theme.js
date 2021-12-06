@@ -18,6 +18,7 @@ const theme = () => {
     const radioFace = document.getElementsByName('radioFace');
     const accordionArrow = document.querySelectorAll('.accordionArrow');
     const meta = document.querySelector("[name=theme-color][content]");
+    const metaIos = document.querySelector("[name=apple-mobile-web-app-status-bar-style][content]");
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const dark = '#1D1F28';
@@ -50,6 +51,7 @@ const theme = () => {
         gameButtons.forEach(el => { el.style.backgroundColor = blueDark});
         indicators.forEach(el => { el.style.backgroundColor = grayDark });
         meta.content = dark;
+        metaIos.content = dark;
         switcherSlider.forEach(el => { 
             // .switcherSlider:before - https://css-irl.info/quick-tip-style-pseudo-elements-with-javascript-using-custom-properties/
             el.style.setProperty('--background', '#1D1F28'); 
@@ -90,6 +92,7 @@ const theme = () => {
         gameButtons.forEach(el => { el.style.backgroundColor = blueLight});
         indicators.forEach(el => { el.style.backgroundColor = grayLight });
         meta.content = light;
+        metaIos.content = light;
         switcherSlider.forEach(el => { 
             el.style.setProperty('--background', '#FFFFFF'); 
             el.previousElementSibling.checked ? el.style.backgroundColor = grayLight : el.style.backgroundColor = blueLight

@@ -3,7 +3,6 @@
 2. SETTINGS 2 GAME V.V. - animation
 3. bigger icons & buttons on mobile
 4. font & icons - laptop & extra small phones
-5. theme - top address bar on phone
 
 ### ALL
 1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
