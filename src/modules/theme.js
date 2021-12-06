@@ -21,6 +21,8 @@ const theme = () => {
     const metaIos = document.querySelector("[name=apple-mobile-web-app-status-bar-style][content]");
     const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
+    const containerDarkMobile = 'linear-gradient(252.35deg, #1D1F28 1.48%, #1D1F28 49.71%, #1D1F28 97.43%)';
+    const containerLightMobile = 'linear-gradient(252.35deg, #FFFFFF 1.48%, #FFFFFF 49.71%, #FFFFFF 97.43%)';
     const dark = '#1D1F28';
     const light = '#FFFFFF';
     const darkFont_default = '#E9EDF2';
@@ -43,7 +45,11 @@ const theme = () => {
         nextLevel.src = './assets/icons/continueDark.png';
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: darkFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontUltralight", color: darkFont_thin})});
-        container.style.backgroundImage = containerDark;
+        document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerDarkMobile : container.style.backgroundImage = containerDark;
+			window.addEventListener("resize", () => {
+				document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerDarkMobile : container.style.backgroundImage = containerDark;
+			})
+       // container.style.backgroundImage = containerDark;
         sections.forEach(el => { el.style.backgroundColor = dark });
         helpWrapper.style.backgroundColor = helperDark;
         messageWrapper.style.backgroundColor = dark;
@@ -84,7 +90,11 @@ const theme = () => {
         nextLevel.src = './assets/icons/continueLight.png';
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontLight", color: lightFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: lightFont_thin})});
-        container.style.backgroundImage = containerLight;
+        document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerLightMobile : container.style.backgroundImage = containerLight;
+			window.addEventListener("resize", () => {
+				document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerLightMobile : container.style.backgroundImage = containerLight;
+			})
+        //container.style.backgroundImage = containerLight;
         sections.forEach(el => { el.style.backgroundColor = light });
         helpWrapper.style.backgroundColor = light;
         messageWrapper.style.backgroundColor = light;
