@@ -31,8 +31,8 @@
       border-radius: 25px;
 
       @include respond(phone) {
-        height: calc(100vh - 56px);  /* mobile address bar height */
-        max-height: calc(100vh - 56px);
+        height: calc(100vh - 7rem);  /* mobile address bar height */
+        max-height: calc(100vh - 7rem);
       }
     }
 

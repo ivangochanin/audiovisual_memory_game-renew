@@ -2,7 +2,6 @@
 1. gameBoard different width on levels
 2. SETTINGS 2 GAME V.V. - animation
 3. font & icons - laptop & extra small phones
-4. 100vh height when address bar is shown
 
 ### ALL
 1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
@@ -15,8 +14,7 @@
 1. add iGo icon
 2. if rotate off - disable face accordion
 3. save settings into Cookie or Local storage or Session storage - find solution
-4. player choose set timeout for card speed
-5. turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
+4. turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
 
 ### CODE REFACTORING
 1. accordion nested for loop => es6

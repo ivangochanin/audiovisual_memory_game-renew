@@ -48,4 +48,6 @@ const initialLoading = () => {
     return gsap.to("#container", {duration: .5, autoAlpha: 1, delay: 1});
 };
 
+
+
 export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading};

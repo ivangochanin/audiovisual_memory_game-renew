@@ -49,7 +49,6 @@ const theme = () => {
 			window.addEventListener("resize", () => {
 				document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerDarkMobile : container.style.backgroundImage = containerDark;
 			})
-       // container.style.backgroundImage = containerDark;
         sections.forEach(el => { el.style.backgroundColor = dark });
         helpWrapper.style.backgroundColor = helperDark;
         messageWrapper.style.backgroundColor = dark;
@@ -94,7 +93,6 @@ const theme = () => {
 			window.addEventListener("resize", () => {
 				document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerLightMobile : container.style.backgroundImage = containerLight;
 			})
-        //container.style.backgroundImage = containerLight;
         sections.forEach(el => { el.style.backgroundColor = light });
         helpWrapper.style.backgroundColor = light;
         messageWrapper.style.backgroundColor = light;

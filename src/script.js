@@ -47,8 +47,11 @@ let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
 initialLoading();
+theme();
+animations();
 accordion();
 cardsData();
+makeGame();
 
 function boardStart() {
 	!startGameInput.checked && firstClick ? playGame() : null;
@@ -390,9 +393,7 @@ function makeGame() {
 	switchLevel.innerHTML = level;
 }
 
-makeGame();
-animations();
-theme();
+
 
 
 
