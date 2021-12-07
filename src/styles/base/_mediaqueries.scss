@@ -1,4 +1,9 @@
 @mixin respond($breakpoint) {
+  @if $breakpoint == landscapeScreen {
+    @media screen and (orientation: landscape) {
+      @content
+    };
+  }
 
   @if $breakpoint == phone-smallest {
     @media only screen and (max-width: 320px) {

@@ -17,11 +17,19 @@
       height: 20%;
     }
 
+    @include respond(landscapeScreen) {
+      height: 9rem;
+      max-height: 9rem;
+    }
+
     .boardInfoSectionsWrapper {
       height: 4rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      @include respond(landscapeScreen) {
+        height: 3rem;
+      }
     }
     
     #boardInfoTop {
@@ -163,7 +171,7 @@
     max-height: 90%;
     @include flex-center;
     flex-wrap: wrap;
-   /*  background: lightgoldenrodyellow; */
+    
     @include respond(laptop) {
       height: 90%;
       max-height: 90%;
@@ -173,14 +181,17 @@
       height: 80%;
       max-height: 80%;
     }
-
+    @include respond(landscapeScreen) {
+      height: calc(100% - 9rem);
+      max-height: calc(100% - 9rem);
+    }
     #gameBoard {
       //background: black;
       /* width: 35rem; */
       @include flex-center;
       flex-wrap: wrap;
       height: auto;
-      max-height: 100%;
+      max-height: 90%;
       overflow: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -189,7 +200,10 @@
         display: none;
       }
 
-
+      @include respond(landscapeScreen) {
+        height: calc(100% - 9rem);
+      max-height: calc(100% - 9rem);
+      }
 
       .cardWrapper {
         opacity: 0;
