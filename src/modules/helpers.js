@@ -24,23 +24,23 @@ const responsiveGameBoardLevel1 = () => {
     switch (true) {
         case (documentWidth <= 1440 && documentWidth > 1284):
             gameBoard.style.width = '70rem'
-            gameBoard.style.background = 'black';
+            /* gameBoard.style.background = 'black'; */
             break;
         case (documentWidth <= 1284 && documentWidth > 1024):
             gameBoard.style.width = '60%'
-            gameBoard.style.background = 'blue';
+            /* gameBoard.style.background = 'blue'; */
             break;
         case (documentWidth <= 1024 && documentWidth > 768):
             gameBoard.style.width = '70%'
-            gameBoard.style.background = 'green';
+            /* gameBoard.style.background = 'green'; */
             break;	
         case (documentWidth <= 768):
             gameBoard.style.width = '80%'
-            gameBoard.style.background = 'yellow';
+            /* gameBoard.style.background = 'yellow'; */
             break;
         default:
             gameBoard.style.width = '35rem';
-            gameBoard.style.background = 'red';
+            /* gameBoard.style.background = 'red'; */
             break;
     }
 }
@@ -50,23 +50,23 @@ const responsiveGameBoardLevel2 = () => {
     switch (true) {
         case (documentWidth <= 1440 && documentWidth > 1284):
             gameBoard.style.width = '70rem'
-            gameBoard.style.background = 'black';
+            /* gameBoard.style.background = 'black'; */
             break;
         case (documentWidth <= 1284 && documentWidth > 1024):
             gameBoard.style.width = '60%'
-            gameBoard.style.background = 'blue';
+            /* gameBoard.style.background = 'blue'; */
             break;
         case (documentWidth <= 1024 && documentWidth > 768):
             gameBoard.style.width = '70%'
-            gameBoard.style.background = 'green';
+           /*  gameBoard.style.background = 'green'; */
             break;	
         case (documentWidth <= 768):
             gameBoard.style.width = '100%'
-            gameBoard.style.background = 'yellow';
+           /*  gameBoard.style.background = 'yellow'; */
             break;
         default:
             gameBoard.style.width = '55rem';
-            gameBoard.style.background = 'orange';
+            /* gameBoard.style.background = 'orange'; */
             break;
     }
 }
@@ -76,23 +76,23 @@ const responsiveGameBoardLevel3 = () => {
     switch (true) {
         case (documentWidth <= 1440 && documentWidth > 1284):
             gameBoard.style.width = '70rem'
-            gameBoard.style.background = 'black';
+            /* gameBoard.style.background = 'black'; */
             break;
         case (documentWidth <= 1284 && documentWidth > 1024):
             gameBoard.style.width = '55rem'
-            gameBoard.style.background = 'blue';
+           /*  gameBoard.style.background = 'blue'; */
             break;
         case (documentWidth <= 1024 && documentWidth > 768):
             gameBoard.style.width = '65rem'
-            gameBoard.style.background = 'green';
+            /* gameBoard.style.background = 'green'; */
             break;	
         case (documentWidth <= 768):
             gameBoard.style.width = '50rem'
-            gameBoard.style.background = 'yellow';
+            /* gameBoard.style.background = 'yellow'; */
             break;
         default:
             gameBoard.style.width = '75rem';
-            gameBoard.style.background = 'red';
+            /* gameBoard.style.background = 'red'; */
             break;
     }
 }

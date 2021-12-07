@@ -163,7 +163,7 @@
     max-height: 90%;
     @include flex-center;
     flex-wrap: wrap;
-    background: lightgoldenrodyellow;
+   /*  background: lightgoldenrodyellow; */
     @include respond(laptop) {
       height: 90%;
       max-height: 90%;
