@@ -29,16 +29,16 @@
   .switcherSlider:before {
     position: absolute;
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: var(--background, #1D1F28);
-    right: 5px;
+    right: 4px;
     transition: $base-transition;
     border-radius: 50%;
     @include respond(laptop) {
-      width: 16px;
-      height: 16px;
-      /* right: 2.5px; */
+      width: 14px;
+      height: 14px;
+      /* right: 2px; */
     }
   }
 
@@ -49,7 +49,7 @@
     display: none;
 
     &:checked+.switcherSlider:before {
-      transform: translateX(-20px);
+      transform: translateX(-24px);
     }
   }
 }

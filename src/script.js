@@ -1,6 +1,6 @@
 import './styles/style.scss';
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
-import { stopGame, continueGame, getRandom } from './modules/helpers.js';
+import { stopGame, continueGame, getRandom, responsiveGameBoardLevel1, responsiveGameBoardLevel2, responsiveGameBoardLevel3 } from './modules/helpers.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading} from './modules/animations.js';
@@ -66,34 +66,37 @@ function setLevel() {
 	let dataTonesLevel1 = cardsData().filter((tone, index) => index < 8);
 	let dataTonesLevel2 = cardsData().filter((tone, index) => index < 13);
 	let dataTonesLevel3 = cardsData().filter((tone, index) => index < 25);
+	
 	switch (level) {
 		case 1:
 			cardCounter = 16;
 			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
 			seconds = 20;
-			document.documentElement.clientWidth < 768 ? gameBoard.style.width = '60%': gameBoard.style.width = '35rem';
-			window.addEventListener("resize", () => {
-				document.documentElement.clientWidth < 768 ? gameBoard.style.width = '60%': gameBoard.style.width = '35rem';
-			})
+			responsiveGameBoardLevel1();
+			window.addEventListener("resize", () => responsiveGameBoardLevel1());
 			break;
 		case 2:
 			cardCounter = 26;
 			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
 			seconds = 30 + addTimeFromLevel;
-			document.documentElement.clientWidth < 768 ? gameBoard.style.width = '80%': gameBoard.style.width = '55rem';
+			responsiveGameBoardLevel2();
+			window.addEventListener("resize", () => responsiveGameBoardLevel2());
+			/* document.documentElement.clientWidth < 768 ? gameBoard.style.width = '80%': gameBoard.style.width = '55rem';
 			window.addEventListener("resize", () => {
 				document.documentElement.clientWidth < 768 ? gameBoard.style.width = '80%': gameBoard.style.width = '55rem';
-			})
+			}) */
 			
 			break;
 		case 3:
 			cardCounter = 50;
 			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
 			seconds = 40 + addTimeFromLevel;
-			document.documentElement.clientWidth < 768 ? gameBoard.style.width = '100%': gameBoard.style.width = '75rem';
+			responsiveGameBoardLevel3();
+			window.addEventListener("resize", () => responsiveGameBoardLevel3());
+			/* document.documentElement.clientWidth < 768 ? gameBoard.style.width = '100%': gameBoard.style.width = '75rem';
 			window.addEventListener("resize", () => {
 				document.documentElement.clientWidth < 768 ? gameBoard.style.width = '100%': gameBoard.style.width = '75rem';
-			})
+			}) */
 			break;
 		default:
 			cardCounter = 0;
@@ -251,6 +254,8 @@ function rotateOnOff() {
 		if (switchRotateCard.checked) {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
+			/* switchSound.checked = false;
+			switchSoundText.innerHTML = 'on'; */
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
@@ -263,6 +268,8 @@ function soundOnOff() {
 		if (switchSound.checked) {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
+			/* switchRotateCard.checked = false;
+			switchRotateCardText.innerHTML = 'on'; */
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';

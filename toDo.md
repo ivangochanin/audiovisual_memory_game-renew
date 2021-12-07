@@ -10,10 +10,9 @@
   Just ask inside func if some true/false then listener will work or not.
 
 ### Maybe
-1. add iGo icon
-2. if rotate off - disable face accordion
-3. save settings into Cookie or Local storage or Session storage - find solution
-4. turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
+1. if rotate off - disable face accordion
+2. save settings into Cookie or Local storage or Session storage - find solution
+3. turn off score(face) on mobile devices - or default = symbol - if cardWrapper width < xy turn off score/default symbol
 
 ### CODE REFACTORING
 1. accordion nested for loop => es6
@@ -23,5 +22,6 @@
 ### BUG
 1. add time in different scenarios
 2. ios sample - play() problem
+3. if turn on/off switches (rotate/sound) - second card bug
 
 > TEST GAME

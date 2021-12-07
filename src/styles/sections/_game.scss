@@ -163,7 +163,7 @@
     max-height: 90%;
     @include flex-center;
     flex-wrap: wrap;
-
+    background: lightgoldenrodyellow;
     @include respond(laptop) {
       height: 90%;
       max-height: 90%;
@@ -180,7 +180,7 @@
       @include flex-center;
       flex-wrap: wrap;
       height: auto;
-      max-height: 90%;
+      max-height: 100%;
       overflow: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -193,8 +193,6 @@
 
       .cardWrapper {
         opacity: 0;
-        /* flex-basis: calc(25% - .2vw); */
-        //flex: 0 0 23%;
         width: 8rem;
         height: 8rem;
         border-radius: 4px;
@@ -215,8 +213,8 @@
         }
 
         @include respond(tab-land) {
-          width: 6rem;
-          height: 6rem;
+          width: 6.5rem;
+          height: 6.5rem;
         }
 
         @include respond(tab-port) {
