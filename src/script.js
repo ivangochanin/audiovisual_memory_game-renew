@@ -1,6 +1,7 @@
 import './styles/style.scss';
 //import {switchesDisable, switchesEnable} from "./modules/switches.js";
-import { stopGame, continueGame, getRandom, responsiveGameBoardLevel1, responsiveGameBoardLevel2, responsiveGameBoardLevel3 } from './modules/helpers.js';
+import { stopGame, continueGame, getRandom } from './modules/helpers.js';
+import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
 import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading} from './modules/animations.js';
@@ -72,31 +73,22 @@ function setLevel() {
 			cardCounter = 16;
 			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
 			seconds = 20;
-			responsiveGameBoardLevel1();
-			window.addEventListener("resize", () => responsiveGameBoardLevel1());
+			responsiveLevel1();
+			window.addEventListener("resize", () => responsiveLevel1());
 			break;
 		case 2:
 			cardCounter = 26;
 			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
 			seconds = 30 + addTimeFromLevel;
-			responsiveGameBoardLevel2();
-			window.addEventListener("resize", () => responsiveGameBoardLevel2());
-			/* document.documentElement.clientWidth < 768 ? gameBoard.style.width = '80%': gameBoard.style.width = '55rem';
-			window.addEventListener("resize", () => {
-				document.documentElement.clientWidth < 768 ? gameBoard.style.width = '80%': gameBoard.style.width = '55rem';
-			}) */
-			
+			responsiveLevel2();
+			window.addEventListener("resize", () => responsiveLevel2());
 			break;
 		case 3:
 			cardCounter = 50;
 			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
 			seconds = 40 + addTimeFromLevel;
-			responsiveGameBoardLevel3();
-			window.addEventListener("resize", () => responsiveGameBoardLevel3());
-			/* document.documentElement.clientWidth < 768 ? gameBoard.style.width = '100%': gameBoard.style.width = '75rem';
-			window.addEventListener("resize", () => {
-				document.documentElement.clientWidth < 768 ? gameBoard.style.width = '100%': gameBoard.style.width = '75rem';
-			}) */
+			responsiveLevel3();
+			window.addEventListener("resize", () => responsiveLevel3());
 			break;
 		default:
 			cardCounter = 0;

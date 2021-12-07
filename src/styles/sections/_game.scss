@@ -21,6 +21,10 @@
       height: 9rem;
       max-height: 9rem;
     }
+    @include respond(phone-smallest) {
+      height: 9rem;
+      max-height: 9rem;
+    }
 
     .boardInfoSectionsWrapper {
       height: 4rem;
@@ -28,6 +32,9 @@
       justify-content: space-around;
       align-items: center;
       @include respond(phoneLandscape) {
+        height: 3rem;
+      }
+      @include respond(phone-smallest) {
         height: 3rem;
       }
     }
@@ -185,6 +192,10 @@
       height: calc(100% - 9rem);
       max-height: calc(100% - 9rem);
     }
+    @include respond(phone-smallest) {
+      height: calc(100% - 9rem);
+      max-height: calc(100% - 9rem);
+    }
     #gameBoard {
       //background: black;
       /* width: 35rem; */
@@ -199,12 +210,7 @@
       &::-webkit-scrollbar {
         display: none;
       }
-
-      /* @include respond(phoneLandscape) {
-        height: calc(100% - 9rem);
-      max-height: calc(100% - 9rem);
-      } */
-
+      
       .cardWrapper {
         opacity: 0;
         width: 8rem;
@@ -222,28 +228,28 @@
         }
 
         @include respond(laptop) {
-          width: 5.5rem;
-          height: 5.5rem;
+          width: 6rem;
+          height: 6rem;
         }
 
-        @include respond(tab-land) {
-          width: 6.5rem;
-          height: 6.5rem;
-        }
-
-        @include respond(tab-port) {
+         @include respond(phone) {
           width: 5rem;
           height: 5rem;
         }
 
-         @include respond(phone) {
+        @include respond(phone-small) {
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+
+        @include respond(phone-extra-small) {
           width: 4rem;
           height: 4rem;
         }
 
-        @include respond(phone-smallest) {
-          width: 3.75rem;
-          height: 3.75rem;
+        @include respond(nonsense) {
+          width: 17.5vw;
+          height: 17.5vw;
         }
       }
 

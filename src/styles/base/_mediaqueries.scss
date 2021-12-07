@@ -4,6 +4,12 @@
       @content
     };
   }
+  
+  @if $breakpoint == nonsense {
+    @media only screen and (max-width: 290px) {
+      @content
+    };
+  }
 
   @if $breakpoint == phone-smallest {
     @media only screen and (max-width: 320px) {
