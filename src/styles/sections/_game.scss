@@ -200,10 +200,10 @@
         display: none;
       }
 
-      @include respond(landscapeScreen) {
+      /* @include respond(landscapeScreen) {
         height: calc(100% - 9rem);
       max-height: calc(100% - 9rem);
-      }
+      } */
 
       .cardWrapper {
         opacity: 0;
