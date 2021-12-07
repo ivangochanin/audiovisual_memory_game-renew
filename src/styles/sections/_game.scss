@@ -17,7 +17,7 @@
       height: 20%;
     }
 
-    @include respond(landscapeScreen) {
+    @include respond(phoneLandscape) {
       height: 9rem;
       max-height: 9rem;
     }
@@ -27,7 +27,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      @include respond(landscapeScreen) {
+      @include respond(phoneLandscape) {
         height: 3rem;
       }
     }
@@ -181,7 +181,7 @@
       height: 80%;
       max-height: 80%;
     }
-    @include respond(landscapeScreen) {
+    @include respond(phoneLandscape) {
       height: calc(100% - 9rem);
       max-height: calc(100% - 9rem);
     }
@@ -200,7 +200,7 @@
         display: none;
       }
 
-      /* @include respond(landscapeScreen) {
+      /* @include respond(phoneLandscape) {
         height: calc(100% - 9rem);
       max-height: calc(100% - 9rem);
       } */

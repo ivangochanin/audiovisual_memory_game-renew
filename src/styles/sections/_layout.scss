@@ -34,6 +34,10 @@
         height: calc(100vh - 56px);  /* mobile address bar height */
         max-height: calc(100vh - 56px);
       }
+      @include respond(phoneLandscape) {
+        height: calc(100vh);
+        max-height: calc(100vh);
+      }
     }
 
     #settingsWrapperSection {
@@ -46,6 +50,12 @@
       }
 
       @include respond(phone) {
+        width: 100%;
+        left: 0%;
+        border-radius: 0px;
+        padding: 5%;
+      }
+      @include respond(phoneLandscape) {
         width: 100%;
         left: 0%;
         border-radius: 0px;
@@ -64,6 +74,12 @@
       }
 
       @include respond(phone) {
+        width: 100%;
+        left: 0%;
+        border-radius: 0px;
+        padding: 5%;
+      }
+      @include respond(phoneLandscape) {
         width: 100%;
         left: 0%;
         border-radius: 0px;
