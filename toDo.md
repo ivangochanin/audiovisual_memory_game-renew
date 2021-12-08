@@ -1,10 +1,9 @@
 ### RESPONSIVE
-1. SETTINGS 2 GAME V.V. - animation
-2. nonsense phone text & icons/btns
+1. nonsense phone text & icons/btns
 
 ### ALL
 1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
-2. stop everything(timer) on switch to game settings
+2. stop everything(timer or pause) on switch to game settings
 3. win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
 
 ### MAYBE

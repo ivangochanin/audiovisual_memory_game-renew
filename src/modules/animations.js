@@ -48,6 +48,18 @@ const initialLoading = () => {
     return gsap.to("#container", {duration: .5, autoAlpha: 1, delay: 1});
 };
 
+const showSettings = () => {
+    gsap.fromTo('#gameWrapperSection', {rotationY: 0}, {duration: .75, rotationY: 180});
+    gsap.fromTo('#settingsWrapperSection', {rotationY: 180}, {duration: .75, rotationY:0})
+    gsap.fromTo('#gameWrapperSection', {autoAlpha:1}, {duration: .1, autoAlpha:0});
+    gsap.fromTo('#settingsWrapperSection', {autoAlpha:0}, {duration: .5, autoAlpha:1})
+}
 
+const showGame = () => {
+    gsap.fromTo('#gameWrapperSection', {rotationY: 180}, {duration: .75, rotationY:0});
+    gsap.fromTo('#settingsWrapperSection', {rotationY: 0}, {duration: .75, rotationY: 180})
+    gsap.fromTo('#gameWrapperSection', {autoAlpha:0}, {duration: .5, autoAlpha:1});
+    gsap.fromTo('#settingsWrapperSection', {autoAlpha:1}, {duration: .1, autoAlpha:0})
+}
 
-export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading};
+export {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading, showSettings, showGame};

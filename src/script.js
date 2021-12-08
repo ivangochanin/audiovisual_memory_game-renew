@@ -4,9 +4,9 @@ import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
-import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementShow, elementHide, initialLoading} from './modules/animations.js';
+import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, 
+	    elementShow, elementHide, initialLoading, showSettings, showGame} from './modules/animations.js';
 import theme from './modules/theme.js';
-import rotateGameSections from './modules/switchSections.js'
 import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
 const cardSignal = document.querySelector('#cardSignal');
@@ -364,8 +364,8 @@ continueAfterWin.addEventListener('click', setNextLevel);
 resetAfterWin.addEventListener('click', reset);
 levelAfterWin.addEventListener('click', repeatLevel);
 switchTheme.addEventListener('change', theme);
-goToSettingsButton.addEventListener('click', rotateGameSections)
-goToGameButton.addEventListener('click', rotateGameSections)
+goToSettingsButton.addEventListener('click', showSettings)
+goToGameButton.addEventListener('click', showGame)
 
 function makeGame() {
 	gameBoard.innerHTML = null;
