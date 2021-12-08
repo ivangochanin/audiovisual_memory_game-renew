@@ -49,16 +49,16 @@ const initialLoading = () => {
 };
 
 const showSettings = () => {
-    gsap.fromTo('#gameWrapperSection', {rotationY: 0}, {duration: .75, rotationY: 180});
-    gsap.fromTo('#settingsWrapperSection', {rotationY: 180}, {duration: .75, rotationY:0})
+    gsap.fromTo('#gameWrapperSection', {rotationY: 0}, {duration: .5, rotationY: 180});
+    gsap.fromTo('#settingsWrapperSection', {rotationY: 180}, {duration: .5, rotationY:0})
     gsap.fromTo('#gameWrapperSection', {autoAlpha:1}, {duration: .1, autoAlpha:0});
-    gsap.fromTo('#settingsWrapperSection', {autoAlpha:0}, {duration: .5, autoAlpha:1})
+    gsap.fromTo('#settingsWrapperSection', {autoAlpha:0}, {duration: .25, autoAlpha:1})
 }
 
 const showGame = () => {
-    gsap.fromTo('#gameWrapperSection', {rotationY: 180}, {duration: .75, rotationY:0});
-    gsap.fromTo('#settingsWrapperSection', {rotationY: 0}, {duration: .75, rotationY: 180})
-    gsap.fromTo('#gameWrapperSection', {autoAlpha:0}, {duration: .5, autoAlpha:1});
+    gsap.fromTo('#gameWrapperSection', {rotationY: 180}, {duration: .5, rotationY:0});
+    gsap.fromTo('#settingsWrapperSection', {rotationY: 0}, {duration: .5, rotationY: 180})
+    gsap.fromTo('#gameWrapperSection', {autoAlpha:0}, {duration: .25, autoAlpha:1});
     gsap.fromTo('#settingsWrapperSection', {autoAlpha:1}, {duration: .1, autoAlpha:0})
 }
 
