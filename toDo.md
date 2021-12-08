@@ -1,6 +1,3 @@
-### RESPONSIVE
-1. nonsense phone text & icons/btns
-
 ### ALL
 1. disable - turn off both switches or if all switches off - disable all or ? or turn off both switches === popup bet mode
 2. stop everything(timer or pause) on switch to game settings

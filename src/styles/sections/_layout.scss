@@ -6,6 +6,17 @@
   justify-content: space-between;
   align-items: center;
 
+  #extraSmallMessage {
+    display: none;
+    @include respond(everythingOff) {
+      width: 100%;
+      padding: 5%;
+      text-align: center;
+      display: block;
+      font-size: 7.5vw;
+      font-family: fontUltralight;
+    }
+  }
   #customContainer {
     width: 100%;
     max-width: 2560px;
@@ -23,7 +34,9 @@
     @include respond(tab-land) {
       position: relative;
     }
-
+    @include respond(everythingOff) {
+      display: none;
+    }
     .sections {
       height: 90%;
       max-height: 90%;

@@ -4,6 +4,12 @@
       @content
     };
   }
+
+  @if $breakpoint == everythingOff {
+    @media only screen and (max-width: 260px), screen and (max-height: 260px) {
+      @content
+    };
+  }
   
   @if $breakpoint == nonsense {
     @media only screen and (max-width: 290px) {
