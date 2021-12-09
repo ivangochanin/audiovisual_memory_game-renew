@@ -11,6 +11,5 @@
 1. add time in different scenarios
 2. ios sample - play() problem
 3. if turn on/off switches (rotate/sound) - second card bug
-4. buttons hover - script line 385 - resetGame.style.opacity = '1';
 
 > TEST GAME

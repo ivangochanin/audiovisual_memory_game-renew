@@ -188,12 +188,6 @@ function game() {
 
 function winLose() {
 	pauseGame();
-	nextLevel.removeEventListener('click', setNextLevel);
-	resetGame.removeEventListener('click', reset);
-	gameBoard.removeEventListener('click', boardStart);
-	resetGame.style.opacity = '0.35';
-	nextLevel.style.opacity = '0.35';
-	startGameInput.disabled = true;
 	winLoseMessage(
 		messageWrapper,
 		message,
@@ -366,11 +360,13 @@ startGameInput.addEventListener('change', playPause);
 switchRotateCard.addEventListener('change', rotateOnOff);
 switchSound.addEventListener('change', soundOnOff);
 switchTime.addEventListener('change', timeOnOf);
-resetGame.addEventListener('click', reset);
+nextLevel.addEventListener('click', setNextLevel);
 continueAfterWin.addEventListener('click', setNextLevel);
+resetGame.addEventListener('click', reset);
 resetAfterWin.addEventListener('click', reset);
 levelAfterWin.addEventListener('click', repeatLevel);
 switchTheme.addEventListener('change', theme);
+gameBoard.addEventListener('click', boardStart);
 
 
 function makeGame() {
@@ -385,14 +381,8 @@ function makeGame() {
 	showCardsAnimation();
 	timerOnOff = true;
 	time.style.color = blue;
-	startGameInput.disabled = false;
 	//switchesDisable(switchRotateCard, switchSound, switchTime);
 	pauseGame();
-	nextLevel.addEventListener('click', setNextLevel);
-	resetGame.addEventListener('click', reset);
-	gameBoard.addEventListener('click', boardStart);
-	nextLevel.style.opacity = '1';
-	resetGame.style.opacity = '1';
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
 	switchLevel.innerHTML = level;
