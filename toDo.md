@@ -9,10 +9,8 @@
 
 ### CODE REFACTORING
 1. accordion nested for loop => es6
-2. remove unused ids and classes from html
-3. add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
+2. add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
   Just ask inside func if some true/false then listener will work or not.
-4. check everything
 
 ### BUG
 1. add time in different scenarios
