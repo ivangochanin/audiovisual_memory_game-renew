@@ -25,6 +25,8 @@ const messageAddedSeconds = document.querySelector('#messageAddedSeconds');
 const messageWrongGuesses = document.querySelector('#messageWrongGuesses');
 const radioInputs = document.querySelectorAll('.radioInputs');
 const switchRotateCard = document.querySelector('#switchRotateCard');
+const switchRotateCardSlider = document.querySelector('#switchRotateCardSlider');
+const switchSoundSlider = document.querySelector('#switchSoundSlider');
 const switchRotateCardText = document.querySelector('#switchRotateCardText');
 const switchSound = document.querySelector('#switchSound');
 const switchSoundText = document.querySelector('#switchSoundText');
@@ -246,11 +248,13 @@ function rotateOnOff() {
 		if (switchRotateCard.checked) {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
-			/* switchSound.checked = false;
-			switchSoundText.innerHTML = 'on'; */
+			switchSound.disabled = true;
+			switchSoundSlider.style.pointerEvents = "none";
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
+			switchSound.disabled = false;
+			switchSoundSlider.style.pointerEvents = "auto";
 		}
 	});
 }
@@ -260,11 +264,13 @@ function soundOnOff() {
 		if (switchSound.checked) {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
-			/* switchRotateCard.checked = false;
-			switchRotateCardText.innerHTML = 'on'; */
+			switchRotateCard.disabled = true;
+			switchRotateCardSlider.style.pointerEvents = "none";
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';
+			switchRotateCard.disabled = false;
+			switchRotateCardSlider.style.pointerEvents = "auto";
 		}
 	});
 }
