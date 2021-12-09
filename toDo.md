@@ -1,7 +1,6 @@
 ### ALL
-1. turn off both switches === popup 
-2. stop everything(timer or pause) on switch to game settings
-3. win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
+1. stop everything(timer or pause) on switch to game settings
+2. win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
 
 ### MAYBE
 1. if rotate off - disable face accordion (show popup on click)

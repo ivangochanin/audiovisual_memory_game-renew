@@ -1,19 +1,19 @@
-/*
-function switchesDisable(switchRotateCard, switchSound, switchTime) {
+
+function disableSwitch(switchInput, switchElement) {
     return [
-        switchRotateCard.disabled = true,
-        switchSound.disabled = true,
-        switchTime.disabled = true,
+        switchInput.disabled = true,
+		switchElement.style.pointerEvents = "none",
+		switchElement.style.opacity = ".25"
     ]
 }
 
-function switchesEnable(switchRotateCard, switchSound, switchTime) {
+function enableSwitch(switchInput, switchElement) {
     return [
-        switchRotateCard.disabled = false,
-        switchSound.disabled = false,
-        switchTime.disabled = false,
+        switchInput.disabled = false,
+		switchElement.style.pointerEvents = "auto",
+		switchElement.style.opacity = "1"
     ]
 }
 
-export {switchesDisable, switchesEnable}
-*/
+export {disableSwitch, enableSwitch}
+

@@ -1,5 +1,5 @@
 import './styles/style.scss';
-//import {switchesDisable, switchesEnable} from "./modules/switches.js";
+import {disableSwitch, enableSwitch} from "./modules/switches.js";
 import { stopGame, continueGame, getRandom } from './modules/helpers.js';
 import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
 import accordion from './modules/accordion.js';
@@ -248,13 +248,11 @@ function rotateOnOff() {
 		if (switchRotateCard.checked) {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
-			switchSound.disabled = true;
-			switchSoundSlider.style.pointerEvents = "none";
+			disableSwitch(switchSound, switchSoundSlider);
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
-			switchSound.disabled = false;
-			switchSoundSlider.style.pointerEvents = "auto";
+			enableSwitch(switchSound, switchSoundSlider);
 		}
 	});
 }
@@ -264,13 +262,11 @@ function soundOnOff() {
 		if (switchSound.checked) {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
-			switchRotateCard.disabled = true;
-			switchRotateCardSlider.style.pointerEvents = "none";
+			disableSwitch(switchRotateCard, switchRotateCardSlider)
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';
-			switchRotateCard.disabled = false;
-			switchRotateCardSlider.style.pointerEvents = "auto";
+			enableSwitch(switchRotateCard, switchRotateCardSlider);
 		}
 	});
 }
