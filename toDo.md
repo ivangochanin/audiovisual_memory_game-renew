@@ -1,7 +1,3 @@
-### ALL
-1. stop everything(timer or pause) on switch to game settings
-2. win/lose - all disabled - disable whole info section on win/lose message - buttons hover - script line 385 - resetGame.style.opacity = '1';
-
 ### MAYBE
 1. if rotate off - disable face accordion (show popup on click)
 2. save settings into Cookie or Local storage or Session storage - find solution
@@ -9,12 +5,12 @@
 
 ### CODE REFACTORING
 1. accordion nested for loop => es6
-2. add true/false mechanism inside functions that you call with eventListener - where you need to add and remove listener. 
-  Just ask inside func if some true/false then listener will work or not.
+2. add true/false mechanism inside functions that you call with eventListener(where you need to add and remove listener) - ask inside func if some true/false 
 
 ### BUG
 1. add time in different scenarios
 2. ios sample - play() problem
 3. if turn on/off switches (rotate/sound) - second card bug
+4. buttons hover - script line 385 - resetGame.style.opacity = '1';
 
 > TEST GAME

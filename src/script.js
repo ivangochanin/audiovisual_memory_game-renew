@@ -357,6 +357,11 @@ radioInputs.forEach(i => {
 	i.addEventListener('click', makeGame)
 })
 
+goToSettingsButton.addEventListener('click',() => {    
+	showSettings();
+	pauseGame();    
+});
+goToGameButton.addEventListener('click', showGame);
 startGameInput.addEventListener('change', playPause);
 switchRotateCard.addEventListener('change', rotateOnOff);
 switchSound.addEventListener('change', soundOnOff);
@@ -366,8 +371,7 @@ continueAfterWin.addEventListener('click', setNextLevel);
 resetAfterWin.addEventListener('click', reset);
 levelAfterWin.addEventListener('click', repeatLevel);
 switchTheme.addEventListener('change', theme);
-goToSettingsButton.addEventListener('click', showSettings)
-goToGameButton.addEventListener('click', showGame)
+
 
 function makeGame() {
 	gameBoard.innerHTML = null;
