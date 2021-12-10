@@ -1,6 +1,8 @@
 const radioInstrument = document.getElementsByName('radioInstrument');
 const radioMode = document.getElementsByName('radioMode');
 const radioFace = document.getElementsByName('radioFace');
+const radioButtonScore = document.querySelector('#radioButtonScore');
+const radioButtonSymbol = document.querySelector('#radioButtonSymbol');
 let panelInstrumentName = document.querySelector('#panelInstrumentName');
 let panelModeName = document.querySelector('#panelModeName');
 let panelCardFaceName = document.querySelector('#panelCardFaceName');
@@ -9,7 +11,24 @@ let boardInfoModeName = document.querySelector('#boardInfoModeName');
 let boardInfoFaceName = document.querySelector('#boardInfoFaceName');
 let instrument = 'piano';
 let mode = 'tone';
-let cardFace = 'score';
+let cardFace;
+
+const defaultCardFace = () => {
+    if (document.documentElement.clientWidth > 576) {
+        radioButtonScore.checked = true;
+        radioButtonSymbol.checked = false;
+        panelCardFaceName.innerHTML = 'score';
+        boardInfoFaceName.innerHTML = 'score';
+        cardFace = 'score';
+    } else {
+        radioButtonScore.checked = false;
+        radioButtonSymbol.checked = true;
+        panelCardFaceName.innerHTML = 'symbol';
+        boardInfoFaceName.innerHTML = 'symbol';
+        cardFace = 'symbol';
+    }
+}
+defaultCardFace();
 
 const setInstrument = () => {
     radioInstrument.forEach(i => {

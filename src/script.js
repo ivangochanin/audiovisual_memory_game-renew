@@ -1,6 +1,5 @@
 import './styles/style.scss';
-import {disableSwitch, enableSwitch} from "./modules/switches.js";
-import { stopGame, continueGame, getRandom } from './modules/helpers.js';
+import { stopGame, continueGame, disableSwitch, enableSwitch, disablePanel, enablePanel, getRandom } from './modules/helpers.js';
 import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
@@ -9,7 +8,6 @@ import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage,
 import theme from './modules/theme.js';
 import cardsData from './modules/cardsData';
 const gameBoard = document.querySelector('#gameBoard');
-const cardSignal = document.querySelector('#cardSignal');
 const resetGame = document.querySelector('#resetGame');
 const startGameInput = document.querySelector('#startGameInput');
 const nextLevel = document.querySelector('#nextLevel');
@@ -38,6 +36,10 @@ const firstCardIndicator = document.querySelector('#firstCardIndicator');
 const secondCardIndicator = document.querySelector('#secondCardIndicator');
 const goToSettingsButton = document.querySelector('#goToSettingsButton');
 const goToGameButton = document.querySelector('#goToGameButton');
+const panelCardFace = document.querySelector('#panelCardFace');
+const panelInstrument = document.querySelector('#panelInstrument');
+const panelCardFaceArrow = document.querySelector('#panelCardFaceArrow');
+const panelInstrumentArrow = document.querySelector('#panelInstrumentArrow');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -53,7 +55,6 @@ initialLoading();
 theme();
 animations();
 accordion();
-cardsData();
 makeGame();
 
 function boardStart() {
@@ -66,6 +67,7 @@ function bonusTime() {
 }
 
 function setLevel() {
+
 	let dataTonesLevel1 = cardsData().filter((tone, index) => index < 8);
 	let dataTonesLevel2 = cardsData().filter((tone, index) => index < 13);
 	let dataTonesLevel3 = cardsData().filter((tone, index) => index < 25);
@@ -75,22 +77,23 @@ function setLevel() {
 			cardCounter = 16;
 			dataPack = dataTonesLevel1.concat(dataTonesLevel1);
 			seconds = 20;
-			responsiveLevel1();
-			window.addEventListener("resize", () => responsiveLevel1());
+			// document.documentElement.clientWidth - dimensions limited by window, without scrollbars
+			responsiveLevel1(document.documentElement.clientWidth); 
+			window.addEventListener("resize", () => responsiveLevel1(document.documentElement.clientWidth));
 			break;
 		case 2:
 			cardCounter = 26;
 			dataPack = dataTonesLevel2.concat(dataTonesLevel2);
 			seconds = 30 + addTimeFromLevel;
-			responsiveLevel2();
-			window.addEventListener("resize", () => responsiveLevel2());
+			responsiveLevel2(document.documentElement.clientWidth);
+			window.addEventListener("resize", () => responsiveLevel2(document.documentElement.clientWidth));
 			break;
 		case 3:
 			cardCounter = 50;
 			dataPack = dataTonesLevel3.concat(dataTonesLevel3);
 			seconds = 40 + addTimeFromLevel;
-			responsiveLevel3();
-			window.addEventListener("resize", () => responsiveLevel3());
+			responsiveLevel3(document.documentElement.clientWidth);
+			window.addEventListener("resize", () => responsiveLevel3(document.documentElement.clientWidth));
 			break;
 		default:
 			cardCounter = 0;
@@ -243,10 +246,12 @@ function rotateOnOff() {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
 			disableSwitch(switchSound, switchSoundSlider);
+			disablePanel(panelCardFace, panelCardFaceArrow);
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
 			enableSwitch(switchSound, switchSoundSlider);
+			enablePanel(panelCardFace);
 		}
 	});
 }
@@ -256,11 +261,13 @@ function soundOnOff() {
 		if (switchSound.checked) {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
-			disableSwitch(switchRotateCard, switchRotateCardSlider)
+			disableSwitch(switchRotateCard, switchRotateCardSlider);
+			disablePanel(panelInstrument, panelInstrumentArrow);
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';
 			enableSwitch(switchRotateCard, switchRotateCardSlider);
+			enablePanel(panelInstrument);
 		}
 	});
 }

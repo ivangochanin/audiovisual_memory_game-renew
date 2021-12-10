@@ -239,16 +239,16 @@
                         </div>
                     </div>
 
-                    <div class="panel">
-                        <div class="panelSections accordionTrigger">
+                    <div class="panel" >
+                        <div class="panelSections accordionTrigger" id="panelCardFace">
                             <div class="panelSectionsLeft">
                                 <div class="iconWrapper"><img src="./assets/icons/cards.png" alt="face"></div>
                                 <span>Card Face</span>
                             </div>
                             <div class="panelSectionsRight">
-                                <span id="panelCardFaceName" class="switchTitles font_thin">score</span>
+                                <span id="panelCardFaceName" class="switchTitles font_thin"> </span>
                                 <div class="accordionArrowWrapper">
-                                    <img class="accordionArrow" src=" " alt="card face arrow">
+                                    <img class="accordionArrow" id="panelCardFaceArrow" src=" " alt="card face arrow">
                                 </div>
                             </div>
                         </div>
@@ -257,15 +257,14 @@
                                 <div class="accordionCheckboxesWrapper font_thin">
                                     <div class="radioSection">
                                         <label class="radioWrapper">
-                                            <input class="radioInputs" type="radio" name="radioFace" value="score"
-                                                checked>
+                                            <input id="radioButtonScore" class="radioInputs" type="radio" name="radioFace" value="score">
                                             <span class="customRadio"></span>
                                             <span class="radioTitles">Score</span>
                                         </label>
                                     </div>
                                     <div class="radioSection">
                                         <label class="radioWrapper">
-                                            <input class="radioInputs" type="radio" name="radioFace" value="symbol">
+                                            <input id="radioButtonSymbol" class="radioInputs" type="radio" name="radioFace" value="symbol">
                                             <span class="customRadio"></span>
                                             <span class="radioTitles">Symbol</span>
                                         </label>
@@ -276,7 +275,7 @@
                     </div>
 
                     <div class="panel">
-                        <div class="panelSections accordionTrigger">
+                        <div class="panelSections accordionTrigger" id="panelInstrument">
                             <div class="panelSectionsLeft">
                                 <div class="iconWrapper"><img src="./assets/icons/instrument.png" alt="instrument">
                                 </div>
@@ -285,7 +284,7 @@
                             <div class="panelSectionsRight">
                                 <span id="panelInstrumentName" class="switchTitles font_thin">piano</span>
                                 <div class="accordionArrowWrapper">
-                                    <img class="accordionArrow" src=" " alt="instrument arrow">
+                                    <img class="accordionArrow" id="panelInstrumentArrow" src=" " alt="instrument arrow">
                                 </div>
                             </div>
                         </div>
