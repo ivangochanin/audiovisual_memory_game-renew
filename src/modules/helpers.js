@@ -31,20 +31,20 @@ const enableSwitch = (switchInput, switchElement) => {
     ]
 }
 
-const disablePanel = (panel, arrow) => {
+const disablePanel = (section, panel, arrow) => {
     return [
-        panel.childNodes[3].style.opacity = .25,
-		panel.disabled = true,
+        section.style.opacity = .25,
+        panel.disabled = true,
 		panel.style.pointerEvents = "none",
 		panel.nextElementSibling.style.maxHeight = null, 
 		arrow.style.transform = null,
     ]
 }
 
-const enablePanel = (panel) => {
+const enablePanel = (section, panel) => {
     return [
-        panel.childNodes[3].style.opacity = 1,
-		panel.disabled = false,
+        section.style.opacity = 1,
+        panel.disabled = false,
 		panel.style.pointerEvents = "auto",
     ]
 }

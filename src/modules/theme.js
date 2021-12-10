@@ -16,7 +16,6 @@ const theme = () => {
     const radioInstrument = document.getElementsByName('radioInstrument');
     const radioMode = document.getElementsByName('radioMode');
     const radioFace = document.getElementsByName('radioFace');
-  
     const accordionArrow = document.querySelectorAll('.accordionArrow');
     const meta = document.querySelector("[name=theme-color][content]");
     const metaIos = document.querySelector("[name=apple-mobile-web-app-status-bar-style][content]");
@@ -38,7 +37,6 @@ const theme = () => {
     const grayLight = '#c7c8c9';
     const helperDark = '#EEEEEE';
 
-    
 
     if (!switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
@@ -67,6 +65,7 @@ const theme = () => {
                     this.previousElementSibling.checked ? this.style.backgroundColor = blueDark : this.style.backgroundColor = grayDark
                 });
             });
+            
             const radioButtonsDark = (radioButton) => {
                 radioButton.forEach(i => { 
                     i.checked ? i.nextElementSibling.style.backgroundColor = blueDark : i.nextElementSibling.style.backgroundColor = grayDark

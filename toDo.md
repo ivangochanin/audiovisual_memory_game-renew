@@ -4,6 +4,6 @@
 ### BUG
 1. add time in different scenarios
 2. ios sample - play() problem
-3. if turn on/off switches (rotate/sound) - second card bug (all) - if turn on/off rotate - first card bug (phone)
+3. if turn on/off switches (rotate/sound) - second card bug (all) - if turn on/off rotate - first card bug (phone) - continueGame() problem
 
 > TEST GAME

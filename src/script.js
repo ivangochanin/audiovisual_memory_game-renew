@@ -1,12 +1,11 @@
 import './styles/style.scss';
-import { stopGame, continueGame, disableSwitch, enableSwitch, disablePanel, enablePanel, getRandom } from './modules/helpers.js';
-import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
 import accordion from './modules/accordion.js';
 import makeCards from './modules/cardBuilder.js';
-import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, 
-	    elementShow, elementHide, initialLoading, showSettings, showGame} from './modules/animations.js';
 import theme from './modules/theme.js';
 import cardsData from './modules/cardsData';
+import { stopGame, continueGame, disableSwitch, enableSwitch, disablePanel, enablePanel, getRandom } from './modules/helpers.js';
+import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
+import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementHide, initialLoading, showSettings, showGame} from './modules/animations.js';
 const gameBoard = document.querySelector('#gameBoard');
 const resetGame = document.querySelector('#resetGame');
 const startGameInput = document.querySelector('#startGameInput');
@@ -40,6 +39,8 @@ const panelCardFace = document.querySelector('#panelCardFace');
 const panelInstrument = document.querySelector('#panelInstrument');
 const panelCardFaceArrow = document.querySelector('#panelCardFaceArrow');
 const panelInstrumentArrow = document.querySelector('#panelInstrumentArrow');
+const panelCardFaceRight = document.querySelector('#panelCardFaceRight');
+const panelInstrumentRight = document.querySelector('#panelInstrumentRight');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -246,12 +247,12 @@ function rotateOnOff() {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
 			disableSwitch(switchSound, switchSoundSlider);
-			disablePanel(panelCardFace, panelCardFaceArrow);
+			disablePanel(panelCardFaceRight, panelCardFace, panelCardFaceArrow);
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
 			enableSwitch(switchSound, switchSoundSlider);
-			enablePanel(panelCardFace);
+			enablePanel(panelCardFaceRight, panelCardFace);
 		}
 	});
 }
@@ -262,12 +263,12 @@ function soundOnOff() {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
 			disableSwitch(switchRotateCard, switchRotateCardSlider);
-			disablePanel(panelInstrument, panelInstrumentArrow);
+			disablePanel(panelInstrumentRight, panelInstrument, panelInstrumentArrow);
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';
 			enableSwitch(switchRotateCard, switchRotateCardSlider);
-			enablePanel(panelInstrument);
+			enablePanel(panelInstrumentRight, panelInstrument);
 		}
 	});
 }
@@ -309,7 +310,6 @@ function playGame() {
 	startGameInput.checked = true;
 	firstClick = false;
 	runTime();
-	//switchesEnable(switchRotateCard, switchSound, switchTime);
 	switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
 	cardWrapper.forEach((i) => {
 		switchRotateCard.checked
@@ -329,7 +329,6 @@ function pauseGame() {
 		stopTime(),
 		(timerOnOff = false),
 		(firstClick = true),
-		//switchesDisable(switchRotateCard, switchSound, switchTime),
 		removeAllListeners(),
 	];
 }
@@ -388,7 +387,6 @@ function makeGame() {
 	showCardsAnimation();
 	timerOnOff = true;
 	time.style.color = blue;
-	//switchesDisable(switchRotateCard, switchSound, switchTime);
 	pauseGame();
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
