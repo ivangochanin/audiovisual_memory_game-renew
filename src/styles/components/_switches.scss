@@ -6,10 +6,10 @@
   width: 50px;
   height: 24px;
   background: transparent;
-  @include respond(laptop) {
+  /* @include respond(laptop) {
     width: 45px;
     height: 20px;
-  }
+  } */
 
   .switcherSlider {
     border-radius: 50px;
@@ -35,11 +35,10 @@
     right: 4px;
     transition: $base-transition;
     border-radius: 50%;
-    @include respond(laptop) {
+    /* @include respond(laptop) {
       width: 14px;
       height: 14px;
-      /* right: 2px; */
-    }
+    } */
   }
 
   input {
