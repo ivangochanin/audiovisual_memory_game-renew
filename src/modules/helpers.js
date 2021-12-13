@@ -15,19 +15,19 @@ const continueGame = (cardWrapper, rotateOnOff, soundOnOff, game) => {
     });
 }
 
-const disableSwitch = (switchInput, switchElement) => {
+const disableSwitch = (switchInput, switchElement, section) => {
     return [
         switchInput.disabled = true,
 		switchElement.style.pointerEvents = "none",
-		switchElement.style.opacity = ".25"
+		section.style.opacity = ".25"
     ]
 }
 
-const enableSwitch = (switchInput, switchElement) => {
+const enableSwitch = (switchInput, switchElement, section) => {
     return [
         switchInput.disabled = false,
 		switchElement.style.pointerEvents = "auto",
-		switchElement.style.opacity = "1"
+		section.style.opacity = "1"
     ]
 }
 

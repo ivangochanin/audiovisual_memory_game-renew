@@ -21,6 +21,7 @@ const makeCards = (dataPack, game, switchTheme) => {
         });
         addClassAndAttribute(frontImage, 'front', {src: '', alt: 'frontImage'});
         addClassAndAttribute(audio, 'audio', {src: '', preload: 'auto'});
+        /* addClassAndAttribute(audio, 'audio', {src: '', preload: 'auto', autoPlay: 'true', muted: 'true'}); */
         createCards.append(frontImage, backImage, audio);
     });
 };

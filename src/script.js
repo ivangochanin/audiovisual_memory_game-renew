@@ -41,6 +41,8 @@ const panelCardFaceArrow = document.querySelector('#panelCardFaceArrow');
 const panelInstrumentArrow = document.querySelector('#panelInstrumentArrow');
 const panelCardFaceRight = document.querySelector('#panelCardFaceRight');
 const panelInstrumentRight = document.querySelector('#panelInstrumentRight');
+const switchRotateCardRight = document.querySelector('#switchRotateCardRight');
+const switchSoundRight = document.querySelector('#switchSoundRight');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -246,12 +248,12 @@ function rotateOnOff() {
 		if (switchRotateCard.checked) {
 			i.removeEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'off';
-			disableSwitch(switchSound, switchSoundSlider);
+			disableSwitch(switchSound, switchSoundSlider, switchSoundRight);
 			disablePanel(panelCardFaceRight, panelCardFace, panelCardFaceArrow);
 		} else {
 			i.addEventListener('click', rotateCard);
 			switchRotateCardText.innerHTML = 'on';
-			enableSwitch(switchSound, switchSoundSlider);
+			enableSwitch(switchSound, switchSoundSlider, switchSoundRight);
 			enablePanel(panelCardFaceRight, panelCardFace);
 		}
 	});
@@ -262,12 +264,12 @@ function soundOnOff() {
 		if (switchSound.checked) {
 			i.removeEventListener('click', playSound);
 			switchSoundText.innerHTML = 'off';
-			disableSwitch(switchRotateCard, switchRotateCardSlider);
+			disableSwitch(switchRotateCard, switchRotateCardSlider, switchRotateCardRight);
 			disablePanel(panelInstrumentRight, panelInstrument, panelInstrumentArrow);
 		} else {
 			i.addEventListener('click', playSound);
 			switchSoundText.innerHTML = 'on';
-			enableSwitch(switchRotateCard, switchRotateCardSlider);
+			enableSwitch(switchRotateCard, switchRotateCardSlider, switchRotateCardRight);
 			enablePanel(panelInstrumentRight, panelInstrument);
 		}
 	});
