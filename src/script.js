@@ -5,7 +5,7 @@ import theme from './modules/theme.js';
 import cardsData from './modules/cardsData';
 import { stopGame, continueGame, disableSwitch, enableSwitch, disablePanel, enablePanel, getRandom } from './modules/helpers.js';
 import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
-import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementHide, initialLoading, showSettings, showGame} from './modules/animations.js';
+import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementHide, initialLoading, showSettings, showGame, showLandscape} from './modules/animations.js';
 const gameBoard = document.querySelector('#gameBoard');
 const resetGame = document.querySelector('#resetGame');
 const startGameInput = document.querySelector('#startGameInput');
@@ -43,6 +43,8 @@ const panelCardFaceRight = document.querySelector('#panelCardFaceRight');
 const panelInstrumentRight = document.querySelector('#panelInstrumentRight');
 const switchRotateCardRight = document.querySelector('#switchRotateCardRight');
 const switchSoundRight = document.querySelector('#switchSoundRight');
+const continueAfterWinWrapper = document.querySelector('#continueAfterWinWrapper');
+const settingsWrapperSection = document.querySelector('#settingsWrapperSection');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -53,12 +55,6 @@ let wrongGuesses = 0;
 let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
-
-initialLoading();
-theme();
-animations();
-accordion();
-makeGame();
 
 function boardStart() {
 	!startGameInput.checked && firstClick ? playGame() : null;
@@ -202,12 +198,15 @@ function winLose() {
 		levelAfterWin
 	);
 }
+
 function repeatLevel() {
 	addTimeFromLevel = 0;
 	makeGame();
 }
+
 function winGame() {
 	winLose();
+	continueAfterWinWrapper.style.display = 'flex';
 	message.innerHTML = `Great Job!`;
 	messageAddedSeconds.innerHTML = `Added seconds to next level: ${seconds}`;
 	messageWrongGuesses.innerHTML = `Wrong guesses: ${wrongGuesses}`;
@@ -217,6 +216,7 @@ function winGame() {
 
 function loseGame() {
 	winLose();
+	continueAfterWinWrapper.style.display = 'none';
 	message.innerHTML = `More luck next time!`;
 	messageAddedSeconds.innerHTML = `Time is up!`;
 	messageWrongGuesses.innerHTML = `Wrong guesses: ${wrongGuesses}`;
@@ -360,26 +360,23 @@ radioInputs.forEach(i => {
 	i.addEventListener('click', makeGame)
 })
 
-goToSettingsButton.addEventListener('click',() => {    
-	showSettings();
-	timerOnOff = false;
-});
-goToGameButton.addEventListener('click',() => {
-	showGame();
-	switchTime.checked ? (timerOnOff = false) : (timerOnOff = true); 
-});
-startGameInput.addEventListener('change', playPause);
-switchRotateCard.addEventListener('change', rotateOnOff);
-switchSound.addEventListener('change', soundOnOff);
-switchTime.addEventListener('change', timeOnOf);
-nextLevel.addEventListener('click', setNextLevel);
-continueAfterWin.addEventListener('click', setNextLevel);
-resetGame.addEventListener('click', reset);
-resetAfterWin.addEventListener('click', reset);
-levelAfterWin.addEventListener('click', repeatLevel);
-switchTheme.addEventListener('change', theme);
-gameBoard.addEventListener('click', boardStart);
+function showHideSections() {
+	goToSettingsButton.addEventListener('click',() => {    
+		showSettings();
+		timerOnOff = false;
+	});
+	goToGameButton.addEventListener('click',() => {
+		showGame();
+		switchTime.checked ? (timerOnOff = false) : (timerOnOff = true); 
+	});
+}
 
+function landscapePortrait() {
+    document.documentElement.clientWidth <= 1024 ? showHideSections() : showLandscape();
+	window.addEventListener("resize", () => {
+    document.documentElement.clientWidth <= 1024 ?  showHideSections() : showLandscape();
+	})
+}
 
 function makeGame() {
 	gameBoard.innerHTML = null;
@@ -398,6 +395,27 @@ function makeGame() {
 	currentLevel.innerHTML = level;
 	switchLevel.innerHTML = level;
 }
+
+startGameInput.addEventListener('change', playPause);
+switchRotateCard.addEventListener('change', rotateOnOff);
+switchSound.addEventListener('change', soundOnOff);
+switchTime.addEventListener('change', timeOnOf);
+nextLevel.addEventListener('click', setNextLevel);
+continueAfterWin.addEventListener('click', setNextLevel);
+resetGame.addEventListener('click', reset);
+resetAfterWin.addEventListener('click', reset);
+levelAfterWin.addEventListener('click', repeatLevel);
+switchTheme.addEventListener('change', theme);
+gameBoard.addEventListener('click', boardStart);
+
+initialLoading();
+theme();
+animations();
+accordion();
+makeGame();
+landscapePortrait();
+
+
 
 
 
