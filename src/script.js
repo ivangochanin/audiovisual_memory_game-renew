@@ -5,7 +5,8 @@ import theme from './modules/theme.js';
 import cardsData from './modules/cardsData';
 import { stopGame, continueGame, disableSwitch, enableSwitch, disablePanel, enablePanel, getRandom } from './modules/helpers.js';
 import { responsiveLevel1, responsiveLevel2, responsiveLevel3 } from './modules/responsiveBoard.js';
-import {animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementHide, initialLoading, showSettings, showGame, showLandscape} from './modules/animations.js';
+import { animations, showCardsAnimation, bonusTimeAnimation, winLoseMessage, elementHide, initialLoading, showSettings, showGame, showLandscape } 
+        from './modules/animations.js';
 const gameBoard = document.querySelector('#gameBoard');
 const resetGame = document.querySelector('#resetGame');
 const startGameInput = document.querySelector('#startGameInput');
@@ -44,7 +45,6 @@ const panelInstrumentRight = document.querySelector('#panelInstrumentRight');
 const switchRotateCardRight = document.querySelector('#switchRotateCardRight');
 const switchSoundRight = document.querySelector('#switchSoundRight');
 const continueAfterWinWrapper = document.querySelector('#continueAfterWinWrapper');
-const settingsWrapperSection = document.querySelector('#settingsWrapperSection');
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
@@ -315,12 +315,8 @@ function playGame() {
 	runTime();
 	switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
 	cardWrapper.forEach((i) => {
-		switchRotateCard.checked
-			? i.removeEventListener('click', rotateCard)
-			: i.addEventListener('click', rotateCard);
-		switchSound.checked
-			? i.removeEventListener('click', playSound)
-			: i.addEventListener('click', playSound);
+		switchRotateCard.checked ? i.removeEventListener('click', rotateCard) : i.addEventListener('click', rotateCard);
+		switchSound.checked ? i.removeEventListener('click', playSound) : i.addEventListener('click', playSound);
 		i.addEventListener('click', game);
 	});
 }
