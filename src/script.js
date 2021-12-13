@@ -231,11 +231,18 @@ function rotateCard() {
 }
 
 function playSound() {
-	let sound = this.childNodes[2];
+	let sound = new Audio();
+	/* console.log('1',sound); */
+	sound = this.childNodes[2];
+	/* console.log('2',sound); */
 	sound.currentTime = 0;
+
 	if (openedCards <= 2) {
 		sound.volume = 1;
-		sound ? sound.play() : null;
+		if(sound){
+		    sound.load();
+			sound.play();
+		} 
 	} else {
 		cardWrapper.forEach((i) => {
 			i.removeEventListener('click', playSound);
