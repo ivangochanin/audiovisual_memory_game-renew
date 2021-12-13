@@ -154,7 +154,7 @@ function game() {
 	}
 	if (openedCards === 2) {
 		secondCard = this;
-		stopGame(cardWrapper, rotateCard, playSound, game);
+		stopGame(cardWrapper, game);
 		seconds <= 10
 			? (secondCardIndicator.style.background = red)
 			: (secondCardIndicator.style.background = green);
@@ -167,7 +167,7 @@ function game() {
 				firstCard.style.visibility = 'hidden';
 				secondCard.style.visibility = 'hidden';
 				indicatorOff();
-				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
+				continueGame(cardWrapper, game);
 			}, 50);
 			openedCards = 0;
 			cardCounter -= 2;
@@ -177,7 +177,7 @@ function game() {
 				secondCard.classList.remove('rotate');
 				openedCards = 0;
 				wrongGuesses++;
-				continueGame(cardWrapper, rotateOnOff, soundOnOff, game);
+				continueGame(cardWrapper, game);
 				indicatorOff();
 			}, 200);
 		}
@@ -223,7 +223,7 @@ function loseGame() {
 }
 
 function rotateCard() {
-	openedCards < 2
+	openedCards <= 2
 		? this.classList.add('rotate')
 		: cardWrapper.forEach((i) => {
 				i.removeEventListener('click', rotateCard);
@@ -233,7 +233,7 @@ function rotateCard() {
 function playSound() {
 	let sound = this.childNodes[2];
 	sound.currentTime = 0;
-	if (openedCards < 2) {
+	if (openedCards <= 2) {
 		sound.volume = 1;
 		sound ? sound.play() : null;
 	} else {
