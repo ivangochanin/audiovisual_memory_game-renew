@@ -361,9 +361,12 @@ radioInputs.forEach(i => {
 
 goToSettingsButton.addEventListener('click',() => {    
 	showSettings();
-	pauseGame();    
+	timerOnOff = false;
 });
-goToGameButton.addEventListener('click', showGame);
+goToGameButton.addEventListener('click',() => {
+	showGame();
+	switchTime.checked ? (timerOnOff = false) : (timerOnOff = true); 
+});
 startGameInput.addEventListener('change', playPause);
 switchRotateCard.addEventListener('change', rotateOnOff);
 switchSound.addEventListener('change', soundOnOff);
