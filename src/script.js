@@ -48,7 +48,6 @@ const continueAfterWinWrapper = document.querySelector('#continueAfterWinWrapper
 const blue = '#06A7A7';
 const red = '#FF7070';
 const green = '#B7E10F';
-let firstClick = true;
 let timerOnOff = true;
 let addTimeFromLevel = 0;
 let wrongGuesses = 0;
@@ -56,9 +55,23 @@ let openedCards = 0;
 let level = 1;
 let dataPack, cardWrapper, cardCounter, firstCard, secondCard, interval, seconds;
 
+initialLoading();
+theme();
+animations();
+accordion();
+makeGame();
+landscapePortrait();
+
+function playNow() {
+	cardWrapper.forEach((i) => {
+		switchRotateCard.checked ? i.removeEventListener('click', rotateCard) : i.addEventListener('click', rotateCard);
+		switchSound.checked ? i.removeEventListener('click', playSound) : i.addEventListener('click', playSound);
+		i.addEventListener('click', game);
+	});
+}
+
 function boardStart() {
-	!startGameInput.checked && firstClick ? playGame() : null;
-	firstClick = false;
+	!startGameInput.checked ? playGame() : null;
 }
 
 function bonusTime() {
@@ -233,7 +246,7 @@ function rotateCard() {
 function playSound() {
 	let sound = this.childNodes[2];
 	sound.currentTime = 0;
-	sound.load();
+	/* sound.load(); */ // iOS slow down
 	sound.volume = 1;
 	if (openedCards <= 2) {
 		sound ? sound.play() : null;
@@ -311,33 +324,17 @@ function stopTime() {
 function playGame() {
 	startGameImage.src = './assets/icons/pause.png';
 	startGameInput.checked = true;
-	firstClick = false;
 	runTime();
 	switchTime.checked ? (timerOnOff = false) : (timerOnOff = true);
-	cardWrapper.forEach((i) => {
-		switchRotateCard.checked ? i.removeEventListener('click', rotateCard) : i.addEventListener('click', rotateCard);
-		switchSound.checked ? i.removeEventListener('click', playSound) : i.addEventListener('click', playSound);
-		i.addEventListener('click', game);
-	});
 }
 
 function pauseGame() {
 	return [
-		(startGameInput.checked = false),
-		(startGameImage.src = './assets/icons/play.png'),
+		startGameInput.checked = false,
+		startGameImage.src = './assets/icons/play.png',
 		stopTime(),
-		(timerOnOff = false),
-		(firstClick = true),
-		removeAllListeners(),
+		timerOnOff = false,
 	];
-}
-
-function removeAllListeners() {
-	return cardWrapper.forEach((i) => {
-		i.removeEventListener('click', rotateCard);
-		i.removeEventListener('click', playSound);
-		i.removeEventListener('click', game);
-	});
 }
 
 function playPause() {
@@ -374,6 +371,18 @@ function landscapePortrait() {
 	})
 }
 
+startGameInput.addEventListener('change', playPause);
+switchRotateCard.addEventListener('change', rotateOnOff);
+switchSound.addEventListener('change', soundOnOff);
+switchTime.addEventListener('change', timeOnOf);
+nextLevel.addEventListener('click', setNextLevel);
+continueAfterWin.addEventListener('click', setNextLevel);
+resetGame.addEventListener('click', reset);
+resetAfterWin.addEventListener('click', reset);
+levelAfterWin.addEventListener('click', repeatLevel);
+switchTheme.addEventListener('change', theme);
+gameBoard.addEventListener('click', boardStart);
+
 function makeGame() {
 	gameBoard.innerHTML = null;
 	openedCards = 0;
@@ -390,26 +399,12 @@ function makeGame() {
 	time.innerHTML = seconds;
 	currentLevel.innerHTML = level;
 	switchLevel.innerHTML = level;
+	playNow();
 }
 
-startGameInput.addEventListener('change', playPause);
-switchRotateCard.addEventListener('change', rotateOnOff);
-switchSound.addEventListener('change', soundOnOff);
-switchTime.addEventListener('change', timeOnOf);
-nextLevel.addEventListener('click', setNextLevel);
-continueAfterWin.addEventListener('click', setNextLevel);
-resetGame.addEventListener('click', reset);
-resetAfterWin.addEventListener('click', reset);
-levelAfterWin.addEventListener('click', repeatLevel);
-switchTheme.addEventListener('change', theme);
-gameBoard.addEventListener('click', boardStart);
 
-initialLoading();
-theme();
-animations();
-accordion();
-makeGame();
-landscapePortrait();
+
+
 
 
 
