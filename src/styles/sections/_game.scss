@@ -107,7 +107,13 @@
         font-size: 1.6rem;
         text-transform: capitalize;
 
+        @include respond(laptop-big) {
+          font-size: 1.3rem;
+        }
         @include respond(laptop) {
+          font-size: 1.2rem;
+        }
+        @include respond(tab-land) {
           font-size: 1.4rem;
         }
       }
@@ -117,13 +123,16 @@
         text-transform: capitalize;
         width: 60px;
 
-        @include respond(laptop) {
-          font-size: 1.5rem;
-          width: auto;
+        @include respond(laptop-big) {
+          font-size: 1.3rem;
         }
-
-        @include respond(phone) {
+        @include respond(laptop) {
+          font-size: 1.2rem;
+        }
+        @include respond(tab-land) {
           font-size: 1.4rem;
+        }
+        @include respond(phone) {
           width: auto;
         }
 
