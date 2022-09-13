@@ -16,6 +16,10 @@ Thanks.
 
 ### Start
 
+- install node v16
+
+- nvm use 16
+
 - Install: `yarn`
 
 - Run dev: `yarn start`
