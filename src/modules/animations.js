@@ -13,7 +13,7 @@ const showCardsAnimation = () => {
         ease: "power1.inOut",
         delay: .25,
         stagger: {
-            amount: 1,
+            amount: .5,
             from: "top"
         }
     });
@@ -45,7 +45,7 @@ const elementHide = (wrapper) => {
 };
 
 const initialLoading = () => {
-    return gsap.to("#container", {duration: .5, autoAlpha: 1, delay: 1});
+    return gsap.to("#container", {duration: .25, autoAlpha: 1, delay: .5});
 };
 
 const showSettings = () => {
