@@ -332,6 +332,8 @@ function pauseGame() {
 	return [
 		startGameInput.checked = false,
 		startGameImage.src = './assets/icons/play.png',
+		startGameImage.style.width = '26px', 
+		startGameImage.style.height = '26px',
 		stopTime(),
 		timerOnOff = false,
 	];

@@ -44,6 +44,8 @@ const theme = () => {
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB1.svg'})}, 25);
         setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownDark.png'})}, 25);
         nextLevel.src = './assets/icons/continueDark.png';
+        nextLevel.style.width = '26px', 
+		nextLevel.style.height = '26px',
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: darkFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontUltralight", color: darkFont_thin})});
         document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerDarkMobile : container.style.backgroundImage = containerDark;
@@ -87,8 +89,10 @@ const theme = () => {
     } else {
         switchThemeText.innerHTML = "Light";
         setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB1.svg'})}, 25);
-        setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownLight.png'})}, 25);
+        setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownLight.png', i.style.width = '14px', i.style.height = '8px'})}, 25);
         nextLevel.src = './assets/icons/continueDark.png';
+        nextLevel.style.width = '26px', 
+		nextLevel.style.height = '26px',
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontLight", color: lightFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: lightFont_thin})});
         document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerLightMobile : container.style.backgroundImage = containerLight;
