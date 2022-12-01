@@ -7,17 +7,17 @@ const animations = () => {
 };
 
 const showCardsAnimation = () => {
-    gsap.to(".cardWrapper", .25, {
+    gsap.to(".cardWrapper", .2, {
         opacity: 1,
         repeat: 0,
         ease: "power1.inOut",
-        delay: .25,
+        delay: .2,
         stagger: {
             amount: .5,
             from: "top"
         }
     });
-    gsap.to("#cardSignal", .25, {opacity: 1, delay: 1,});
+    gsap.to("#cardSignal", .25, {opacity: 1, delay: 0,});
 };
 
 const bonusTimeAnimation = (el) => {
