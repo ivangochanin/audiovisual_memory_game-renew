@@ -11,13 +11,13 @@ const showCardsAnimation = () => {
         opacity: 1,
         repeat: 0,
         ease: "power1.inOut",
-        delay: .2,
+        delay: .5,
         stagger: {
-            amount: .5,
+            amount: 1,
             from: "top"
         }
     });
-    gsap.to("#cardSignal", .25, {opacity: 1, delay: 0,});
+    gsap.to("#cardSignal", .25, {opacity: 1, delay: 1,});
 };
 
 const bonusTimeAnimation = (el) => {
