@@ -27,4 +27,4 @@ Thanks.
 - Production: `yarn build`
 
 
-`Play game:` https://audiovisual-memory-game.netlify.app/
+`Play game:` https://audiovisual-memory-game-portfolio.netlify.app

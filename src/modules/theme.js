@@ -19,7 +19,7 @@ const theme = () => {
     const accordionArrow = document.querySelectorAll('.accordionArrow');
     const meta = document.querySelector("[name=theme-color][content]");
     const metaIos = document.querySelector("[name=apple-mobile-web-app-status-bar-style][content]");
-    const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%)';
+    const containerDark = 'linear-gradient(252.35deg, #161D3B 1.48%, #41439E 49.71%, #6B69D1 97.43%)';
     const containerLight = 'linear-gradient(252.35deg, #EEEEEE 1.48%, #EEEEEE 49.71%, #EEEEEE 97.43%)';
     const containerDarkMobile = 'linear-gradient(252.35deg, #1D1F28 1.48%, #1D1F28 49.71%, #1D1F28 97.43%)';
     const containerLightMobile = 'linear-gradient(252.35deg, #FFFFFF 1.48%, #FFFFFF 49.71%, #FFFFFF 97.43%)';
@@ -31,16 +31,17 @@ const theme = () => {
     const lightFont_thin = '#70737a';
     const darkWrapper = '#2D3037';
     const lightWrapper = '#6E6F71';
-    const blueDark = '#31397E';
-    const blueLight = '#0054E7';
+    const blueDark = '#41439E';
+    const blueLight = '#393b8f';
     const grayDark = '#505258';
     const grayLight = '#c7c8c9';
     const helperDark = '#EEEEEE';
+    
 
 
-    if (!switchTheme.checked) {
+    if (switchTheme.checked) {
         switchThemeText.innerHTML = "Dark";
-        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB.svg'})}, 25);
+        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB1.svg'})}, 25);
         setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownDark.png'})}, 25);
         nextLevel.src = './assets/icons/continueDark.png';
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: darkFont_default})});
@@ -85,9 +86,9 @@ const theme = () => {
 
     } else {
         switchThemeText.innerHTML = "Light";
-        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backW.svg'})}, 25);
+        setTimeout(() => { backTheme.forEach(i => { i.src = './assets/images/backB1.svg'})}, 25);
         setTimeout(() => { accordionArrow.forEach(i => { i.src = './assets/icons/upDownLight.png'})}, 25);
-        nextLevel.src = './assets/icons/continueLight.png';
+        nextLevel.src = './assets/icons/continueDark.png';
         font_default.forEach(el => { Object.assign(el.style, {fontFamily: "fontLight", color: lightFont_default})});
         font_thin.forEach(el => { Object.assign(el.style, {fontFamily: "fontThin", color: lightFont_thin})});
         document.documentElement.clientWidth < 576 ? container.style.backgroundImage = containerLightMobile : container.style.backgroundImage = containerLight;

@@ -1,0 +1,1072 @@
+/* $background: linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%); */
+/* $blue: #31397E; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.gameTitle {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  text-transform: capitalize;
+}
+
+.font_default {
+  letter-spacing: 0.5px;
+}
+
+.font_thin {
+  letter-spacing: 0.5px;
+}
+
+.addOpacity {
+  opacity: 0.2;
+}
+
+@font-face {
+  font-family: fontUltralight;
+  src: local("SF UI Display Ultralight"), url("../assets/font/sf-ui-display-ultralight-58646b19bf205.woff") format("woff");
+}
+@font-face {
+  font-family: fontThin;
+  src: local("SF UI Display Thin"), url("../assets/font/sf-ui-display-thin-58646e9b26e8b.woff") format("woff");
+}
+@font-face {
+  font-family: fontLight;
+  src: local("SF UI Display Light"), url("../assets/font/sf-ui-display-light-58646b33e0551.woff") format("woff");
+}
+@font-face {
+  font-family: fontMedium;
+  src: local("SF UI Display Medium"), url("../assets/font/sf-ui-display-medium-58646be638f96.woff") format("woff");
+}
+@font-face {
+  font-family: fontSemibold;
+  src: local("SF UI Display Semibold"), url("../assets/font/sf-ui-display-semibold-58646eddcae92.woff") format("woff");
+}
+@font-face {
+  font-family: fontBold;
+  src: local("SF UI Display Bold"), url("../assets/font/sf-ui-display-bold-58646a511e3d9.woff") format("woff");
+}
+@font-face {
+  font-family: fontHeavy;
+  src: local("SF UI Display Heavy"), url("../assets/font/sf-ui-display-heavy-586470160b9e5.woff") format("woff");
+}
+@font-face {
+  font-family: fontBlack;
+  src: local("SF UI Display Black"), url("../assets/font/sf-ui-display-black-58646a6b80d5a.woff") format("woff");
+}
+/* $background: linear-gradient(252.35deg, #161D3B 1.48%, #31397E 49.71%, #6B69D1 97.43%); */
+/* $blue: #31397E; */
+#container {
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#container #extraSmallMessage {
+  display: none;
+}
+@media only screen and (max-width: 260px), screen and (max-height: 260px) {
+  #container #extraSmallMessage {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+    display: block;
+    font-size: 7.5vw;
+    font-family: fontUltralight;
+  }
+}
+#container #customContainer {
+  width: 100%;
+  max-width: 2560px;
+  height: 100vh;
+  max-height: 1440px;
+  padding: 0 3vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: all ease-in-out 0.25s;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  #container #customContainer {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 260px), screen and (max-height: 260px) {
+  #container #customContainer {
+    display: none;
+  }
+}
+#container #customContainer .sections {
+  height: 90%;
+  max-height: 90%;
+  padding: 2.5%;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 576px) {
+  #container #customContainer .sections {
+    height: calc(100vh - 56px); /* mobile address bar height */
+    max-height: calc(100vh - 56px);
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #container #customContainer .sections {
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+#container #customContainer #settingsWrapperSection {
+  width: 33%;
+}
+@media only screen and (max-width: 1024px) {
+  #container #customContainer #settingsWrapperSection {
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #container #customContainer #settingsWrapperSection {
+    width: 100%;
+    left: 0%;
+    border-radius: 0px;
+    padding: 5%;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #container #customContainer #settingsWrapperSection {
+    width: 100%;
+    left: 0%;
+    border-radius: 0px;
+    padding: 5%;
+  }
+}
+#container #customContainer #gameWrapperSection {
+  position: relative;
+  width: 65%;
+}
+@media only screen and (max-width: 1024px) {
+  #container #customContainer #gameWrapperSection {
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #container #customContainer #gameWrapperSection {
+    width: 100%;
+    left: 0%;
+    border-radius: 0px;
+    padding: 5%;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #container #customContainer #gameWrapperSection {
+    width: 100%;
+    left: 0%;
+    border-radius: 0px;
+    padding: 5%;
+  }
+}
+
+#settingsWrapperSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* -------------------------------------------------------   TOP   ------------------------------------------------------- */
+  /* -------------------------------------------------------   MID   ------------------------------------------------------- */
+  /* -------------------------------------------------------   BOTTOM   ------------------------------------------------------- */
+}
+#settingsWrapperSection #titleWrapper {
+  position: relative;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 1024px) {
+  #settingsWrapperSection #titleWrapper {
+    height: 4rem;
+  }
+}
+#settingsWrapperSection #titleWrapper #goToGameButton {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  #settingsWrapperSection #titleWrapper #goToGameButton {
+    display: block;
+  }
+}
+#settingsWrapperSection #panelWrapper {
+  width: 100%;
+  height: 75%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#settingsWrapperSection #panelWrapper::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (max-width: 1284px) {
+  #settingsWrapperSection #panelWrapper {
+    height: 70%;
+  }
+}
+#settingsWrapperSection #panelWrapper .panel {
+  transition: all ease-in-out 0.25s;
+  margin-top: 5px;
+}
+#settingsWrapperSection #panelWrapper .panel .accordionTrigger {
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+#settingsWrapperSection #panelWrapper .panel .panelSections {
+  width: 100%;
+  padding: 0 10px;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1284px) {
+  #settingsWrapperSection #panelWrapper .panel .panelSections {
+    font-size: 1.4rem;
+  }
+}
+#settingsWrapperSection #panelWrapper .panel .panelSections .panelSectionsLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#settingsWrapperSection #panelWrapper .panel .panelSections .panelSectionsRight {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.25s;
+}
+@media (hover: hover) {
+  #settingsWrapperSection #panelWrapper .panel .panelSections .panelSectionsRight:hover {
+    opacity: 0.7;
+  }
+}
+#settingsWrapperSection #panelWrapper .panel .panelSections .panelSectionsRight .switchTitles {
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+#settingsWrapperSection #panelWrapper .panel .panelSections .panelSectionsRight .accordionArrowWrapper {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+#settingsWrapperSection #panelWrapper .panel .accordionWrapper {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+#settingsWrapperSection #panelWrapper .panel .accordionWrapper .accordion {
+  padding-top: 10px;
+  font-size: 1.4rem;
+}
+#settingsWrapperSection #panelWrapper .panel .accordionWrapper .accordion .accordionCheckboxesWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 7rem 1rem 5rem;
+}
+#settingsWrapperSection #resetWrapper {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 1284px) {
+  #settingsWrapperSection #resetWrapper {
+    height: 15%;
+  }
+}
+#settingsWrapperSection #resetWrapper #resetGame {
+  margin-top: 1rem;
+}
+
+/* -------------------------------------------------------   HELP   ------------------------------------------------------- */
+#helpWrapper {
+  width: 100%;
+  height: 450px;
+  padding: 0 1rem;
+  border-radius: 12.5px;
+  font-size: 1.4rem;
+  color: #70737a;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#helpWrapper::-webkit-scrollbar {
+  display: none;
+}
+#helpWrapper .helpSections {
+  margin: 3rem 0;
+  padding: 1rem 0;
+  border-top: 2px solid #70737a;
+}
+#helpWrapper .helpSections .helpTitles {
+  font-family: fontLight;
+  font-size: 1.75rem;
+  color: #70737a;
+  margin-bottom: 1rem;
+}
+#helpWrapper .helpSections .helpSubTitles {
+  text-align: right;
+  padding-right: 2rem;
+  font-family: fontHeavy;
+  font-size: 1.25rem;
+  color: #70737a;
+  margin-bottom: 1rem;
+}
+#helpWrapper .helpSections .helpText {
+  font-size: 1.35rem;
+  color: #70737a;
+}
+#helpWrapper .helpSections .helpLevelTitle {
+  font-family: fontHeavy;
+  font-size: 1.25rem;
+  margin: 3rem 0 0.5rem 0;
+  color: #06A7A7;
+}
+#helpWrapper .helpSections .helpLevelText {
+  font-size: 1.35rem;
+  color: #70737a;
+}
+#helpWrapper .helpSections .addedScore {
+  font-family: fontSemibold;
+  font-size: 1.15rem;
+  color: #1D1F28;
+  margin: 0.5rem 1rem 0 1rem;
+}
+#helpWrapper .helpSections .rulesImgWrapper {
+  max-width: 500px;
+}
+#helpWrapper .helpSections .rulesImgWrapper .helpImages {
+  width: 100%;
+  margin-top: 1rem;
+}
+#helpWrapper .helpSections .helpSymbolSections .symbolTitle {
+  font-family: fontMedium;
+  text-decoration: overline;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 2rem 0 0.5rem 0;
+}
+#helpWrapper .helpSections .helpSymbolSections .symbol {
+  display: inline-block;
+  font-family: fontHeavy;
+  font-size: 1.25rem;
+  min-width: 6rem;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ BOARD INFO ------------------------------------------------------------------*/
+#gameWrapperSection {
+  /* ------------------------------------------------------------------ BOARD GAME ------------------------------------------------------------------*/
+}
+#gameWrapperSection #boardInfoWrapper {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper {
+    height: 10%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper {
+    height: 20%;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #gameWrapperSection #boardInfoWrapper {
+    height: 9rem;
+    max-height: 9rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #gameWrapperSection #boardInfoWrapper {
+    height: 9rem;
+    max-height: 9rem;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSectionsWrapper {
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSectionsWrapper {
+    height: 3rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSectionsWrapper {
+    height: 3rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoTop {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoTop {
+    order: 1;
+  }
+}
+#gameWrapperSection #boardInfoWrapper #boardInfoTop .boardInfoGameTitle,
+#gameWrapperSection #boardInfoWrapper #boardInfoTop #boardInfoSectionsSwitchButton {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoTop .boardInfoGameTitle,
+#gameWrapperSection #boardInfoWrapper #boardInfoTop #boardInfoSectionsSwitchButton {
+    display: block;
+  }
+}
+#gameWrapperSection #boardInfoWrapper #boardInfoTop #startGameImage {
+  width: 25px;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoTop #startGameImage {
+    width: 20px;
+  }
+}
+#gameWrapperSection #boardInfoWrapper #boardInfoMid {
+  width: 45%;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoMid {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoMid {
+    width: 100%;
+    order: 3;
+  }
+  #gameWrapperSection #boardInfoWrapper #boardInfoMid :nth-child(2) {
+    order: 2;
+  }
+}
+#gameWrapperSection #boardInfoWrapper #boardInfoBottom {
+  width: 45%;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoBottom {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper #boardInfoBottom {
+    width: 100%;
+    order: 2;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoTitles {
+  margin-right: 5px;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 1440px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoTitles {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoTitles {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoTitles {
+    font-size: 1.4rem;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  width: 60px;
+}
+@media only screen and (max-width: 1440px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters {
+    width: auto;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections .boardInfoParameters #timer {
+  font-family: fontMedium, serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 40px;
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal {
+  opacity: 0;
+  width: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal {
+    width: 50px;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal .indicatorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: all ease-in-out 0.25s;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal .indicatorWrapper {
+    width: 20px;
+    height: 20px;
+  }
+}
+#gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal .indicatorWrapper #firstCardIndicator,
+#gameWrapperSection #boardInfoWrapper .boardInfoSections #cardSignal .indicatorWrapper #secondCardIndicator {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#gameWrapperSection #boardGameWrapper {
+  width: 100%;
+  height: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardGameWrapper {
+    height: 90%;
+    max-height: 90%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #gameWrapperSection #boardGameWrapper {
+    height: 80%;
+    max-height: 80%;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #gameWrapperSection #boardGameWrapper {
+    height: calc(100% - 9rem);
+    max-height: calc(100% - 9rem);
+  }
+}
+@media only screen and (max-width: 320px) {
+  #gameWrapperSection #boardGameWrapper {
+    height: calc(100% - 9rem);
+    max-height: calc(100% - 9rem);
+  }
+}
+#gameWrapperSection #boardGameWrapper #gameBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  max-height: 90%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#gameWrapperSection #boardGameWrapper #gameBoard::-webkit-scrollbar {
+  display: none;
+}
+#gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+  opacity: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: all ease-in-out 0.15s;
+  margin: 0.1vw;
+}
+@media only screen and (max-width: 1440px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+@media only screen and (max-width: 1284px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+@media only screen and (max-width: 290px) {
+  #gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper {
+    width: 17.5vw;
+    height: 17.5vw;
+  }
+}
+#gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper:active {
+  transform: scale(0.975);
+  transition: all ease-in-out 0.25s;
+}
+#gameWrapperSection #boardGameWrapper #gameBoard .front,
+#gameWrapperSection #boardGameWrapper #gameBoard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+#gameWrapperSection #boardGameWrapper #gameBoard .front {
+  transform: rotateY(180deg);
+  border-radius: 6px;
+  /*  border: 1px solid #0054E7; */
+}
+#gameWrapperSection #boardGameWrapper #gameBoard .cardWrapper.rotate {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+/* ----------------------------------------------------------------  END MESSAGE  ---------------------------------------------------------------- */
+#messageWrapper {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem 0;
+  text-transform: capitalize;
+  /* #continueAfterWin,
+  #resetAfterWin,
+  #levelAfterWin {
+    visibility: hidden;
+    margin-top: 50px;
+    border: none;
+    text-transform: uppercase;
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    transition: $base-transition;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    &:hover {
+      opacity: .75;
+    }
+
+    &:active {
+      transform: scale(0.975);
+      transition: transform ease-in-out .15s;
+    }
+  } */
+}
+@media only screen and (min-width: 2561px) {
+  #messageWrapper {
+    justify-content: center;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #messageWrapper {
+    padding: 3rem 0;
+  }
+}
+#messageWrapper .messageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+#messageWrapper #message {
+  font-size: 4rem;
+  text-align: center;
+}
+@media only screen and (min-width: 2561px) {
+  #messageWrapper #message {
+    margin-bottom: 10rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #messageWrapper #message {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #messageWrapper #message {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+#messageWrapper .messages {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 576px) {
+  #messageWrapper .messages {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #messageWrapper .messages {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+}
+#messageWrapper #messageButtonsSection {
+  width: 30%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 2561px) {
+  #messageWrapper #messageButtonsSection {
+    margin: 10rem 0;
+  }
+}
+@media only screen and (min-width: 2561px) {
+  #messageWrapper #messageButtonsSection {
+    width: 10%;
+  }
+}
+@media only screen and (max-width: 1284px) {
+  #messageWrapper #messageButtonsSection {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #messageWrapper #messageButtonsSection {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #messageWrapper #messageButtonsSection {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #messageWrapper #messageButtonsSection {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #messageWrapper #messageButtonsSection {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #messageWrapper #messageButtonsSection {
+    margin-bottom: 1rem;
+    flex-direction: row;
+  }
+}
+#messageWrapper #messageButtonsSection .messageButtonWrapper {
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+@media only screen and (max-width: 576px) {
+  #messageWrapper #messageButtonsSection .messageButtonWrapper {
+    width: 100%;
+  }
+}
+#messageWrapper #messageButtonsSection .messageButtonWrapper button {
+  margin: 2rem 0 3rem 0;
+}
+@media only screen and (max-width: 576px) {
+  #messageWrapper #messageButtonsSection .messageButtonWrapper button {
+    margin: 1rem 0 2.5rem 0;
+  }
+}
+@media screen and (max-height: 576px) and (orientation: landscape) {
+  #messageWrapper #messageButtonsSection .messageButtonWrapper button {
+    margin: 0.5rem 0 1.5rem 0;
+  }
+}
+
+/* ------------------------------------------------------------------ PANEL SWITCHES ------------------------------------------------------------------*/
+.switchWrapper {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  background: transparent;
+  /* @include respond(laptop) {
+    width: 45px;
+    height: 20px;
+  } */
+}
+.switchWrapper .switcherSlider {
+  border-radius: 50px;
+  position: absolute;
+  cursor: pointer;
+  background: #41439E;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.25s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.switchWrapper .switcherSlider:before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: var(--background, #1D1F28);
+  right: 4px;
+  transition: all ease-in-out 0.25s;
+  border-radius: 50%;
+  /* @include respond(laptop) {
+    width: 14px;
+    height: 14px;
+  } */
+}
+.switchWrapper input {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: none;
+}
+.switchWrapper input:checked + .switcherSlider:before {
+  transform: translateX(-24px);
+}
+
+/* ------------------------------------------------------------------ PANEL RADIO BOXES ------------------------------------------------------------------*/
+.radioSection {
+  width: 200px;
+  height: 22px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.radioSection .radioWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+@media (hover: hover) {
+  .radioSection .radioWrapper:hover {
+    opacity: 0.7;
+  }
+}
+.radioSection .radioWrapper input {
+  position: absolute;
+  left: 4px;
+  display: none;
+  /* &:checked~.customRadio {
+    background: $blue;
+  } */
+}
+.radioSection .radioWrapper input:checked ~ .customRadio::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #E9EDF2;
+  border-radius: 50%;
+}
+.radioSection .radioWrapper .customRadio {
+  height: 22px;
+  width: 22px;
+  /* background: #505258; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radioSection .radioWrapper .radioTitles {
+  margin-left: 10px;
+}
+
+/* ------------------------------------------------------------------ BUTTONS ------------------------------------------------------------------*/
+.gameButtons {
+  border: none;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (hover: hover) {
+  .gameButtons:hover {
+    opacity: 0.7;
+  }
+}
+@media only screen and (max-width: 1284px) {
+  .gameButtons {
+    width: 33px;
+    height: 33px;
+  }
+  .gameButtons img {
+    width: 60%;
+  }
+}
+
+/* ----------------------------------------------------------------- START GAME BUTTON -----------------------------------------------------------------*/
+#startGameButton {
+  position: relative;
+}
+#startGameButton input {
+  position: absolute;
+  left: 10px;
+  display: none;
+}
+
+/* ------------------------------------------------------------------ PANEL NEXT LEVEL ------------------------------------------------------------------*/
+#nextLevelIconWrapper {
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (hover: hover) {
+  #nextLevelIconWrapper:hover {
+    opacity: 0.7;
+  }
+}
+
+/* ------------------------------------------------------------------ ICONS ------------------------------------------------------------------*/
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: all ease-in-out 0.25s;
+}
+.iconWrapper img {
+  width: 25px;
+}
+@media only screen and (max-width: 576px) {
+  .iconWrapper img {
+    width: 22px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .iconWrapper {
+    width: 33px;
+    height: 33px;
+  }
+}
