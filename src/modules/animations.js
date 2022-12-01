@@ -1,9 +1,9 @@
 import { gsap, Power3 } from "gsap";
 
 const animations = () => {
-    gsap.to("#settingsWrapperSection", {duration: 2, delay: 1, opacity: 1});
-    gsap.to("#timer", {duration: 2, delay: 2, opacity: 1});
-    gsap.to("#currentLevel", {duration: 2, delay: 2, opacity: 1});
+    gsap.to("#settingsWrapperSection", {duration: 1, delay: 1, opacity: 1});
+    gsap.to("#timer", {duration: 1, delay: 1, opacity: 1});
+    gsap.to("#currentLevel", {duration: 1, delay: 1, opacity: 1});
 };
 
 const showCardsAnimation = () => {
@@ -11,7 +11,7 @@ const showCardsAnimation = () => {
         opacity: 1,
         repeat: 0,
         ease: "power1.inOut",
-        delay: 1,
+        delay: .25,
         stagger: {
             amount: 1,
             from: "top"
